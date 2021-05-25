@@ -1,0 +1,40 @@
+﻿// SCSS File
+// animation.scss
+
+
+// animation mixin
+@mixin animation-delay($delay) {
+	@include prefix(animation-delay, $delay, webkit moz o);
+}
+
+@mixin animation-duration($duration) {
+	@include prefix(animation-duration, $duration, webkit moz o);
+}
+
+@mixin animation-name($animation) {
+	@include prefix(animation-name, $animation, webkit moz o);
+}
+
+@mixin animation-fill-mode() {
+	@include prefix(animation-mode, forwards, webkit moz o);
+}
+
+@mixin animation-iteration-count($count) {
+	@include prefix(animation-iteration-count, $count, webkit moz o);
+}
+
+@mixin animation-play-state($play-state) {
+	@include prefix(animation-play-state, $play-state, webkit moz o);
+}
+
+@mixin animation-timing-function($timing: ease-out) {
+	@include prefix(animation-timing-function, $timing, webkit moz o);
+}
+
+@mixin animation-direction($direction: normal) {
+	@include prefix(animation-direction, $direction, webkit moz o);
+}
+
+@mixin animation($animation) {
+	@include prefix(animation, $animation, webkit moz o);
+}

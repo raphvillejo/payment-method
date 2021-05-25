@@ -1,0 +1,24 @@
+﻿// SCSS File
+// modal-header.scss
+
+
+// modal-header style
+@if $enable-modal {
+	.modal-header {
+		padding: $modal-header-pad;
+		border-bottom: $modal-header-border;
+		@include flex-display();
+		@include flex-direction();
+		@include flex-justify-content(space-between);
+		@include flex-align-items();
+
+		~ .card-body {
+			padding-top: 0;
+		}
+
+		@include media-breakpoint-down(xs) {
+			padding-left: $modal-header-pad-xs;
+			padding-right: $modal-header-pad-xs;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+﻿// SCSS File
+// input-strength.scss
+
+
+// input-strength style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-input-strength {
+			.input-strength {
+				margin: -#{$p6} -#{$p2};
+				margin-bottom: $spacer-24;
+				overflow: hidden;
+
+				.bar {
+					width: calc(20% - #{$p4});
+					height: $p6;
+					margin: 0 $p2;
+					background-color: $highlight-bg;
+					float: left;
+
+					&.complete {
+						background-color: $build-invalid-border;
+					}
+
+					&.is-slim {
+						background-color: $build-invalid-border;
+					}
+
+					&.is-poor {
+						background-color: $build-warning-border;
+					}
+
+					&.is-fair {
+						background-color: $build-caution-border;
+					}
+
+					&.is-good {
+						background-color: $build-valid-bg;
+					}
+
+					&.is-great {
+						background-color: $build-valid-border;
+					}
+				}
+			}
+		}
+	}
+}

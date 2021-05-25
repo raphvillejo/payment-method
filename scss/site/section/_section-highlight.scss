@@ -1,0 +1,36 @@
+// SCSS File
+// section-highlight.scss
+
+// section-highlight variables
+$highlight-item-colors: #1450d2 1, #01a49c 2, #009bfa 3;
+
+// section-highlight style
+.section-highlight {
+  padding: $spacer-48 0;
+
+  .heading {
+    font-size: $font-size-32;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  .lead {
+    font-size: $font-size-16;
+  }
+
+  @each $color, $i in $highlight-item-colors {
+    .item:nth-child(#{$i}) {
+      .card {
+        border-bottom: $p12 solid $color;
+      }
+
+      .card-caption {
+        color: $color;
+      }
+    }
+  }
+
+  .item {
+    display: flex;
+  }
+}

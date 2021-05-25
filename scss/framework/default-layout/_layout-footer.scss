@@ -1,0 +1,31 @@
+﻿// SCSS File
+// layout-footer.scss
+
+
+// layout-footer style
+.layout-footer {
+	font-size: $layout-footer-font-size;
+	font-weight: $layout-footer-font-weight;
+	@include flex-shrink();
+	@include flex-grow();
+
+	.foot {
+		+ .foot {
+		}
+	}
+}
+
+// foot menus style
+.foot-menus {
+}
+
+// foot contact style
+.foot-contact {
+}
+
+// foot terms style
+.foot-terms {
+	a {
+		color: inherit;
+	}
+}

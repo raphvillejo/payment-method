@@ -1,0 +1,23 @@
+﻿// SCSS File
+// form-alert-dismissible.scss
+
+
+// alert-dismissible style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-alert-dismissible {
+			.alert-dismissible {
+				padding: $alert-dismissible-pad;
+				text-align: center;
+
+				.close {
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: $alert-dismissible-close-pad;
+					color: inherit;
+				}
+			}
+		}
+	}
+}

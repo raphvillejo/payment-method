@@ -1,0 +1,89 @@
+﻿// SCSS File
+// measurement.scss
+
+
+// rate-bar variables
+$rate-color-default:                                        $mono-002;
+$rate-color-poor:                                           $build-danger;
+$rate-color-bad:                                            $build-warning-border;
+$rate-color-ok:                                             $build-warning-highlight;
+$rate-color-good:                                           $build-caution-highlight;
+$rate-color-great:                                          $build-valid-highlight;
+$rate-color-excellent:                                      $build-success;
+//$rate-width:                                                14.28571428571429%;
+$rate-width:                                                14.2%;
+$rate-width-0:                                              $rate-width;
+$rate-width-1:                                              $rate-width * 2;
+$rate-width-2:                                              $rate-width * 3;
+$rate-width-3:                                              $rate-width * 4;
+$rate-width-4:                                              $rate-width * 5;
+$rate-width-5:                                              $rate-width * 6;
+$rate-width-6:                                              $rate-width * 7;
+$rate-bar-mar:                                              $p4 0 0 0;
+$rate-bar-round:                                            $spacer-16;
+$rate-bar-height:                                           $p8;
+$rate-bar-width:                                            100%;
+$rate-bar-bg:                                               $mono-001;
+$rate-bar-state-height:                                     100%;
+$rate-bar-state-round:                                      $rate-bar-round;
+
+// rate-gauge variables
+$rate-color-default:                                        $mono-002;
+$rate-color-poor:                                           $build-danger;
+$rate-color-bad:                                            $build-warning-border;
+$rate-color-ok:                                             $build-warning-highlight;
+$rate-color-good:                                           $build-caution-highlight;
+$rate-color-great:                                          $build-valid-highlight;
+$rate-color-excellent:                                      $build-success;
+$rate-gauge-compute-size:                                   $spacer-80;						// 80px
+$rate-gauge-compute-p04:                                    $rate-gauge-compute-size / 20;	// 4px
+$rate-gauge-compute-p08:                                    $rate-gauge-compute-size / 10;	// 8px
+$rate-gauge-compute-p16:                                    $rate-gauge-compute-p08 * 2;	// 16px
+$rate-gauge-compute-p32:                                    $rate-gauge-compute-p16 * 2;	// 32px
+$rate-gauge-width:                                          $rate-gauge-compute-size;
+$rate-gauge-height:                                         $rate-gauge-width - $spacer-30;
+$rate-gauge-div-size:                                       $rate-gauge-compute-size;
+$rate-gauge-div-pseudo-round:                               50%;
+$rate-gauge-div-child-1-pseudo-border-colors:               $rate-color-default $rate-color-default transparent transparent;
+$rate-gauge-div-child-2-pseudo-bg:                          $rate-color-default;
+$rate-gauge-div-child-3-pseudo-border-colors:               $rate-color-excellent transparent transparent transparent;
+$rate-gauge-div-child-3-pseudo-bg:                          $rate-color-excellent;
+$rate-gauge-div-child-4-pseudo-border-colors:               transparent $rate-color-excellent transparent transparent;
+$rate-gauge-div-child-4-pseudo-bg:                          $rate-color-excellent;
+$rate-gauge-div-child-5-pseudo-width:                       $rate-gauge-compute-p32;
+$rate-gauge-div-child-5-pseudo-height:                      $rate-gauge-compute-p08;
+$rate-gauge-div-child-5-pseudo-border-width:                $rate-gauge-compute-p04 0 $rate-gauge-compute-p04 $rate-gauge-compute-p32;
+$rate-gauge-div-child-5-pseudo-border-colors:               transparent transparent transparent $mono-007;
+$rate-gauge-div-child-5-pseudo-pos-y:                       50%;
+$rate-gauge-div-child-5-pseudo-pos-x-1:                     $rate-gauge-compute-p04;
+$rate-gauge-div-child-5-pseudo-pos-x-2:                     50%;
+$rate-gauge-div-child-5-pseudo-mar-y:                       -#{$rate-gauge-compute-p04};
+$rate-gauge-div-child-5-pseudo-mar-x:                       -#{$rate-gauge-compute-p08};
+$rate-gauge-div-child-5-pseudo-bg:                          $mono-005;
+$rate-gauge-ratecount-0-div-child-3-pseudo-border-colors:   $rate-color-default transparent transparent transparent;
+$rate-gauge-ratecount-0-div-child-4-pseudo-border-colors:   transparent transparent $rate-color-default transparent;
+$rate-gauge-ratecount-0-div-child-3-4-pseudo-bg:            $rate-color-poor;
+$rate-gauge-ratecount-0-div-child-3-4-rotate:               -180;
+$rate-gauge-ratecount-1-div-child-3-pseudo-border-colors:   $rate-color-bad transparent transparent transparent;
+$rate-gauge-ratecount-1-div-child-4-pseudo-border-colors:   transparent transparent $rate-color-default transparent;
+$rate-gauge-ratecount-1-div-child-3-4-pseudo-bg:            $rate-color-bad;
+$rate-gauge-ratecount-1-div-child-3-4-rotate:               -150;
+$rate-gauge-ratecount-2-div-child-3-pseudo-border-colors:   $rate-color-ok transparent transparent transparent;
+$rate-gauge-ratecount-2-div-child-4-pseudo-border-colors:   transparent transparent $rate-color-default transparent;
+$rate-gauge-ratecount-2-div-child-3-4-pseudo-bg:            $rate-color-ok;
+$rate-gauge-ratecount-2-div-child-3-4-rotate:               -120;
+$rate-gauge-ratecount-3-div-child-3-pseudo-border-colors:   $rate-color-good transparent transparent transparent;
+$rate-gauge-ratecount-3-div-child-4-pseudo-border-colors:   transparent $rate-color-good transparent transparent;
+$rate-gauge-ratecount-3-div-child-3-4-pseudo-bg:            $rate-color-good;
+$rate-gauge-ratecount-3-div-child-3-4-rotate:               -90;
+$rate-gauge-ratecount-4-div-child-3-pseudo-border-colors:   $rate-color-great transparent transparent transparent;
+$rate-gauge-ratecount-4-div-child-4-pseudo-border-colors:   transparent $rate-color-great transparent transparent;
+$rate-gauge-ratecount-4-div-child-3-4-pseudo-bg:            $rate-color-great;
+$rate-gauge-ratecount-4-div-child-3-4-rotate:               -60;
+$rate-gauge-ratecount-5-div-child-3-4-rotate:               -30;
+$rate-gauge-arc-size:                                       $rate-gauge-compute-size;
+$rate-gauge-arc-rotate:                                     -45;
+$rate-gauge-arc-border-width:                               $rate-gauge-compute-p16;
+$rate-gauge-dot-pos-y:                                      50%;
+$rate-gauge-dot-mar-y:                                      -#{$rate-gauge-compute-p08};
+$rate-gauge-dot-size:                                       $rate-gauge-compute-p16;

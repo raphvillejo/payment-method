@@ -1,0 +1,32 @@
+﻿// SCSS File
+// ui-datepicker-title.scss
+
+
+// datepicker-title style
+@if $enable-form {
+	@if $enable-form-ui {
+		@if $enable-form-ui-datepicker {
+			.ui-datepicker-title {
+				line-height: $ui-datepicker-title-line-height;
+				font-size: $ui-datepicker-title-font-size;
+				text-align: center;
+
+				.ui-datepicker-month {
+					font-weight: $ui-datepicker-title-month-font-weight;
+					font-size: $ui-datepicker-title-month-font-size;
+					margin-right: auto;
+				}
+
+				.ui-datepicker-year {
+					margin-left: auto;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-bottom: $p14;
+					@include flex-align-items(flex-end);
+					@include flex-display();
+				}
+			}
+		}
+	}
+}

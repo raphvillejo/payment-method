@@ -1,0 +1,32 @@
+﻿// SCSS File
+// card-button.scss
+
+
+// card-button style
+@if $enable-card {
+	@if $enable-card-button {
+		.card-button {
+			padding: $card-button-pad;
+			margin: $card-button-mar;
+			border-top: $card-button-border;
+			@include flex-display();
+			@include flex-direction(row-reverse);
+
+			.btn + .btn {
+				margin-right: $card-button-mar-x;
+			}
+
+			@include media-breakpoint-down(sm) {
+				@include flex-direction(column);
+
+				.btn {
+					width: 100%;
+
+					+ .btn {
+						margin-top: $spacer-14;
+					}
+				}
+			}
+		}
+	}
+}

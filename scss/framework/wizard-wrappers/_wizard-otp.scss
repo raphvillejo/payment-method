@@ -1,0 +1,12 @@
+﻿// SCSS File
+// wizard-otp.scss
+
+
+// wizard-otp style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-otp {
+		.wizard-otp {
+			padding-top: $wizard-otp-pad;
+		}
+	}
+}

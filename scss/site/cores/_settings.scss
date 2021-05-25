@@ -1,0 +1,497 @@
+// SCSS File
+// whitelabel settings.scss
+
+// server path
+$server-path: ".." !default !global;
+
+// colors
+$black: #000 !default;
+$white: #fff !default;
+
+// =========================================== monochrome colors settings
+$mono-000: #fafcfe !default;
+$mono-001: #f8fafd !default;
+$mono-002: #dae1ec !default;
+$mono-003: #ced4da !default;
+$mono-004: #adb9cb !default;
+$mono-005: #8393a9 !default;
+$mono-006: #53657f !default;
+$mono-007: #42516b !default;
+$mono-008: #3e4c63 !default;
+$mono-009: #182940 !default;
+
+// =========================================== brand colors settings
+$brand-color-primary: #003366 !default;
+$brand-color-secondary: #00acee !default;
+$brand-color-tertiary: #ff9800 !default;
+$brand-color-quaternary: #fcb509 !default;
+$brand-color-gradient: linear-gradient(
+  300deg,
+  #2751cf 0%,
+  #00acee 100%
+) !default;
+
+$blue-color: #3394de !default;
+$red-color: #e64040 !default;
+$green-color: #8dc63f !default;
+$orange-color: $brand-color-tertiary !default;
+
+$build-primary: #33b159 !default;
+$build-secondary: $brand-color-secondary !default;
+$build-tertiary: $brand-color-tertiary !default;
+$build-success: $green-color !default;
+$build-info: $blue-color !default;
+$build-warning: $orange-color !default;
+$build-danger: $red-color !default;
+$build-white: $white !default;
+$build-black: $black !default;
+$build-grey: #7c858d !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary": $build-primary,
+    "secondary": $build-secondary,
+    "tertiary": $build-tertiary,
+    "success": $build-success,
+    "info": $build-info,
+    "warning": $build-warning,
+    "danger": $build-danger,
+    "light": $build-white,
+    "dark": $build-black,
+    "grey": $build-grey,
+  ),
+  $theme-colors
+);
+
+$border-color: $mono-003 !default;
+$divider-color: $mono-002 !default;
+$text-color: $black !default;
+$accent-color: $mono-006 !default;
+$heading-color: $mono-008 !default;
+$build-shadow: rgba($mono-002, 0.4) !default;
+$build-shadow-dark: rgba($build-black, 0.25) !default;
+
+$text-muted: $mono-004 !default;
+
+$highlight-color: $mono-002 !default;
+$highlight-bg: $mono-001 !default;
+$highlight-border: $border-color !default;
+
+$link-color: #007bff !default;
+
+$build-input-bg: $mono-001 !default;
+$build-input-border: $border-color !default;
+$build-input-focus: $build-info !default;
+
+$build-default-bg: #e9ecef !default;
+$build-default-border: #7c858d !default;
+$build-default-highlight: #a7aeb4 !default;
+$build-default-color: darken($build-default-border, 20%) !default;
+
+$build-info-bg: $blue-color !default;
+$build-info-border: #389df2 !default;
+$build-info-highlight: #7ebef6 !default;
+$build-info-color: darken($build-info-border, 20%) !default;
+
+$build-interface-bg: $build-info-bg !default;
+$build-interface-border: #88b5e0 !default;
+$build-interface-color: darken($build-interface-border, 20%) !default;
+
+$build-inverted-bg: $build-white !default;
+$build-inverted-border: $mono-004 !default;
+$build-inverted-color: darken($build-inverted-border, 20%) !default;
+
+$build-valid-bg: #f2f8eb !default;
+$build-valid-border: #7fbf38 !default;
+$build-valid-highlight: #acd680 !default;
+$build-valid-color: darken($build-valid-border, 20%) !default;
+
+$build-invalid-bg: #fef0f0 !default;
+$build-invalid-border: $build-danger !default;
+$build-invalid-highlight: #f09082 !default;
+$build-invalid-color: darken($build-invalid-border, 20%) !default;
+
+$build-caution-bg: #ffffcc !default;
+$build-caution-border: #ffcc33 !default;
+$build-caution-highlight: #ffdd00 !default;
+$build-caution-color: darken($build-caution-border, 20%) !default;
+
+$build-warning-bg: #fff4e5 !default;
+$build-warning-border: $build-warning !default;
+$build-warning-highlight: #ffbc5b !default;
+$build-warning-color: darken($build-warning-border, 20%) !default;
+
+// body variables
+$body-bg: $build-white;
+$body-color: $text-color;
+
+// settings
+// =========================================== global animation
+//							   (if false will collect all component that needs transition)
+//							   (if true, you will have the option to add 'animate' to do transition)
+$enable-single-class-animate: false !default;
+
+// =========================================== custom fonts variables
+$enable-default-glyphs: false !default;
+$font-default-glyphs: "RENAME_ME_1" !default;
+$enable-custom-glyphs: false !default;
+$font-custom-glyphs: "custom" !default;
+$enable-custom-font: true !default;
+$font-custom-font-rg:"Hurme Geometric Sans 3";
+$font-custom-font-sb:"Hurme Geometric Sans 3 Semi Bold";
+$font-custom-font-bo:"Hurme Geometric Sans 3 Bold";
+$font-custom-font: $font-custom-font-rg, $font-custom-font-sb,
+  $font-custom-font-bo !default;
+
+// =========================================== media query settings
+$enable-media-query-xs: true !default;
+$enable-media-query-sm: true !default;
+$enable-media-query-md: true !default;
+$enable-media-query-lg: true !default;
+
+// =========================================== grid settings (container, container-fluid, row and col classes)
+$enable-grid-classes: true !default; // parent
+$enable-grid-classes-container: true !default;
+$enable-grid-classes-container-fluid: false !default;
+$enable-grid-classes-row: false !default;
+$enable-grid-classes-columns: false !default;
+
+// =========================================== alert settings (level range from '-12.5' to '12.5')
+$alert-bg-level: -10 !default; // color level background
+$alert-border-level: -9 !default; // color level border
+$alert-color-level: 6 !default; // color level text
+$alert-status-bg-level: -12.5 !default; // color level background
+$alert-status-border-level: -1.6 !default; // color level border
+$alert-status-color-level: 0.05 !default; // color level text
+
+// =========================================== card settings
+$enable-card: true !default; // parent
+$enable-card-button: false !default;
+$enable-card-grid: false !default;
+$enable-card-icon: false !default;
+$enable-card-image: false !default;
+$enable-card-background: false !default;
+$enable-card-hover: false !default;
+$enable-card-loading: true !default;
+$enable-card-toggle: false !default;
+$enable-card-action: true !default;
+$enable-card-application: false !default;
+$enable-card-data: false !default;
+$enable-card-date: false !default;
+$enable-card-details: false !default;
+$enable-card-post: false !default;
+$enable-card-product: false !default;
+$enable-card-progress: false !default;
+$enable-card-promo: false !default;
+$enable-card-specs: false !default;
+$enable-card-status: false !default;
+$enable-card-teaser: false !default;
+
+// =========================================== card-type settings
+$enable-card-type-alert: false !default;
+$enable-card-type-alert-variant: false !default;
+$enable-card-type-application: false !default;
+$enable-card-type-assets: false !default;
+$enable-card-type-banner: false !default;
+$enable-card-type-button: false !default;
+$enable-card-type-dashboard: false !default;
+$enable-card-type-data: false !default;
+$enable-card-type-edit: false !default;
+$enable-card-type-emphasis: false !default;
+$enable-card-type-empty: false !default;
+$enable-card-type-graph: false !default;
+$enable-card-type-input: false !default;
+$enable-card-type-post: false !default;
+$enable-card-type-product: false !default;
+$enable-card-type-profile: false !default;
+$enable-card-type-progress: false !default;
+$enable-card-type-promo: false !default;
+$enable-card-type-settings: false !default;
+$enable-card-type-table: false !default;
+
+$card-type-alert-bg-level: -10 !default; // color level background
+$card-type-alert-border-level: -3 !default; // color level border
+$card-type-alert-color-level: 6 !default; // color level text
+
+// =========================================== drawer components settings
+$enable-drawer: true !default;
+$enable-drawer-form: false !default;
+
+// =========================================== modal components settings
+$enable-modal: false !default;
+$enable-modal-image: false !default;
+$enable-modal-inset: false !default;
+$enable-modal-outset: false !default;
+$enable-modal-loading: false !default;
+$enable-modal-otp: false !default;
+$enable-modal-tabs: false !default;
+$enable-modal-tab-content: false !default;
+$enable-modal-table: false !default;
+$enable-modal-product: false !default;
+
+// =========================================== table components settings (level range from '-12.5' to '12.5')
+// If parent settings is enabled, please choose a child settings to include in the build.
+$component-table: false !default; // parent
+$component-table-small: false !default;
+$component-table-bordered: false !default;
+$component-table-borderless: false !default;
+$component-table-striped: false !default;
+$component-table-hover: false !default;
+$component-table-variants: false !default;
+$component-table-variants-row: false !default;
+$component-table-thead-dark: false !default;
+$component-table-dark: false !default;
+$component-table-responsive: false !default;
+
+$table-bg-level: -10 !default; // color level background
+$table-border-level: -9 !default; // color level border
+
+// =========================================== nav components settings
+$component-nav: true !default; // parent
+$component-nav-link: false !default;
+$component-nav-tabs: true !default;
+$component-nav-tabs-in-modal: false !default;
+$component-nav-pills: false !default;
+$component-nav-fill: false !default;
+$component-nav-justified: false !default;
+$component-nav-content: false !default;
+
+// =========================================== list components settings
+$component-list: false !default;
+$component-list-data: false !default;
+$component-list-data-muted: false !default;
+$component-list-data-discount: false !default;
+$component-list-data-striped: false !default;
+$component-list-deck: false !default;
+$component-list-deck-grid: false !default;
+$component-list-details: false !default;
+$component-list-float: false !default;
+$component-list-icon: false !default;
+$component-list-icon-bullet: false !default;
+$component-list-icon-tick: false !default;
+$component-list-items: false !default;
+$component-list-nowrap: false !default;
+$component-list-terms: false !default;
+$component-list-terms-accent: false !default;
+$component-list-terms-justified: false !default;
+
+// =========================================== toggle components settings
+$component-toggle: false !default;
+$component-toggle-action: false !default;
+$component-toggle-button: false !default;
+$component-toggle-help: false !default;
+$component-toggle-input: false !default;
+$component-toggle-items: false !default;
+
+// =========================================== toggle components settings
+$component-badge: false !default;
+$component-badge-icon: false !default;
+$component-badge-pill: false !default;
+
+// =========================================== measurement components settings
+$enable-measurement-rate-bar: false !default;
+$enable-measurement-rate-gauge: false !default;
+$enable-measurement-rate-stars: false !default;
+
+// =========================================== text utilities settings
+// If parent settings is enabled, please choose a child settings to include in the build.
+$utilities-text: true !default; // parent
+$utilities-text-style: false !default;
+$utilities-text-alignment: true !default;
+$utilities-text-alignment-responsive: true !default;
+$utilities-text-transform: false !default;
+$utilities-text-weight-italic: false !default;
+$utilities-text-colors: true !default;
+$utilities-text-misc: false !default;
+$utilities-text-reset: false !default;
+
+// =========================================== spacing utilities settings
+$utilities-spacing: true !default;
+
+// =========================================== screenreaders utilities settings
+$utilities-screenreaders: true !default;
+
+// =========================================== position utilities settings
+$utilities-position: false !default; // parent
+$utilities-position-element: false !default;
+$utilities-position-shorthand: false !default;
+
+// =========================================== position utilities settings
+$utilities-display: false !default; // parent
+$utilities-display-element: false !default;
+$utilities-display-print: false !default;
+
+// =========================================== background utilities settings
+$utilities-background: true !default; // parent
+$utilities-background-variant: true !default;
+$utilities-background-gradient: false !default;
+$utilities-background-white: false !default;
+$utilities-background-transparent: false !default;
+
+// =========================================== stack grid system settings
+$enable-stack: true !default;
+$enable-stack-grid: true !default;
+$enable-stack-grid-small: false !default;
+$enable-stack-display: false !default;
+$enable-stack-masonry: false !default;
+$enable-stack-articles: false !default;
+
+// =========================================== form settings
+// If parent settings is enabled, please choose a child settings to include in the build.
+
+// form-core
+$enable-form: true !default; // form parent
+
+// form-wrappers
+$enable-form-wrappers: true !default; // parent
+$enable-form-wrappers-section: true !default;
+$enable-form-wrappers-page: false !default;
+$enable-form-wrappers-fillup: false !default;
+$enable-form-wrappers-followup: false !default;
+$enable-form-wrappers-toggle: false !default;
+$enable-form-wrappers-amend: true !default;
+$enable-form-wrappers-grid: true !default;
+$enable-form-wrappers-group: true !default;
+$enable-form-wrappers-button: true !default;
+$enable-form-wrappers-consent: false !default;
+$enable-form-wrappers-emphasis: false !default;
+$enable-form-wrappers-emphasis-alert: false !default;
+$enable-form-wrappers-emphasis-highlight: false !default;
+$enable-form-wrappers-text: false !default;
+$enable-form-wrappers-terms: false !default;
+$enable-form-wrappers-option: true !default;
+$enable-form-wrappers-option-flex: false !default;
+$enable-form-wrappers-checkbox-stack: false !default;
+$enable-form-wrappers-radio-stack: false !default;
+$enable-form-wrappers-range: false !default;
+$enable-form-wrappers-info: false !default;
+$enable-form-wrappers-info-otp: false !default;
+$enable-form-wrappers-voucher: false !default;
+$enable-form-wrappers-autocomplete: false !default;
+$enable-form-wrappers-guidance: false !default;
+$enable-form-wrappers-datepicker: false !default;
+
+// form-advance
+$enable-form-advance: true !default; // parent
+$enable-form-advance-date: false !default;
+$enable-form-advance-control-range: false !default;
+$enable-form-advance-file: false !default;
+$enable-form-advance-file-canvas: false !default;
+$enable-form-advance-file-display: false !default;
+$enable-form-advance-file-documents: false !default;
+$enable-form-advance-file-editor: false !default;
+$enable-form-advance-file-media: false !default;
+$enable-form-advance-file-preview: false !default;
+$enable-form-advance-locality: false !default;
+$enable-form-advance-locality-map: false !default;
+$enable-form-advance-locality-picker: false !default;
+$enable-form-advance-locality-pin: false !default;
+$enable-form-advance-locality-places: false !default;
+$enable-form-advance-otp: false !default;
+$enable-form-advance-digits: false !default;
+$enable-form-advance-password-meter: true !default;
+$enable-form-advance-progress: false !default;
+$enable-form-advance-autocomplete: false !default;
+$enable-form-advance-autocomplete-items: false !default;
+$enable-form-advance-survey-option: false !default;
+$enable-form-advance-survey-option-gradient: false !default;
+$enable-form-advance-survey-option-smiley: false !default;
+$enable-form-advance-input-strength: false !default;
+$enable-form-advance-input-strength-feedback: false !default;
+
+// form-ui
+$enable-form-ui: false !default; // parent
+$enable-form-ui-datepicker: false !default;
+
+// form-utilities
+$enable-form-utilities: true !default; // parent
+$enable-form-utilities-alert: false !default;
+$enable-form-utilities-alert-dismissible: false !default;
+$enable-form-utilities-alert-status: false !default;
+$enable-form-utilities-alert-variant: false !default;
+$enable-form-utilities-feedback: false !default;
+$enable-form-utilities-feedback-output: false !default;
+$enable-form-utilities-loading: true !default;
+$enable-form-utilities-help: false !default;
+$enable-form-utilities-basket: false !default;
+$enable-form-utilities-btn-edit: true !default;
+$enable-form-utilities-btn-group: false !default;
+$enable-form-utilities-btn-toggle: false !default;
+$enable-form-utilities-input: false !default;
+$enable-form-utilities-input-addon: true !default;
+$enable-form-utilities-input-group: false !default;
+$enable-form-utilities-input-flex: false !default;
+$enable-form-utilities-pagination: false !default;
+$enable-form-utilities-placeholder-label: true !default;
+
+// =========================================== wizard settings
+// If parent settings is enabled, please choose a child settings to include in the build.
+
+$enable-wizard: false !default; // wizard parent
+
+// wizard-layout
+$enable-wizard-layout: false !default;
+$enable-wizard-layout-market: false !default;
+
+// wizard-wrappers
+$enable-wizard-wrappers-loading: false !default;
+$enable-wizard-wrappers-items: false !default;
+$enable-wizard-wrappers-page: false !default;
+$enable-wizard-wrappers-card: false !default;
+$enable-wizard-wrappers-card-stack: false !default;
+$enable-wizard-wrappers-cards: false !default;
+$enable-wizard-wrappers-content: false !default;
+$enable-wizard-wrappers-document: false !default;
+$enable-wizard-wrappers-document-paper: false !default;
+$enable-wizard-wrappers-document-reader: false !default;
+$enable-wizard-wrappers-document-wrapper: false !default;
+$enable-wizard-wrappers-agreement: false !default;
+$enable-wizard-wrappers-agreement-consent: false !default;
+$enable-wizard-wrappers-agreement-feedback: false !default;
+$enable-wizard-wrappers-agreement-signature: false !default;
+$enable-wizard-wrappers-filter: false !default;
+$enable-wizard-wrappers-filters: false !default;
+$enable-wizard-wrappers-gadget: false !default;
+$enable-wizard-wrappers-gadget-data: false !default;
+$enable-wizard-wrappers-gadget-inline: false !default;
+$enable-wizard-wrappers-gadget-modal: false !default;
+$enable-wizard-wrappers-graphic: false !default;
+$enable-wizard-wrappers-guide: false !default;
+$enable-wizard-wrappers-iframe: false !default;
+$enable-wizard-wrappers-loader: false !default;
+$enable-wizard-wrappers-logo: false !default;
+$enable-wizard-wrappers-modal: false !default;
+$enable-wizard-wrappers-navigation: false !default;
+$enable-wizard-wrappers-otp: false !default;
+$enable-wizard-wrappers-pagination: false !default;
+$enable-wizard-wrappers-payment: false !default;
+$enable-wizard-wrappers-preview: false !default;
+$enable-wizard-wrappers-product: false !default;
+$enable-wizard-wrappers-product-count: false !default;
+$enable-wizard-wrappers-progress: false !default;
+$enable-wizard-wrappers-progress-FALLBACK-stick: false !default;
+$enable-wizard-wrappers-result: false !default;
+$enable-wizard-wrappers-settings: false !default;
+$enable-wizard-wrappers-stack: false !default;
+$enable-wizard-wrappers-status: false !default;
+$enable-wizard-wrappers-steps: false !default;
+$enable-wizard-wrappers-sticky: false !default;
+$enable-wizard-wrappers-subject: false !default;
+$enable-wizard-wrappers-summary: false !default;
+$enable-wizard-wrappers-table: false !default;
+$enable-wizard-wrappers-table-sticky: false !default;
+$enable-wizard-wrappers-voucher: false !default;
+
+// =========================================== other settings
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: false !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: false !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: true !default;

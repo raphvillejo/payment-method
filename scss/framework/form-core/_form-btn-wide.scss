@@ -1,0 +1,22 @@
+﻿// SCSS File
+// form-btn-wide.scss
+
+
+// btn wide style
+@if $enable-form {
+	.btn-wide {
+		min-width: $btn-wide-width;
+
+		&.btn-sm {
+			min-width: $btn-wide-sm-width;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+
+			& + .btn {
+				margin: $spacer-24 0 0;
+			}
+		}
+	}
+}

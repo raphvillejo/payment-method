@@ -1,0 +1,15 @@
+﻿// SCSS File
+// modal-image.scss
+
+
+// modal-image style
+@if $enable-modal {
+	@if $enable-modal-image {
+		.modal-image {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

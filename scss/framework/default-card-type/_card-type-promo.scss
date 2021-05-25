@@ -1,0 +1,43 @@
+﻿// SCSS File
+// card-type-promo.scss
+
+
+// card-type-promo style
+@if $enable-card {
+	@if $enable-card-type-promo {
+		.card-type-promo {
+
+			img {
+				object-position: $card-type-promo-object-pos;
+			}
+
+			.card-image {
+				height: $card-type-promo-image-height;
+			}
+
+			.card-footer {
+				padding: $card-type-promo-footer-pad;
+				padding-top: 0;
+				border: none;
+			}
+
+			.badge-pill {
+				padding-right: $card-type-promo-badge-pad-x;
+				position: absolute;
+				right: $card-type-promo-badge-pos-x;
+				top: -#{$card-type-promo-badge-pos-y};
+			}
+
+			@include media-breakpoint-down(xs) {
+
+				.card-image {
+					height: $spacer-14 * 10;
+				}
+
+				.badge-pill {
+					top: -#{($spacer-14 * 10) + $p8};
+				}
+			}
+		}
+	}
+}

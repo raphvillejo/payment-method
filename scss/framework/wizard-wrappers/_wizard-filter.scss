@@ -1,0 +1,57 @@
+﻿// SCSS File
+// wizard-filter.scss
+
+
+// wizard-filter style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-filter {
+		.wizard-filter {
+
+			+ .wizard-filter {
+				margin-top: $wizard-filter-mar;
+			}
+
+			.filter-title {
+				display: block;
+				margin-bottom: $wizard-filter-title-mar;
+				font-size: $wizard-filter-title-font-size;
+			}
+
+			.filter-group {
+				margin: 0;
+
+				label {
+					display: inline-block;
+					font-size: $wizard-filter-group-label-font-size;
+					@include flex-basis();
+					@include flex-grow(1);
+				}
+
+				input {
+
+					~ label {
+						cursor: pointer;
+					}
+
+					&:checked ~ label {
+						color: $wizard-filter-group-input-focus-color;
+					}
+				}
+
+				.option {
+					cursor: pointer;
+					margin: $wizard-filter-group-option-mar;
+					padding: $wizard-filter-group-option-pad;
+
+					@include hover {
+						background-color: $wizard-filter-group-option-hover-bg;
+					}
+
+					&.checked {
+						background-color: $wizard-filter-group-option-cheked-bg;
+					}
+				}
+			}
+		}
+	}
+}

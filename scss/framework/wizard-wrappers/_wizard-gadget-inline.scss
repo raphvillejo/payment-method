@@ -1,0 +1,51 @@
+﻿// SCSS File
+// wizard-gadget-inline.scss
+
+
+// wizard-gadget-inline style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-gadget-inline {
+		.wizard-gadget-inline {
+			padding: 0;
+			@include flex-direction(column);
+
+			.gadget-details {
+				margin-top: $wizard-gadget-inline-details-mar;
+			}
+
+			.gadget-image {
+				@include size($wizard-gadget-inline-image-size);
+				margin: 0;
+				text-align: center;
+
+				img {
+					width: $wizard-gadget-inline-image-width;
+					max-width: $wizard-gadget-inline-image-min-width;
+					height: $wizard-gadget-inline-image-size;
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+
+				.gadget-image {
+
+					img {
+						width: 31.25%;
+						height: auto;
+					}
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+
+				.gadget-image {
+
+					img {
+						width: 43.75%;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+}

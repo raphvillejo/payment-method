@@ -1,0 +1,21 @@
+﻿// SCSS File
+// font-weight.scss
+
+
+// font-weight variables
+$font-weight-1:										100;
+$font-weight-2:										200;
+$font-weight-3:										300;
+$font-weight-4:										400;
+$font-weight-5:										500;
+$font-weight-6:										600;
+$font-weight-7:										700;
+$font-weight-8:										800;
+
+$font-weight-lighter:								$font-weight-1;
+$font-weight-light:									$font-weight-3;
+$font-weight-base:									$font-weight-4;
+$font-weight-medium:								$font-weight-base;
+$font-weight-bold:									$font-weight-5;
+$font-weight-bolder:								$font-weight-6;
+$font-weight-normal:								$font-weight-base;

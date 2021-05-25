@@ -1,0 +1,145 @@
+﻿// SCSS File
+// modal.scss
+
+
+// modal variables
+$modal-show-size:									100%;
+$modal-width:										auto;
+$modal-min-height:									calc(100% - #{$spacer-64});
+$modal-mar:											$spacer-32;
+
+// modal-dialog variables
+$modal-dialog-height:								100%;
+$modal-dialog-width:                                $spacer-90 * 10;    // default width 800px
+$modal-dialog-lg-width:								$spacer-12 * 100;	// 1200px
+$modal-dialog-md-width:								$spacer-72 * 10;	//  720px
+$modal-dialog-sm-width:								$spacer-56 * 10;	//  560px
+$modal-dialog-bg:									$build-white;
+$modal-dialog-height-xs:							auto;
+$modal-dialog-width-xs:								100%;
+$modal-dialog-min-height-xs:						100%;
+
+// modal-content variables
+$modal-content-width:								100%;
+
+// modal-header variables
+$modal-header-pad-x:								$spacer-24;
+$modal-header-pad-y:								$p12;
+$modal-header-pad:									$spacer-24;
+$modal-header-border:								$build-apply-border;
+$modal-header-pad-xs:								$spacer-16;
+
+// modal-title variables
+$modal-title-font-size:								$font-size-16;
+$modal-title-font-weight:							$font-weight-bold;
+
+// modal-label variables
+$modal-label-font-size:								$font-size-14;
+$modal-label-color:									$mono-004;
+$modal-label-line-height: 							$line-height-md;
+
+// modal-body variables
+$modal-body-pad-x:									$modal-header-pad-x;
+$modal-body-pad-y:									$modal-header-pad-y;
+$modal-body-pad:									$modal-body-pad-y $modal-body-pad-x;
+$modal-body-height:									100%;
+$modal-body-pad-xs:									$modal-header-pad-xs;
+
+// modal-footer variables
+$modal-footer-pad-x:								$modal-body-pad-x;
+$modal-footer-pad-y:								$modal-body-pad-y;
+$modal-footer-pad:									$modal-footer-pad-y $modal-footer-pad-x;
+$modal-footer-border:								$modal-header-border;
+$modal-footer-pad-xs:								$modal-body-pad-xs;
+
+// modal-close variables
+$modal-close-mar:									-#{$modal-header-pad-y};
+
+// modal-buttons variables
+$modal-buttons-border:								$modal-header-border;
+$modal-buttons-btn-width:							50%;
+$modal-buttons-btn-flex:							1 1 $modal-buttons-btn-width;
+$modal-buttons-btn-border-size:						$p1;
+$modal-buttons-btn-pad:								$modal-header-pad-x 0;
+
+// modal-outset variables
+$modal-outset-pad-x:								$modal-footer-pad-x;
+$modal-outset-pad-y:								$modal-footer-pad-x;
+$modal-outset-pad:									$modal-outset-pad-y $modal-outset-pad-x;
+$modal-outset-border:								$modal-header-border;
+$modal-outset-bg:									$mono-000;
+$modal-outset-label-mar:							$spacer-24;
+$modal-outset-graphic-size:							$spacer-64;
+$modal-outset-graphic-mar-bot:						-#{$modal-outset-graphic-size / 2};
+$modal-outset-graphic-mar:							0 auto $modal-outset-graphic-mar-bot auto;
+$modal-outset-graphic-round:						50%;
+$modal-outset-graphic-border:						$modal-header-border;
+$modal-outset-graphic-bg:							$modal-outset-bg;
+$modal-outset-graphic-body-pad-y:					$spacer-56;
+$modal-outset-graphic-body-pad-x:					$spacer-16;
+$modal-outset-graphic-body-round:					0 0 $spacer-16 $spacer-16;
+
+// modal-inset variables
+$modal-inset-mar:									0 -#{$spacer-32};
+$modal-inset-pad:									$modal-outset-pad;
+$modal-inset-border:								$modal-header-border;
+
+// modal-otp variables
+$modal-otp-input-font-size:							$font-size-48;
+$modal-otp-input-height:							$spacer-64;
+
+// modal-product variables
+$modal-product-font-size:                           $font-size-14;
+$modal-product-badge-mar:                           $p8;
+$modal-product-body-pad:                            $spacer-24;
+$modal-product-body-bg:                             $mono-001;
+$modal-product-image-height:                        $spacer-64;
+$modal-product-company-height:                      $spacer-32;
+$modal-product-head-pad:                            $spacer-20;
+$modal-product-head-border:                         $build-apply-border;
+$modal-product-title-mar:                           $p4;
+$modal-product-spec-list-pad:                       $modal-product-head-pad;
+$modal-product-spec-list-border:                    $modal-product-head-border;
+
+// modal-tabs variables
+$modal-tabs-header-pad-y:							$p1;
+$modal-tabs-header-psuedo-height:					$spacer-16;
+$modal-tabs-header-psuedo-width:					100%;
+$modal-tabs-header-psuedo-gradient-1:				lighten($mono-002, 5%);
+$modal-tabs-header-psuedo-gradient-2:				$build-white;
+$modal-tabs-header-psuedo-pos-x:					0;
+$modal-tabs-header-psuedo-pos-y:					-#{$modal-tabs-header-psuedo-height};
+$modal-tabs-title-pad-x:							$modal-header-pad-x;
+$modal-tabs-title-flex:								1 1 100%;
+$modal-tabs-title-pad-y1:							$spacer-48;
+$modal-tabs-title-pad-y2:							$p8;
+$modal-tabs-title-border:							$p4 solid $build-white;
+$modal-tabs-title-color:							$mono-004;
+$modal-tabs-title-active-color:						$build-primary;
+$modal-tabs-title-active-border-color:				$modal-tabs-title-active-color;
+
+// modal-tab-content variables
+$modal-tab-content-body-pad:						$spacer-32;
+$modal-tab-content-body-font-size:                  $font-size-14;
+$modal-tab-content-card-mar-y:						$spacer-24;
+$modal-tab-content-list-data-mar-y:					$p12;
+$modal-tab-content-list-data-flex-basis:			100%;
+$modal-tab-content-list-data-span-flex-basis:		25%;
+$modal-tab-content-list-data-strong-flex-basis:		75%;
+$modal-tab-content-list-data-strong-color:			$mono-005;
+$modal-tab-content-list-data-strong-font-weight:	$font-weight-4;
+$modal-tab-content-card-type-alert-border-width:	$p1;
+$modal-tab-content-card-type-alert-border-color:	lighten($build-grey, 30%);
+
+// modal-table variables
+$modal-table-font-size:								$font-size-14;
+$modal-table-pad:									$modal-header-pad;
+$modal-table-color:									$text-color;
+$modal-table-strong-font-weight:					$font-weight-6;
+$modal-table-strong-mar-y:							$p10;
+$modal-table-list-pad-x:							$modal-table-strong-mar-y;
+$modal-table-heading-font-weight:					$font-weight-6;
+$modal-table-heading-sub-border:					$p3 solid $border-color;
+$modal-table-heading-sub-font-size:					$font-size-18;
+$modal-table-heading-sub-color:						$text-color;
+$modal-table-heading-sub-pad-y:						$modal-header-pad;

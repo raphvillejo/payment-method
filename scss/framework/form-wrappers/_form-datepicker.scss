@@ -1,0 +1,13 @@
+﻿// SCSS File
+// form-datepicker.scss
+
+
+// form datepicker style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-datepicker {
+			.form-datepicker {
+			}
+		}
+	}
+}

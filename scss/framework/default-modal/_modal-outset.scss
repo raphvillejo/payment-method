@@ -1,0 +1,45 @@
+﻿// SCSS File
+// modal-outset.scss
+
+
+// modal-outset style
+@if $enable-modal {
+	@if $enable-modal-outset {
+		.modal-outset {
+			padding: $modal-outset-pad;
+			padding-bottom: 0;
+			border-bottom: $modal-outset-border;
+			border-top-left-radius: inherit;
+			border-top-right-radius: inherit;
+			text-align: center;
+
+			.modal-label {
+				margin-bottom: $modal-outset-label-mar;
+			}
+
+			.modal-graphic {
+				@include size($modal-outset-graphic-size);
+				margin: $modal-outset-graphic-mar;
+				border: $modal-outset-graphic-border;
+				border-radius: $modal-outset-graphic-round;
+				background-color: $modal-outset-graphic-bg;
+
+				img {
+					border-radius: inherit;
+				}
+			}
+
+			~ .modal-body,
+			~ .modal-loading {
+				background-color: $modal-outset-bg;
+				padding-top: $modal-outset-graphic-body-pad-y;
+				border-radius: $modal-outset-graphic-body-round;
+			}
+
+			@include media-breakpoint-down(xs) {
+				padding-left: $modal-outset-graphic-body-pad-x;
+				padding-right: $modal-outset-graphic-body-pad-x;
+			}
+		}
+	}
+}

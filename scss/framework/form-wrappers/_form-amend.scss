@@ -1,0 +1,22 @@
+﻿// SCSS File
+// form-amend.scss
+
+
+// form-amend style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-amend {
+			.form-amend {
+				margin-top: 0;
+
+				&.show {
+					margin-top: $form-amend-show-mar-y;
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+﻿// SCSS File
+// form-emphasis-highlight.scss
+
+
+// form emphasis style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-emphasis-highlight {
+			.form-emphasis-highlight {
+				text-align: center;
+			}
+		}
+	}
+}

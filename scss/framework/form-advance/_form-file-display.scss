@@ -1,0 +1,137 @@
+﻿// SCSS File
+// form-file-display.scss
+
+
+// file-display style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-display {
+			.file-display {
+
+				.file-card {
+					padding: $file-display-card-pad;
+					border-radius: $file-display-card-round;
+					border: $file-display-card-border;
+					box-shadow: $file-display-card-shadow;
+					background-color: $file-display-card-bg;
+					text-align: center;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.file-photo {
+					margin: 0 auto;
+					position: relative;
+					display: inline-block;
+				}
+
+				.file-location {
+					height: $file-display-location-height;
+					margin: -#{$file-display-location-mar};
+					border-radius: inherit;
+
+					img {
+						width: $file-display-location-image-width;
+						height: inherit;
+						border-radius: inherit;
+						object-position: $file-display-location-image-object-pos;
+						object-fit: cover;
+					}
+				}
+
+				.file-thumb {
+
+					img {
+						border-radius: $file-display-thumb-image-round;
+					}
+				}
+
+				.file-signature {
+					height: $file-display-signature-height;
+
+					img {
+						width: auto;
+						height: $file-display-signature-image-height;
+					}
+				}
+
+				.file-count {
+					text-align: right;
+					position: absolute;
+					font-size: $file-display-count-font-size;
+					left: -#{$file-display-count-pos-x};
+					bottom: $file-display-count-pos-y;
+					color: $file-display-count-color;
+				}
+
+				.file-icon {
+					@include size($file-display-icon-size);
+					border-radius: $file-display-icon-round;
+					background-color: $file-display-icon-bg;
+					position: absolute;
+					color: $file-display-icon-color;
+					right: -#{$file-display-icon-pos-x};
+					top: $file-display-icon-pos-y;
+
+					.icon {
+						margin: $file-display-icon-mar;
+					}
+				}
+
+				.file-toggle {
+					width: $file-display-toggle-width;
+					padding: $file-display-toggle-pad;
+					margin: -#{$file-display-toggle-mar};
+					margin-top: $file-display-toggle-mar-y;
+					background-color: $file-display-toggle-bg;
+					border-bottom-left-radius: $file-display-toggle-round;
+					border-bottom-right-radius: $file-display-toggle-round;
+					font-size: $file-display-toggle-font-size;
+					line-height: $file-display-toggle-line-height;
+					display: block;
+				}
+
+				&.is-file {
+
+					.file-card {
+						background-color: $file-display-file-card-bg;
+					}
+
+					.file-icon {
+						top: $file-display-file-icon-pos-y;
+					}
+
+					.file-toggle {
+						background-color: $file-display-file-toggle-bg;
+					}
+				}
+
+				&.is-success {
+
+					.file-icon {
+						background-color: $file-display-success-icon-bg;
+						color: $file-display-success-icon-color;
+					}
+				}
+
+				&.is-error {
+
+					label {
+						color: $file-display-error-label-color;
+					}
+
+					.file-card {
+						border-color: $file-display-error-card-border;
+						box-shadow: $file-display-error-card-shadow;
+						color: $file-display-error-card-color;
+					}
+
+					.file-icon {
+						background-color: $file-display-error-icon-bg;
+						color: $file-display-error-icon-color;
+					}
+				}
+			}
+		}
+	}
+}

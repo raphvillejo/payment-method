@@ -1,0 +1,28 @@
+﻿// SCSS File
+// layout-backdrop.scss
+
+// layout-backdrop extend
+%extend-layout-backdrop-feedback {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include size($layout-backdrop-size);
+  @include transform-translate(0, 0);
+}
+
+// layout-backdrop style
+.layout-backdrop {
+  @extend %extend-layout-backdrop-feedback;
+  @extend %extend-animate-all;
+  position: fixed;
+  opacity: 0;
+  background-color: $layout-backdrop-bg;
+  z-index: $layout-backdrop-layer;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: $layout-backdrop-show-layer;
+  }
+}

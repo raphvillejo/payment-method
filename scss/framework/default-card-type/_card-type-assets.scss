@@ -1,0 +1,91 @@
+﻿// SCSS File
+// card-type-assets.scss
+
+
+// card-type-assets style
+@if $enable-card {
+	@if $enable-card-type-assets {
+		.card-type-assets {
+			overflow: hidden;
+			padding: $card-type-assets-pad;
+			@include flex-display();
+			@include flex-direction();
+
+			.heading {
+				font-size: $card-type-assets-heading-font-size;
+				color: $card-type-assets-heading-color;
+			}
+
+			.lead {
+				font-size: $card-type-assets-lead-font-size;
+				font-weight: $card-type-assets-lead-font-weight;
+				margin-bottom: 0;
+			}
+
+			.card-image {
+				border-width: 0;
+				overflow: hidden;
+				position: relative;
+				z-index: $card-type-assets-content-layer;
+				border-radius: $card-type-assets-image-round;
+				@include flex($card-type-assets-image-flex);
+
+				.image {
+					height: auto;
+					width: $card-type-assets-image-width;
+
+					@if $enable-single-class-animate == false {
+						@extend %extend-animate-all;
+					}
+				}
+			}
+
+			.card-body {
+				position: relative;
+				z-index: $card-type-assets-content-layer;
+				@include flex($card-type-assets-body-flex);
+			}
+
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				z-index: $card-type-assets-psuedo-layer;
+				@include size($card-type-assets-psuedo-size);
+				background-color: $card-type-assets-psuedo-bg;
+				border-radius: $card-type-assets-psuedo-round;
+			}
+
+			&::before {
+				top: -#{$card-type-assets-psuedo-pos};
+				left: -#{$card-type-assets-psuedo-pos};
+			}
+
+			&::after {
+				bottom: -#{$card-type-assets-psuedo-pos};
+				right: -#{$card-type-assets-psuedo-pos};
+			}
+
+			@include media-breakpoint-down(sm) {
+				border-radius: $card-type-assets-pad / 2 !important;
+				@include flex-direction(column);
+
+				.card-image {
+					border-radius: 0;
+				}
+
+				.card-body {
+					padding-left: 0;
+					padding-right: 0;
+				}
+
+				.heading {
+					margin-bottom: $card-type-assets-pad;
+				}
+
+				.lead {
+					margin-bottom: 0
+				}
+			}
+		}
+	}
+}

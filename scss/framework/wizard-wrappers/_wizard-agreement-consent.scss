@@ -1,0 +1,38 @@
+﻿// SCSS File
+// wizard-agreement-consent.scss
+
+
+// wizard-agreement-consent style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-agreement-consent {
+		.wizard-agreement-consent {
+			padding: $document-inner-padding;
+			margin-top: $document-inner-padding;
+			background-color: $agreement-consent-bg;
+			border-top: $agreement-consent-border;
+
+			.form-section, .form-group {
+				margin-bottom: 0;
+
+				& + .form-group {
+					margin-top: $agreement-consent-form-group-next-mar;
+				}
+			}
+
+			.form-section {
+
+				h2 {
+
+					@include responsive-font-size($agreement-consent-form-section-heading-font-size);
+
+					& + p {
+						margin-bottom: $agreement-consent-form-section-heading-next-mar;
+					}
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+			}
+		}
+	}
+}

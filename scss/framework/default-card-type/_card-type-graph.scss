@@ -1,0 +1,15 @@
+﻿// SCSS File
+// card-type-graph.scss
+
+
+// card-type-graph style
+@if $enable-card {
+	@if $enable-card-type-graph {
+		.card-type-graph {
+			.card-body {
+				padding: 0;
+				height: $card-type-graph-body-height;
+			}
+		}
+	}
+}

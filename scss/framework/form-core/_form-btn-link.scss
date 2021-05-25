@@ -1,0 +1,10 @@
+﻿// SCSS File
+// form-btn-link.scss
+
+
+// btn link style
+@if $enable-form {
+	.btn-link {
+		color: $btn-link-color;
+	}
+}

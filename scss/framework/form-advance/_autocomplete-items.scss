@@ -1,0 +1,42 @@
+﻿// SCSS File
+// autocomplete-items.scss
+
+
+// autocomplete-items style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-autocomplete-items {
+			.autocomplete-items {
+				position: absolute;
+				overflow: auto;
+				z-index: 2;
+				padding-left: 0;
+				top: $autocomplete-items-pos-y;
+				left: $autocomplete-items-pos-x;
+				width: $autocomplete-items-width;
+				box-shadow: $autocomplete-items-shadow;
+				border: $autocomplete-item-border;
+				border-radius: $autocomplete-items-round;
+				max-height: $autocomplete-items-height;
+
+				> div {
+					padding: $autocomplete-item-pad;
+					line-height: $autocomplete-item-line-height;
+					font-size: $autocomplete-item-font-size;
+					background-color: $autocomplete-item-bg;
+					border-bottom: $autocomplete-item-div-border;
+
+					&.autocomplete-active {
+						background-color: $autocomplete-item-active-bg;
+						color: $autocomplete-item-active-color;
+					}
+
+					@include hover {
+						background-color: $autocomplete-item-hover-bg;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}

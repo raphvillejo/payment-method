@@ -1,0 +1,19 @@
+﻿// SCSS File
+// layout-feedback.scss
+
+
+// layout feedback style
+.layout-feedback {
+	@extend %extend-layout-backdrop-feedback;
+	z-index: $layer-buried;
+
+	.feedback {
+		@extend %extend-layout-modal-show;
+	}
+
+	&.show {
+		opacity: 1;
+		z-index: $zindex-modal;
+	}
+}
+

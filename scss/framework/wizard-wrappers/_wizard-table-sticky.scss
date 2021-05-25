@@ -1,0 +1,74 @@
+﻿// SCSS File
+// wizard-table-sticky.scss
+
+
+// wizard-table-sticky extension
+
+// wizard-table-sticky style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-table-sticky {
+		.wizard-table-sticky {
+			position: relative;
+			top: 0;
+			left: $wizard-table-sticky-pos-x;
+			width: $wizard-table-sticky-width;
+			margin-bottom: $wizard-table-sticky-mar-y;
+			height: $wizard-table-sticky-height;
+
+			.container {
+				padding: 0;
+			}
+
+			.image {
+				margin-bottom: $wizard-table-sticky-image-mar-y;
+			}
+
+			.small {
+				font-size: $font-size-11;
+			}
+
+			&.stick {
+				position: fixed;
+				z-index: 2;
+
+				.container {
+					padding-left: $p15;
+					padding-right: $p15;
+				}
+
+				.image {
+					height: auto;
+					width: auto;
+					max-height: $wizard-table-sticky-stick-image-height;
+					max-width: $wizard-table-sticky-stick-image-width;
+				}
+
+				~ * {
+					margin-top: $wizard-table-sticky-stick-next-mar-y;
+				}
+			}
+
+			.table {
+				th {
+					border-top-width: $wizard-table-sticky-table-cel-border-size;
+				}
+			}
+
+			~ * {
+				margin-top: $wizard-table-sticky-next-mar-y;
+			}
+
+			@include media-breakpoint-down(sm) {
+
+				.table {
+					th {
+						text-align: center;
+					}
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+			}
+		}
+	}
+}

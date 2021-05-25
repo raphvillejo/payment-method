@@ -1,0 +1,22 @@
+﻿// SCSS File
+// form-info-otp.scss
+
+
+// form-info-otp style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-info-otp {
+			.form-info-otp {
+				padding-left: $form-info-otp-pad;
+				text-align: left;
+
+				.icon {
+					position: absolute;
+					left: 0;
+					top: 0;
+					color: $form-info-otp-color;
+				}
+			}
+		}
+	}
+}

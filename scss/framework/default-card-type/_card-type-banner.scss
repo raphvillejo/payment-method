@@ -1,0 +1,24 @@
+﻿// SCSS File
+// card-type-banner.scss
+
+
+// card-banner-banner style
+@if $enable-card {
+	@if $enable-card-type-banner {
+		.card-type-banner {
+			height: $card-type-banner-height;
+			padding: 0;
+			display: block;
+
+			.card-image {
+				height: inherit;
+				margin: $card-type-banner-image-mar;
+				border-radius: $card-type-banner-image-round;
+			}
+
+			@include media-breakpoint-down(xs) {
+				height: $spacer-14 * 10;
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+﻿// SCSS File
+// nav.scss
+
+
+// nav-link variables
+$nav-link-padding-y:								$p8 !default;
+$nav-link-padding-x:								$spacer-16 !default;
+$nav-link-disabled-color:							$build-grey !default;
+
+// nav-tabs variables
+$nav-tabs-border-color:								$mono-003 !default;
+$nav-tabs-border-width:								$border-width !default;
+$nav-tabs-border-radius:							$border-radius !default;
+
+// nav-tabs-link variables
+$nav-tabs-link-hover-border-color:					$mono-002 $mono-002 $nav-tabs-border-color !default;
+$nav-tabs-link-active-color:						$heading-color !default;
+$nav-tabs-link-active-bg:							$build-white !default;
+$nav-tabs-link-active-border-color:					$build-secondary !default;
+
+$modal-nav-tabs-bg:									$build-white;
+$modal-nav-tabs-pad-y:								$spacer-16;
+$modal-nav-tabs-mar-y:								-#{$p1};
+$modal-nav-tabs-items-flex:							1 1 auto;
+$modal-nav-tabs-link-font-size:						$p12;
+$modal-nav-tabs-link-active-bg:						$mono-000;
+$modal-nav-tabs-link-active-border:					$build-info;
+$modal-tabs-bg:										$mono-000;
+
+// nav-pills variables
+$nav-pills-border-radius:							$border-radius !default;
+$nav-pills-link-active-color:						$build-white !default;
+$nav-pills-link-active-bg:							$build-primary !default;

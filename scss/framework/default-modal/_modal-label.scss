@@ -1,0 +1,13 @@
+﻿// SCSS File
+// modal-label.scss
+
+
+// modal-label style
+@if $enable-modal {
+	.modal-label {
+		margin-bottom: 0;
+		color: $modal-label-color;
+		font-size: $modal-label-font-size;
+		line-height: $modal-label-line-height;
+	}
+}

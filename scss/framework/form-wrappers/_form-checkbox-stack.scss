@@ -1,0 +1,25 @@
+﻿// SCSS File
+// form-checkbox-stack.scss
+
+
+// checkbox-stack style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-checkbox-stack {
+			.checkbox-stack {
+
+				label {
+					padding-right: 0;
+				}
+
+				.option {
+					@include flex-display();
+
+					+ .option {
+						margin-top: $checkbox-stack-option-mar;
+					}
+				}
+			}
+		}
+	}
+}

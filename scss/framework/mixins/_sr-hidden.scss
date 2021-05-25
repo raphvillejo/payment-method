@@ -1,0 +1,19 @@
+﻿// SCSS File
+// sr-hidden.scss
+
+
+// sr-hidden mixin
+@mixin sr-hidden($focusable: false) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: $p1;
+	margin: -#{$p1};
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: $p1;
+
+	@if $focusable {
+		@include sr-focusable;
+	}
+}

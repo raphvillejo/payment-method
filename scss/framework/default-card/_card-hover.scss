@@ -1,0 +1,14 @@
+﻿// SCSS File
+// card-hover.scss
+
+
+// card-hover style
+@if $enable-card {
+	@if $enable-card-hover {
+		.card-hover {
+			@at-root a#{&} {
+				@extend %extend-card-image-at-root;
+			}
+		}
+	}
+}

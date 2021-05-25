@@ -1,0 +1,39 @@
+﻿// SCSS File
+// card-body-section.scss
+
+
+// card-body-section style
+@if $enable-card {
+	.card-body-section {
+		padding-top: $card-body-section-pad;
+		padding-bottom: $card-body-section-pad;
+		border-bottom: $card-body-section-border;
+		color: $card-body-section-color;
+		display: block;
+
+		@if $enable-single-class-animate == false {
+			@extend %extend-animate-all;
+		}
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		&.show {
+		}
+
+		.lead {
+			font-size: $card-body-section-lead-font-size;
+			margin-bottom: 0;
+		}
+
+		@extend %extend-aria-hide;
+
+		@extend %extend-aria-show;
+	}
+}

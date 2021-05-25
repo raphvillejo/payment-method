@@ -1,0 +1,20 @@
+﻿// SCSS File
+// card-type-settings.scss
+
+
+// card-type-settings style
+@if $enable-card {
+	@if $enable-card-type-settings {
+		.card-type-settings {
+
+			.card-header {
+				padding-bottom: $card-type-settings-header-pad;
+				border-bottom: $card-type-settings-header-border;
+
+				~ .card-body {
+					padding-top: $card-type-settings-body-pad;
+				}
+			}
+		}
+	}
+}

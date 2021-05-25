@@ -1,0 +1,40 @@
+﻿// SCSS File
+// column.scss
+
+
+// column mixin
+@mixin column-count($count) {
+	@include prefix(column-count, $count, webkit moz);
+}
+
+@mixin column-fill($fill) {
+	@include prefix(column-fill, $fill, webkit moz);
+}
+
+@mixin column-gap($gap) {
+	@include prefix(column-gap, $gap, webkit moz);
+}
+
+@mixin column-rule($rule) {
+	@include prefix(column-rule, $rule, webkit moz);
+}
+
+@mixin column-rule-color($rule-color) {
+	@include prefix(column-rule-color, $rule-color, webkit moz);
+}
+
+@mixin column-rule-style($rule-style) {
+	@include prefix(column-rule-style, $rule-style, webkit moz);
+}
+
+@mixin column-rule-width($rule-width) {
+	@include prefix(column-rule-width, $rule-width, webkit moz);
+}
+
+@mixin column-span($span) {
+	@include prefix(column-span, $span, webkit moz);
+}
+
+@mixin column-width($width) {
+	@include prefix(column-width, $width, webkit moz);
+}

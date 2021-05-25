@@ -1,0 +1,38 @@
+﻿// SCSS File
+// wizard-agreement-feedback.scss
+
+
+// wizard-agreement-feedback style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-agreement-feedback {
+		.wizard-agreement-feedback {
+			background-color: $wizard-agreement-feedback-bg;
+			position: fixed;
+			z-index: $wizard-agreement-feedback-layer;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			@include flex-align-items();
+			@include flex-justify-content();
+			@include flex-direction(column);
+			@include flex-display();
+
+			.feedback-content {
+				padding-top: $wizard-agreement-feedback-pad;
+			}
+
+			&.close {
+				display: none;
+				visibility: hidden;
+				z-index: $wizard-agreement-feedback-close-layer;
+			}
+
+			@include media-breakpoint-down(xs) {
+				.panel {
+					width: $wizard-agreement-feedback-panel-width;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+﻿// SCSS File
+// form-locality-pin.scss
+
+
+// form-locality-pin style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-locality-pin {
+			.form-locality-pin {
+				padding: $form-locality-pin-pad;
+				padding-left: $form-locality-pin-pad-x;
+				background-color: $form-locality-pin-bg;
+				display: none;
+
+				span {
+					font-size: $form-locality-pin-span-font-size;
+					line-height: $form-locality-pin-span-line-height;
+					color: $form-locality-pin-span-color;
+					display: block;
+				}
+
+				.pin-name {
+					font-weight: $form-locality-pin-name-font-weight;
+					color: $form-locality-pin-name-color;
+				}
+
+				.pin-icon {
+					position: absolute;
+					left: $form-locality-pin-icon-pos-x;
+					top: $form-locality-pin-icon-pos-y;
+				}
+
+				.form-locality-map & {
+					display: inline-block;
+				}
+
+				@include media-breakpoint-down(xs) {
+					padding-bottom: $p8;
+				}
+			}
+		}
+	}
+}

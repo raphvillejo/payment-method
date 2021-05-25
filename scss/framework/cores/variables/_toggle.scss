@@ -1,0 +1,24 @@
+﻿// SCSS File
+// toggle.scss
+
+
+// toggle-action variables
+$toggle-action-pad:				$spacer-14;
+$toggle-action-transition:		opacity .2s ease-in-out;
+$toggle-action-icon-size:		$spacer-24;
+$toggle-action-icon-font-size:	$font-size-24;
+
+// toggle-button variables
+$toggle-button-size:			$spacer-56;
+$toggle-button-color:			$mono-008;
+$toggle-button-transition:		background-color .2s ease-in-out, color .2s ease-in-out;
+$toggle-button-icon-size:		$spacer-26;
+$toggle-button-icon-font-size:	$font-size-26;
+$toggle-button-hover-bg:		$highlight-bg;
+
+// toggle-help variables
+$toggle-help-mar:				$p5;
+$toggle-help-font-size:			$font-size-15;
+$toggle-help-color:				$link-color;
+$toggle-help-icon-mar:			$p4;
+$toggle-help-icon-valign:		-#{$p2};

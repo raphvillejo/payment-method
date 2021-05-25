@@ -1,0 +1,38 @@
+﻿// SCSS File
+// bg-gradient.scss
+
+
+// bg-gradient mixin
+@mixin linear-gradient-v($top, $bottom) {
+	background-image: -webkit-gradient(left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+	background-image: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+	background-image:	   -moz-linear-gradient(top, $top 0%, $bottom 100%);
+	background-image:         linear-gradient(to bottom, $top 0%, $bottom 100%);
+}
+
+@mixin linear-gradient-h($left, $right) {
+	background-image: -webkit-gradient(left top, right top, color-stop(0%, $left), color-stop(100%, $right));
+	background-image: -webkit-linear-gradient(left, $left 0%, $right 100%);
+	background-image:    -moz-linear-gradient(left, $left 0%, $right 100%);
+	background-image:         linear-gradient(to right, $left 0%, $right 100%);
+}
+
+@mixin radial-gradient($from, $to) {
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+	background-image: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background-image:	   -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background-image:         radial-gradient(center, circle cover, $from 0%, $to 100%);
+}
+
+@mixin linear-gradient-d($from, $to) {
+	background-image: -webkit-gradient(left bottom, right top, color-stop(0%, $from), color-stop(100%, $to));
+	background-image: -webkit-linear-gradient(45deg, $from 0%, $to 100%);
+	background-image:    -moz-linear-gradient(45deg, $from 0%, $to 100%);
+	background-image:         linear-gradient(45deg, $from 0%, $to 100%);
+}
+
+@mixin radial-gradient-pos($fr, $to) {
+	background-image: -webkit-radial-gradient(center, ellipse cover, $fr 0%, $to 100%);
+	background-image:    -moz-radial-gradient(center, ellipse cover, $fr 0%, $to 100%);
+	background-image:			radial-gradient(ellipse at center, $fr 0%, $to 100%);
+}

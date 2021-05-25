@@ -1,0 +1,68 @@
+﻿// SCSS File
+// ui-datepicker-header.scss
+
+
+// datepicker-header style
+@if $enable-form {
+	@if $enable-form-ui {
+		@if $enable-form-ui-datepicker {
+			.ui-datepicker-header {
+				margin-bottom: $ui-datepicker-header-mar-y;
+
+				.ui-datepicker-prev, .ui-datepicker-next {
+					@include size($ui-datepicker-header-arrow-size);
+					text-align: center;
+					position: absolute;
+					top: -#{$ui-datepicker-header-arrow-pos-y};
+					cursor: pointer;
+
+					span {
+						font-size: 0;
+						color: transparent;
+					}
+
+					@include hover {
+						color: $ui-datepicker-header-arrow-hover-color !important;
+					}
+
+					&::before {
+						content: '';
+						color: inherit;
+						font-size: $ui-datepicker-header-arrow-psuedo-font-size;
+						font-family: $ui-datepicker-header-arrow-psuedo-font-family;
+						top: $ui-datepicker-header-arrow-psuedo-pos-y;
+						position: relative;
+					}
+				}
+
+				.ui-datepicker-prev {
+					left: 0;
+
+					&::before {
+						content: '\eA10';
+					}
+				}
+
+				.ui-datepicker-next {
+					right: 0;
+
+					&::before {
+						content: '\eA11';
+					}
+				}
+
+				.ui-state-disabled {
+					display: none;
+				}
+
+				@include media-breakpoint-down(sm) {
+					margin-bottom: 0;
+
+					.ui-datepicker-prev, .ui-datepicker-next {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+﻿// SCSS File
+// card-post.scss
+
+
+// card-post style
+@if $enable-card {
+	@if $enable-card-post {
+		.card-post {
+			padding: $card-post-pad;
+			@include flex-direction(column);
+			@include felx-display();
+
+			h5 {
+				margin-bottom: $card-post-h5-mar-y;
+				font-weight: $card-post-h5-font-weight;
+			}
+
+			.image {
+				height: $card-post-image-height;
+				margin: $card-post-image-mar;
+				margin-bottom: $card-post-image-mar-y;
+			}
+
+			.anchor {
+				padding: $card-post-anchor-pad;
+				margin: $card-post-anchor-mar;
+				margin-top: auto;
+				border-top: $card-post-anchor-border;
+				font-size: $card-post-anchor-font-size;
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+﻿// SCSS File
+// form-option-flex.scss
+
+
+// form-option style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-option-flex {
+			.form-option {
+
+				&.form-flex {
+					margin-left: -#{$form-option-flex-mar-x};
+					@include flex-wrap();
+					@include flex-display();
+
+					.option {
+						@include flex-basis($form-option-flex-basis);
+						margin-left: $form-option-flex-mar-x;
+
+						&:nth-child(1), &:nth-child(2) {
+							margin-top: 0;
+						}
+					}
+				}
+
+				@include media-breakpoint-down(xs) {
+
+					&.form-flex {
+						margin-left: 0;
+						@include flex-direction(column);
+
+						.option {
+							@include flex-basis(100%);
+							margin-left: 0;
+
+							+ .option {
+								margin-top: $p10;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

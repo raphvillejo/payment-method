@@ -1,0 +1,14 @@
+// SCSS File
+// screenreaders.scss
+
+
+// screenreaders style
+@if $utilities-screenreaders {
+	.sr-only {
+	  @include sr-only();
+	}
+
+	.sr-only-focusable {
+	  @include sr-only-focusable();
+	}
+}

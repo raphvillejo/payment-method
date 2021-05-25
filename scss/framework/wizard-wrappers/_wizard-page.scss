@@ -1,0 +1,11 @@
+﻿// SCSS File
+// wizard-page.scss
+
+
+// wizard-page style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-page {
+		.wizard-page {
+		}
+	}
+}

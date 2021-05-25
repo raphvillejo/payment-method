@@ -1,0 +1,152 @@
+﻿// SCSS File
+// nav.scss
+
+
+// nav variables
+
+// nav style
+@if $component-nav {
+	.nav {
+		@include flex-display();
+		@include flex-wrap();
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+
+	@if $component-nav-link {
+		// nav-link
+		.nav-link {
+			display: block;
+			padding: $nav-link-padding-y $nav-link-padding-x;
+
+			@include hover-focus {
+				text-decoration: none;
+			}
+
+			&.disabled {
+				color: $nav-link-disabled-color;
+				pointer-events: none;
+				cursor: default;
+			}
+		}
+	}
+
+	@if $component-nav-tabs {
+		// nav-tabs
+		.nav-tabs {
+			border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+			.nav-item {
+				margin-bottom: -#{$nav-tabs-border-width};
+			}
+
+			.nav-link {
+				border: $nav-tabs-border-width solid transparent;
+				@include border-top-radius($nav-tabs-border-radius);
+
+				@include hover-focus {
+					border-color: $nav-tabs-link-hover-border-color;
+				}
+
+				&.disabled {
+					color: $nav-link-disabled-color;
+					background-color: transparent;
+					border-color: transparent;
+				}
+			}
+
+				.nav-link.active,
+				.nav-item.show .nav-link {
+					color: $nav-tabs-link-active-color;
+					background-color: $nav-tabs-link-active-bg;
+					border-color: $nav-tabs-link-active-border-color;
+				}
+
+			.dropdown-menu {
+				margin-top: -$nav-tabs-border-width;
+				@include border-top-radius(0);
+			}
+
+			@if $component-nav-tabs-in-modal {
+				.modal & {
+					@include flex-direction();
+					background-color: $modal-nav-tabs-bg;
+					padding-top: $modal-nav-tabs-pad-y;
+					margin-bottom: $modal-nav-tabs-mar-y;
+
+					.nav-item {
+						@include flex($modal-nav-tabs-items-flex);
+					}
+
+					.nav-link {
+						width: inherit;
+						font-size: $modal-nav-tabs-link-font-size;
+
+						&.active {
+							background-color: $modal-nav-tabs-link-active-bg;
+							border-top-color: $modal-nav-tabs-link-active-border;
+						}
+					}
+				}
+			}
+		}
+
+		.tabs {
+			@if $component-nav-tabs-in-modal {
+				.modal & {
+					background-color: $modal-tabs-bg;
+				}
+			}
+		}
+	}
+
+	@if $component-nav-pills {
+		// nav-pills
+		.nav-pills {
+			.nav-link {
+				@include border-radius($nav-pills-border-radius);
+			}
+
+				.nav-link.active,
+				.show > .nav-link {
+					color: $nav-pills-link-active-color;
+					background-color: $nav-pills-link-active-bg;
+				}
+		}
+	}
+
+	@if $component-nav-fill {
+		// nav-fill
+		.nav-fill {
+			.nav-item {
+				@include flex(1 1 auto);
+				text-align: center;
+			}
+		}
+	}
+
+	@if $component-nav-justified {
+		// nav-justified
+		.nav-justified {
+			.nav-item {
+				@include flex-basis();
+				@include flex-grow(1);
+				text-align: center;
+			}
+		}
+	}
+
+	@if $component-nav-content {
+		// tab-content
+		.tab-content {
+			> .tab-pane {
+				display: none;
+			}
+
+			> .active {
+				display: block;
+			}
+		}
+	}
+}

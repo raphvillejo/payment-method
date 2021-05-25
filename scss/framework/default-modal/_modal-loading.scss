@@ -1,0 +1,12 @@
+﻿// SCSS File
+// modal-loading.scss
+
+
+// modal-loading style
+@if $enable-modal {
+	@if $enable-modal-loading {
+		.modal-loading {
+			@extend %extend-card-loading;
+		}
+	}
+}

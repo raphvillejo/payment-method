@@ -1,0 +1,27 @@
+﻿// SCSS File
+// fonts-custom.scss
+
+// fonts-custom style
+@if $enable-custom-glyphs {
+  @each $glyphs-name in $font-custom-glyphs {
+    @font-face {
+      font-family: $glyphs-name;
+      src: url("#{$server-path}/fonts/#{$glyphs-name}.woff2") format("woff2"),
+        url("#{$server-path}/fonts/#{$glyphs-name}.woff") format("woff");
+      font-weight: $font-weight-3;
+      font-style: normal;
+    }
+  }
+}
+
+@if $enable-custom-font {
+  @each $font-name in $font-custom-font {
+    @font-face {
+      font-family: $font-name;
+      src: url("#{$server-path}/fonts/#{$font-name}.woff2") format("woff2"),
+        url("#{$server-path}/fonts/#{$font-name}.woff") format("woff");
+      font-weight: $font-weight-3;
+      font-style: normal;
+    }
+  }
+}

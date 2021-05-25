@@ -1,0 +1,20 @@
+﻿// SCSS File
+// wizard-modal-content.scss
+
+
+// wizard-modal-content style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-modal {
+		.wizard-modal-content {
+			figure {
+				width: 100%;
+			}
+
+			figcaption {
+				margin-top: $wizard-modal-content-figcaption-mar;
+				font-size: $wizard-modal-content-figcaption-font-size;
+				text-align: center;
+			}
+		}
+	}
+}

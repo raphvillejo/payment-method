@@ -1,0 +1,55 @@
+﻿// SCSS File
+// wizard-progress.scss
+
+
+// wizard-progress style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-progress {
+		.wizard-progress {
+			@include position-sticky();
+			z-index: 2;
+			padding: $wizard-progress-pad 0;
+			background-color: $wizard-progress-bg;
+			top: $wizard-progress-pos;
+			margin-bottom: $wizard-progress-mar;
+
+			> span {
+				display: none;
+				line-height: 1;
+				color: $wizard-progress-span-color;
+				padding: $wizard-progress-span-pad;
+				font-size: $wizard-progress-span-font-size;
+				font-weight: $wizard-progress-span-font-weight;
+			}
+
+			@include media-breakpoint-down(xs) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			@if $enable-wizard-wrappers-progress-FALLBACK-stick {
+				&.stick {
+					position: fixed;
+					max-width: $wizard-progress-stick-max-width;
+					margin-left: -#{$wizard-progress-stick-mar};
+					width: 100%;
+					left: 50%;
+					top: 0;
+
+					~ * {
+						margin-top: $wizard-progress-stick-next-mar;
+					}
+
+					@include media-breakpoint-down(sm) {
+						padding-left: $wizard-progress-stick-pad-sm;
+						padding-right: $wizard-progress-stick-pad-sm;
+						margin-left: 0;
+						top: 0;
+						left: 0;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+}

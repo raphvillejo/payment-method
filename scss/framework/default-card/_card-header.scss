@@ -1,0 +1,45 @@
+﻿// SCSS File
+// card-header.scss
+
+
+// card-header style
+@if $enable-card {
+	.card-header {
+		padding: $card-header-pad;
+		padding-bottom: $card-header-pad-y;
+		position: relative;
+
+		.btn {
+			position: absolute;
+			right: $card-header-btn-pos-x;
+			top: $card-header-btn-pos-y;
+
+			&.btn-back {
+				right: auto;
+				left: $card-header-btn-pos-x;
+			}
+		}
+
+		.image {
+			margin-bottom: $card-header-figure-mar-y;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		~ .card-body {
+			padding-top: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-left: $spacer-14;
+			padding-right: $spacer-14;
+
+			.btn {
+				right: $p10;
+				top: $spacer-24;
+			}
+		}
+	}
+}

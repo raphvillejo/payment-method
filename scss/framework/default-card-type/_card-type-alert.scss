@@ -1,0 +1,35 @@
+﻿// SCSS File
+// card-type-alert.scss
+
+
+// card-type-alert style
+@if $enable-card {
+	@if $enable-card-type-alert {
+		.card-type-alert {
+			padding: $card-type-alert-pad;
+			border-width: $card-type-alert-border-size;
+			border-style: solid;
+
+			.heading, .paragraph {
+				display: block;
+			}
+
+			.heading {
+				color: $card-type-alert-strong-color;
+				margin-top: $card-type-alert-strong-mar-y;
+				font-size: $card-type-alert-strong-font-size;
+			}
+
+			.paragraph {
+				color: $card-type-alert-span-color;
+				font-size: $card-type-alert-span-font-size;
+			}
+
+			.btn {
+				font-size: $card-type-alert-btn-font-size;
+				border-width: $card-type-alert-btn-border-size;
+				padding: $card-type-alert-btn-pad;
+			}
+		}
+	}
+}

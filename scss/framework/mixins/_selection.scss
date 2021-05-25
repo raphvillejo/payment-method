@@ -1,0 +1,10 @@
+﻿// SCSS File
+// selection.scss
+
+
+// selection mixin
+@mixin selection {
+	::-moz-selection, ::selection {
+		@content;
+	}
+}

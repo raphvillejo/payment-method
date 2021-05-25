@@ -1,0 +1,13 @@
+﻿// SCSS File
+// form-file-canvas.scss
+
+
+// file canvas style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-canvas {
+			.file-canvas {
+			}
+		}
+	}
+}

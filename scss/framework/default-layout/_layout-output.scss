@@ -1,0 +1,39 @@
+﻿// SCSS File
+// layout-output.scss
+
+
+// layout-output style
+.layout-output {
+	padding: $layout-output-pad;
+	z-index: $layout-output-layer;
+	text-align: center;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: $layout-output-hide-pos-y;
+
+	@include transform-translate(0, $layout-output-hide-pos-y);
+
+	@if $enable-single-class-animate == false {
+		@extend %extend-animate-all;
+	}
+
+	.alert {
+		max-width: $layout-output-alert-width;
+		margin: $layout-output-alert-mar;
+		box-shadow: $layout-output-alert-shadow;
+	}
+
+	&.show {
+		top: 0;
+		@include transform-translate(0, 0);
+	}
+
+	@extend %extend-aria-hide;
+
+	@extend %extend-aria-show;
+
+	@include media-breakpoint-down(xs) {
+		padding: $layout-output-pad-xs;
+	}
+}

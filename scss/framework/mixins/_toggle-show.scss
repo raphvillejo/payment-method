@@ -1,0 +1,13 @@
+﻿// SCSS File
+// toggle-show.scss
+
+
+// toggle show mixin
+@mixin toggle-show($transform: transform, $timing-function: ease-in-out, $duration: 0.2s, $perspective: none, $backface-visibility: hidden) {
+    @include preserve-3d();
+    @include transition-property($transform);
+    @include transition-timing-function($timing-function);
+    @include transition-duration($duration);
+    @include perspective($perspective);
+    backface-visibility: $backface-visibility;
+}

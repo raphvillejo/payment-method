@@ -1,0 +1,20 @@
+﻿// SCSS File
+// form-file.scss
+
+
+// file group style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file {
+			.file-group {
+
+				.form-control-file {
+					display: none;
+				}
+
+				.form-text {
+				}
+			}
+		}
+	}
+}

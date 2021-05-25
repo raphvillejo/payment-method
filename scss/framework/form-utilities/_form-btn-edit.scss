@@ -1,0 +1,42 @@
+﻿// SCSS File
+// form-btn-edit.scss
+
+
+// btn-edit style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-btn-edit {
+			.btn-edit {
+				padding: 0;
+				border-radius: $btn-edit-round;
+				color: $btn-edit-color;
+				@include size($btn-edit-size);
+				@include flex-align-items();
+				@include flex-justify-content();
+				@include flex-display();
+
+				.icon {
+					margin: 0;
+				}
+
+				@include hover {
+					background-color: $btn-edit-hover-bg;
+				}
+			}
+
+			// btn-edit-pill style
+			.btn-edit-pill {
+				padding: $btn-edit-pill-pad;
+				border-radius: $btn-edit-pill-round;
+				font-weight: $btn-edit-pill-font-weight;
+				color: $btn-edit-pill-color;
+				@include size($btn-edit-pill-size);
+				@include flex-display-inline();
+
+				.icon {
+					margin-left: $btn-edit-pill-icon-mar;
+				}
+			}
+		}
+	}
+}

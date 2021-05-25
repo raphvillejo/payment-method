@@ -1,0 +1,10 @@
+﻿// SCSS File
+// form-btn-ghost.scss
+
+
+// btn ghost style
+@if $enable-form {
+	.btn-ghost-primary {
+		@include button-ghost-style($build-primary, $build-white, $build-white, $build-primary, $build-white, $build-white, $build-primary);
+	}
+}

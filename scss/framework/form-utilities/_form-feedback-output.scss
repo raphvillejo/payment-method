@@ -1,0 +1,20 @@
+﻿// SCSS File
+// form-feedback-output.scss
+
+
+// form-feedback-output style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-feedback-output {
+			.form-feedback-output {
+				margin-left: $form-feedback-output-mar;
+
+				.icon {
+					@extend %extend-aria-hide;
+
+					@extend %extend-aria-show;
+				}
+			}
+		}
+	}
+}

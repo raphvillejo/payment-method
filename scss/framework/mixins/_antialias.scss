@@ -1,0 +1,10 @@
+﻿// mixins
+// antialias.scss
+
+
+// antialias mixin
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

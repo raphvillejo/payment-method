@@ -1,0 +1,14 @@
+﻿// SCSS File
+// fonts.scss
+
+// fonts style
+@if $enable-default-glyphs {
+  @font-face {
+    font-family: $font-family-glyphs;
+    src: url("#{$server-path}/fonts/#{$font-family-glyphs}.woff2")
+        format("woff2"),
+      url("#{$server-path}/fonts/#{$font-family-glyphs}.woff") format("woff");
+    font-weight: $font-weight-3;
+    font-style: normal;
+  }
+}

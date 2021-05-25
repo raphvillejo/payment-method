@@ -1,0 +1,74 @@
+﻿// SCSS File
+// wizard-guide.scss
+
+
+// wizard-guide style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-guide {
+		.wizard-guide {
+			ol {
+				list-style: none;
+				counter-reset: $wizard-guide-counter-name;
+				padding: 0;
+				margin: 0;
+
+				> li {
+					position: relative;
+					min-height: $wizard-guide-psuedo-size;
+					counter-increment: $wizard-guide-counter-name;
+
+					&::before {
+						font-weight: bold;
+						position: absolute;
+						text-align: center;
+						content: counter($wizard-guide-counter-name) "";
+						@include size($wizard-guide-psuedo-size);
+						line-height: $wizard-guide-psuedo-line-height;
+						left: $wizard-guide-psuedo-pos;
+						top: $wizard-guide-psuedo-pos;
+						border-radius: $wizard-guide-psuedo-round;
+						color: $wizard-guide-psuedo-color;
+						background-color: $wizard-guide-psuedo-bg;
+					}
+
+					> span {
+						display: block;
+						padding-top: $wizard-guide-span-pad-top;
+						padding-bottom: $wizard-guide-span-pad-bot;
+						padding-left: $wizard-guide-span-pad-x;
+						font-size: $wizard-guide-span-font-size;
+						font-weight: $wizard-guide-span-font-weight;
+						min-height: $wizard-guide-span-min-height;
+					}
+
+					> div {
+						padding: $wizard-guide-div-pad;
+						margin: $wizard-guide-div-mar;
+						@include flex-display();
+						@include flex-direction();
+
+						@include media-breakpoint-down(xs) {
+							padding-left: 0;
+							@include flex-direction(column);
+						}
+					}
+				}
+			}
+
+			figure {
+				text-align: center;
+				padding: $wizard-guide-figure-pad;
+				@include flex($wizard-guide-figure-flex);
+
+				img {
+					height: auto;
+					width: $wizard-guide-figure-img-width;
+				}
+
+				figcaption {
+					padding-top: $wizard-guide-figcaption-pad;
+				}
+			}
+		}
+	}
+}

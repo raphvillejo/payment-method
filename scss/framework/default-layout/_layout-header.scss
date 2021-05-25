@@ -1,0 +1,59 @@
+﻿// SCSS File
+// layout-header.scss
+
+
+// layout-header style
+.layout-header {
+	@include flex-shrink();
+	@include flex-grow();
+
+	.head {
+		@include flex-display();
+		@include flex-justify-content(space-between);
+		@include flex-align-items();
+	}
+
+	.logo {
+		a {
+			display: block;
+
+			@include hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.menu {
+		right: 0;
+		bottom: auto;
+		width: auto;
+
+		.nav-item {
+			@include flex();
+		}
+
+		.nav-link {
+			border-top: 0;
+		}
+	}
+
+	.toggle-drawer {
+		display: none;
+	}
+
+	@include media-breakpoint-down(md) {
+		.toggle-drawer {
+			position: static;
+			height: $layout-header-toggle-size;
+			width: $layout-header-toggle-size;
+			top: auto;
+			left: auto;
+			bottom: auto;
+			right: auto;
+			@include flex(0 0 $layout-header-toggle-size);
+			@include flex-display-inline();
+			@include flex-align-items();
+			@include flex-justify-content();
+		}
+	}
+}

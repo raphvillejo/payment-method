@@ -1,0 +1,50 @@
+﻿// SCSS File
+// form-survey-option.scss
+
+
+// form-survey-option style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-survey-option {
+			.form-survey-option {
+				margin: 0;
+				margin-left: 0;
+				@include flex-flow(row wrap);
+				@include flex-display();
+
+				&.form-option {
+
+					.option {
+						margin-left: 0;
+
+						+ .option {
+							margin-top: 0;
+						}
+					}
+				}
+
+				.option {
+
+					label {
+						padding: $p10 $spacer-24;
+						padding-bottom: $spacer-48;
+						font-size: $font-size-13;
+						@include flex-direction(column);
+						@include flex-display();
+					}
+
+					input {
+						top: unset;
+						left: calc(50% - #{$p10});
+						bottom: calc(18% - #{$p10});
+						margin-right: 0;
+					}
+				}
+
+				@include media-breakpoint-down(sm) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

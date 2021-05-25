@@ -1,0 +1,17 @@
+﻿// SCSS File
+// form-autocomplete.scss
+
+
+// form-autocomplete style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-autocomplete {
+			.form-autocomplete {
+
+				.form-control {
+					padding-right: $form-autocomplete-input-pad;
+				}
+			}
+		}
+	}
+}

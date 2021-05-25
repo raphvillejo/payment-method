@@ -1,0 +1,206 @@
+﻿// SCSS File
+// card-type.scss
+
+
+// card-type-alert variables
+$card-type-alert-pad:								$p4 $p12;
+$card-type-alert-border-size:						$p1;
+$card-type-alert-btn-border-size:					$p1;
+$card-type-alert-btn-pad:							(($btn-padding-y / 2) ($btn-padding-x / 2));
+$card-type-alert-btn-font-size:						$font-size-14;
+$card-type-alert-strong-color:						$build-secondary;
+$card-type-alert-strong-mar-y:						$p12;
+$card-type-alert-strong-font-size:					$font-size-16;
+$card-type-alert-span-color:						$mono-005;
+$card-type-alert-span-font-size:					$font-size-14;
+
+// card-type-alert-variant variables
+
+// card-type-application variables
+$card-type-application-header-pad:					$card-mar;
+$card-type-application-header-mar:					$card-type-application-header-pad / 2;
+$card-type-application-body-pad:					$card-type-application-header-pad;
+$card-type-application-action-pad:					$p10 $card-type-application-header-pad;
+$card-type-application-action-bg:					$mono-001;
+$card-type-application-action-round:				0 0 $p6 $p6;
+$card-type-application-action-color:				$heading-color;
+$card-type-application-action-font-size:			$font-size-12;
+$card-type-application-action-font-weight:			$font-weight-5;
+$card-type-application-list-pad:					$spacer-12 0 0 0;
+$card-type-application-list-title-size:				$font-size-14;
+$card-type-application-list-title-font-weight:		$font-weight-7;
+$card-type-application-list-strong-width:			37.5%;
+$card-type-application-list-strong-flex:			1 1 $card-type-application-list-strong-width;
+$card-type-application-list-strong-color:			$heading-color;
+$card-type-application-list-span-width:				62.5%;
+$card-type-application-list-span-flex:				0 0 $card-type-application-list-span-width;
+$card-type-application-list-span-color:				$accent-color;
+
+// card-type-assets variables
+$card-type-assets-pad:								$spacer-16;
+$card-type-assets-image-round:						$p8;
+$card-type-assets-image-min-width:					30%;
+$card-type-assets-image-flex:						0 0 $card-type-assets-image-min-width;
+$card-type-assets-image-width:						100%;
+$card-type-assets-psuedo-size:						$spacer-100;
+$card-type-assets-psuedo-bg:						lighten($build-primary, 43.75%);
+$card-type-assets-psuedo-round:						50%;
+$card-type-assets-psuedo-layer:						0;
+$card-type-assets-psuedo-pos:						$spacer-50;
+$card-type-assets-heading-font-size:				$font-size-18;
+$card-type-assets-heading-color:					$build-secondary;
+$card-type-assets-lead-font-size:					$font-size-14;
+$card-type-assets-lead-font-weight:					$font-weight-5;
+$card-type-assets-body-flex:						1 1 100%;
+$card-type-assets-content-layer:					1;
+
+// card-banner-banner variables
+$card-type-banner-height:							$spacer-16 * 10; // 160px
+$card-type-banner-image-mar:						-#{$p1};
+$card-type-banner-image-round:						$p6;
+
+// card-type-button variables
+$card-type-button-round:							$card-round;
+$card-type-button-span-pad-x:						$spacer-18;
+$card-type-button-icon-size:						$input-height-inner-lg;
+$card-type-button-icon-pos:							$p2;
+
+// card-type-dashboard variables
+$card-type-dashboard-head-pad:						$spacer-16 $spacer-20;
+$card-type-dashboard-head-pad-y:					$p8;
+$card-type-dashboard-head-border:					$build-apply-border;
+$card-type-dashboard-body-pad:						$spacer-20;
+
+// card-type-data variables
+$card-type-data-pad:								0;
+$card-type-data-header-border:                      $build-apply-border;
+$card-type-data-heading-font-size-1:				$font-size-20;
+$card-type-data-heading-font-weight-1:				$font-weight-5;
+$card-type-data-heading-font-size-2:				$font-size-36;
+$card-type-data-heading-font-weight-2:				$font-weight-5;
+$card-type-data-heading-color:						$build-input-focus;
+$card-type-data-heading-small-font-size:			$font-size-14;
+$card-type-data-heading-small-color-1:				$text-color;
+$card-type-data-heading-small-color-2:				lighten($text-color, 20%);
+$card-type-data-body-pad:                           $spacer-20;
+
+// card edit variables
+$card-type-edit-header-pad-y:						$spacer-20;
+$card-type-edit-header-border:						$build-apply-border;
+$card-type-edit-body-pad-y:							$card-type-edit-header-pad-y;
+$card-type-edit-button-mar:							0 -#{$card-mar};
+$card-type-edit-button-mar-y:						-#{$card-type-edit-body-pad-y};
+$card-type-edit-button-pad-x:						$card-mar;
+$card-type-edit-button-pad:							$card-type-edit-body-pad-y $card-type-edit-button-pad-x;
+$card-type-edit-button-border:						$card-type-edit-header-border;
+$card-type-edit-button-bg:							$highlight-color;
+$card-type-edit-button-round:						$p6;
+
+// card-type-emphasis variables
+$card-type-emphasis-pad:							$p1;
+$card-type-emphasis-pos-x:							$card-mar;
+$card-type-emphasis-pos-y:							50%;
+$card-type-emphasis-color:							$build-white;
+$card-type-emphasis-size:							$spacer-28;
+$card-type-emphasis-round:							$card-type-emphasis-size / 2;
+$card-type-emphasis-bg-1:							$build-primary;
+$card-type-emphasis-bg-2:							$build-secondary;
+$card-type-emphasis-bg-3:							$build-tertiary;
+$card-type-emphasis-body-round:						$p6;
+$card-type-emphasis-body-pad:						$spacer-32;
+$card-type-emphasis-body-pad-right:					$spacer-96;
+
+// card-type-graph variables
+$card-type-graph-body-height:						100%;
+
+// card-type-input variables
+$card-type-input-round:								$card-round;
+
+// card-type-post variables
+$card-type-post-h5-mar-y:							$p10;
+$card-type-post-h5-font-weight:						$font-weight-5;
+$card-type-post-p-mar-y:							$p2;
+$card-type-post-p-font-size:						$font-size-14;
+$card-type-post-p-line-height:						$line-height-md;
+$card-type-post-time-font-size:						$font-size-12;
+$card-type-post-truncate-max-height:				$card-type-post-p-font-size * $card-type-post-p-line-height * 3;
+$card-type-post-body-pad:							$spacer-16;
+$card-type-post-footer-pad-y:						$spacer-16 / 2;
+$card-type-post-footer-pad-x:						$spacer-16;
+$card-type-post-footer-pad:							$card-type-post-footer-pad-y $card-type-post-footer-pad-x;
+$card-type-post-footer-border:						$build-apply-border;
+$card-type-post-image-height:						$spacer-16 * 10; // 160px
+
+// card-type-product variables
+$card-type-product-font-size:                       $font-size-14;
+$card-type-product-btn-pad-y:						$p6;
+$card-type-product-btn-pad-x:						$p10;
+$card-type-product-btn-pad:							$p6 $p10;
+$card-type-product-btn-round:						$round-m;
+$card-type-product-btn-border:				        $p1;
+$card-type-product-badge-mar:                       $p8;
+$card-type-product-alert-round:                     $card-type-product-btn-round;
+$card-type-product-alert-pad:                       $p12;
+$card-type-product-alert-font-size:                 $font-size-12;
+$card-type-product-alert-badge-mar:                 $card-type-product-alert-pad;
+$card-type-product-selected-border:                 $link-color;
+$card-type-product-selected-bg:                     lighten($card-type-product-selected-border, 48%);
+$card-type-product-selected-action-bg:              $build-white;
+$card-type-product-body-pad:						$spacer-20;
+$card-type-product-foot-bg:							$mono-001;
+$card-type-product-foot-round:						0 0 $p6 $p6;
+$card-type-product-foot-width:						100%;
+$card-type-product-view-width:						$spacer-16 * 10; // 160px
+$card-type-product-view-pad:						$card-type-product-body-pad;
+$card-type-product-view-border:                     $build-apply-border;
+$card-type-product-image-width:						100%;
+$card-type-product-image-pad-y:						$p10;
+$card-type-product-info-pad:						$card-type-product-view-pad;
+$card-type-product-info-width:                      100%;
+$card-type-product-head-border:					    $build-apply-border;
+$card-type-product-head-pad:					    $card-type-product-body-pad;
+$card-type-product-title-mar:                       $p4;
+$card-type-product-company-image-height:			$spacer-32;
+$card-type-product-company-image-width:				auto;
+$card-type-product-spec-list-width:                 100%;
+$card-type-product-spec-list-pad:                   $card-type-product-head-pad;
+$card-type-product-spec-list-border:                $build-apply-border;
+$card-type-product-preview-image-height:            $spacer-56;
+$card-type-product-preview-body-bg:                 $mono-001;
+$card-type-product-preview-body-border:             $build-apply-border;
+$card-type-product-preview-foot-border:             $card-type-product-preview-body-border;
+
+// card profile variables
+$card-type-profile-header-pad-x:					$card-header-pad-x;
+$card-type-profile-header-border:					$build-apply-border;
+$card-type-profile-body-pad-y:						$card-type-profile-header-pad-x;
+
+// card-type-progress variables
+$card-type-progress-heading-pad-x:					$spacer-18 * 10; // 180px
+$card-type-progress-progress-mar-y:					$card-header-pad-x;
+$card-type-progress-body-pad:						$card-header-pad-x;
+
+// card-type-promo variables
+$card-type-promo-object-pos:						left 0;
+$card-type-promo-image-height:						$spacer-16 * 10; // 160px
+$card-type-promo-footer-pad:						$spacer-16;
+$card-type-promo-badge-pad-x:						$p10;
+$card-type-promo-badge-pos-x:						$card-header-pad-x;
+$card-type-promo-badge-pos-y:						$card-type-promo-image-height + $p8;
+
+// card-type-settings variables
+$card-type-settings-header-pad:						$card-header-pad-x;
+$card-type-settings-header-border:					$build-apply-border;
+$card-type-settings-body-pad:						$card-type-settings-header-pad;
+
+// card-type-table variables
+$card-type-table-width:								100%;
+$card-type-table-color:								$mono-006;
+$card-type-table-font-size:							$font-size-14;
+$card-type-table-head-pad:							$spacer-16 $spacer-20;
+$card-type-table-head-pad-y:						$p8;
+$card-type-table-head-color:						$build-default-highlight;
+$card-type-table-head-border-size:					$p1;
+$card-type-table-body-width:						$card-type-table-width;
+$card-type-table-btn-pad:							$p8 $spacer-16;
+$card-type-table-truncate-width:					$spacer-16 * 10; // 160px

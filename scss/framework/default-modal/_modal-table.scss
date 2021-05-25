@@ -1,0 +1,67 @@
+﻿// SCSS File
+// modal-table.scss
+
+
+// modal-table style
+@if $enable-modal {
+	@if $enable-modal-table {
+		.modal-table {
+			font-size: $modal-table-font-size;
+
+			.table {
+				color: $modal-table-color;
+
+				strong {
+					display: block;
+					font-weight: $modal-table-strong-font-weight;
+					margin-bottom: $modal-table-strong-mar-y;
+				}
+
+				.list {
+					padding-left: $modal-table-list-pad-x;
+				}
+
+				> thead, > tbody {
+					> tr {
+						> th, > td {
+							padding-left: $modal-table-heading-sub-pad-y;
+							padding-right: $modal-table-heading-sub-pad-y;
+						}
+
+						> th {
+							font-weight: $modal-table-heading-font-weight;
+
+							&.heading-sub {
+								border-top: 0;
+								border-bottom: $modal-table-heading-sub-border;
+								font-weight: $modal-table-heading-font-weight;
+								font-size: $modal-table-heading-sub-font-size;
+								color: $modal-table-heading-sub-color;
+								padding: $modal-table-heading-sub-pad-y;
+							}
+						}
+					}
+				}
+			}
+
+			.tab {
+				visibility: hidden;
+				pointer-events: none;
+				opacity: 0;
+				height: 0;
+				overflow: hidden;
+
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+
+				&.active {
+					visibility: visible;
+					pointer-events: auto;
+					opacity: 1;
+					height: auto;
+				}
+			}
+		}
+	}
+}

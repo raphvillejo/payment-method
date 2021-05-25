@@ -1,0 +1,144 @@
+﻿// SCSS File
+// form-wrappers.scss
+
+// form-section variables
+$form-section-mar-y: $spacer-24;
+$form-section-disabled-opacity: $build-default-opacity;
+$form-section-heading-mar-y: $p8;
+$form-section-heading-font-size: $font-size-22;
+$form-section-heading-font-weight: $font-weight-5;
+$form-section-heading-line-height: $line-height-md;
+$form-section-heading-color: $mono-009;
+$form-section-paragraph-mar-top: 0;
+$form-section-paragraph-mar-bot: $form-section-heading-mar-y;
+
+// form-group variables
+$form-group-mar: $p8;
+$form-group-valid-color: $mono-006;
+$form-group-invalid-color: $build-invalid-color;
+$form-group-label-btn-color: $build-white;
+
+// form-amend variables
+$form-amend-show-mar-y: $form-group-mar;
+
+// form-autocomplete variables
+$form-autocomplete-input-pad: $spacer-48 + $p4;
+
+// form-button variables
+$form-button-pad: null;
+$form-button-mar: $form-group-mar;
+$form-button-terms-flex: 1 1 100%;
+
+// checkbox-stack variables
+$checkbox-stack-option-mar: $p2;
+
+// radio-stack variables
+$radio-stack-option-mar: $checkbox-stack-option-mar;
+
+// form consent variables
+$form-consent-font-size: $font-size-16;
+$form-consent-line-height: $line-height-md;
+$form-consent-list-pad: $form-group-mar;
+$form-consent-list-mar: $form-group-mar;
+$form-consent-list-li-mar: $p10;
+
+// form-emphasis variables
+$form-emphasis-pad: $spacer-14;
+$form-emphasis-bg: $mono-001;
+$form-emphasis-font-size: $font-size-16;
+
+// form emphasis variables
+$form-emphasis-alert-pad: $spacer-48;
+$form-emphasis-alert-icon-pos-y: calc(50% - #{$p10});
+$form-emphasis-alert-icon-pos-x: $p14;
+
+// form-followup variables
+$form-followup-mar: $form-group-mar;
+
+// form-grid variables
+$form-grid-gutter: $gutter-lg-size;
+$form-grid-flex-basis-1: 100%;
+$form-grid-flex-basis-2: calc(50% - #{$form-grid-gutter});
+$form-grid-flex-basis-3: calc(33.33333% - #{$form-grid-gutter});
+$form-grid-flex-basis-4: calc(25% - #{$form-grid-gutter});
+
+// form-guidance variables
+$form-guidance-emphasis-mar-y: $spacer-14;
+
+// form-info variables
+$form-info-mar: $form-group-mar;
+
+// form-info-otp variables
+$form-info-otp-pad: $spacer-64;
+$form-info-otp-color: $mono-009;
+
+// form-option variables
+$form-option-mar: $p10;
+$form-option-label-height: 100%;
+$form-option-label-min-height: $input-height;
+$form-option-label-pad: $input-padding-y $input-padding-x;
+$form-option-label-pad-x: $spacer-64;
+$form-option-label-round: $input-border-radius;
+$form-option-label-border: $input-border;
+$form-option-label-bg: $input-bg-color;
+$form-option-label-transition: $input-transition;
+$form-option-label-color: $input-text-color;
+$form-option-label-strong-font-weight: $font-weight-5;
+$form-option-label-em-mar-x: $p8;
+$form-option-label-em-color: $accent-color;
+$form-option-label-small-flex-basis: 100%;
+$form-option-label-small-mar-y: $p2;
+$form-option-label-small-color: $accent-color;
+$form-option-input-bg: $build-white;
+$form-option-input-pos-y: calc(50% - (#{$spacer-20} / 2));
+$form-option-input-pos-x: $spacer-24;
+$form-option-input-focus-label-border: $build-interface-border;
+$form-option-input-focus-label-shadow: $build-input-shadow;
+$form-option-input-focus-label-color: $build-interface-color;
+$form-option-input-palette-size: $spacer-24;
+$form-option-input-palette-mar-x: $p8;
+$form-option-input-palette-bg: $build-white;
+$form-option-input-palette-border: $p1 solid $build-shadow-dark;
+$form-option-input-palette-round: $p6;
+$form-option-input-icon-size: $spacer-32;
+$form-option-input-icon-font-size: $font-size-32;
+$form-option-input-icon-mar: -#{$p2} 0;
+$form-option-input-icon-mar-x: $p10;
+$form-option-input-graphic-flex-basis: $spacer-50;
+$form-option-input-graphic-mar-x: $p8;
+$form-option-input-graphic-image-mar-x: $form-option-input-graphic-mar-x;
+$form-option-inverted-bg: $input-bg-color;
+$form-option-inverted-label-border: $build-inverted-border;
+$form-option-inverted-label-bg: $build-inverted-bg;
+$form-option-valid-label-border: $build-valid-border;
+$form-option-valid-label-bg: $build-valid-bg;
+$form-option-valid-label-color: $build-valid-color;
+$form-option-valid-focus-label-border: $build-valid-border;
+$form-option-valid-focus-label-shadow: $build-valid-shadow;
+$form-option-valid-focus-label-color: $build-valid-color;
+$form-option-invalid-label-border: $build-invalid-border;
+$form-option-invalid-label-bg: $build-invalid-bg;
+$form-option-invalid-label-color: $build-invalid-color;
+$form-option-invalid-focus-label-border: $build-invalid-border;
+$form-option-invalid-focus-label-shadow: $build-invalid-shadow;
+$form-option-invalid-focus-label-color: $build-invalid-color;
+
+// form-option variables
+$form-option-flex-mar-x: $gutter-lg-size;
+$form-option-flex-basis: calc(50% - #{$form-option-flex-mar-x});
+
+// range-group variables
+$range-group-input-mar-y: $spacer-14;
+$range-values-mar-y: $p8;
+$range-values-font-size: $font-size-14;
+
+// form-terms variables
+$form-terms-mar-y: $p14;
+$form-terms-font-size: $font-size-16;
+
+// form-text variables
+$form-text-font-weight: $font-weight-4;
+$form-text-color: $accent-color;
+
+// form-voucher variables
+$form-voucher-input-pad-x: $form-autocomplete-input-pad;

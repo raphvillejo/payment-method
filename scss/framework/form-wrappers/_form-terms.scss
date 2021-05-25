@@ -1,0 +1,16 @@
+﻿// SCSS File
+// form-terms.scss
+
+
+// form-terms style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-terms {
+			.form-terms {
+				margin-top: $form-terms-mar-y;
+				font-size: $form-terms-font-size;
+				text-align: center;
+			}
+		}
+	}
+}

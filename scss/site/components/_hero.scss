@@ -1,0 +1,93 @@
+// SCSS File
+// hero.scss
+
+// menu style
+.hero {
+  padding: 0;
+  margin: 0;
+
+  @include media-breakpoint-down(xs) {
+    background-color: #1a9cf7;
+  }
+}
+
+// hero-item
+.hero-item {
+  position: relative;
+}
+
+// hero-caption
+.hero-caption {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $white;
+  padding-top: $spacer-96;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: $spacer-48;
+
+    .heading {
+      font-size: 5vw;
+    }
+
+    .lead {
+      font-size: 3vw;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    position: static;
+    padding-bottom: $spacer-48;
+
+    .heading {
+      font-size: 10vw;
+      width: 100%;
+      padding-bottom: $spacer-16;
+      margin-bottom: $spacer-16;
+      border-bottom: $p4 dotted rgba($white, 0.5);
+    }
+
+    .lead {
+      font-size: 6vw;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// hero-image
+.hero-image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    @include gradient-directional(#518bbe, rgba(#518bbe, 0));
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    flex: 1 1 100%;
+
+    @include media-breakpoint-down(lg) {
+      width: auto;
+      height: 400px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}

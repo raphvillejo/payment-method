@@ -1,0 +1,20 @@
+﻿// SCSS File
+// drawer-foot.scss
+
+
+// drawer-foot style
+@if $enable-drawer {
+	.drawer-foot {
+		padding: $drawer-foot-pad;
+		border-top: $drawer-foot-border;
+		@include flex();
+
+		.btn {
+			border-width: $drawer-foot-btn-border-size;
+		}
+
+		@extend %extend-aria-hide;
+
+		@extend %extend-aria-show;
+	}
+}

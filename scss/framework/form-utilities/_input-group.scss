@@ -1,0 +1,181 @@
+﻿// SCSS File
+// input-group.scss
+
+
+// input-group style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-input-group {
+			.input-group {
+				position: relative;
+				@include flex-display();
+				@include flex-wrap();
+				@include flex-align-items(stretch);
+				width: $input-group-width;
+
+				> .form-control,
+				> .form-control-plaintext,
+				> .custom-select,
+				> .custom-file {
+					position: relative;
+					@include flex(1 1 auto);
+					width: 1%;
+					margin-bottom: 0;
+
+					+ .form-control,
+					+ .custom-select,
+					+ .custom-file {
+						margin-left: -#{$input-border-width};
+					}
+				}
+
+					> .form-control:focus,
+					> .custom-select:focus,
+					> .custom-file .custom-file-input:focus ~ .custom-file-label {
+						z-index: 3;
+					}
+
+					> .custom-file .custom-file-input:focus {
+						z-index: 4;
+					}
+
+				> .form-control,
+				> .custom-select {
+					&:not(:last-child) {
+						@include border-right-radius(0);
+					}
+
+					&:not(:first-child) {
+						@include border-left-radius(0);
+					}
+				}
+
+				> .custom-file {
+					@include flex-display();
+					@include flex-align-items();
+
+					&:not(:last-child) .custom-file-label,
+					&:not(:last-child) .custom-file-label::after {
+						@include border-right-radius(0);
+					}
+
+					&:not(:first-child) .custom-file-label {
+						@include border-left-radius(0);
+					}
+				}
+			}
+
+			.input-group-prepend,
+			.input-group-append {
+				@include flex-display();
+
+				.btn {
+					position: relative;
+					z-index: 2;
+
+					&:focus {
+						z-index: 3;
+					}
+				}
+
+					.btn + .btn,
+					.btn + .input-group-text,
+					.input-group-text + .input-group-text,
+					.input-group-text + .btn {
+						margin-left: -#{$input-border-width};
+					}
+			}
+
+			.input-group-prepend {
+				margin-right: -#{$input-border-width};
+			}
+
+			.input-group-append {
+				margin-left: -#{$input-border-width};
+			}
+
+			.input-group-text {
+				margin-bottom: 0;
+				text-align: center;
+				white-space: nowrap;
+				font-weight: $input-group-text-font-weight;
+				font-size: $input-group-text-font-size;
+				color: $input-group-text-color;
+				padding: $input-group-text-pad;
+				line-height: $input-group-text-line-height;
+				background-color: $input-group-text-bg;
+				border: $input-group-text-border;
+				@include flex-display();
+				@include flex-align-items();
+				@include border-radius($input-group-text-round);
+
+				input[type="radio"], input[type="checkbox"] {
+					margin-top: 0;
+				}
+			}
+
+			.input-group-lg {
+				> .form-control:not(textarea),
+				> .custom-select {
+					height: $input-height-lg;
+				}
+
+				> .form-control,
+				> .custom-select,
+				> .input-group-prepend > .input-group-text,
+				> .input-group-prepend > .btn,
+				> .input-group-append > .input-group-text,
+				> .input-group-append > .btn {
+					padding: $input-padding-y-lg $input-padding-x-lg;
+					@include font-size($input-font-size-lg);
+					line-height: $input-line-height-lg;
+					@include border-radius($input-border-radius-lg);
+				}
+			}
+
+			.input-group-sm {
+				> .form-control:not(textarea),
+				> .custom-select {
+					height: $input-height-sm;
+				}
+
+				> .form-control,
+				> .custom-select,
+				> .input-group-prepend > .input-group-text,
+				> .input-group-prepend > .btn,
+				> .input-group-append > .input-group-text,
+				> .input-group-append > .btn {
+					padding: $input-padding-y-sm $input-padding-x-sm;
+					@include font-size($input-font-size-sm);
+					line-height: $input-line-height-sm;
+					@include border-radius($input-border-radius-sm);
+				}
+			}
+
+			.input-group-lg > .custom-select,
+			.input-group-sm > .custom-select {
+				padding-right: $custom-select-padding-x + $custom-select-indicator-padding;
+			}
+
+			.input-group {
+				> .input-group-prepend > .btn,
+				> .input-group-prepend > .input-group-text,
+				> .input-group-append:not(:last-child) > .btn,
+				> .input-group-append:not(:last-child) > .input-group-text,
+				> .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+				> .input-group-append:last-child > .input-group-text:not(:last-child) {
+					@include border-right-radius(0);
+				}
+
+				> .input-group-append > .btn,
+				> .input-group-append > .input-group-text,
+				> .input-group-prepend:not(:first-child) > .btn,
+				> .input-group-prepend:not(:first-child) > .input-group-text,
+				> .input-group-prepend:first-child > .btn:not(:first-child),
+				> .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+					@include border-left-radius(0);
+				}
+			}
+		}
+	}
+}

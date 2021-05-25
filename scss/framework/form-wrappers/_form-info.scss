@@ -1,0 +1,19 @@
+﻿// SCSS File
+// form-info.scss
+
+
+// form-info style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-info {
+			.form-info {
+				margin-bottom: $form-info-mar;
+				position: relative;
+
+				span, strong {
+					display: block;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+﻿// SCSS File
+// wizard-logo.scss
+
+
+// wizard-logo style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-logo {
+		.wizard-logo {
+		}
+	}
+}
+

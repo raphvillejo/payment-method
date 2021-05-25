@@ -1,0 +1,31 @@
+﻿// SCSS File
+// card-teaser.scss
+
+
+// card teaser style
+@if $enable-card {
+	@if $enable-card-teaser {
+		.card-teaser {
+			color: $card-teaser-color;
+			text-align: center;
+
+			@if $enable-single-class-animate == false {
+				@extend %extend-animate-all;
+			}
+
+			.title {
+				color: inherit;
+			}
+
+			.icon {
+				margin: $card-teaser-mar;
+			}
+
+			@include hover {
+				text-decoration: none;
+				color: $card-teaser-hover-color;
+			}
+		}
+	}
+}
+

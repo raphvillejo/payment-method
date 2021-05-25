@@ -1,0 +1,34 @@
+﻿// SCSS File
+// form-radio.scss
+
+// radio style
+@if $enable-form {
+  .radio {
+    @extend %extend-checkbox-radio-container;
+  }
+
+  // input radio style
+  input[type="radio"] {
+    border-radius: $radio-round;
+    @extend %extend-checkbox-radio;
+    @extend %extend-form-appearance;
+
+    &:checked {
+      background-image: $radio-checked-bg-image;
+      background-size: $radio-checked-bg-size;
+      border-width: $p4;
+    }
+
+    &.is-valid {
+      &:checked {
+        background-image: $radio-is-valid-checked-bg-image;
+      }
+    }
+
+    &.is-invalid {
+      &:checked {
+        background-image: $radio-is-invalid-checked-bg-image;
+      }
+    }
+  }
+}

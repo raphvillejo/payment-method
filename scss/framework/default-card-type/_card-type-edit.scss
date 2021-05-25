@@ -1,0 +1,39 @@
+﻿// SCSS File
+// card-type-edit.scss
+
+
+// card edit style
+@if $enable-card {
+	@if $enable-card-type-edit {
+		.card-type-edit {
+
+			.card-header {
+				padding-bottom: $card-type-edit-header-pad-y;
+				border-bottom: $card-type-edit-header-border;
+
+				~ .card-body {
+					padding-top: $card-type-edit-body-pad-y;
+				}
+			}
+
+			.form-button {
+				margin: $card-type-edit-button-mar;
+				margin-bottom: $card-type-edit-button-mar-y;
+				padding: $card-type-edit-button-pad;
+				border-top: $card-type-edit-button-border;
+				background-color: $card-type-edit-button-bg;
+				border-bottom-left-radius: $card-type-edit-button-round;
+				border-bottom-right-radius: $card-type-edit-button-round;
+			}
+
+			@include media-breakpoint-down(sm) {
+
+				.form-button {
+					margin-left: -#{$spacer-14};
+					margin-right: -#{$spacer-14};
+					padding: $spacer-24 $spacer-14 $spacer-14;
+				}
+			}
+		}
+	}
+}

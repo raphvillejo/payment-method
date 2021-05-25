@@ -1,0 +1,43 @@
+﻿// SCSS File
+// layout-modal.scss
+
+
+// layout-modal extend
+%extend-layout-modal-show {
+	&.show {
+		@include transform-translate(0, 0);
+	}
+}
+
+// layout-modal style
+@if $enable-modal {
+	.layout-modal {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: $layout-modal-layer;
+
+		.modal {
+			@extend %extend-layout-modal-show;
+		}
+
+		&.show {
+			opacity: 1;
+			overflow: auto;
+			z-index: $layout-modal-layer-show;
+		}
+
+		@include media-breakpoint-down(xs) {
+			%extend-layout-modal-media-xs {
+				margin-top: 0;
+				height: 100%;
+				min-height: 100%;
+			}
+
+			.modal {
+				@extend %extend-layout-modal-media-xs;
+			}
+		}
+	}
+}

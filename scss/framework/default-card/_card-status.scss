@@ -1,0 +1,108 @@
+﻿// SCSS File
+// card-status.scss
+
+
+// card status style
+@if $enable-card {
+	@if $enable-card-status {
+		.card-status {
+			position: relative;
+			border-color: $card-status-border-color;
+			background-color: $card-status-bg;
+			font-size: $card-status-font-size;
+			color: $card-status-color;
+
+			p {
+				margin-bottom: $card-status-paragraph-mar-y;
+			}
+
+			.list {
+				margin-bottom: 0;
+				padding-left: 0;
+				text-align: left;
+			}
+
+			.status {
+				padding: $card-status-pad;
+				@include flex-align-items();
+				@include flex-display();
+			}
+
+			.action {
+				padding: $card-status-action-pad;
+				text-align: right;
+			}
+
+			.badge {
+				margin-right: $card-status-badge-mar-x;
+				background-color: $card-status-badge-bg;
+				color: $card-status-badge-color;
+			}
+
+			.feedback {
+				padding: $card-status-feedback-pad;
+				border-width: $card-status-feedback-border-size;
+				border-top-style: solid;
+				border-color: inherit;
+			}
+
+			&.is-processing {
+				border-color: $card-status-processing-bg;
+				background-color: $card-status-processing-bg;
+
+				.badge {
+					background-color: $card-status-processing-badge-bg;
+				}
+			}
+
+			&.is-denied {
+				border-color: $card-status-denied-border;
+				background-color: $card-status-denied-bg;
+
+				.badge {
+					background-color: $card-status-denied-badge-bg;
+				}
+			}
+
+			&.is-approved {
+				border-color: $card-status-approved-border;
+				background-color: $card-status-approved-bg;
+
+				.badge {
+					background-color: $card-status-approved-badge-bg;
+				}
+			}
+
+			&.is-active {
+				border-color: $card-status-active-border;
+				background-color: $card-status-active-bg;
+
+				.badge {
+					background-color: $card-status-active-badge-bg;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				margin-top: $p10;
+				text-align: center;
+
+				.status {
+					padding-top: $p14;
+					display: block;
+				}
+
+				.action {
+					padding-top: $p8;
+				}
+
+				.badge {
+					position: absolute;
+					top: -#{$p8};
+					left: 50%;
+					margin: 0;
+					@include transform-translate(-50%, 0);
+				}
+			}
+		}
+	}
+}

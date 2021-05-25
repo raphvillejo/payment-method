@@ -1,0 +1,14 @@
+﻿// SCSS File
+// modal-content.scss
+
+
+// modal-content style
+@if $enable-modal {
+	.modal-content {
+		width: $modal-content-width;
+		border-radius: inherit;
+		text-align: inherit;
+		@include flex-direction(column);
+		@include flex-display();
+	}
+}

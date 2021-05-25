@@ -1,0 +1,25 @@
+﻿// SCSS File
+// card-body.scss
+
+
+// card-body style
+@if $enable-card {
+	.card-body {
+		padding: $card-body-pad;
+		padding-bottom: 0;
+		position: relative;
+
+		&:last-child {
+			padding-bottom: $card-body-pad-y;
+		}
+
+		@extend %extend-aria-hide;
+
+		@extend %extend-aria-show;
+
+		@include media-breakpoint-down(sm) {
+			padding-left: $spacer-14;
+			padding-right: $spacer-14;
+		}
+	}
+}

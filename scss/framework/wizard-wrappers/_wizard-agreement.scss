@@ -1,0 +1,23 @@
+﻿// SCSS File
+// wizard-agreement.scss
+
+
+// wizard-agreement style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-agreement {
+		.wizard-agreement {
+			position: relative;
+			font-size: $wizard-agreement-font-size;
+
+			p, ul, ol, table {
+				margin-bottom: $wizard-agreement-mar;
+				font-size: inherit;
+			}
+
+			a[x-apple-data-detectors] {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+}

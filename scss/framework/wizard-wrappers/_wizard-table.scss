@@ -1,0 +1,95 @@
+﻿// SCSS File
+// wizard-table.scss
+
+
+// wizard-table extension
+%extend-table-cell {
+	padding: $spacer-16;
+	font-size: $font-size-14;
+	vertical-align: top;
+
+	&.table-title {
+		width: 25%;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: $spacer-16 0;
+	}
+}
+
+// wizard-table style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-table {
+		.wizard-table {
+			* {
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+			}
+
+			.table {
+				> thead {
+					background-color: $build-white;
+
+					> tr {
+						> th, > td {
+							@extend %extend-table-cell;
+
+							.table-title-sub {
+								display: none;
+							}
+						}
+					}
+				}
+
+				> tbody {
+					> tr {
+						> th, > td {
+							@extend %extend-table-cell;
+						}
+					}
+				}
+
+				> tfoot {
+					> tr {
+						> th, > td {
+							@extend %extend-table-cell;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.image {
+					width: auto;
+					height: auto;
+					max-width: $wizard-table-image-width;
+					max-height: $wizard-table-image-height;
+				}
+
+				.table-title-sub {
+					display: none;
+					border-bottom: $wizard-table-title-sub-border;
+					padding-bottom: $wizard-table-title-sub-pad;
+					margin-bottom: $wizard-table-title-sub-mar;
+					font-size: $wizard-table-title-sub-font-size;
+					font-weight: $wizard-table-title-sub-font-weight;
+
+					@include media-breakpoint-down(sm) {
+						display: block;
+					}
+				}
+
+				.btn {
+					margin-bottom: $wizard-table-btn-mar;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

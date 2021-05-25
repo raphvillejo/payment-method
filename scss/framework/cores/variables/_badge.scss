@@ -1,0 +1,28 @@
+﻿// SCSS File
+// badge.scss
+
+
+// badge variables
+$badge-color:               		$build-white !default;
+$badge-font-size:                   $font-size-12 !default;
+$badge-padding-y:                   $p4 !default;
+$badge-padding-x:                   $p10 !default;
+$badge-border-radius:               $round-l !default;
+$badge-bg:                          lighten(desaturate(adjust-hue($link-color, 22), 25.00), 45.29);
+$badge-color:                       lighten(desaturate(adjust-hue($link-color, 20%), 18.41%), 3.14%);
+
+$badge-pill-font-size:             	$font-size-10 !default;
+$badge-pill-font-weight:           	$font-weight-medium !default;
+$badge-pill-padding-y:             	$p4 !default;
+$badge-pill-padding-x:             	$p10 !default;
+$badge-pill-border-radius:			$spacer-96 !default;
+
+$badge-icon-width:					$spacer-56 !default;
+$badge-icon-height:					$spacer-56 !default;
+$badge-icon-border-radius:			50% !default;
+
+// badge small style
+$badge-font-size-sm: 				$font-size-11 !default;
+$badge-font-weight-sm: 				$font-weight-medium !default;
+$badge-padding-y-sm:             	$p4 !default;
+$badge-padding-x-sm: 				$p8 !default;

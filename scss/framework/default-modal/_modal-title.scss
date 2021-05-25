@@ -1,0 +1,15 @@
+﻿// SCSS File
+// modal-title.scss
+
+
+// modal-title style
+@if $enable-modal {
+	.modal-title {
+		margin-bottom: 0;
+		font-size: $modal-title-font-size;
+		font-weight: $modal-title-font-weight;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}

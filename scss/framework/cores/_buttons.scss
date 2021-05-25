@@ -1,0 +1,23 @@
+﻿// SCSS File
+// buttons.scss
+
+
+// button style
+button {
+	padding: 0;
+	border: none;
+	background-image: none;
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	color: inherit;
+
+	.icon {
+		pointer-events: none;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+}

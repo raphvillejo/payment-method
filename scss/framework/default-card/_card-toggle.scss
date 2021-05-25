@@ -1,0 +1,24 @@
+﻿// SCSS File
+// card-toggle.scss
+
+
+// card-toggle style
+@if $enable-card {
+	@if $enable-card-toggle {
+		.card-toggle {
+			width: $card-toggle-width;
+			padding: $card-toggle-pad;
+			border-top: $card-toggle-border;
+			border-bottom-left-radius: $card-toggle-round;
+			border-bottom-right-radius: $card-toggle-round;
+			background-color: $card-toggle-bg-hue;
+			font-size: $card-toggle-font-size;
+			color: $card-toggle-color;
+			line-height: 1;
+
+			@include hover {
+				background-color: $card-toggle-hover-bg-hue;
+			}
+		}
+	}
+}

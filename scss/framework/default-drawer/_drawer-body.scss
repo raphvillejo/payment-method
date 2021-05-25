@@ -1,0 +1,14 @@
+﻿// SCSS File
+// drawer-body.scss
+
+
+// drawer-body style
+@if $enable-drawer {
+	.drawer-body {
+		padding: $drawer-body-pad;
+		height: $drawer-body-min-height;
+		overflow-x: hidden;
+		overflow-y: auto;
+		@include flex($drawer-body-flex);
+	}
+}

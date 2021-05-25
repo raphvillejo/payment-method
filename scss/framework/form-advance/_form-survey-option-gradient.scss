@@ -1,0 +1,124 @@
+﻿// SCSS File
+// form-survey-option-gradient.scss
+
+
+// form-survey-option-gradient style
+@if $enable-form {
+    @if $enable-form-advance {
+        @if $enable-form-advance-survey-option-gradient {
+            .form-survey-option-gradient {
+                &.form-option {
+                    display: block;
+
+                    .gradient-scale {
+                        @include flex-display();
+                        @include flex-justify-content(space-between);
+
+                        .option {
+                            margin: 0;
+
+                            input {
+                                bottom: calc(28% - #{$p10});
+                            }
+
+                            label {
+                                background-color: $build-white;
+                            }
+
+                            &:nth-child(1) label {
+                                border-color: #E7393B;
+                            }
+
+                            &:nth-child(2) label {
+                                border-color: #FC6551;
+                            }
+
+                            &:nth-child(3) label {
+                                border-color: #FD8540;
+                            }
+
+                            &:nth-child(4) label {
+                                border-color: #FEA738;
+                            }
+
+                            &:nth-child(5) label {
+                                border-color: #FBC200;
+                            }
+
+                            &:nth-child(6) label {
+                                border-color: #E4C400;
+                            }
+
+                            &:nth-child(7) label {
+                                border-color: #C0CB00;
+                            }
+
+                            &:nth-child(8) label {
+                                border-color: #A1CB00;
+                            }
+
+                            &:nth-child(9) label {
+                                border-color: #7FCA00;
+                            }
+
+                            &:nth-child(10) label {
+                                border-color: #36AC00;
+                            }
+                        }
+                    }
+                }
+
+                .gradient-label {
+                    width: 100%;
+                    margin-top: $p14;
+                    @include flex-justify-content(space-between);
+                    @include flex-display();
+
+                    &:first-child {
+                        display: none;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: $font-size-13;
+                    }
+                }
+
+                @include media-breakpoint-down(xs) {
+                    &.form-survey-option {
+                        &.form-option {
+                            .gradient-scale {
+                                @include flex(1);
+                                @include flex-wrap();
+                                @include flex-display();
+
+                                .option {
+                                    width: 18%;
+                                    margin-top: $p10;
+                                }
+                            }
+                        }
+                    }
+
+                    .gradient-label {
+                        &:first-child {
+                            @include flex-display();
+
+                            p:last-child {
+                                display: none;
+                            }
+                        }
+
+                        &:last-child {
+                            @include flex-justify-content(flex-end);
+
+                            p:first-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

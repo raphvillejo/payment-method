@@ -1,0 +1,129 @@
+﻿// SCSS File
+// wizard-cards.scss
+
+
+// wizard-cards style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-cards {
+		.wizard-cards {
+			margin-left: -#{$wizard-cards-mar-x};
+			@include flex-wrap();
+			@include flex-display();
+
+			.card {
+				@include flex-basis($wizard-cards-size);
+				margin-left: $wizard-cards-mar-x;
+				margin-bottom: $wizard-cards-mar-y;
+				border-radius: $wizard-cards-round;
+				border: $wizard-cards-border;
+				box-shadow: $wizard-cards-shadow;
+				background-color: $wizard-cards-bg;
+				@include flex-direction(column);
+				@include flex-display();
+			}
+
+			.card-name {
+				margin: 0;
+				line-height: 1.5;
+				font-size: $wizard-cards-name-font-size;
+				font-weight: $wizard-cards-name-font-weight;
+				color: $wizard-cards-name-color;
+			}
+
+			.card-label {
+				display: block;
+				font-size: $wizard-cards-label-font-size;
+				color: $wizard-cards-label-color;
+			}
+
+			.card-price {
+				margin-top: auto;
+
+				span, em, strong {
+					line-height: 1;
+				}
+
+				span {
+					display: block;
+					font-size: $wizard-cards-price-span-font-size;
+					margin-bottom: $wizard-cards-price-span-mar-y;
+					color: $wizard-cards-price-span-color;
+				}
+
+				em {
+					font-style: normal;
+					font-size: $wizard-cards-price-em-font-size;
+					color: $wizard-cards-price-em-color;
+				}
+
+				strong {
+					font-size: $wizard-cards-price-strong-font-size;
+					font-weight: $wizard-cards-price-strong-font-weight;
+					color: $wizard-cards-price-strong-color;
+				}
+			}
+
+			.card-product {
+				padding: $wizard-cards-product-pad;
+				@include flex-display();
+
+				.details {
+					@include flex-grow(1);
+					@include flex-direction(column);
+					@include flex-display();
+				}
+
+				.image {
+					width: $wizard-cards-product-image-width;
+					height: $wizard-cards-product-image-height;
+					margin-right: $wizard-cards-product-image-mar-x;
+					@include flex-grow();
+
+					img {
+						width: $wizard-cards-product-image-size;
+						max-width: $wizard-cards-product-image-size;
+						height: auto;
+					}
+				}
+			}
+
+			.card-buttons {
+				margin-top: auto;
+				border-radius: inherit;
+				@include flex-align-items();
+				@include flex-display();
+
+				button {
+					width: auto;
+					border: none;
+					border-radius: 0;
+					margin: 0 !important;
+					padding: $wizard-cards-buttons-pad;
+					@include flex-basis($wizard-cards-buttons-flex-basis);
+
+					&[name=details] {
+						box-shadow: $wizard-cards-buttons-shadow;
+					}
+
+					&:first-child {
+						border-bottom-left-radius: inherit;
+					}
+
+					&:last-child {
+						border-bottom-right-radius: inherit;
+					}
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin: 0;
+				@include flex-direction(column);
+
+				.card {
+					margin-left: 0;
+					@include flex-basis(100%);
+				}
+			}
+		}
+	}
+}

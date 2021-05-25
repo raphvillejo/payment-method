@@ -1,0 +1,33 @@
+﻿// SCSS File
+// wizard-loader.scss
+
+
+// wizard-loader style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-loader {
+		.wizard-loader {
+			width: $wizard-loader-width;
+			margin: $wizard-loader-mar;
+
+			.progress {
+				height: $wizard-loader-progress-height;
+				border-radius: $wizard-loader-progress-round;
+				background-color: $wizard-loader-progress-bg;
+			}
+
+			.bar {
+				height: inherit;
+				border-radius: inherit;
+				background-color: $wizard-loader-progress-bar-bg;
+				@include animation($wizard-loader-progress-bar-animation);
+				@include flex-justify-content(flex-end);
+				@include flex-align-items();
+				@include flex-display();
+
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+﻿// SCSS File
+// wizard-document-paper.scss
+
+
+// wizard-document-paper style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-document-paper {
+		.wizard-document-paper {
+			padding: $document-outer-padding;
+			background-color: $document-outer-bg;
+
+			.wizard-agreement {
+				box-shadow: $document-outer-shadow;
+				padding: $document-inner-padding;
+				background-color: $document-inner-bg;
+			}
+		}
+	}
+}

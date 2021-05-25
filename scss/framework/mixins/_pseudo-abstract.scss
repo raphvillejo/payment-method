@@ -1,0 +1,33 @@
+﻿// SCSS File
+// pseudo-abstract.scss
+
+
+// pseudo-abstract mixin
+@mixin pseudo-abstract($bg: rgba($build-black, .08)) {
+    &::before, &::after {
+        content: '';
+        width: 50%;
+        height: 50%;
+        border-radius: $spacer-24;
+        background-color: $bg;
+        transform: scale(3) rotate(43deg);
+        position: absolute;
+        z-index: 0;
+    }
+
+    &::before {
+        left: -60%;
+        top: -100%;
+    }
+
+    &::after {
+        right: -60%;
+        top: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &::before, &::after {
+            display: none;
+        }
+    }
+}

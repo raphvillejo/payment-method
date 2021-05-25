@@ -1,0 +1,289 @@
+﻿// SCSS File
+// rate-gauge.scss
+
+
+// rate-gauge extend
+%extend-rate-gauge-arc {
+	top: 0;
+	left: 0;
+	@include size($rate-gauge-arc-size);
+	@include transform-rotate($rate-gauge-arc-rotate);
+	border-width: $rate-gauge-arc-border-width;
+	border-style: solid;
+}
+
+%extend-rate-gauge-dot {
+	top: $rate-gauge-dot-pos-y;
+	margin-top: $rate-gauge-dot-mar-y;
+	@include size($rate-gauge-dot-size);
+}
+
+// rate-gauge style
+@if $enable-measurement-rate-gauge {
+	.rate-gauge {
+		@include size($rate-gauge-width, $rate-gauge-height);
+		pointer-events: none;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+
+		> div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include size($rate-gauge-div-size);
+
+			@if $enable-single-class-animate == false {
+				@extend %extend-animate-all;
+			}
+
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				border-radius: $rate-gauge-div-pseudo-round;
+
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+			}
+
+			&:nth-child(1) {
+				z-index: 2;
+
+				&::before {
+					@extend %extend-rate-gauge-arc;
+					z-index: 3;
+					border-color: $rate-gauge-div-child-1-pseudo-border-colors;
+				}
+			}
+
+			&:nth-child(2) {
+				z-index: 4;
+
+				&::before, &::after {
+					z-index: 5;
+					@extend %extend-rate-gauge-dot;
+					background-color: $rate-gauge-div-child-2-pseudo-bg;
+				}
+
+				&::before {
+					left: 0;
+				}
+
+				&::after {
+					right: 0;
+				}
+			}
+
+			&:nth-child(3) {
+				z-index: 6;
+
+				&::before {
+					@extend %extend-rate-gauge-arc;
+					z-index: 7;
+					border-color: $rate-gauge-div-child-3-pseudo-border-colors;
+				}
+
+				&::after {
+					z-index: 8;
+					@extend %extend-rate-gauge-dot;
+					background-color: $rate-gauge-div-child-3-pseudo-bg;
+					left: 0;
+				}
+			}
+
+			&:nth-child(4) {
+				z-index: 9;
+
+				&::before {
+					@extend %extend-rate-gauge-arc;
+					z-index: 10;
+					border-color: $rate-gauge-div-child-4-pseudo-border-colors;
+				}
+
+				&::after {
+					z-index: 11;
+					@extend %extend-rate-gauge-dot;
+					background-color: $rate-gauge-div-child-4-pseudo-bg;
+					right: 0;
+				}
+			}
+
+			&:nth-child(5) {
+				z-index: 12;
+
+				&::before {
+					z-index: 13;
+					border-style: solid;
+					@include size($rate-gauge-div-child-5-pseudo-width, $rate-gauge-div-child-5-pseudo-height);
+					border-width: $rate-gauge-div-child-5-pseudo-border-width;
+					border-color: $rate-gauge-div-child-5-pseudo-border-colors;
+					top: $rate-gauge-div-child-5-pseudo-pos-y;
+					right: $rate-gauge-div-child-5-pseudo-pos-x-1;
+					margin-top: $rate-gauge-div-child-5-pseudo-mar-y;
+				}
+
+				&::after {
+					z-index: 14;
+					@extend %extend-rate-gauge-dot;
+					background-color: $rate-gauge-div-child-5-pseudo-bg;
+					right: $rate-gauge-div-child-5-pseudo-pos-x-2;
+					margin-right: $rate-gauge-div-child-5-pseudo-mar-x;
+				}
+			}
+		}
+
+		&[aria-ratecount="0"] {
+			> div {
+				&:nth-child(3) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-0-div-child-3-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(4) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-0-div-child-4-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(3), &:nth-child(4) {
+
+					&::after {
+						background-color: $rate-gauge-ratecount-0-div-child-3-4-pseudo-bg;
+					}
+				}
+
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-0-div-child-3-4-rotate);
+				}
+			}
+		}
+
+		&[aria-ratecount="1"] {
+			> div {
+				&:nth-child(3) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-1-div-child-3-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(4) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-1-div-child-4-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(3), &:nth-child(4) {
+
+					&::after {
+						background-color: $rate-gauge-ratecount-1-div-child-3-4-pseudo-bg;
+					}
+				}
+
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-1-div-child-3-4-rotate);
+				}
+			}
+		}
+
+		&[aria-ratecount="2"] {
+			> div {
+				&:nth-child(3) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-2-div-child-3-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(4) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-2-div-child-4-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(3), &:nth-child(4) {
+
+					&::after {
+						background-color: $rate-gauge-ratecount-2-div-child-3-4-pseudo-bg;
+					}
+				}
+
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-2-div-child-3-4-rotate);
+				}
+			}
+		}
+
+		&[aria-ratecount="3"] {
+			> div {
+				&:nth-child(3) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-3-div-child-3-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(4) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-3-div-child-4-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(3), &:nth-child(4) {
+
+					&::after {
+						background-color: $rate-gauge-ratecount-3-div-child-3-4-pseudo-bg;
+					}
+				}
+
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-3-div-child-3-4-rotate);
+				}
+			}
+		}
+
+		&[aria-ratecount="4"] {
+			> div {
+				&:nth-child(3) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-4-div-child-3-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(4) {
+
+					&::before {
+						border-color: $rate-gauge-ratecount-4-div-child-4-pseudo-border-colors;
+					}
+				}
+
+				&:nth-child(3), &:nth-child(4) {
+
+					&::after {
+						background-color: $rate-gauge-ratecount-4-div-child-3-4-pseudo-bg;
+					}
+				}
+
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-4-div-child-3-4-rotate);
+				}
+			}
+		}
+
+		&[aria-ratecount="5"] {
+			> div {
+				&:nth-child(4), &:nth-child(5) {
+					@include transform-rotate($rate-gauge-ratecount-5-div-child-3-4-rotate);
+				}
+			}
+		}
+	}
+}

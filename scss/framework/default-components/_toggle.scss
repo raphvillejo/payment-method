@@ -1,0 +1,163 @@
+﻿// SCSS File
+// toggle.scss
+
+
+// toggle style
+@if $component-toggle {
+	.toggle {
+		pointer-events: auto;
+		@include flex-align-items();
+		@include flex-justify-content();
+		@include flex-display-inline();
+	}
+
+	@if $component-toggle-action {
+		// toggle-action style
+		.toggle-action {
+			width: auto;
+			height: auto;
+			padding: $toggle-action-pad;
+			@include transition($toggle-action-transition);
+			line-height: 1;
+			display: inline-block;
+			color: inherit;
+
+			.icon {
+				width: $toggle-action-icon-size;
+				height: $toggle-action-icon-size;
+				font-size: $toggle-action-icon-font-size;
+			}
+
+			@include hover {
+				opacity: $build-default-opacity;
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+
+	@if $component-toggle-button {
+		// toggle-button style
+		.toggle-button {
+			width: $toggle-button-size;
+			height: $toggle-button-size;
+			color: $mono-008;
+			@include transition($toggle-button-transition);
+
+			.icon {
+				width: $toggle-button-icon-size;
+				height: $toggle-button-icon-size;
+				font-size: $toggle-button-icon-font-size;
+			}
+
+			@include hover {
+				background-color: $toggle-button-hover-bg;
+				color: inherit;
+			}
+
+			@include media-breakpoint-down(xs) {
+				width: $spacer-48;
+				height: $spacer-48;
+			}
+		}
+	}
+
+	@if $component-toggle-help {
+		// toggle-help style
+		.toggle-help {
+			margin-left: auto;
+			margin-top: $toggle-help-mar;
+			font-size: $toggle-help-font-size;
+			color: $toggle-help-color;
+			@include flex-align-self(start);
+
+			.icon {
+				margin-right: $toggle-help-icon-mar;
+				vertical-align: $toggle-help-icon-valign;
+			}
+
+			@include media-breakpoint-down(xs) {
+				margin-top: $p2;
+			}
+		}
+	}
+
+	@if $component-toggle-input {
+		// toggle-input style
+		.toggle-input {
+			width: 100%;
+			padding: $input-padding-y $input-padding-x;
+			border-radius: $input-border-radius;
+			border: $p1 dotted $input-border-color;
+			background-color: $input-bg-color;
+			@include transition($input-transition);
+			font-weight: $input-font-weight;
+			line-height: $input-line-height;
+			font-size: $font-size-base;
+			@include flex-justify-content(flex-start);
+			text-align: left;
+			color: $input-text-color;
+
+			.icon {
+				margin-right: $spacer-14;
+				vertical-align: -#{$p9};
+			}
+
+			@include hover {
+				background-color: $build-inverted-bg;
+			}
+
+			&.is-inverted {
+				border-color: $build-inverted-border;
+				background-color: $build-inverted-bg;
+
+				@include hover {
+					background-color: $input-bg-color;
+				}
+			}
+
+			&::before {
+				width: $spacer-26;
+				height: $spacer-26;
+				font-size: $spacer-26;
+				font-family: $font-family-glyphs;
+				line-height: $line-height-sm;
+				position: absolute;
+				right: $input-padding-x;
+				top: calc(50% - #{$p13});
+				content: $toggle-input-icon;
+			}
+
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-16;
+
+				.icon {
+					margin-right: $p10;
+					vertical-align: -#{$p10};
+				}
+			}
+		}
+	}
+
+	@if $component-toggle-items {
+		// toggle-items style
+		.toggle-items {
+			width: $spacer-40;
+			height: $spacer-40;
+			padding: 0;
+			border-radius: 50%;
+			border: $p1 solid $divider-color;
+			box-shadow: 0 $p2 $p4 0 rgba($build-black, .05);
+			background-color: $build-white;
+			text-align: center;
+
+			.icon {
+				width: $p14;
+				height: $p14;
+				margin-top: $p6;
+				font-size: $p14;
+				vertical-align: top;
+			}
+		}
+	}
+}

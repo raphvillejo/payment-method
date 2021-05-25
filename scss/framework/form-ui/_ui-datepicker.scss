@@ -1,0 +1,22 @@
+﻿// SCSS File
+// ui-datepicker.scss
+
+
+// datepicker style
+@if $enable-form {
+	@if $enable-form-ui {
+		@if $enable-form-ui-datepicker {
+			.ui-datepicker {
+				margin: $ui-datepicker-mar-x;
+				width: auto !important;
+				position: relative;
+				@include flex-justify-content(space-between);
+				@include flex-display();
+
+				@include media-breakpoint-down(sm) {
+					@include flex-direction(column);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+﻿// SCSS File
+// wizard-stack.scss
+
+
+// wizard-stack style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-stack {
+		.wizard-stack {
+			margin-left: -#{$wizard-stack-mar};
+			@include flex-wrap();
+			@include flex-display();
+			@include flex-direction();
+			@include flex(1 1 100%);
+
+			.wizard-card-stack {
+				@include flex-basis($wizard-stack-card-flex-basis-1);
+				margin-left: $wizard-stack-card-mar;
+			}
+
+			&[data-items="2"] {
+				.wizard-card-stack {
+					@include flex-basis($wizard-stack-card-flex-basis-2);
+				}
+			}
+
+			&[data-items="3"] {
+				.wizard-card-stack {
+					@include flex-basis($wizard-stack-card-flex-basis-3);
+				}
+			}
+
+			&[data-items="4"] {
+				.wizard-card-stack {
+					@include flex-basis($wizard-stack-card-flex-basis-4);
+				}
+			}
+
+			@include media-breakpoint-down(lg) {
+				&[data-items="3"] {
+					.wizard-card-stack {
+						@include flex-basis($wizard-stack-card-flex-basis-2);
+					}
+				}
+
+				&[data-items="4"] {
+					.wizard-card-stack {
+						@include flex-basis($wizard-stack-card-flex-basis-3);
+					}
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin-left: 0;
+				display: block;
+
+				.wizard-card-stack {
+					margin-left: 0;
+				}
+
+				&[data-items="2"], &[data-items="3"], &[data-items="4"] {
+					.wizard-card-stack {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

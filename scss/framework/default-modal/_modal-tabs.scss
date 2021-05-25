@@ -1,0 +1,42 @@
+﻿// SCSS File
+// modal-tabs.scss
+
+
+// modal-tabs style
+@if $enable-modal {
+	@if $enable-modal-tabs {
+		.modal-tabs {
+			.modal-header {
+				position: relative;
+				@include flex-display();
+				@include flex-direction();
+				padding: 0;
+				padding-bottom: $modal-tabs-header-pad-y;
+
+				&::after {
+					content: '';
+					position: absolute;
+					height: $modal-tabs-header-psuedo-height;
+					width: $modal-tabs-header-psuedo-width;
+					@include linear-gradient-v($modal-tabs-header-psuedo-gradient-1, $modal-tabs-header-psuedo-gradient-2);
+					left: $modal-tabs-header-psuedo-pos-x;
+					bottom: $modal-tabs-header-psuedo-pos-y;
+				}
+			}
+
+			.modal-title {
+				cursor: pointer;
+				text-align: center;
+				padding: $modal-tabs-title-pad-y1 $modal-tabs-title-pad-x $modal-tabs-title-pad-y2;
+				border-bottom: $modal-tabs-title-border;
+				color: $modal-tabs-title-color;
+				@include flex($modal-tabs-title-flex);
+
+				&.active {
+					color: $modal-tabs-title-active-color;
+					border-bottom-color: $modal-tabs-title-active-border-color;
+				}
+			}
+		}
+	}
+}

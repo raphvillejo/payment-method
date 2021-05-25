@@ -1,0 +1,17 @@
+﻿// SCSS File
+// form-voucher.scss
+
+
+// form-voucher style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-voucher {
+			.form-voucher {
+
+				.form-control {
+					padding-right: $form-voucher-input-pad-x;
+				}
+			}
+		}
+	}
+}

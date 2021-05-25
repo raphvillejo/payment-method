@@ -1,0 +1,15 @@
+﻿// SCSS File
+// animate.scss
+
+
+// animate style and collection
+@if $enable-single-class-animate {
+	.animate {
+		@include animate-all();
+	}
+}
+@else {
+	%extend-animate-all {
+		@include animate-all();
+	}
+}

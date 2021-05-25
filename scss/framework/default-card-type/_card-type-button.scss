@@ -1,0 +1,29 @@
+﻿// SCSS File
+// card-type-button.scss
+
+
+// card-type-button style
+@if $enable-card {
+	@if $enable-card-type-button {
+		.card-type-button {
+			.btn {
+				border-radius: $card-type-button-round;
+
+				.icon {
+					@include size($card-type-button-icon-size);
+					position: absolute;
+					top: $card-type-button-icon-pos;
+					left: -#{$card-type-button-icon-pos};
+
+					&::before {
+						line-height: $card-type-button-icon-size;
+					}
+				}
+
+				span {
+					padding-left: $card-type-button-span-pad-x;
+				}
+			}
+		}
+	}
+}

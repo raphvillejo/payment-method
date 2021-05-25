@@ -1,0 +1,21 @@
+﻿// SCSS File
+// form-emphasis-alert.scss
+
+
+// form emphasis style
+@if $enable-form {
+    @if $enable-form-wrappers {
+        @if $enable-form-wrappers-emphasis-alert {
+			.form-emphasis-alert {
+				padding-left: $form-emphasis-alert-pad;
+
+				.icon {
+					position: absolute;
+					left: $form-emphasis-alert-icon-pos-x;
+					top: $form-emphasis-alert-icon-pos-y;
+				}
+			}
+        }
+    }
+}
+

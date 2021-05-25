@@ -1,0 +1,10 @@
+﻿// SCSS File
+// modal-close.scss
+
+
+// modal-close style
+@if $enable-modal {
+	.modal-close {
+		margin-right: $modal-close-mar;
+	}
+}

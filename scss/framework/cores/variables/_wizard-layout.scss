@@ -1,0 +1,36 @@
+﻿// SCSS File
+// wizard-layout.scss
+
+
+// wizard-header variables
+$wizard-header-height:								auto;
+$wizard-header-border:								$build-apply-border;
+$wizard-header-bg:									$build-white;
+$wizard-header-pad:									$spacer-16 0;
+$wizard-header-logo-height:							$spacer-32;
+$wizard-header-head-height:							$spacer-80;
+$wizard-header-container-max-width:					map-get($container-max-widths, xl); // 1210px
+
+// wizard-main variables
+$wizard-main-height:								100%;
+$wizard-main-flex:									1 1 $wizard-main-height;
+$wizard-main-container-width:						map-get($container-max-widths, md); // 760px
+$wizard-main-container-pad-top:						$spacer-32;
+$wizard-main-container-pad-bot:						$spacer-48;
+
+// wizard-footer variables
+$wizard-footer-pad:									$wizard-main-container-pad-top;
+$wizard-footer-height:								null;
+$wizard-footer-color:								$text-color;
+$wizard-footer-border:								$wizard-header-border;
+$wizard-footer-bg:									$wizard-header-bg;
+$wizard-footer-font-size:							$font-size-14;
+$wizard-footer-font-weight:							$font-weight-3;
+$wizard-footer-line-height:							$line-height-md;
+$wizard-footer-flex:								0 0 auto;
+$wizard-footer-container-max-width:					$wizard-header-container-max-width; // 1210px
+
+// wizard-market variables
+$wizard-market-height:								100%;
+$wizard-market-container-pad-top:					$wizard-main-container-pad-top;
+$wizard-market-container-pad-bot:					$wizard-main-container-pad-bot;

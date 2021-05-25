@@ -1,0 +1,60 @@
+﻿// SCSS File
+// transform.scss
+
+
+// transform mixin
+@mixin transform($transforms...) {
+	@include prefix(transform, $transforms, webkit moz);
+}
+
+@mixin transform-rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin transform-scale($x: $y, $y: $x) {
+	@include transform(scale($x, $y));
+}
+
+@mixin transform-translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin transform-translateY($y) {
+	@include transform(translateY($y));
+}
+
+@mixin transform-translateX($x) {
+	@include transform(translateY($x));
+}
+
+@mixin transform-skew($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-skewY($y) {
+	@include transform(skewY(#{$y}deg));
+}
+
+@mixin transform-perspective($perspective) {
+    @include transform(perspective($perspective));
+}
+
+@mixin transform-translate3d($tx, $ty, $tz) {
+	@include transform(translate3d($tx, $ty, $tz));
+}
+
+@mixin transform-origin($origin...) {
+	@include prefix(transform-origin, $origin, webkit moz);
+}
+
+@mixin transform-style($style...) {
+	@include prefix(transform-style, $style, webkit);
+}
+
+@mixin preserve-3d() {
+    @include transform-style(preserve-3d);
+}
+
+@mixin perspective($perspective) {
+	@include prefix(perspective, $perspective, webkit moz);
+}

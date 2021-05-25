@@ -1,0 +1,49 @@
+﻿// SCSS File
+// card-type-data.scss
+
+
+// card-type-data style
+@if $enable-card {
+	@if $enable-card-type-data {
+		.card-type-data {
+			padding: $card-type-data-pad;
+
+			.card-header {
+				border-bottom: $card-type-data-header-border;
+
+				~ .card-body {
+					padding-top: $card-type-data-body-pad;
+				}
+			}
+
+			.heading {
+				font-size: $card-type-data-heading-font-size-1;
+				font-weight: $card-type-data-heading-font-weight-1;
+				margin-bottom: 0;
+			}
+
+			.data-heading {
+				@include flex-display();
+				@include flex-direction();
+				@include flex-justify-content(space-between);
+				@include flex-align-items(baseline);
+
+				> span {
+					font-size: $card-type-data-heading-font-size-2;
+					font-weight: $card-type-data-heading-font-weight-2;
+					color: $card-type-data-heading-color;
+
+					small {
+						font-size: $card-type-data-heading-small-font-size;
+						font-weight: $card-type-data-heading-font-weight-2;
+						color: $card-type-data-heading-small-color-1;
+					}
+				}
+
+				> small {
+					color: $card-type-data-heading-small-color-2;
+				}
+			}
+		}
+	}
+}

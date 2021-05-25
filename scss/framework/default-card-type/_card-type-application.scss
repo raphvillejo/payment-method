@@ -1,0 +1,73 @@
+﻿// SCSS File
+// card-type-application.scss
+
+
+// card-type-application style
+@if $enable-card {
+	@if $enable-card-type-application {
+		.card-type-application {
+
+			.card-header {
+				padding: $card-type-application-header-pad;
+
+				.heading {
+					margin-bottom: $card-type-application-header-mar;
+				}
+			}
+
+			.card-body {
+				padding-bottom: $card-type-application-body-pad;
+			}
+
+			.list-data {
+				li {
+					padding: $card-type-application-list-pad;
+				}
+
+				span {
+					text-align: left;
+					color: $card-type-application-list-span-color;
+					@include flex($card-type-application-list-span-flex);
+				}
+
+				strong {
+					color: $card-type-application-list-strong-color;
+					@include flex($card-type-application-list-strong-flex);
+				}
+
+				.title {
+					font-size: $card-type-application-list-title-size;
+					font-weight: $card-type-application-list-title-font-weight;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.card-footer {
+				padding: 0;
+
+				.link {
+					margin-bottom: 0;
+				}
+
+				.action {
+					display: block;
+					text-align: center;
+					text-decoration: none;
+					padding: $card-type-application-action-pad;
+					color: $card-type-application-action-color;
+					font-size: $card-type-application-action-font-size;
+					font-weight: $card-type-application-action-font-weight;
+					background-color: $card-type-application-action-bg;
+					border-radius: $card-type-application-action-round;
+
+					@include hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

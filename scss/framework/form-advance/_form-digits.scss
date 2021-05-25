@@ -1,0 +1,35 @@
+﻿// SCSS File
+// form-digits.scss
+
+
+// form digits style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-digits {
+			.form-digits {
+				margin: 0 -#{$p8};
+				@include flex-flow();
+				@include flex-display();
+
+				.complete {
+					border-bottom-color: $build-success;
+					border-bottom-width: $p3;
+
+					&:focus {
+						border-color: $input-focus-border-color;
+						border-bottom-width: $input-border-width;
+					}
+				}
+
+				input {
+					width: auto;
+					padding: $input-padding-y 0;
+					margin: 0 $p8;
+					text-align: center;
+					display: inline-block;
+					@include flex-grow(1);
+				}
+			}
+		}
+	}
+}

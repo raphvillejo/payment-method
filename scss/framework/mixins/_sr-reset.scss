@@ -1,0 +1,13 @@
+﻿// SCSS File
+// sr-reset.scss
+
+
+// sr-reset mixin
+@mixin sr-reset {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}

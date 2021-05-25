@@ -1,0 +1,65 @@
+// SCSS File
+// rate-bar.scss
+
+
+// rate-bar mixin
+@mixin width-basis($s) {
+    flex-basis: $s;
+    min-width: $s;
+}
+
+// rate-bar style
+@if $enable-measurement-rate-bar {
+    .rate-bar {
+        @include flex-display();
+        @include flex-direction();
+        @include flex-wrap();
+        margin: $rate-bar-mar;
+        height: $rate-bar-height;
+        width: $rate-bar-width;
+        background-color: $rate-bar-bg;
+        border-radius: $rate-bar-round;
+
+        &::before {
+            content: '';
+            height: $rate-bar-state-height;
+            @include flex-shrink();
+            @include flex-grow();
+            border-radius: $rate-bar-state-round;
+
+            @if $enable-single-class-animate == false {
+                @extend %extend-animate-all;
+            }
+        }
+
+        &[aria-ratecount="0"]::before {
+            background-color: $rate-color-poor;
+            @include width-basis($rate-width-0);
+        }
+
+        &[aria-ratecount="1"]::before {
+            background-color: $rate-color-bad;
+            @include width-basis($rate-width-1);
+        }
+
+        &[aria-ratecount="2"]::before {
+            background-color: $rate-color-ok;
+            @include width-basis($rate-width-2);
+        }
+
+        &[aria-ratecount="3"]::before {
+            background-color: $rate-color-good;
+            @include width-basis($rate-width-3);
+        }
+
+        &[aria-ratecount="4"]::before {
+            background-color: $rate-color-great;
+            @include width-basis($rate-width-4);
+        }
+
+        &[aria-ratecount="5"]::before {
+            background-color: $rate-color-excellent;
+            @include width-basis($rate-width-5);
+        }
+    }
+}

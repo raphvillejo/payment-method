@@ -1,0 +1,40 @@
+// SCSS File
+// card.scss
+
+// card style
+@if $enable-card {
+  .card {
+    margin-bottom: $card-mar;
+    border-radius: $card-round;
+    border: $card-border;
+    box-shadow: $card-shadow;
+    background-color: $card-bg-hue;
+    position: relative;
+
+    @if $enable-single-class-animate == false {
+      @extend %extend-animate-all;
+    }
+
+    @at-root a#{&} {
+      color: inherit;
+
+      @include hover {
+        border-color: $card-hover-border-hue;
+
+        .cover-loaded {
+          &::after {
+            border-color: $card-hover-cover-loaded-psuedo-bg;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .logo {
+        img {
+          height: $spacer-32;
+        }
+      }
+    }
+  }
+}

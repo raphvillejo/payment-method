@@ -1,0 +1,10 @@
+// SCSS File
+// layout-main.scss
+
+// layout-main style
+.layout-main {
+  &,
+  > .container {
+    display: flex;
+  }
+}

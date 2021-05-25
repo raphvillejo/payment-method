@@ -1,0 +1,15 @@
+﻿// SCSS File
+// wizard-document.scss
+
+
+// wizard-document style
+@if $enable-wizard {
+    @if $enable-wizard-wrappers-document {
+        .wizard-document {
+            position: relative;
+            @include flex-basis(100%);
+            @include flex-grow(1);
+        }
+    }
+}
+

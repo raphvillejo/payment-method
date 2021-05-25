@@ -1,0 +1,35 @@
+﻿// SCSS File
+// aria.scss
+
+
+// aria hidden: hide | mixin
+@mixin aria-hide() {
+	&[aria-hidden="true"] {
+		@content;
+		visibility: hidden;
+		overflow: hidden;
+		display: none;
+	}
+}
+
+// aria hidden: show | mixin
+@mixin aria-show($display: block) {
+	&[aria-hidden="false"] {
+		@content;
+		visibility: visible;
+		overflow: visible;
+
+		@if $display == flex {
+			@include flex-display();
+		}
+		@else if $display == inline-flex {
+			@include flex-display-inline();
+		}
+		@else if $display == inline-block {
+			display: inline-block;
+		}
+		@else {
+			display: block;
+		}
+	}
+}

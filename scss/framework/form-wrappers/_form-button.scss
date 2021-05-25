@@ -1,0 +1,72 @@
+﻿// SCSS File
+// form-button.scss
+
+
+// form-button style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-button {
+			.form-button {
+				padding-top: $form-button-pad;
+				@include clearfix();
+
+				.btn {
+					float: right;
+					margin-left: $form-button-mar;
+
+					&:last-child {
+						margin-left: 0;
+					}
+				}
+
+				.btn-link {
+				}
+
+				.btn-primary {
+				}
+
+				.btn-outline-primary {
+					float: left;
+				}
+
+				.form-terms {
+					@include flex($form-button-terms-flex);
+					text-align: left;
+				}
+
+				&.align-center {
+					text-align: center;
+
+					.btn {
+						float: none;
+					}
+				}
+
+				&.align-block {
+					@include flex-direction(column);
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					.btn {
+						float: none;
+						width: 100%;
+						margin-left: 0;
+					}
+
+					.btn-outline-primary {
+						float: none;
+					}
+				}
+
+				@include media-breakpoint-down(xs) {
+					margin-top: $spacer-24;
+
+					.form-terms {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}

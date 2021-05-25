@@ -1,0 +1,25 @@
+﻿// SCSS File
+// form-file-documents.scss
+
+
+// file-documents style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-documents {
+			.file-documents {
+
+				p {
+					margin-bottom: $file-documents-mar-y;
+				}
+
+				.list {
+					margin: 0;
+					padding: $file-documents-pad;
+					font-size: $file-documents-font-size;
+					line-height: $file-documents-line-height;
+					background-color: $file-documents-bg;
+				}
+			}
+		}
+	}
+}

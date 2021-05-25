@@ -1,0 +1,43 @@
+﻿// SCSS File
+// drawer-head.scss
+
+// drawer-head style
+@if $enable-drawer {
+  .drawer-head {
+    padding: $drawer-head-pad;
+    border-bottom: $drawer-head-border;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading {
+      font-size: $drawer-head-heading-font-size;
+      font-weight: $drawer-head-heading-font-weight;
+      margin-bottom: 0;
+    }
+
+    .title {
+      font-size: $drawer-head-title-font-size;
+      font-weight: $drawer-head-title-font-weight;
+      margin-bottom: 0;
+    }
+
+    .lead {
+      font-size: $drawer-head-lead-font-size;
+      font-weight: $drawer-head-lead-font-weight;
+      color: $drawer-head-lead-color;
+    }
+
+    .drawer-close {
+      position: absolute;
+      box-shadow: none;
+      top: $drawer-head-close-pos-y;
+      right: $drawer-head-close-pos-x;
+      margin-top: $drawer-head-close-mar-y;
+    }
+
+    @include media-breakpoint-down(xs) {
+    }
+  }
+}

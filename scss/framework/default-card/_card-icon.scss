@@ -1,0 +1,21 @@
+﻿// SCSS File
+// card-icon.scss
+
+
+// card-icon style
+@if $enable-card {
+	@if $enable-card-icon {
+		.card-icon {
+			margin: 0;
+			border-radius: $card-icon-round;
+
+			img {
+				border-radius: inherit;
+			}
+
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+			}
+		}
+	}
+}

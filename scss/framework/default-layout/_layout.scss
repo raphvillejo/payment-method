@@ -1,0 +1,45 @@
+﻿// SCSS File
+// layout.scss
+
+
+// layout style
+html {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	&.overflow body,
+	&.overflow-modal body,
+	&.overflow-panel body,
+	&.overflow-calendar body,
+	&.overflow-filter body,
+	&.overflow-drawer body,
+	&.overflow-board body {
+		overflow: hidden;
+	}
+
+	@include media-breakpoint-down(xs) {
+		&.overflow body {
+			max-height: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+html, body {
+	height: 100%;
+	color: $text-color;
+}
+
+body, .layout {
+	@include flex-display();
+	@include flex-direction(column);
+}
+
+body {
+	@include media-breakpoint-down(xs) {
+		font-size: $font-size-16;
+	}
+}
+
+.layout {
+	min-height: 100%;
+}

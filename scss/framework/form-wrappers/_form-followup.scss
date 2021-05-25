@@ -1,0 +1,18 @@
+﻿// SCSS File
+// form-followup.scss
+
+
+// form-followup style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-followup {
+			.form-followup {
+				margin-top: $form-followup-mar;
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+			}
+		}
+	}
+}

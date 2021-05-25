@@ -1,0 +1,381 @@
+﻿// SCSS File
+// list.scss
+
+
+// list style
+@if $component-list {
+	.list {
+		margin: $list-margin-top 0 $list-margin-bottom;
+		padding-left: 0;
+		list-style: none;
+
+		.icon {
+			margin-right: $p8;
+			vertical-align: -#{$p4};
+		}
+	}
+
+	@if $component-list-data {
+		// list-data style
+		.list-data {
+			li {
+				@include flex-justify-content(space-between);
+				@include flex-display();
+				text-align: left;
+
+				+ li {
+					margin-top: $p4;
+				}
+			}
+
+			strong, span, a {
+				@include flex-basis();
+			}
+
+			em {
+				font-style: normal;
+			}
+
+			hr {
+				@include flex-basis(100%);
+				margin: $p10 0;
+			}
+
+			@include media-breakpoint-down(xs) {
+				strong, span, a {
+					@include flex-basis();
+				}
+
+				hr {
+					margin: $p8 0;
+				}
+			}
+		}
+	}
+
+	@if $component-list-data-muted {
+		// list-muted style
+		.list-data-muted {
+			strong {
+				font-weight: $font-weight-base;
+			}
+		}
+	}
+
+	@if $component-list-data-discount {
+		// list-discount style
+		.list-data-discount {
+			strong {
+				font-weight: $font-weight-base;
+				color: $build-danger;
+			}
+		}
+	}
+
+	@if $component-list-data-striped {
+		// list-striped style
+		.list-data-striped {
+			li {
+				padding: $p4 $p8;
+
+				&:nth-child(odd) {
+					background-color: $highlight-bg;
+				}
+			}
+		}
+	}
+
+	@if $component-list-deck {
+		// list-deck style
+		.list-deck {
+			margin-left: -#{$list-gutter-width};
+			@include flex-wrap();
+			@include flex-display();
+
+			li {
+				margin-left: $list-gutter-width;
+				@include flex-basis(calc(50% - #{$list-gutter-width}));
+				@include flex-display-inline();
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin-left: 0;
+
+				li {
+					@include flex-basis(100%);
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	@if $component-list-deck-grid {
+		// list-deck-grid style
+		.list-deck-grid {
+			li {
+				@include flex-basis(calc(33.33333% - #{$list-gutter-width}));
+			}
+
+			@include media-breakpoint-down(lg) {
+
+				li {
+					@include flex-basis(calc(50% - #{$list-gutter-width}));
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin-left: 0;
+
+				li {
+					@include flex-basis(100%);
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	@if $component-list-details {
+		// list-details style
+		.list-details {
+			margin-bottom: $p4;
+			margin-left: -#{$grid-gutter-width};
+			@include flex-wrap();
+			@include flex-display();
+
+			li {
+				@include flex-basis(calc(50% - #{$grid-gutter-width}));
+				margin-left: #{$grid-gutter-width};
+				margin-bottom: $p8;
+			}
+
+			strong, span {
+				padding: $p4 0;
+				font-weight: $font-weight-base;
+				color: $accent-color;
+				display: block;
+			}
+
+			strong {
+				border-bottom: $build-apply-diverder;
+				color: $heading-color;
+			}
+
+			+ .list-details {
+				margin-top: $spacer-48;
+			}
+
+			@include media-breakpoint-down(xs) {
+				margin-left: 0;
+				@include flex-direction(column);
+
+				li {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	@if $component-list-float {
+		// list-float style
+		.list-float {
+			margin-left: -#{$spacer-24};
+
+			li {
+				padding-left: $spacer-24;
+				margin-bottom: $p8;
+				align-items: center;
+				@include flex-display-inline();
+
+				strong {
+					margin-right: $p10;
+				}
+			}
+		}
+	}
+
+	@if $component-list-icon {
+		// list-icon style
+		.list-icon {
+			list-style: none;
+
+			li {
+				padding-top: $p5;
+				padding-bottom: $p5;
+				padding-left: $spacer-32;
+				position: relative;
+
+				&::before {
+					width: $list-icon-size;
+					height: $list-icon-size;
+					font-size: $list-icon-size;
+					line-height: $list-icon-size;
+					font-family: $font-family-glyphs;
+					position: absolute;
+					top: calc(50% - #{$list-icon-pos-y});
+					left: 0;
+					content: '';
+				}
+			}
+			
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-left: $p4;
+			}
+		}
+	}
+
+	@if $component-list-icon-bullet {
+		// list-bullet style
+		.list-icon-bullet {
+			li {
+				padding-left: $spacer-18;
+
+				&::before {
+					height: $p6;
+					line-height: 0;
+					top: calc(50% - #{$p4});
+					content: '\2022';
+				}
+			}
+		}
+	}
+
+	@if $component-list-icon-tick {
+		// list-tick style
+		.list-icon-tick {
+			li {
+				&::before {
+					color: $build-success;
+					content: $list-tick-icon;
+				}
+			}
+		}
+	}
+
+	@if $component-list-items {
+		// list-items style
+		.list-items {
+			text-align: left;
+
+			li {
+				margin: 0;
+
+				+ li {
+					margin-top: $spacer-24;
+					padding-top: $spacer-24;
+					border-top: $build-apply-border;
+				}
+			}
+
+			span, strong {
+				line-height: $line-height-sm;
+				color: $accent-color;
+				display: block;
+			}
+
+			span {
+				font-size: $font-size-15;
+			}
+
+			strong {
+				margin-bottom: $p2;
+				font-weight: $font-weight-medium;
+				color: $heading-color;
+			}
+		}
+	}
+
+	@if $component-list-nowrap {
+		// list-nowrap style
+		.list-nowrap {
+			li {
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+		}
+	}
+
+	@if $component-list-terms {
+		// list terms style
+		.list-terms {
+			li {
+				@include flex-display();
+			}
+
+			strong {
+				@include flex-basis($spacer-26 * 10);
+				padding-right: $spacer-14;
+				font-weight: $font-weight-medium;
+				@include flex-shrink();
+				@include flex-grow();
+			}
+
+			span {
+				@include flex-basis();
+				@include flex-grow(1);
+			}
+
+			&[style] {
+				strong {
+					@include flex-basis(var(--flex-basis));
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				li {
+					@include flex-direction(column);
+				}
+
+				&[style] strong, strong, span {
+					text-align: left;
+					@include flex-basis();
+					@include flex-grow(1);
+				}
+			}
+		}
+	}
+
+	@if $component-list-terms-accent {
+		// list-terms-accent style
+		.list-terms-accent {
+			strong {
+				font-weight: $font-weight-base;
+			}
+
+			span {
+				color: $accent-color;
+			}
+		}
+	}
+
+	@if $component-list {
+		// list-terms-justified style
+		.list-terms-justified {
+			max-width: $spacer-64 * 10;
+
+			strong, span {
+				@include flex-basis();
+				@include flex-grow(1);
+			}
+
+			span {
+				text-align: right;
+				@include flex-grow();
+			}
+
+			@include media-breakpoint-down(xs) {
+				strong, span {
+					text-align: left;
+				}
+			}
+		}
+	}
+}

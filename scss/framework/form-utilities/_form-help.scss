@@ -1,0 +1,75 @@
+﻿// SCSS File
+// form-help.scss
+
+
+// form-help style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-help {
+			.form-help {
+				position: relative;
+				color: $form-help-color;
+				border-top: $form-help-border;
+				background-color: $form-help-bg;
+				font-size: $form-help-font-size;
+				line-height: $form-help-line-height;
+				margin-bottom: $form-help-mar;
+				opacity: 0;
+
+				h6 {
+					margin-bottom: $form-help-heading-mar;
+					font-weight: $form-help-heading-font-weight;
+					font-size: inherit;
+					line-height: inherit;
+				}
+
+				p {
+					margin-bottom: $form-help-paragraph-mar;
+				}
+
+				.icon {
+					position: absolute;
+					left: $form-help-icon-pos-x;
+					top: $form-help-icon-pos-y;
+				}
+
+				.dialog {
+					padding: $form-help-dialog-pad;
+					padding-left: $form-help-dialog-pad-x;
+
+					> *:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				.link {
+					font-weight: inherit;
+					text-decoration: underline;
+					color: $form-help-link-color;
+
+					@include hover {
+						text-decoration: none;
+					}
+				}
+
+				&[aria-hidden="false"] {
+					opacity: 1;
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+
+				@include media-breakpoint-down(xs) {
+					.icon {
+						display: none;
+					}
+
+					.dialog {
+						padding: $spacer-24;
+					}
+				}
+			}
+		}
+	}
+}

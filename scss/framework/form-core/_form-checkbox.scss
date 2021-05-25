@@ -1,0 +1,122 @@
+﻿// SCSS File
+// form-checkbox.scss
+
+// checkbox extends
+%extend-checkbox-radio-container {
+  label {
+    margin: 0;
+    padding: $checkbox-label-pad;
+    padding-right: $checkbox-label-pad-x;
+    color: $checkbox-label-color;
+    font-size: $font-size-18;
+  }
+
+  div {
+    @include flex-align-items();
+    @include flex-display();
+  }
+
+  input {
+    margin-left: 0;
+    @include flex(0 0 auto);
+  }
+}
+
+%extend-checkbox-radio {
+  @include size($checkbox-size);
+  margin: $checkbox-mar;
+  margin-right: $checkbox-mar-x;
+  vertical-align: -#{$checkbox-v-align};
+  border: $checkbox-border;
+  background-color: $checkbox-bg;
+  cursor: pointer;
+
+  @include hover {
+  }
+
+  &:focus {
+    border-color: $checkbox-focus-border-color;
+    box-shadow: $checkbox-focus-shadow;
+    outline-offset: -#{$checkbox-focus-outline-offset};
+    outline: 0;
+  }
+
+  &:checked {
+    border-color: $checkbox-checked-border-color;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &.is-inverted {
+    border-color: $checkbox-is-inverted-border;
+    background-color: $checkbox-is-inverted-bg;
+
+    &:focus {
+      border-color: $checkbox-is-inverted-focus-border;
+      background-color: $checkbox-is-inverted-focus-bg;
+    }
+  }
+
+  &.is-valid {
+    border-color: $checkbox-is-valid-border;
+    background-color: $checkbox-is-valid-bg;
+
+    &:focus {
+      border-color: $checkbox-is-valid-focus-border;
+      box-shadow: $checkbox-is-valid-focus-shadow;
+      outline: 0;
+    }
+
+    & ~ label {
+      color: $checkbox-is-valid-label-color;
+    }
+  }
+
+  &.is-invalid {
+    border-color: $checkbox-is-invalid-border;
+    background-color: $checkbox-is-invalid-bg;
+
+    &:focus {
+      border-color: $checkbox-is-invalid-focus-border;
+      box-shadow: $checkbox-is-invalid-focus-shadow;
+      outline: 0;
+    }
+
+    & ~ label {
+      color: $checkbox-is-invalid-label-color;
+    }
+  }
+}
+
+// checkbox style
+@if $enable-form {
+  .checkbox {
+    @extend %extend-checkbox-radio-container;
+  }
+
+  // input checkbox style
+  input[type="checkbox"] {
+    border-radius: $checkbox-round;
+    @extend %extend-checkbox-radio;
+    @extend %extend-form-appearance;
+
+    &:checked {
+      background-color: $build-white;
+      background-image: $checkbox-checked-bg-image;
+      background-size: $checkbox-checked-bg-size;
+      border-width: $p4;
+    }
+
+    &.is-valid {
+      &:checked {
+        background-image: $checkbox-is-valid-checked-bg-image;
+      }
+    }
+
+    &.is-invalid {
+      &:checked {
+        background-image: $checkbox-is-invalid-checked-bg-image;
+      }
+    }
+  }
+}

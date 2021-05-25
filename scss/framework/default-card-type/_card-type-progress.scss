@@ -1,0 +1,46 @@
+﻿// SCSS File
+// card-type-progress.scss
+
+
+// card-type-progress style
+@if $enable-card {
+	@if $enable-card-type-progress {
+		.card-type-progress {
+
+			.heading, .label {
+				padding-right: $card-type-progress-heading-pad-x;
+			}
+
+			.progress {
+				margin-top: $card-type-progress-progress-mar-y;
+			}
+
+			.card-body {
+				padding-bottom: $card-type-progress-body-pad;
+
+				> *:nth-last-child(2) {
+					margin-bottom: 0;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+
+				.badge {
+					margin: 0;
+					@include transform-translate(-50%, 0);
+					position: absolute;
+					left: 50%;
+					top: -#{$p10};
+				}
+
+				.heading, .label {
+					padding-right: 0;
+				}
+
+				.label {
+					display: none;
+				}
+			}
+		}
+	}
+}

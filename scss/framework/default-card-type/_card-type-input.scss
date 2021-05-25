@@ -1,0 +1,18 @@
+﻿// SCSS File
+// card-type-input.scss
+
+
+// card-type-input style
+@if $enable-card {
+	@if $enable-card-type-input {
+		.card-type-input {
+			.form-control {
+				@include plain-hover-focus {
+					border-color: transparent;
+					background-color: transparent;
+					border-radius: $card-type-input-round;
+				}
+			}
+		}
+	}
+}

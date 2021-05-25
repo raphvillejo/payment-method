@@ -1,0 +1,38 @@
+﻿// SCSS File
+// form-range.scss
+
+
+// form-range style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-range {
+			// range-group style
+			.range-group {
+
+				.form-control {
+					margin-bottom: $range-group-input-mar-y;
+				}
+			}
+
+			// range-values style
+			.range-values {
+				margin-top: $range-values-mar-y;
+				font-size: $range-values-font-size;
+				@include flex-display();
+
+				.range-min {
+					margin-right: auto;
+				}
+
+				.range-max {
+					margin-left: auto;
+				}
+			}
+
+			// range-display style
+			.range-display {
+				text-align: center;
+			}
+		}
+	}
+}

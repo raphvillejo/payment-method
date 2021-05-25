@@ -1,0 +1,17 @@
+﻿// SCSS File
+// card-footer.scss
+
+
+// card-footer style
+@if $enable-card {
+	.card-footer {
+		padding: $card-footer-pad;
+		padding-bottom: $card-footer-pad-y;
+
+		.link {
+			margin-bottom: $card-footer-link-mar;
+			text-align: center;
+			display: block;
+		}
+	}
+}

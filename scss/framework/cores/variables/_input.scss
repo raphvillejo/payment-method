@@ -1,0 +1,59 @@
+﻿// SCSS File
+// input.scss
+
+// input variables
+//$input-border-width:								$p2 !default;
+$input-border-width: $p1 !default;
+$input-border-color: $mono-003 !default;
+$input-border: $input-border-width solid $input-border-color !default;
+$input-text-color: $mono-009 !default;
+//$input-bg-color:									$mono-001 !default;
+$input-bg-color: $build-white !default;
+$input-border-height: $input-border-width * 2 !default;
+$input-font-weight: $font-weight-4 !default;
+$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+$input-font-size: $font-size-18 !default;
+$input-border-radius: $p3 !default;
+//$input-line-height:									$line-height-md !default;
+$input-line-height: 2 !default;
+$input-padding-y: $p10 !default;
+$input-padding-x: $p14 !default;
+$input-padding: $input-padding-y $input-padding-x !default;
+$input-height-inner: ($input-font-size * $input-line-height) +
+  ($input-padding-y * 2) !default; // 54px
+$input-height: ($input-height-inner + $input-border-height) !default; // 56px
+
+$input-font-size-sm: $font-size-14 !default;
+$input-border-radius-sm: $round-s !default;
+$input-line-height-sm: $line-height-md !default;
+$input-padding-y-sm: $p8 !default;
+$input-padding-x-sm: $p8 !default;
+$input-padding-sm: $input-padding-y-sm $input-padding-x-sm !default;
+$input-height-inner-sm: ($input-font-size * $input-line-height-sm) +
+  ($input-padding-y-sm * 2) !default; // 40px
+$input-height-sm: (
+  $input-height-inner-sm + $input-border-height
+) !default; // 42px
+
+$input-font-size-lg: $font-size-20 !default;
+$input-border-radius-lg: $round-l !default;
+$input-line-height-lg: $line-height-md !default;
+$input-padding-y-lg: $spacer-16 !default;
+$input-padding-x-lg: $spacer-16 !default;
+$input-padding-lg: $input-padding-y-lg $input-padding-x-lg !default;
+$input-height-inner-lg: ($input-font-size * $input-line-height-lg) +
+  ($input-padding-y-lg * 2) !default; // 56px
+$input-height-lg: (
+  $input-height-inner-lg + $input-border-height
+) !default; // 58px
+
+// input-group
+$input-group-addon-color: $text-color !default;
+$input-group-addon-bg: $mono-002 !default;
+$input-group-addon-border-color: $input-border-color !default;
+
+// custom-select
+$custom-select-padding-y: $input-padding-y !default;
+$custom-select-padding-x: $input-padding-x !default;
+$custom-select-indicator-padding: $spacer-16 !default;

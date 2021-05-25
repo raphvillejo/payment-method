@@ -1,0 +1,29 @@
+﻿// SCSS File
+// layers.scss
+
+
+// layers variables
+$layer-buried:										-1 !default;
+$layer-dropdown: 									1000 !default;
+$layer-sticky:										1020 !default;
+$layer-fixed:										1030 !default;
+$layer-modal-backdrop:								1040 !default;
+$layer-modal:										1050 !default;
+$layer-popover:										1060 !default;
+$layer-tooltip:										1070 !default;
+$layer-layout-sticky:            					1080 !default;
+$layer-layout-backdrop:								1100 !default;
+$layer-layout-transition:         					1110 !default;
+$layer-layout-drawer:            					1120 !default;
+$layer-layout-panel:            					1120 !default;
+$layer-layout-output:            					1180 !default;
+$layer-google-places:								1130 !default;
+$layer-always-on-top:								9999 !default;
+
+$zindex-dropdown:									$layer-dropdown !default;		// 1000
+$zindex-sticky:										$layer-sticky !default;			// 1020
+$zindex-fixed:										$layer-fixed !default;			// 1030
+$zindex-modal-backdrop:								$layer-modal-backdrop !default;	// 1040
+$zindex-modal:										$layer-modal !default;			// 1050
+$zindex-popover:									$layer-popover !default;		// 1060
+$zindex-tooltip:									$layer-tooltip !default;		// 1070

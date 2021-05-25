@@ -1,0 +1,32 @@
+﻿// SCSS File
+// form-locality-places.scss
+
+
+// form-locality-places style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-locality-picker {
+			.form-locality-picker {
+				height: $form-locality-picker-width;
+				min-height: $form-locality-picker-height;
+				@include flex-direction(column);
+				@include flex-display();
+
+				.form-locality {
+					@include flex-basis();
+					@include flex-grow(1);
+
+					.form-locality-map {
+						height: auto;
+						margin: 0;
+						position: absolute !important;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

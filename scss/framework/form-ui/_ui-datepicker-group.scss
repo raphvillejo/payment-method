@@ -1,0 +1,33 @@
+﻿// SCSS File
+// ui-datepicker-group.scss
+
+
+// datepicker-group style
+@if $enable-form {
+	@if $enable-form-ui {
+		@if $enable-form-ui-datepicker {
+			.ui-datepicker-group {
+				@include flex-basis($ui-datepicker-group-flex);
+
+				@include media-breakpoint-up(md) {
+					@include flex-basis(calc(100% - #{$gutter-lg-size}));
+
+					&.ui-datepicker-group-first {
+						margin-right: ($gutter-lg-size / 2);
+					}
+
+					&.ui-datepicker-group-last {
+						margin-left: ($gutter-lg-size / 2);
+					}
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					& + #{&} {
+						margin-top: $spacer-24;
+					}
+				}
+			}
+		}
+	}
+}

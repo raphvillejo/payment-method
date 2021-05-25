@@ -1,0 +1,154 @@
+﻿// SCSS File
+// form-option.scss
+
+// form-option style
+@if $enable-form {
+  @if $enable-form-wrappers {
+    @if $enable-form-wrappers-option {
+      .form-option {
+        .option {
+          position: relative;
+          display: block;
+
+          label {
+            width: auto;
+            height: $form-option-label-height;
+            min-height: $form-option-label-min-height;
+            padding: $form-option-label-pad;
+            padding-left: $form-option-label-pad-x;
+            border-radius: $form-option-label-round;
+            border: $form-option-label-border;
+            background-color: $form-option-label-bg;
+            @include transition($form-option-label-transition);
+            color: $form-option-label-color;
+            cursor: pointer;
+            @include flex-align-items();
+            @include flex-wrap();
+            @include flex-display();
+
+            strong {
+              font-weight: $form-option-label-strong-font-weight;
+            }
+
+            em {
+              margin-left: $form-option-label-em-mar-x;
+              color: $form-option-label-em-color;
+              font-style: normal;
+            }
+
+            small {
+              @include flex-basis($form-option-label-small-flex-basis);
+              margin-top: $form-option-label-small-mar-y;
+              color: $form-option-label-small-color;
+              display: block;
+            }
+          }
+
+          input {
+            position: absolute;
+            background-color: $form-option-input-bg;
+            top: $form-option-input-pos-y;
+            left: $form-option-input-pos-x;
+
+            &:focus {
+              box-shadow: none;
+
+              & ~ label {
+                border-color: $form-option-input-focus-label-border;
+                box-shadow: $form-option-input-focus-label-shadow;
+                color: $form-option-input-focus-label-color;
+              }
+            }
+          }
+
+          .palette {
+            font-size: 0;
+            @include size($form-option-input-palette-size);
+            margin-right: $form-option-input-palette-mar-x;
+            background-color: $form-option-input-palette-bg;
+            border: $form-option-input-palette-border;
+            border-radius: $form-option-input-palette-round;
+          }
+
+          .icon {
+            @include size($form-option-input-icon-size);
+            font-size: $form-option-input-icon-font-size;
+            margin: $form-option-input-icon-mar;
+            margin-right: $form-option-input-icon-mar-x;
+            position: relative;
+            left: auto;
+            bottom: auto;
+            @include flex-shrink();
+          }
+
+          .graphic {
+            @include flex-basis($form-option-input-graphic-flex-basis);
+            margin-left: auto;
+            margin-right: -#{$form-option-input-graphic-mar-x};
+            text-align: right;
+            @include flex-shrink(1);
+            @include flex-grow(1);
+
+            img {
+              //margin-right: $form-option-input-graphic-image-mar-x;
+              margin-right: 0;
+            }
+          }
+
+          .is-inverted {
+            background-color: $form-option-inverted-bg;
+
+            & ~ label {
+              border-color: $form-option-inverted-label-border;
+              background-color: $form-option-inverted-label-bg;
+            }
+          }
+
+          .is-valid {
+            & ~ label {
+              border-color: $form-option-valid-label-border;
+              background-color: $form-option-valid-label-bg;
+              color: $form-option-valid-label-color;
+            }
+
+            &:focus ~ label {
+              border-color: $form-option-valid-focus-label-border;
+              box-shadow: $form-option-valid-focus-label-shadow;
+              color: $form-option-valid-focus-label-color;
+            }
+          }
+
+          .is-invalid {
+            & ~ label {
+              border-color: $form-option-invalid-label-border;
+              background-color: $form-option-invalid-label-bg;
+              color: $form-option-invalid-label-color;
+            }
+
+            &:focus ~ label {
+              border-color: $form-option-invalid-focus-label-border;
+              box-shadow: $form-option-invalid-focus-label-shadow;
+              color: $form-option-invalid-focus-label-color;
+            }
+          }
+
+          + .option {
+            margin-top: $form-option-mar;
+          }
+        }
+
+        @include media-breakpoint-down(xs) {
+          .option {
+            label {
+              font-size: $font-size-16;
+            }
+          }
+
+          .graphic {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

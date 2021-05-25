@@ -1,0 +1,19 @@
+﻿// SCSS File
+// modal-footer.scss
+
+
+// modal-footer style
+@if $enable-modal {
+	.modal-footer {
+		padding: $modal-footer-pad;
+		border-top: $modal-footer-border;
+		border-bottom-left-radius: inherit;
+		border-bottom-right-radius: inherit;
+		text-align: left;
+
+		@include media-breakpoint-down(xs) {
+			padding-left: $modal-footer-pad-xs;
+			padding-right: $modal-footer-pad-xs;
+		}
+	}
+}

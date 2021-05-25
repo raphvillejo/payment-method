@@ -1,0 +1,37 @@
+﻿// SCSS File
+// stack-display.scss
+// Modified April 1, 2020
+
+// stack display style
+@if $enable-stack {
+  @if $enable-stack-display {
+    .stack-display {
+      margin-bottom: -#{$p10};
+      justify-content: center;
+
+      @include media-breakpoint-down(lg) {
+        .item {
+          flex-grow: 0;
+        }
+
+        &[data-items="3"],
+        &[data-items="4"] {
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width}) !important;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0 !important;
+        flex-direction: column;
+
+        .item {
+          flex-basis: 100% !important;
+          margin-left: 0 !important;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

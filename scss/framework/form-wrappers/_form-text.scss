@@ -1,0 +1,15 @@
+﻿// SCSS File
+// form-text.scss
+
+
+// form-text style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-text {
+			.form-text {
+				font-weight: $form-text-font-weight;
+				color: $form-text-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+// SCSS File
+// stack-grid-small.scss
+// Modified January 10, 2020
+
+// stack grid style
+@if $enable-stack {
+  @if $enable-stack-grid-small {
+    .stack-grid-small {
+      padding: calc(#{$stack-gutter-width} - #{$stack-gutter-width-sm}) 0;
+      margin-left: -#{$stack-gutter-width-sm};
+
+      .item {
+        flex-basis: calc(33.33% - #{$stack-gutter-width-sm});
+        margin-top: $stack-gutter-width-sm;
+        margin-left: #{$stack-gutter-width-sm};
+      }
+
+      &[data-items="2"] {
+        .item {
+          flex-basis: calc(50% - #{$stack-gutter-width-sm});
+        }
+      }
+
+      &[data-items="4"] {
+        .item {
+          flex-basis: calc(25% - #{$stack-gutter-width-sm});
+        }
+      }
+
+      &[data-items="5"] {
+        .item {
+          flex-basis: calc(20% - #{$stack-gutter-width-sm});
+        }
+      }
+
+      &[data-items="6"] {
+        .item {
+          flex-basis: calc(16.66% - #{$stack-gutter-width-sm});
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        &[data-items="6"],
+        &[data-items="5"] {
+          .item {
+            flex-basis: calc(25% - #{$stack-gutter-width-sm});
+          }
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        & {
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width-sm}) !important;
+          }
+        }
+      }
+    }
+  }
+}

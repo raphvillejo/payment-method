@@ -1,0 +1,26 @@
+﻿// SCSS File
+// form-fillup.scss
+
+
+// form-fillup style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-fillup {
+			.form-fillup {
+				opacity: 0;
+
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+
+				&.show {
+					opacity: 1;
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show
+			}
+		}
+	}
+}

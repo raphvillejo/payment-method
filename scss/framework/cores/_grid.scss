@@ -1,0 +1,44 @@
+// SCSS File
+// grid.scss
+
+
+// grid style
+@if $enable-grid-classes {
+	@if $enable-grid-classes-container {
+		// container style
+		.container {
+			@include make-container();
+			@include make-container-max-widths();
+		}
+	}
+
+	@if $enable-grid-classes-container-fluid {
+		// fluid container style
+		.container-fluid {
+			@include make-container();
+		}
+	}
+
+	@if $enable-grid-classes-row {
+		// row style
+		.row {
+			@include make-row();
+		}
+
+		.no-gutters {
+			margin-right: 0;
+			margin-left: 0;
+
+			> .col,
+			> [class*="col-"] {
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}
+	}
+
+	@if $enable-grid-classes-columns {
+		// columns style
+		@include make-grid-columns();
+	}
+}

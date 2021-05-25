@@ -1,0 +1,24 @@
+// SCSS File
+// card-type-image.scss
+
+// card-type-image style
+.card-type-image {
+  box-shadow: 0 0 $p10 0 rgba(0, 0, 0, 0.25);
+  padding: $spacer-36 $spacer-24 $spacer-24 $spacer-24;
+
+  .card {
+    display: flex;
+  }
+
+  .card-image {
+    flex: 0 0 auto;
+  }
+
+  .card-caption {
+    flex: 1 1 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: $spacer-16;
+  }
+}

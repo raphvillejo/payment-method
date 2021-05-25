@@ -1,0 +1,22 @@
+﻿// SCSS File
+// wizard-document-wrapper.scss
+
+
+// wizard-document-wrapper style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-document-wrapper {
+		.wizard-document-wrapper {
+			padding: $document-outer-padding;
+			background-color: $document-outer-bg;
+			-ms-overflow-style: -ms-autohiding-scrollbar;
+			-webkit-overflow-scrolling: touch;
+			overflow: hidden;
+			overflow-y: auto;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+	}
+}

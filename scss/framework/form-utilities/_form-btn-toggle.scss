@@ -1,0 +1,17 @@
+﻿// SCSS File
+// form-btn-toggle.scss
+
+
+// btn-toggle style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-btn-toggle {
+			.btn-toggle {
+				width: $btn-toggle-width;
+				@include button-ghost-style($build-primary, $highlight-color, $highlight-color, $build-primary, $highlight-color, $highlight-color, $build-primary);
+				border-radius: 0;
+				border: none;
+			}
+		}
+	}
+}

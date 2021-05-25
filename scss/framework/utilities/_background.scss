@@ -1,0 +1,32 @@
+// SCSS File
+// background.scss
+
+
+// background style
+@if $utilities-background {
+    @if $utilities-background-variant {
+        @each $color, $value in $theme-colors {
+            @include bg-variant(".bg-#{$color}", $value);
+        }
+    }
+
+    @if $utilities-background-gradient {
+        @if $enable-gradients {
+          @each $color, $value in $theme-colors {
+            @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+          }
+        }
+    }
+
+    @if $utilities-background-white {
+        .bg-white {
+          background-color: $white !important;
+        }
+    }
+
+    @if $utilities-background-transparent {
+        .bg-transparent {
+          background-color: transparent !important;
+        }
+    }
+}

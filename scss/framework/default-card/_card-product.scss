@@ -1,0 +1,11 @@
+﻿// SCSS File
+// card-product.scss
+
+
+// card-product style
+@if $enable-card {
+	@if $enable-card-product {
+		.card-product {
+		}
+	}
+}

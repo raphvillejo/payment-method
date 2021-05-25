@@ -1,0 +1,42 @@
+// SCSS File
+// card-image.scss
+
+// card-image style
+.card-image {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    height: 125%;
+    width: 125%;
+    border-left: $spacer-64 solid $white;
+    border-right: $spacer-64 solid $white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -12.5%;
+    left: -12.5%;
+    z-index: 2;
+    @extend %extend-animate-all;
+  }
+
+  &:hover {
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  ~ .card-caption {
+    padding-top: $p8;
+    font-size: $font-size-24;
+    font-weight: 800;
+    line-height: 1;
+  }
+}

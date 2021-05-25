@@ -1,0 +1,12 @@
+﻿// SCSS File
+// card-action.scss
+
+
+// card-action style
+@if $enable-card {
+	@if $enable-card-action {
+		.card-action {
+			padding: 0;
+		}
+	}
+}

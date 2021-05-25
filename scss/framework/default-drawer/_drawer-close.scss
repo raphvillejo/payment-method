@@ -1,0 +1,16 @@
+﻿// SCSS File
+// drawer-close.scss
+
+
+// drawer-close style
+@if $enable-drawer {
+	.drawer-close {
+		@include size($drawer-close-size);
+		box-shadow: $drawer-close-shadow;
+		border-width: 0;
+
+		.icon {
+			margin: $drawer-close-icon-mar;
+		}
+	}
+}

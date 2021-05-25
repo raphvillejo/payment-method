@@ -1,0 +1,71 @@
+// SCSS File
+// payment.scss
+
+// payment style
+.payment {
+  display: flex;
+
+  > * {
+    flex: 0 1 50%;
+  }
+
+  .form-amend {
+    background-color: #f6f6f6;
+    padding: $spacer-16;
+
+    &[aria-hidden="true"] {
+      + .option {
+        margin-top: $p10;
+      }
+    }
+  }
+}
+
+.payment-form {
+  padding-top: $spacer-40;
+  padding-right: $spacer-60;
+  padding-bottom: $spacer-40;
+}
+
+.payment-head {
+  padding: 0 0 $spacer-24 0;
+  text-align: center;
+
+  img {
+    width: 60%;
+    height: auto;
+  }
+}
+
+.payment-body {
+  .tab {
+    padding-top: $spacer-28;
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    @extend %extend-animate-all;
+
+    &.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+.product {
+  padding-top: $spacer-40;
+  padding-left: $spacer-60;
+  padding-bottom: $spacer-40;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: $spacer-16;
+    @include gradient-x(#eeeeee, rgba(#eeeeee, 0));
+  }
+}

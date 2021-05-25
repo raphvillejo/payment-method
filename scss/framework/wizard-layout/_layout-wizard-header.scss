@@ -1,0 +1,71 @@
+﻿// SCSS File
+// layout-wizard-header.scss
+
+
+// wizard header style
+@if $enable-wizard {
+	@if $enable-wizard-layout {
+		.wizard-header {
+			height: $wizard-header-height;
+			border-bottom: $wizard-header-border;
+			background-color: $wizard-header-bg;
+			@include flex-shrink();
+			@include flex-grow();
+			@include flex-basis($wizard-header-height);
+
+			.container {
+				max-width: $wizard-header-container-max-width;
+			}
+
+			.head {
+				height: $wizard-header-head-height;
+				padding: $wizard-header-pad;
+				@include flex-display();
+				@include flex-justify-content(space-between);
+				@include flex-align-items();
+			}
+
+			.logo {
+				position: static;
+				display: block;
+				height: $wizard-header-logo-height;
+
+				img {
+					width: auto;
+					height: $wizard-header-logo-height;
+				}
+
+				@include hover {
+					text-decoration: none;
+				}
+
+				&.logo-primary {
+					margin-right: auto;
+				}
+
+				&.logo-secondary {
+					margin-left: auto;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				height: auto;
+				@include flex();
+
+				.head {
+					height: auto;
+				}
+
+				.logo {
+					height: auto;
+
+					img {
+						width: auto;
+						height: $spacer-32;
+						max-height: 100%;
+					}
+				}
+			}
+		}
+	}
+}

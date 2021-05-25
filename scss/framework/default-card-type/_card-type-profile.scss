@@ -1,0 +1,20 @@
+﻿// SCSS File
+// card-type-profile.scss
+
+
+// card profile style
+@if $enable-card {
+	@if $enable-card-type-profile {
+		.card-type-profile {
+
+			.card-header {
+				padding-bottom: $card-type-profile-header-pad-x;
+				border-bottom: $card-type-profile-header-border;
+
+				~ .card-body {
+					padding-top: $card-type-profile-body-pad-y;
+				}
+			}
+		}
+	}
+}

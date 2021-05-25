@@ -1,0 +1,20 @@
+﻿// SCSS File
+// card-promo.scss
+
+
+// card-promo style
+@if $enable-card {
+	@if $enable-card-promo {
+		.card-promo {
+			height: $card-promo-height;
+			padding: 0;
+			display: block;
+
+			.image {
+				height: inherit;
+				margin: $card-promo-image-mar;
+				border-radius: $card-promo-image-round;
+			}
+		}
+	}
+}

@@ -1,0 +1,114 @@
+﻿// SCSS File
+// feedback-content.scss
+
+
+// feedback-content style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-feedback {
+			.feedback-content {
+				width: $feedback-content-width;
+				padding: $feedback-content-pad;
+				padding-top: $feedback-content-pad-y;
+				background-color: $feedback-content-bg;
+				border-radius: $feedback-content-round;
+				box-shadow: $feedback-content-shadow;
+				pointer-events: auto;
+				text-align: center;
+				position: relative;
+
+				.feedback-title, .feedback-text {
+					display: block;
+					margin-bottom: $feedback-content-title-mar-y;
+					font-size: $feedback-content-title-font-size;
+					font-weight: $feedback-content-title-font-weight;
+					color: $feedback-content-title-color;
+				}
+
+				.feedback-text {
+					font-size: $feedback-content-text-font-size;
+					color: $feedback-content-text-color;
+				}
+
+				.feedback-buttons, > .btn {
+					width: $feedback-content-btn-width;
+					margin: -#{$feedback-content-btn-mar};
+					margin-top: $feedback-content-btn-mar;
+					border-radius: 0;
+					color: $build-white;
+				}
+
+				.feedback-buttons {
+					@include flex-display();
+					@include flex-direction();
+
+					.btn {
+						@include flex(1 1 100%);
+						border-radius: 0;
+						margin: 0;
+					}
+				}
+
+				.badge {
+					@include size($feedback-content-badge-size);
+					position: absolute;
+					left: $feedback-content-badge-x;
+					top: -#{$feedback-content-badge-y};
+				}
+
+				@include media-breakpoint-down(sm) {
+					.modal & {
+						height: 100%;
+						@include flex-display();
+						@include flex-direction(column);
+						padding-bottom: $spacer-64;
+
+						.badge {
+							position: static;
+							margin: 0 auto $spacer-48;
+						}
+
+						.btn {
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							right: 0;
+							margin: 0;
+							width: 100%;
+						}
+
+						@include media-breakpoint-down(xs) {
+							width: 100%;
+						}
+					}
+				}
+
+				@include media-breakpoint-down(xs) {
+					width: auto;
+					padding: $spacer-24;
+					padding-top: $spacer-56;
+
+					.feedback-title {
+						margin-bottom: $p10;
+						font-size: $font-size-26;
+					}
+
+					.feedback-text {
+						font-size: $font-size-16;
+					}
+
+					.btn {
+						margin-top: $spacer-14;
+					}
+
+					.badge {
+						@include size($feedback-content-badge-size);
+						left: $feedback-content-badge-x;
+						top: -#{$feedback-content-badge-pos};
+					}
+				}
+			}
+		}
+	}
+}
+

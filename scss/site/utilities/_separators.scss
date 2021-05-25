@@ -1,0 +1,17 @@
+// SCSS File
+// separators.scss
+
+
+// separators variables
+
+// separators style
+.separator {
+    @at-root .heading#{&} {
+        &::before {
+            content: '';
+            transform: none;
+            left: 0;
+            
+        }
+    }
+}

@@ -1,0 +1,103 @@
+﻿// SCSS File
+// modal-product.scss
+
+
+// modal-product extend
+%extend-modal-product {
+	@include flex-display();
+	@include flex-direction();
+
+	> .btn {
+		margin: 0;
+		border-radius: 0;
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	%extend-modal-product-footer {
+		padding: $spacer-16;
+
+		.btn {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// modal-product style
+@if $enable-modal {
+	@if $enable-modal-product {
+		.modal-product {
+			font-size: $modal-product-font-size;
+			
+			// modal's component
+			.image {
+				margin-bottom: 0;
+
+				img {
+					height: $modal-product-image-height;
+					width: auto;
+				}
+			}
+
+			.badge {
+				margin-left: $modal-product-badge-mar;
+			}
+
+			.heading {
+				margin-bottom: 0;
+			}
+
+			// modal's parts
+			.modal-body {
+				padding: $modal-product-body-pad;
+				background-color: $modal-product-body-bg;
+			}
+		}
+
+		// modal's sections
+		.modal-product-head {
+			padding-bottom: $modal-product-head-pad;
+			border-bottom: $modal-product-head-border;
+			@include flex-display();
+		}
+
+		.modal-product-name {
+			@include flex(1 1 100%);
+		}
+
+		.modal-product-title {
+			margin-bottom: $modal-product-title-mar;
+			@include flex-display();
+		}
+
+		.modal-product-company {
+			margin-bottom: 0;
+			@include flex();
+
+			img {
+				height: $modal-product-company-height;
+				width: auto;
+			}
+		}
+
+		.modal-product-spec-list {
+			.card-specs, .list {
+				margin: 0;
+				padding-bottom: $modal-product-spec-list-pad;
+				padding-top: $modal-product-spec-list-pad;
+			}
+
+			> * {
+				border-bottom: $modal-product-spec-list-border;
+
+				&:last-child {
+					border-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}

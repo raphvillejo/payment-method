@@ -1,0 +1,27 @@
+﻿// SCSS File
+// feedback.scss
+
+
+// feedback style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-feedback {
+			.feedback {
+				min-height: $feedback-min-height;
+				width: $feedback-width;
+				margin: $feedback-mar;
+				pointer-events: none;
+				@include flex-justify-content();
+				@include flex-align-items();
+				@include flex-display();
+				@extend %extend-layout-modal;
+
+				@include media-breakpoint-down(xs) {
+					min-height: calc(100% - #{$feedback-mar});
+					margin: ($feedback-mar / 2);
+				}
+			}
+		}
+	}
+}
+

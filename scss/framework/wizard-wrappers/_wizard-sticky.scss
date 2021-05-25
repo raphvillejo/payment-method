@@ -1,0 +1,62 @@
+﻿// SCSS File
+// wizard-sticky.scss
+
+
+// wizard-sticky style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-sticky {
+		.wizard-sticky {
+			.board {
+				@include flex-display();
+			}
+
+			&.stick {
+				position: fixed;
+				z-index: 2;
+				top: auto;
+				bottom: 0;
+				width: $wizard-sticky-width;
+				max-width: $wizard-sticky-max-width;
+				margin-left: $wizard-sticky-mar;
+				left: $wizard-sticky-pos;
+
+				.board {
+					width: $wizard-sticky-show-board-width;
+				}
+
+				~ .wizard-sticky-placeholder {
+					height: $wizard-sticky-placeholder-height;
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+
+			@include media-breakpoint-down(sm) {
+				&.stick {
+					position: fixed;
+					left: 0;
+					right: 0;
+					margin-left: 0;
+					max-width: 100%;
+
+					.board {
+						padding-left: $spacer-16;
+						padding-right: $spacer-16;
+					}
+
+					~ .wizard-sticky-placeholder {
+						height: $spacer-48;
+					}
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				&.stick ~ .wizard-sticky-placeholder {
+					height: $spacer-48;
+				}
+			}
+		}
+	}
+}

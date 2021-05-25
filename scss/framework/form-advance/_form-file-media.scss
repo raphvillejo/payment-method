@@ -1,0 +1,47 @@
+﻿// SCSS File
+// form-file-media.scss
+
+
+// file-media style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-media {
+			.file-media {
+				border: $file-media-border;
+				background-color: $file-media-bg;
+				position: relative;
+				text-align: center;
+
+				img {
+					width: $file-media-image-width;
+					height: auto;
+				}
+
+				&.is-portrait {
+
+					img {
+					}
+				}
+
+				&.is-landscape {
+
+					img {
+					}
+				}
+
+				& + .file-media {
+					margin-top: $file-media-mar-y;
+				}
+
+				&::before {
+					@include size($file-media-psuedo-size);
+					border: $file-media-psuedo-border;
+					position: absolute;
+					left: 0;
+					top: 0;
+					content: '';
+				}
+			}
+		}
+	}
+}

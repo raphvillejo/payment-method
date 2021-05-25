@@ -1,0 +1,16 @@
+﻿// SCSS File
+// form-page.scss
+
+
+// form page style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-page {
+			.form-page {
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+			}
+		}
+	}
+}

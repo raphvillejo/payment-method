@@ -1,0 +1,11 @@
+﻿// SCSS File
+// card-data.scss
+
+
+// card-data style
+@if $enable-card {
+	@if $enable-card-data {
+		.card-data {
+		}
+	}
+}

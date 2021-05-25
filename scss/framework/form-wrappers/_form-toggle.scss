@@ -1,0 +1,16 @@
+﻿// SCSS File
+// form-toggle.scss
+
+
+// form toggle style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-toggle {
+			.form-toggle {
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+			}
+		}
+	}
+}

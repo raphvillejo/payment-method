@@ -1,0 +1,142 @@
+﻿// SCSS File
+// form-date.scss
+
+
+// form-date style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-date {
+			.form-date {
+
+				label, input {
+					@include flex-basis();
+					@include flex-shrink();
+					@include flex-grow();
+				}
+
+				label {
+					@include flex-display-inline();
+				}
+
+				input {
+					margin: $form-date-input-mar;
+					padding-left: 0;
+					padding-right: 0;
+					border-color: transparent;
+					background-color: transparent;
+					text-align: center;
+				}
+
+				.labels {
+					width: $form-date-label-width;
+					@include flex-justify-content(space-between);
+					@include flex-flow();
+					@include flex-display();
+				}
+
+				.controls {
+					position: relative;
+					height: $form-date-controls-height;
+					border: $form-date-controls-border;
+					background-color: $form-date-controls-bg;
+					border-radius: $form-date-controls-round;
+					@include flex-justify-content(space-between);
+					@include flex-align-items();
+					@include flex-flow();
+					@include flex-display();
+
+					&::before, &::after {
+						width: $form-date-controls-psuedo-width;
+						margin-left: $form-date-controls-psuedo-mar-x;
+						text-align: center;
+						position: absolute;
+						left: $form-date-controls-psuedo-pos-x;
+						top: $form-date-controls-psuedo-pos-y;
+						content: '/';
+					}
+
+					&::after {
+						opacity: 0;
+					}
+				}
+
+				&.is-short-date {
+
+					label, input {
+						width: $form-date-short-controls-input-width;
+					}
+				}
+
+				&.is-long-date {
+
+					.controls {
+						&::before {
+							left: $form-date-long-controls-psuedo-pos-x-1;
+						}
+
+						&::after {
+							left: $form-date-long-controls-psuedo-pos-x-2;
+							opacity: 1;
+						}
+					}
+
+					label, input {
+						width: $form-date-long-controls-input-width-1;
+
+						&:last-child {
+							width: $form-date-long-controls-input-width-2;
+						}
+					}
+				}
+
+				&.is-inverted {
+
+					.controls {
+						border-color: $form-date-inverted-controls-border;
+						background-color: $form-date-inverted-controls-bg;
+					}
+				}
+
+				&.is-invalid {
+
+					.controls {
+						border-color: $form-date-invalid-controls-border;
+						background-color: $form-date-invalid-controls-bg;
+						color: $form-date-invalid-controls-color;
+					}
+				}
+
+				&.is-birthday {
+
+					label {
+						@include flex-basis($form-date-birthday-label-flex-basis-1);
+
+						&:last-child {
+							@include flex-basis($form-date-birthday-label-flex-basis-2);
+						}
+					}
+
+					input {
+						@include flex-basis($form-date-birthday-input-flex-basis-1);
+
+						&:last-child {
+							@include flex-basis($form-date-birthday-input-flex-basis-2);
+						}
+					}
+
+					.controls {
+
+						&::before {
+							left: $form-date-birthday-controls-pos-x-1;
+						}
+
+						&::after {
+							left: $form-date-birthday-controls-pos-x-2;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

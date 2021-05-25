@@ -1,0 +1,26 @@
+﻿// SCSS File
+// wizard-steps.scss
+
+
+// wizard-steps style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-steps {
+		.wizard-steps {
+			position: absolute;
+			right: 0;
+			top: $wizard-steps-pos-y;
+			font-size: $wizard-steps-font-size;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: $spacer-14;
+				position: relative;
+				right: auto;
+				top: auto;
+			}
+
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-14;
+			}
+		}
+	}
+}

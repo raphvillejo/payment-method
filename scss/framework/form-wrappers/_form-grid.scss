@@ -1,0 +1,70 @@
+﻿// SCSS File
+// form-grid.scss
+
+
+// form-grid style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-grid {
+			.form-grid {
+				margin-left: -#{$form-grid-gutter};
+				@include flex-flow(row wrap);
+				@include flex-display();
+
+				.card & > *, > * {
+					@include flex-basis($form-grid-flex-basis-1);
+					margin-left: $form-grid-gutter;
+				}
+
+				.form-section {
+					@include flex-basis($form-grid-flex-basis-1);
+				}
+
+				.form-group {
+					@include flex-basis($form-grid-flex-basis-1);
+				}
+
+				.form-flex, .form-flex-fixed {
+					@include flex-basis();
+					@include flex-grow(1);
+
+					&.form-flex-2 {
+						@include flex-basis($form-grid-flex-basis-2);
+						@include flex-grow();
+					}
+
+					&.form-flex-3 {
+						@include flex-basis($form-grid-flex-basis-3);
+						@include flex-grow();
+					}
+
+					&.form-flex-4 {
+						@include flex-basis($form-grid-flex-basis-4);
+						@include flex-grow();
+					}
+				}
+
+				.form-auto {
+					@include flex();
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					.form-flex {
+						@include flex-basis(100% !important);
+						@include flex-grow(1);
+					}
+
+					.form-flex-fixed {
+						@include flex-basis();
+						@include flex-grow(1);
+					}
+
+					.form-auto {
+						@include flex-shrink(1);
+					}
+				}
+			}
+		}
+	}
+}

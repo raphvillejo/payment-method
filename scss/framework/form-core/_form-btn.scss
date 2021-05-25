@@ -1,0 +1,366 @@
+﻿// SCSS File
+// form-btn.scss
+
+// btn extend
+%extend-btn {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  //text-transform: none;
+  cursor: pointer;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  text-transform: uppercase;
+  //color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  //background-color: transparent;
+  border: $btn-border-width solid transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $btn-line-height,
+    $btn-border-radius
+  );
+  @include prefix(user-select, none, webkit moz ms);
+  @include flex-justify-content();
+  @include flex-align-items();
+  @include flex-display-inline();
+
+  @if $enable-single-class-animate == false {
+    @extend %extend-animate-all;
+  }
+}
+
+%extend-btn-states {
+  @include hover {
+    color: $body-color;
+    text-decoration: none;
+    box-shadow: 0 $p6 $p15 0 rgba($border-color, 0.4);
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &[disabled],
+  &:disabled {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+  &.process {
+    color: $btn-process-color !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    padding: $p12 $p14;
+    margin-left: 0;
+    white-space: normal;
+
+    + .btn {
+      margin-top: $spacer-24;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    + .btn {
+      margin-top: $p14;
+    }
+  }
+}
+
+%extend-btn-psuedo-active {
+  &::after {
+    @include size($btn-psuedo-size);
+    @include transform-scale(10);
+    @include transition($btn-psuedo-transition);
+    background-image: $btn-psuedo-bg-image;
+    background-repeat: no-repeat;
+    background-position: $btn-psuedo-bg-pos;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0;
+    content: "";
+  }
+
+  &:active {
+    &::after {
+      @include transition(0s);
+      @include transform-scale(0);
+      opacity: $btn-psuedo-active-opacity;
+    }
+  }
+}
+
+%extend-btn-icon-badge {
+  //padding-left: $btn-iconed-pad-x;
+  padding-left: $spacer-48;
+}
+
+%extend-btn-icon-badge-position {
+  position: absolute;
+  margin-right: 0;
+  padding: 0;
+  @include size($btn-iconed-icon-size);
+  line-height: $btn-iconed-icon-size;
+  left: $btn-iconed-icon-pos-x;
+  top: $btn-iconed-icon-pos-y;
+  margin-top: $btn-iconed-icon-mar;
+  border-radius: $btn-iconed-icon-round;
+}
+
+%extend-btn-icon-badge-position-right {
+  padding-left: $btn-padding-x;
+  padding-right: $btn-iconed-pad-x;
+}
+
+%extend-btn-icon-badge-position-x {
+  left: auto;
+  right: $btn-iconed-icon-pos-x;
+}
+
+// btn style
+@if $enable-form {
+  .btn {
+    @extend %extend-btn;
+    @extend %extend-btn-psuedo-active;
+    @extend %extend-btn-states;
+
+    .icon {
+      margin-top: -#{$btn-icon-mar-y};
+      margin-right: $btn-icon-mar-x;
+    }
+
+    &.caret-left {
+      padding-left: $btn-caret-pad-x;
+
+      &::before {
+        left: $btn-caret-pos-x;
+        right: auto;
+        border-color: $btn-caret-border-color-left;
+        border-width: $btn-caret-border-left;
+      }
+    }
+
+    &.caret-up::before {
+      border-color: $btn-caret-border-color-up;
+      border-width: $btn-caret-border-up;
+    }
+
+    &.caret-right::before {
+      border-color: $btn-caret-border-color-right;
+      border-width: $btn-caret-border-right;
+    }
+
+    &.caret-down::before {
+      border-color: $btn-caret-border-color-down;
+      border-width: $btn-caret-border-down;
+    }
+
+    &.caret-up,
+    &.caret-right,
+    &.caret-down {
+      padding-right: $btn-caret-pad-x;
+
+      &::before {
+        left: auto;
+        right: $btn-caret-pos-x;
+      }
+    }
+
+    &.caret-up,
+    &.caret-right,
+    &.caret-down,
+    &.caret-left {
+      &::before {
+        content: "";
+        @include size(0);
+        border-style: solid;
+        background-color: transparent;
+        position: absolute;
+        top: $btn-caret-pos-y;
+        margin-top: $btn-caret-mar-y;
+
+        @if $enable-single-class-animate == false {
+          @extend %extend-animate-all;
+        }
+      }
+    }
+
+    // button with icon
+    &.btn-iconed {
+      @extend %extend-btn-icon-badge;
+
+      .icon {
+        @extend %extend-btn-icon-badge-position;
+      }
+
+      &.icon-right {
+        @extend %extend-btn-icon-badge-position-right;
+
+        .icon {
+          @extend %extend-btn-icon-badge-position-x;
+        }
+
+        &.icon-16 {
+          padding-left: $btn-padding-x;
+          padding-right: ($btn-iconed-pad-x / 2);
+        }
+      }
+    }
+
+    // button with badge
+    &.btn-badged {
+      @extend %extend-btn-icon-badge;
+
+      .badge {
+        min-width: 0;
+        @extend %extend-btn-icon-badge-position;
+      }
+
+      &.badge-right {
+        @extend %extend-btn-icon-badge-position-right;
+
+        .badge {
+          @extend %extend-btn-icon-badge-position-x;
+        }
+      }
+    }
+
+    @at-root label#{&} {
+      margin-bottom: 0;
+
+      span {
+        @if $enable-single-class-animate == false {
+          @extend %extend-animate-all;
+        }
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 2;
+        margin: 0;
+
+        &:checked {
+          ~ span {
+          }
+        }
+      }
+    }
+  }
+
+  // Future-proof disabling of clicks on '<a>' elements
+  a.btn.disabled,
+  fieldset:disabled a.btn {
+    pointer-events: none;
+  }
+
+  // Alternate buttons
+  @each $color, $value in $theme-colors {
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    .btn-outline-#{$color} {
+      @include button-outline-variant($value);
+    }
+  }
+
+  // Link buttons
+  // Make a button look and behave like a link
+  .btn-link {
+    font-weight: $font-weight-normal;
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus,
+    &.focus {
+      text-decoration: $link-hover-decoration;
+      box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color;
+      pointer-events: none;
+    }
+    // No need for an active state here
+  }
+
+  // Button Sizes
+  .btn-lg {
+    @include button-size(
+      $btn-padding-y-lg,
+      $btn-padding-x-lg,
+      $btn-font-size-lg,
+      $btn-line-height-lg,
+      $btn-border-radius-lg
+    );
+  }
+
+  .btn-sm {
+    @include button-size(
+      $btn-padding-y-sm,
+      $btn-padding-x-sm,
+      $btn-font-size-sm,
+      $btn-line-height-sm,
+      $btn-border-radius-sm
+    );
+  }
+
+  // Block button
+  .btn-block {
+    padding-left: $btn-padding-y;
+    padding-right: $btn-padding-y;
+    display: block;
+    width: 100%;
+
+    // Vertically space out multiple block buttons
+    + .btn-block {
+      margin-top: $btn-block-spacing-y;
+    }
+  }
+
+  // Specificity overrides
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    &.btn-block {
+      width: 100%;
+    }
+  }
+}

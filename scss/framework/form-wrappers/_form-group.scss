@@ -1,0 +1,48 @@
+﻿// SCSS File
+// form-group.scss
+
+
+// form-group style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-group {
+			.form-group {
+				margin-bottom: $form-group-mar;
+				position: relative;
+
+				label, .label, legend {
+					display: table;
+				}
+
+				&.valid, &.invalid {
+
+					label, .label, legend {
+						color: inherit;
+					}
+				}
+
+				&.valid {
+					color: $form-group-valid-color;
+				}
+
+				&.invalid {
+					color: $form-group-invalid-color;
+				}
+
+				label.btn {
+					color: $form-group-label-btn-color;
+					@include flex-display-inline();
+				}
+
+				@include media-breakpoint-down(xs) {
+
+					label, .label, legend {
+						margin-bottom: $p10;
+						font-size: $font-size-16;
+						line-height: $line-height-md;
+					}
+				}
+			}
+		}
+	}
+}

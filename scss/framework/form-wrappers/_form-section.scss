@@ -1,0 +1,61 @@
+﻿// SCSS File
+// form-section.scss
+
+
+// form-section style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-section {
+			.form-section {
+				margin-bottom: $form-section-mar-y;
+
+				h2 {
+					margin-bottom: $form-section-heading-mar-y;
+					@include responsive-font-size($form-section-heading-font-size);
+					font-weight: $form-section-heading-font-weight;
+					line-height: $form-section-heading-line-height;
+					color: $form-section-heading-color;
+					@include flex-display();
+					@include flex-justify-content(space-between);
+
+					& + p {
+						margin-top: $form-section-paragraph-mar-top;
+						margin-bottom: $form-section-paragraph-mar-bot;
+					}
+				}
+
+				&[aria-disabled="true"] {
+					@include prefix(user-select, none, webkit moz ms);
+					pointer-events: none;
+					opacity: $form-section-disabled-opacity;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show-flex;
+
+				@include media-breakpoint-down(xs) {
+
+					h2 {
+						font-size: $font-size-18;
+						margin-bottom: $p4;
+
+						+ p {
+							margin-top: 0;
+							margin-bottom: $spacer-24;
+						}
+					}
+
+					p {
+						font-size: $font-size-16;
+						margin-bottom: $spacer-24;
+					}
+				}
+			}
+		}
+	}
+}

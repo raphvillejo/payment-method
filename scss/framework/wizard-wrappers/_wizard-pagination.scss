@@ -1,0 +1,11 @@
+﻿// SCSS File
+// wizard-pagination.scss
+
+
+// wizard-pagination style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-pagination {
+		.wizard-pagination {
+		}
+	}
+}

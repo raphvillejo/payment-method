@@ -1,0 +1,12 @@
+﻿// SCSS File
+// wizard-modal.scss
+
+
+// wizard-modal style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-modal {
+		.wizard-modal {
+		}
+	}
+}
+

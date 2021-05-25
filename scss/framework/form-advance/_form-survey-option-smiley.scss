@@ -1,0 +1,63 @@
+﻿// SCSS File
+// form-survey-option-smiley.scss
+
+
+// form-survey-option-smiley style
+@if $enable-form {
+    @if $enable-form-advance {
+        @if $enable-form-advance-survey-option-smiley {
+            .form-survey-option-smiley {
+                &.form-option {
+                    margin-left: -#{$p8};
+
+                    .option {
+                        margin-top: 0;
+                        margin-left: $p8;
+
+                        label {
+                            padding-top: $p14;
+                            background-color: $build-white;
+                        }
+
+                        .smiley-image {
+                            margin: 0;
+                            margin-bottom: $p10;
+
+                            img {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                @include media-breakpoint-down(xs) {
+                    &.form-option {
+                        margin-left: -1%;
+                        @include flex-justify-content(space-between);
+
+                        .option {
+                            width: 18%;
+                            margin-left: 1%;
+                            margin-bottom: 2%;
+
+                            .smiley-image {
+                                width: 55%;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+
+                            label {
+                                width: 100%;
+                                padding: $p8 0 $spacer-48;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

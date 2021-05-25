@@ -1,0 +1,70 @@
+﻿// SCSS File
+// card-type-post.scss
+
+
+// card-type-post style
+@if $enable-card {
+	@if $enable-card-type-post {
+		.card-type-post {
+			@include flex-direction(column);
+			@include felx-display();
+
+			h5 {
+				margin-bottom: $card-type-post-h5-mar-y;
+				font-weight: $card-type-post-h5-font-weight;
+			}
+
+			p {
+				margin-bottom: $card-type-post-p-mar-y;
+				font-size: $card-type-post-p-font-size;
+				line-height: $card-type-post-p-line-height;
+			}
+
+			.time {
+				font-size: $card-type-post-time-font-size;
+			}
+
+			.truncate {
+				max-height: $card-type-post-truncate-max-height;
+			}
+
+			.card-body {
+				padding: $card-type-post-body-pad;
+			}
+
+			.card-footer {
+				padding: $card-type-post-footer-pad;
+				margin-top: auto;
+				border-top: $card-type-post-footer-border;
+				text-align: right;
+			}
+
+			.card-image {
+				height: $card-type-post-image-height;
+			}
+
+			.cover-loaded {
+				&::after {
+					border-bottom: none;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+
+				h5 {
+					margin-bottom: $p10;
+					font-size: $font-size-15;
+					line-height: $line-height-sm;
+				}
+
+				p {
+					font-size: $font-size-13;
+				}
+
+				.card-image {
+					height: $spacer-14 * 10;
+				}
+			}
+		}
+	}
+}

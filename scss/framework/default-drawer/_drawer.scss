@@ -1,0 +1,51 @@
+﻿// SCSS File
+// drawer.scss
+
+
+// drawer style
+@if $enable-drawer {
+	.drawer {
+		@include size(100%);
+		@include flex-display();
+		@include flex-direction(column);
+		position: relative;
+
+		@if $enable-drawer-form {
+			legend, h6 {
+				font-weight: $drawer-label-font-weight;
+			}
+
+			.form-group {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.option {
+				display: block;
+				position: relative;
+				margin-top: 0;
+
+				input[type="radio"], input[type="checkbox"] {
+					position: absolute;
+					margin-right: 0;
+					top: $drawer-option-input-pos;
+					right: $drawer-option-input-pos;
+				}
+
+				label {
+					display: block;
+					width: calc(100% + #{$drawer-option-input-pos});
+					margin-left: -#{$drawer-option-input-mar};
+					margin-right: -#{$drawer-option-input-mar};
+					padding: $drawer-option-label-pad;
+					padding-left: $drawer-option-input-mar;
+
+					&:hover {
+						background-color: $drawer-option-label-hover-bg;
+					}
+				}
+			}
+		}
+	}
+}

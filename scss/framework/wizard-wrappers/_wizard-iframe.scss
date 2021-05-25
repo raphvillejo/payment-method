@@ -1,0 +1,24 @@
+﻿// SCSS File
+// wizard-iframe.scss
+
+
+// wizard-iframe style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-iframe {
+		.wizard-iframe {
+			position: relative;
+			@include flex-basis(100%);
+			@include flex-grow(1);
+
+			iframe {
+				@include size(100%);
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				border: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+﻿// SCSS File
+// modal-otp.scss
+
+
+// modal-otp style
+@if $enable-modal {
+	@if $enable-modal-otp {
+		.modal-otp {
+			.form-otp {
+				padding-top: 0;
+
+				input {
+					font-size: $modal-otp-input-font-size;
+					height: $modal-otp-input-height;
+					padding: 0;
+					line-height: 1;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				.modal-body {
+					padding-top: 50%;
+				}
+
+				.form-otp {
+					input {
+						font-size: $font-size-16;
+					}
+				}
+			}
+		}
+	}
+}

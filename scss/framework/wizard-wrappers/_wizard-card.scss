@@ -1,0 +1,148 @@
+﻿// SCSS File
+// wizard-card.scss
+
+
+// wizard-card style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-card {
+		.wizard-card {
+			padding: $wizard-card-pad;
+			margin-bottom: $wizard-card-mar;
+			border-radius: $wizard-card-round;
+			border: $wizard-card-border;
+			box-shadow: $wizard-card-shadow;
+			background-color: $wizard-card-bg;
+			@include flex-display();
+			@include flex-direction(column);
+
+			.card-header {
+				@include flex();
+				@include flex-display();
+				@include flex-direction();
+				padding-bottom: $wizard-card-header-pad;
+
+				.heading {
+					margin-bottom: 0;
+					overflow: hidden;
+					font-size: $font-size-16;
+					padding-right: $wizard-card-header-heading-pad;
+					@include flex($wizard-card-flex-fill);
+				}
+
+				.action {
+					margin-top: 0;
+					margin-right: 0;
+					margin-bottom: 0;
+					cursor: pointer;
+					display: block;
+					@include flex();
+
+					span {
+						display: block;
+						text-transform: uppercase;
+						padding: $wizard-card-action-span-pad;
+						border: $wizard-card-action-span-border;
+						height: $wizard-card-action-span-height;
+						border-radius: $wizard-card-action-span-round;
+						font-size: $wizard-card-action-span-font-size;
+						font-weight: $wizard-card-action-span-font-weight;
+						line-height: $wizard-card-action-span-line-height;
+						letter-spacing: $wizard-card-action-span-letter-spacing;
+					}
+
+					input {
+						&:checked {
+							~ span {
+								color: $wizard-card-action-input-checked-span-color;
+								background-color: $wizard-card-action-input-checked-span-bg;
+								border-color: $wizard-card-action-input-checked-span-border-color;
+							}
+						}
+					}
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-bottom: $wizard-card-pad;
+				}
+			}
+
+			.card-body, .card-image {
+				@include flex-display();
+				@include flex($wizard-card-flex-fill);
+			}
+
+			.card-body {
+				padding-bottom: $wizard-card-body-pad;
+				@include flex-direction(column);
+
+				.btn {
+					border-radius: $wizard-card-body-btn-round;
+					padding: $wizard-card-body-btn-pad;
+				}
+			}
+
+			.card-image {
+				margin: 0;
+				padding-bottom: $wizard-card-image-pad;
+				@include flex-align-items();
+				@include flex-justify-content(flex-end);
+				@include flex-direction(column);
+
+				img {
+					height: auto;
+					width: auto;
+					max-height: 199px;
+					max-width: 314px;
+
+					@include media-breakpoint-down(sm) {
+						width: 100%;
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+			}
+
+			.card-footer {
+				border-radius: inherit;
+				margin: $wizard-card-footer-mar;
+				margin-top: 0;
+				@include flex();
+				@include flex-align-items(center);
+				@include flex-display();
+
+				.btn {
+					width: auto;
+					margin: 0;
+					border-radius: 0;
+					border: none;
+					flex-basis: 100%;
+					padding: $wizard-card-footer-btn-pad;
+
+					&.btn-ghost-primary {
+						box-shadow: $wizard-card-footer-btn-shadow;
+					}
+
+					&:first-child {
+						border-bottom-left-radius: inherit;
+					}
+
+					&:last-child {
+						border-bottom-right-radius: inherit;
+					}
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show-flex;
+			}
+
+			&.sticky-top {
+				top: $wizard-card-sticky-pos-y;
+			}
+
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
+		}
+	}
+}

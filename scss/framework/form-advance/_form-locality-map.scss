@@ -1,0 +1,29 @@
+﻿// SCSS File
+// form-locality-map.scss
+
+
+// form-locality-map style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-locality-map {
+			.form-locality-map {
+				width: $form-locality-map-width;
+				height: $form-locality-map-height;
+				margin-bottom: $form-locality-map-mar-y;
+				background-color: $form-locality-map-bg;
+				background-image: $form-locality-map-bg-image;
+				background-size: $form-locality-map-bg-size;
+				background-repeat: repeat;
+				background-position: center center;
+
+				.gm-style-iw {
+
+					button {
+						top: 0 !important;
+						right: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,172 @@
+﻿// SCSS File
+// card.scss
+
+
+// card variables
+$card-mar:											$spacer-16;
+$card-round:										$p6;
+$card-border:										$build-apply-border;
+$card-shadow:										$build-apply-shadow;
+$card-bg-hue:										$build-white;
+$card-logo-image-height:							$spacer-48;
+$card-hover-border-hue:								$mono-004;
+$card-hover-cover-loaded-psuedo-bg:					rgba($build-black, .2);
+
+// card-header variables
+$card-header-pad-y:									$spacer-20;
+$card-header-pad-x:									$spacer-20;
+$card-header-pad:									$card-header-pad-y $card-header-pad-x;
+$card-header-btn-pos-y:								$card-header-pad-y;
+$card-header-btn-pos-x:								$card-header-pad-y;
+$card-header-figure-mar-y:							$p10;
+
+// card-body variables
+$card-body-pad-y:									$card-header-pad-y;
+$card-body-pad-x:									$card-header-pad-x;
+$card-body-pad:										$card-header-pad;
+
+// card-body-section variables
+$card-body-section-pad:								$card-header-pad-x;
+$card-body-section-color:							$text-color;
+$card-body-section-border:							$card-border;
+$card-body-section-lead-font-size:					$font-size-14;
+
+// card-footer variables
+$card-footer-pad-y:									$card-header-pad-y;
+$card-footer-pad:									$card-header-pad;
+$card-footer-link-mar:								$card-header-figure-mar-y;
+
+// card-button variables
+$card-button-pad:									$card-header-pad-y 0 $card-header-pad-x 0;
+$card-button-mar-x:									$card-header-figure-mar-y;
+$card-button-mar:									0 $card-header-pad-x;
+$card-button-border:								$build-apply-diverder;
+
+// card-grid variables
+$card-grid-mar-x:									$card-header-pad-y;
+$card-grid-fixed-basis:								$spacer-26 * 10; // 260px
+
+// card-icon variables
+$card-icon-round:									$p2;
+
+// card-image variables
+$card-image-mar:									-#{$p1};
+$card-image-round:									$p6;
+$card-image-border:									$card-button-border;
+$card-image-bg:										darken($highlight-color, 5%);
+$card-image-psuedo-width:							100%;
+$card-image-psuedo-border:							$p1 solid rgba($build-black, .1);
+
+// card-background variables
+$card-background-width:								$spacer-18 * 10; // 180px
+$card-background-layer:								$layer-buried;
+
+// card-loading variables
+$card-loading-min-height:							$spacer-32 * 10; // 320px
+$card-loading-width:								100%;
+$card-loading-layer:								5;
+$card-loading-psuedo-size:							$spacer-80;
+$card-loading-psuedo-pos:							50%;
+$card-loading-psuedo-mar:							-#{$card-loading-psuedo-size / 2};
+$card-loading-psuedo-border-size:					$p8;
+$card-loading-psuedo-border-color-01:				$build-primary;
+$card-loading-psuedo-border-color-02:				rgba($card-loading-psuedo-border-color-01, .1);
+$card-loading-psuedo-animation:						spinner .8s linear infinite;
+$card-loading-psuedo-round:							50%;
+
+// card-toggle variables
+$card-toggle-width:									100%;
+$card-toggle-pad:									$spacer-14;
+$card-toggle-border:								$card-border;
+$card-toggle-round:									$card-image-round;
+$card-toggle-bg-hue:								$highlight-bg;
+$card-toggle-hover-bg-hue:							darken($card-toggle-bg-hue, 10%);
+$card-toggle-color:									$heading-color;
+$card-toggle-font-size:								$font-size-14;
+
+// card-action variables
+
+
+// card-date variables
+$card-date-mar-y:									$p10;
+$card-date-font-size:								$font-size-14;
+$card-date-strong-color:							$heading-color;
+$card-date-em-color:								$accent-color;
+
+// card-details variables
+$card-details-width:								100%;
+$card-details-cell-width:							$spacer-60;
+$card-details-cell-pad:								$spacer-16;
+$card-details-cell-pad-compute:						$card-details-cell-pad * 2;
+$card-details-cell-odd-bg:							$mono-001;
+$card-details-cell-even-bg:							darken($card-details-cell-odd-bg, 2%);
+$card-details-cell-round:							$card-details-cell-pad-compute $card-details-cell-pad-compute 0 0;
+$card-details-cell-image-bg:						$build-white;
+$card-details-cell-image-width:						100%;
+$card-details-cell-image-height:					$spacer-22 * 10; // 220px
+$card-details-cell-image-round:						$card-details-cell-pad;
+$card-details-body-row-odd-cell-odd-bg:				darken($card-details-cell-odd-bg, 2.5%);
+$card-details-body-row-odd-cell-even-bg:			darken($card-details-cell-odd-bg, 4.5%);
+$card-details-body-row-even-cell-odd-bg:			darken($card-details-cell-odd-bg, 5%);
+$card-details-body-row-even-cell-even-bg:			darken($card-details-cell-odd-bg, 6%);
+$card-details-first-cell-width:						25%;
+$card-details-foot-cell-round:						0 0 $card-details-cell-pad-compute $card-details-cell-pad-compute;
+
+// card-post variables
+$card-post-pad:										$spacer-14;
+$card-post-h5-mar-y:								$card-post-pad;
+$card-post-h5-font-weight:							$font-weight-5;
+$card-post-image-height:							$spacer-16 * 10; // 160px
+$card-post-image-mar-y:								$spacer-14;
+$card-post-image-mar:								-#{$card-post-image-mar-y - $p1};
+$card-post-anchor-pad:								$p8 $p14;
+$card-post-anchor-mar:								-#{$p14};
+$card-post-anchor-border:							$build-apply-diverder;
+$card-post-anchor-font-size:						$font-size-14;
+
+// card-promo variables
+$card-promo-height:									$spacer-14 * 10; // 140px
+$card-promo-image-mar:								-#{$p1};
+$card-promo-image-round:							$p6;
+
+// card-specs variables
+$card-specs-font-size:                              $font-size-14;
+$card-specs-mar:                                    $spacer-16;
+$card-specs-1-min-width:                            100%;
+$card-specs-2-min-width:                            50%;
+$card-specs-3-min-width:                            33.33333%;
+$card-specs-4-min-width:                            25%;
+$card-specs-div-pad:                                $spacer-20;
+$card-specs-div-strong-span-font-size:              $font-size-14;
+$card-specs-div-strong-span-font-weight:            $font-weight-3;
+$card-specs-div-h4-font-weight:                     $font-weight-6;
+
+// card status variables
+$card-status-border-color:							rgba($build-default-border, .3);
+$card-status-bg:									$build-default-bg;
+$card-status-font-size:								$font-size-14;
+$card-status-color:									$build-default-color;
+$card-status-pad:									$p10;
+$card-status-paragraph-mar-y:						$p8;
+$card-status-action-pad:							0 $spacer-14 $p10;
+$card-status-feedback-pad:							$p10 $spacer-14;
+$card-status-feedback-border-size:					$p1;
+$card-status-badge-mar-x:							$card-mar;
+$card-status-badge-bg:								$build-default-bg;
+$card-status-badge-color:							$build-white;
+$card-status-processing-bg:							$build-warning-bg;
+$card-status-processing-badge-bg:					$build-warning-border;
+$card-status-denied-bg:								$build-invalid-bg;
+$card-status-denied-badge-bg:						$build-invalid-border;
+$card-status-denied-border:							rgba($card-status-denied-badge-bg, .3);
+$card-status-approved-bg:							$build-valid-bg;
+$card-status-approved-badge-bg:						$build-valid-border;
+$card-status-approved-border:						rgba($card-status-approved-badge-bg, .3);
+$card-status-active-bg:								$build-info-bg;
+$card-status-active-badge-bg:						$build-info-border;
+$card-status-active-border:							rgba($card-status-active-badge-bg, .3);
+
+// card teaser variables
+$card-teaser-color:									$build-white;
+$card-teaser-mar:									$card-mar 0;
+$card-teaser-hover-color:							$build-white;

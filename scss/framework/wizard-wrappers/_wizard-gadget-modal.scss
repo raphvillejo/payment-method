@@ -1,0 +1,30 @@
+﻿// SCSS File
+// wizard-gadget-modal.scss
+
+
+// wizard-gadget-modal style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-gadget-modal {
+		.wizard-gadget-modal {
+			padding: $wizard-gadget-modal-pad;
+			margin: $wizard-gadget-modal-mar;
+			margin-bottom: $wizard-gadget-modal-mar-y;
+			background-color: $wizard-gadget-modal-bg;
+
+			.gadget-image {
+				width: $wizard-gadget-modal-image-width;
+				height: auto;
+			}
+
+			@include media-breakpoint-down(xs) {
+				margin-left: -#{$spacer-16};
+				margin-right: -#{$spacer-16};
+
+				.gadget-image {
+					width: $spacer-90;
+					height: $wizard-gadget-modal-image-width;
+				}
+			}
+		}
+	}
+}

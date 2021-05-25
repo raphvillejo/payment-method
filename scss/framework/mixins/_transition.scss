@@ -1,0 +1,50 @@
+﻿// SCSS File
+// transition.scss
+
+
+// transition mixin
+@mixin transition($transition...) {
+	@include prefix(transition, $transition, webkit moz);
+}
+
+@mixin transition-property($property...) {
+	@include prefix(transition-property, $property, webkit moz);
+}
+
+@mixin transition-duration($duration...) {
+	@include prefix(transition-duration, $duration, webkit moz);
+}
+
+@mixin transition-timing-function($timing...) {
+	@include prefix(transition-timing-function, $timing, webkit moz);
+}
+
+@mixin transition-delay($delay...) {
+	@include prefix(transition-delay, $delay, webkit moz);
+}
+
+@mixin animate-all($timing: 0.2s, $delay: 0s) {
+	@include transition(all $timing ease-out $delay);
+}
+
+@mixin position-sticky() {
+	position: -webkit-sticky;
+	position: sticky;
+}
+
+@mixin transition($transition...) {
+	@if $enable-transitions {
+		@if length($transition) == 0 {
+			transition: $transition-base;
+		}
+		@else {
+			transition: $transition;
+		}
+	}
+
+	@if $enable-prefers-reduced-motion-media-query {
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+	}
+}

@@ -1,0 +1,222 @@
+﻿// SCSS File
+// card-type-product.scss
+
+
+// card-type-product style
+@if $enable-card {
+	@if $enable-card-type-product {
+		.card-type-product {
+			font-size: $card-type-product-font-size;
+
+			// card's components
+			.image {
+				@extend %extend-card-type-product-flex-display-direction;
+				@include flex-justify-content();
+				@include flex-align-items();
+
+				img {
+					width: 100%;
+					height: auto;
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+
+			.btn, .card-action span {
+				padding: $card-type-product-btn-pad;
+				border-radius: $card-type-product-btn-round;
+				border-width: $card-type-product-btn-border;
+			}
+
+			.heading {
+				border-top: 0;
+				padding-top: 0;
+				margin-bottom: 0;
+			}
+
+			.badge {
+				margin-left: $card-type-product-badge-mar;
+			}
+
+			.alert {
+				border-radius: $card-type-product-alert-round;
+				padding: $card-type-product-alert-pad;
+				font-size: $card-type-product-alert-font-size;
+				font-weight: $font-weight-4;
+
+				.badge {
+					display: block;
+					float: left;
+					margin-left: 0;
+					margin-right: $card-type-product-alert-badge-mar;
+				}
+			}
+
+			// card's state
+			&.selected {
+				background-color: $card-type-product-selected-bg;
+				border-color: $card-type-product-selected-border;
+
+				.card-footer {
+					.action {
+						background-color: $card-type-product-selected-action-bg;
+					}
+				}
+			}
+
+			// card's parts
+			.card-header {
+				.heading {
+					margin-bottom: 0;
+				}
+			}
+
+			.card-body {
+				@extend %extend-card-type-product-flex-display-direction;
+				padding: $card-type-product-body-pad;
+
+				+ .card-footer {
+					border-bottom: 0;
+				}
+			}
+
+			.card-footer {
+				padding: 0;
+				background-color: $card-type-product-foot-bg;
+				border-radius: $card-type-product-foot-round;
+
+				.action {
+					@extend %extend-btn;
+					@extend %extend-btn-states;
+					@extend %extend-btn-psuedo-active;
+
+					border-radius: $card-type-product-foot-round;
+					width: $card-type-product-foot-width;
+					text-decoration: none;
+
+					@include hover {
+						text-decoration: none;
+					}
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+
+		// card's sections
+		.card-product-view {
+			@include flex(0 0 $card-type-product-view-width);
+			@include flex-display();
+			@include flex-direction(column);
+			@include flex-justify-content(space-between);
+			@include flex-align-items();
+			padding-right: $card-type-product-view-pad;
+			border-right: $card-type-product-view-border;
+
+			.image {
+				margin-bottom: 0;
+			}
+
+			+ .card-product-info {
+				padding-left: $card-type-product-info-pad;
+			}
+		}
+
+		.card-product-info {
+			max-width: $card-type-product-info-width;
+			@include flex(1 1 $card-type-product-info-width);
+		}
+
+		.card-product-head {
+			@extend %extend-card-type-product-flex-display-direction;
+			border-bottom: $card-type-product-head-border;
+			padding-bottom: $card-type-product-head-pad;
+		}
+
+		.card-product-name {
+			@include flex(1 1 auto);
+		}
+
+		.card-product-title {
+			margin-bottom: $card-type-product-title-mar;
+			@include flex-display();
+		}
+
+		.card-product-company {
+			margin-bottom: 0;
+
+			img {
+				width: $card-type-product-company-image-width;
+				height: $card-type-product-company-image-height;
+			}
+		}
+
+		.card-product-wrap {
+			@include flex-grow(1);
+		}
+
+		.card-product-spec-list {
+			@include flex(1 1 $card-type-product-spec-list-width);
+
+			.card-specs, .list {
+				margin: 0;
+				padding-bottom: $card-type-product-spec-list-pad;
+				padding-top: $card-type-product-spec-list-pad;
+			}
+
+			> * {
+				border-bottom: $card-type-product-spec-list-border;
+
+				&:last-child {
+					border-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		// card's alternate view
+		.card-product-preview {
+			.image {
+				margin-bottom: 0;
+				
+				img {
+					height: $card-type-product-preview-image-height;
+					width: auto;
+				}
+			}
+
+			.card-body {
+				background-color: $card-type-product-preview-body-bg;
+				border-top: $card-type-product-preview-body-border;
+			}
+
+			.card-footer {
+				border-top: $card-type-product-preview-foot-border;
+			}
+
+			.card-product-info,
+			.card-product-company {
+				padding-left: 0;
+			}
+
+			.card-product-spec-list {
+				> * {
+					&:first-child {
+						padding-top: 0;
+					}
+
+					&:last-child {
+						border-bottom: 0;
+						padding-bottom: 0;
+					}
+				}
+			}
+
+			.card-product-company {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

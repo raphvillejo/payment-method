@@ -1,0 +1,26 @@
+﻿// SCSS File
+// form-guidance.scss
+
+
+// form-guidance style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-guidance {
+			.form-guidance {
+
+				.form-emphasis {
+					margin-top: $form-guidance-emphasis-mar-y;
+					display: none;
+
+					strong:first-child {
+						display: block;
+					}
+
+					@extend %extend-aria-hide;
+
+					@extend %extend-aria-show;
+				}
+			}
+		}
+	}
+}

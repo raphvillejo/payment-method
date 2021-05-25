@@ -1,0 +1,43 @@
+﻿// SCSS File
+// layout.scss
+
+
+
+// layout-modal variables
+$layout-modal-layer:                                $layer-buried;
+$layout-modal-layer-show:                           $layer-modal;
+
+// layout-output variables
+$layout-output-pad:									$spacer-24;
+$layout-output-pad-xs:								$p12;
+$layout-output-layer:								$layer-layout-output;
+$layout-output-hide-pos-y:							-($spacer-26 * 10);
+$layout-output-alert-width:							$spacer-90 * 10;
+$layout-output-alert-mar:							0 auto;
+$layout-output-alert-shadow:						$build-apply-shadow;
+
+// layout-header variables
+$layout-header-toggle-size:							$spacer-48;
+
+// layout-footer variables
+$layout-footer-font-size:							$font-size-14;
+$layout-footer-font-weight:							$font-weight-3;
+
+// layout-drawer variables
+$layout-drawer-height:								100%;
+$layout-drawer-min-width:							$spacer-38 * 10;
+$layout-drawer-width:								100%;
+$layout-drawer-bg:									$build-white;
+$layout-drawer-border-color:						$border-color;
+$layout-drawer-border:								$build-apply-border;
+$layout-drawer-shadow:								$build-apply-dark-shadow;
+$layout-drawer-layer:								$layer-buried;
+$layout-drawer-layer-show:                          $zindex-modal;
+$layout-drawer-close-float-pos-x:					125%;
+$layout-drawer-nav-link-active-border-color:		$build-primary;
+
+// layout-backdrop variables
+$layout-backdrop-bg:								$build-backdrop-bg;
+$layout-backdrop-size:								100%;
+$layout-backdrop-layer:								$layer-buried;
+$layout-backdrop-show-layer:						$zindex-modal-backdrop;

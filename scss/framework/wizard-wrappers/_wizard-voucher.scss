@@ -1,0 +1,12 @@
+﻿// SCSS File
+// wizard-voucher.scss
+
+
+// wizard-voucher style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-voucher {
+		.wizard-voucher {
+			margin-bottom: $wizard-voucher-mar-y;
+		}
+	}
+}

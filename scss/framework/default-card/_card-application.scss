@@ -1,0 +1,11 @@
+﻿// SCSS File
+// card-application.scss
+
+
+// card-application style
+@if $enable-card {
+	@if $enable-card-application {
+		.card-application {
+		}
+	}
+}

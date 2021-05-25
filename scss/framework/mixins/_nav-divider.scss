@@ -1,0 +1,12 @@
+// SCSS File
+// nav-divider.scss
+
+
+// Horizontal dividers mixin
+// Dividers (basically an hr) within dropdowns and nav lists
+@mixin nav-divider($color: $nav-divider-color, $margin-y: $nav-divider-margin-y) {
+	height: 0;
+	margin: $margin-y 0;
+	overflow: hidden;
+	border-top: $p1 solid $color;
+}

@@ -1,0 +1,15 @@
+﻿// SCSS File
+// modal-inset.scss
+
+
+// modal-inset style
+@if $enable-modal {
+	@if $enable-modal-inset {
+		.modal-inset {
+			margin: $modal-inset-mar;
+			padding: $modal-inset-pad;
+			padding-bottom: 0;
+			border-top: $modal-inset-border;
+		}
+	}
+}

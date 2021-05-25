@@ -1,0 +1,25 @@
+﻿// SCSS File
+// form-radio-stack.scss
+
+
+// radio-stack style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-radio-stack {
+			.radio-stack {
+
+				label {
+					padding-right: 0;
+				}
+
+				.option {
+					@include flex-display();
+
+					+ .option {
+						margin-top: $radio-stack-option-mar;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+﻿// SCSS File
+// card-type-dashboard.scss
+
+
+// card-type-dashboard style
+@if $enable-card {
+	@if $enable-card-type-dashboard {
+		.card-type-dashboard {
+			.card-header {
+				padding: $card-type-dashboard-head-pad;
+				padding-bottom: $card-type-dashboard-head-pad-y;
+				border-bottom: $card-type-dashboard-head-border;
+			}
+
+			.card-body {
+				padding: $card-type-dashboard-body-pad;
+			}
+		}
+	}
+}

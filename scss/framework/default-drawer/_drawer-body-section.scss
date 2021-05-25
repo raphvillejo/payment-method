@@ -1,0 +1,14 @@
+﻿// SCSS File
+// drawer-body-section.scss
+
+
+// drawer-body-section style
+@if $enable-drawer {
+	.drawer-body-section {
+		margin-bottom: $drawer-body-section-mar-y;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

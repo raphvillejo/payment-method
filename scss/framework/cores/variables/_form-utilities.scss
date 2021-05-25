@@ -1,0 +1,166 @@
+﻿// SCSS File
+// form-utilities.scss
+
+
+// alert variables
+$alert-padding-y:									$p12 !default;
+$alert-padding-x:									$spacer-20 !default;
+$alert-margin-bottom:								$spacer-16 !default;
+$alert-border-width:								$border-width !default;
+$alert-border-radius:								$border-radius !default;
+$alert-link-font-weight:							$font-weight-bold !default;
+
+// alert close
+$close-font-size:									$font-size-24 !default;
+
+// alert-status variables
+$alert-status-font-size:							$font-size-14;
+$alert-status-font-weight:							$font-weight-4;
+$alert-status-mar:									$p14;
+$alert-status-pad:									$p10;
+$alert-status-color:								$build-default-color;
+$alert-status-border:								$build-default-border;
+$alert-status-bg:									transparent;
+$alert-status-icon-flex:							0 0 $spacer-22;
+$alert-status-icon-font-size:						$font-size-20;
+$alert-status-icon-height:							$spacer-20;
+$alert-status-icon-mar:								$p8;
+
+// alert-dismissible variables
+$alert-dismissible-pad-y:							$alert-padding-y;
+$alert-dismissible-pad-x:							($close-font-size + $alert-padding-x * 2);
+$alert-dismissible-pad:								$alert-dismissible-pad-y $alert-dismissible-pad-x;
+$alert-dismissible-close-pad:						$p12 $spacer-20;
+
+// form-basket variables
+$form-basket-pad:									$spacer-14;
+$form-basket-bg:									$highlight-color;
+$form-basket-round:									$p3;
+$form-basket-hr-mar:								$p10 0;
+$form-basket-details-font-size:						$font-size-16;
+$form-basket-details-font-weight:					$font-weight-5;
+$form-basket-details-color:							$heading-color;
+$form-basket-terms-font-size:						$font-size-14;
+$form-basket-terms-color:							$accent-color;
+
+// btn-edit variables
+$btn-edit-size:										$spacer-48;
+$btn-edit-round:									50%;
+$btn-edit-color:									$text-color;
+$btn-edit-hover-bg:									rgba($build-primary, .2);
+$btn-edit-pill-size:								auto;
+$btn-edit-pill-pad:									$p4 $p10;
+$btn-edit-pill-round:								$spacer-32;
+$btn-edit-pill-font-weight:							$font-weight-5;
+$btn-edit-pill-color:								$link-color;
+$btn-edit-pill-icon-mar:							$p8;
+
+// btn-toggle variables
+$btn-toggle-width:									100%;
+
+// form-feedback-output variables
+$form-feedback-output-mar:							$p8;
+
+// form-help variables
+$form-help-border:									$p2 solid $build-interface-border;
+$form-help-mar:										$spacer-32;
+$form-help-bg:										$build-interface-bg;
+$form-help-color:									$build-interface-color;
+$form-help-font-size:								$font-size-14;
+$form-help-line-height:								$line-height-md;
+$form-help-heading-mar:								$p10;
+$form-help-heading-font-weight:						$font-weight-5;
+$form-help-paragraph-mar:							$form-help-heading-mar;
+$form-help-icon-pos-x:								$spacer-14;
+$form-help-icon-pos-y:								calc(50% - #{$p8});
+$form-help-dialog-pad:								$spacer-24;
+$form-help-dialog-pad-x:							$form-help-dialog-pad * 2;
+$form-help-link-color:								$heading-color;
+
+// loading variables
+$loading-width:										75%;
+$loading-pos:										12.5%;
+$loading-span-size:									$p10;
+$loading-span-btn-size:								$p8;
+$loading-span-mar:									0 $p2;
+$loading-span-mar-y:								-#{$p4};
+$loading-span-round:								50%;
+$loading-span-bg:									$build-white;
+$loading-span-animation:							loading .9s linear infinite alternate;
+$loading-span-1-animation-delay:					-.9s;
+$loading-span-2-animation-delay:					-.6s;
+$loading-span-3-animation-delay:					-.3s;
+
+// input-addon variables
+$input-addon-icon-size:								$input-height;
+$input-addon-icon-pos: 								50%;
+$input-addon-icon-mar:	 							-#{$input-addon-icon-size / 2};
+$input-addon-input-pad-x-1:							$input-height-lg;
+$input-addon-input-pad-x-2:							$input-padding-x;
+$input-addon-input-pos:								$input-border-width;
+$input-addon-input-icon-pos:						$spacer-16;
+$input-addon-button-pos:							$p3;
+$input-addon-button-width:							auto;
+$input-addon-button-height:							($input-addon-icon-size - ($input-addon-button-pos * 2));
+$input-addon-button-round:							$p3;
+$input-addon-button-font-size:						$font-size-14;
+$input-addon-button-pad:							0 $spacer-24;
+$input-addon-icon-right-control-pad-x:				$input-padding-x-lg;
+
+// input flex variables
+$input-flex-mar-x:									-#{$gutter-md-size};
+$input-flex-input-mar-x:							$gutter-md-size;
+
+// input-group variables
+$input-group-width:									100%;
+$input-group-text-border:							$input-border-width solid $mono-003;
+$input-group-text-bg:								$mono-001;
+$input-group-text-color:							$input-text-color;
+$input-group-text-pad:								$input-padding-y $spacer-18;
+$input-group-text-line-height:						$input-line-height;
+$input-group-text-round:							$input-border-radius;
+$input-group-text-font-size:						$input-font-size;
+$input-group-text-font-weight:						$input-font-weight;
+
+// pagination variables
+$pagination-pad-y:                                  $p8 !default;
+$pagination-pad-x:                                  $p12 !default;
+$pagination-pad:                                    $pagination-pad-x $pagination-pad-y !default;
+$pagination-pad-y-sm:                               $p4 !default;
+$pagination-pad-x-sm:                               $p8 !default;
+$pagination-pad-y-lg:                               $p12 !default;
+$pagination-pad-x-lg:                               $spacer-24 !default;
+$pagination-border-size:                            $border-width !default;
+$pagination-line-height:                            $line-height-sm !default;
+$pagination-color:                                  $link-color !default;
+$pagination-bg:                                     $build-white !default;
+$pagination-border:                                 $build-apply-border !default;
+$pagination-focus-box-shadow:                       $btn-focus-box-shadow !default;
+$pagination-focus-outline:                          0 !default;
+$pagination-hover-color:                            $link-hover-color !default;
+$pagination-hover-bg:                               $mono-002 !default;
+$pagination-hover-border-color:                     $mono-003 !default;
+$pagination-active-color:                           $build-white !default;
+$pagination-active-bg:                              $build-primary !default;
+$pagination-active-border-color:                    $pagination-active-bg !default;
+$pagination-disabled-color:                         $mono-006 !default;
+$pagination-disabled-bg:                            $build-white !default;
+$pagination-disabled-border-color:                  $mono-003 !default;
+
+// placeholder-label variables
+$placeholder-label-mar:								$spacer-40;
+$placeholder-label-pad:								$input-padding-y $input-padding-x;
+$placeholder-label-line-height:						$input-line-height;
+$placeholder-label-bg:								null;
+$placeholder-label-height:							$input-height;
+$placeholder-label-font-size:						$font-size-13;
+$placeholder-label-pos:								0;
+$placeholder-label-layer:							2;
+$placeholder-label-round:							$input-border-radius;
+$placeholder-label-input-color:						$input-bg-color;
+$placeholder-label-filled-focused-pad:				0;
+$placeholder-label-filled-focused-height:			$spacer-16;
+$placeholder-label-filled-focused-line-height:		$placeholder-label-filled-focused-height;
+$placeholder-label-filled-focused-font-size:		$font-size-10;
+$placeholder-label-filled-focused-pos-y:			$p4;
+$placeholder-label-filled-focused-pos-x:			$p14;

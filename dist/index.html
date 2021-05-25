@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="./css/main.css" />
+  <title>Create and Account</title>
+</head>
+<body>
+  <div class="layout"
+       id="layout">
+    <header class="layout-header"
+            id="layout-header">
+      <div class="container">
+        <div class="head">Header</div>
+      </div>
+    </header>
+    <main class="layout-main"
+          id="layout-main">
+      <div class="container">
+        <section class="section-payment">
+          <div class="payment">
+            <div class="payment-form">
+              <div class="payment-head">
+                <div class="logo">
+                  <img class="lazyload"
+                       src="./img/logo.png"
+                       srcset="./img/blank.png"
+                       data-srcset="./img/logo.png"
+                       alt="Spiritual Hippie"
+                       title="Spiritual Hippie"
+                       height="202"
+                       width="1200" />
+                </div>
+              </div>
+              <div class="payment-body">
+                <ul class="nav nav-tabs"
+                    role="tablist">
+                  <li class="nav-item"
+                      role="presentation">
+                    <a class="nav-link active"
+                       href="#tab-one"
+                       id="nav-tab-one"
+                       data-toggle="tab"
+                       role="tab"
+                       aria-controls="tab-one"
+                       aria-selected="true">Shipping</a>
+                  </li>
+                  <li class="nav-item"
+                      role="presentation">
+                    <a class="nav-link"
+                       href="#tab-two"
+                       id="nav-tab-two"
+                       data-toggle="tab"
+                       role="tab"
+                       aria-controls="tab-two"
+                       aria-selected="false">Payment</a>
+                  </li>
+                </ul>
+                <form>
+                  <div class="tabs">
+                    <div class="tab active"
+                         id="tab-one"
+                         role="tabpanel"
+                         aria-labelledby="nav-tab-one">
+                      <div class="form-section"
+                           aria-labelledby="contact-information"
+                           role="group">
+                        <h2 id="contact-information">Contact Information</h2>
+                        <div class="form-group">
+                          <input type="email"
+                                 class="form-control"
+                                 name="email"
+                                 inputmode="email"
+                                 id="email"
+                                 autocapitalize="off"
+                                 autocomplete="email"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="Email"
+                                 tabindex="1"
+                                 value="" />
+                        </div>
+                      </div>
+                      <div class="form-section form-grid"
+                           aria-labelledby="shipping-address"
+                           role="group">
+                        <h2 id="shipping-address">Shipping Address</h2>
+                        <div class="form-group form-flex form-flex-2">
+                          <input type="text"
+                                 class="form-control"
+                                 name="given-name"
+                                 id="given-name"
+                                 autocomplete="given-name"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="First Name"
+                                 tabindex="2"
+                                 value="" />
+                        </div>
+                        <div class="form-group form-flex form-flex-2">
+                          <input type="text"
+                                 class="form-control"
+                                 name="family-name"
+                                 id="family-name"
+                                 autocomplete="family-name"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="Last Name"
+                                 tabindex="3"
+                                 value="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text"
+                                 class="form-control"
+                                 name="province"
+                                 id="province"
+                                 autocomplete="street-address"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="Address"
+                                 tabindex="4"
+                                 value="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text"
+                                 class="form-control"
+                                 name="city"
+                                 id="city"
+                                 autocomplete="address-level2"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="City"
+                                 tabindex="5"
+                                 value="" />
+                        </div>
+                        <div class="form-group form-flex form-flex-3">
+                          <select class="form-control"
+                                  name="coutry"
+                                  id="coutry"
+                                  autocomplete="country"
+                                  spellcheck="false"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  tabindex="6">
+                            <option value="-1">Select Country</option>
+                          </select>
+                        </div>
+                        <div class="form-group form-flex form-flex-3">
+                          <select class="form-control"
+                                  name="province"
+                                  id="province"
+                                  autocomplete="province"
+                                  spellcheck="false"
+                                  aria-required="true"
+                                  aria-invalid="false"
+                                  tabindex="7">
+                            <option value="-1">Province</option>
+                          </select>
+                        </div>
+                        <div class="form-group form-flex form-flex-3">
+                          <input type="text"
+                                 class="form-control"
+                                 name="postal-code"
+                                 id="postal-code"
+                                 inputmode="numeric"
+                                 size="12"
+                                 autocomplete="postal-code"
+                                 spellcheck="false"
+                                 aria-required="true"
+                                 aria-invalid="false"
+                                 placeholder="Postal Code"
+                                 tabindex="8"
+                                 value="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="tel"
+                                 class="form-control"
+                                 name="phone"
+                                 id="phone"
+                                 autocomplete="tel"
+                                 spellcheck="false"
+                                 aria-required="false"
+                                 aria-invalid="false"
+                                 data-mask="(00) 000-0000"
+                                 placeholder="Phone Number (optional)"
+                                 tabindex="9"
+                                 value="" />
+                        </div>
+                      </div>
+                      <div class="form-button mb-6">
+                        <button type="button"
+                                class="btn btn-primary"
+                                id="continue-to-payment"
+                                onclick="triggerTabClick()"
+                                tabindex="10">
+                          Continue to Payment
+                        </button>
+                      </div>
+                      <div class="form-discrete">
+                        <img class="fluid lazyload"
+                             src="./img/Guaranteed_two.png"
+                             srcset="./img/blank.png"
+                             data-srcset="./img/Guaranteed_two.png 1x, ./img/Guaranteed_two@2x.png 2x"
+                             alt="Payment Options"
+                             title="Payment Options"
+                             height="121"
+                             width="651" />
+                      </div>
+                    </div>
+                    <div class="tab"
+                         id="tab-two"
+                         role="tabpanel"
+                         aria-labelledby="nav-tab-two">
+                      <div class="form-section"
+                           aria-labelledby="shipping-method"
+                           role="group">
+                        <h2 id="shipping-method">Shipping method</h2>
+                        <div class="form-group">
+                          <div class="radio form-option"
+                               id="shipping-method-method"
+                               aria-required="true"
+                               aria-invalid="false"
+                               role="radiogroup">
+                            <div class="option">
+                              <input type="radio"
+                                     name="shipping-method"
+                                     id="shipping-method-a"
+                                     aria-describedby="shipping-method-label"
+                                     value=""
+                                     tabindex="11" />
+                              <label for="shipping-method-a">Secured Shipping</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-section"
+                           aria-labelledby="billing-address"
+                           role="group">
+                        <h2 id="billing-address">Billing Address</h2>
+                        <div class="form-group">
+                          <div class="radio form-option"
+                               id="billing-address-address"
+                               aria-required="true"
+                               aria-invalid="false"
+                               role="radiogroup">
+                            <div class="option">
+                              <input type="radio"
+                                     name="billing-method"
+                                     id="billing-address-a"
+                                     aria-describedby="billing-address-label"
+                                     value=""
+                                     tabindex="12" />
+                              <label for="billing-address-a">Same as shipping address</label>
+                            </div>
+                            <div class="option">
+                              <input type="radio"
+                                     name="billing-method"
+                                     id="billing-address-b"
+                                     aria-describedby="billing-address-label"
+                                     value=""
+                                     tabindex="13" />
+                              <label for="billing-address-b">Use a different billing address</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-section"
+                           aria-labelledby="payment-method"
+                           role="group">
+                        <h2 id="payment-method">Payment</h2>
+                        <p>All transaction are secured and encrypted.</p>
+                        <div class="form-group">
+                          <div class="radio form-option"
+                               id="payment-method-cc"
+                               aria-required="true"
+                               aria-invalid="false"
+                               role="radiogroup">
+                            <div class="option">
+                              <input type="radio"
+                                     name="payment-method"
+                                     id="payment-method-a"
+                                     aria-describedby="payment-method-label"
+                                     value=""
+                                     tabindex="14"
+                                     checked />
+                              <label for="payment-method-a"
+                                     data-toggle="amend"
+                                     aria-controls="payment-method-creditcard">
+                                Credit Card
+                                <span class="graphic">
+                                  <img class="lazyload"
+                                       src="./img/visa.svg"
+                                       srcset="./img/blank.png"
+                                       data-srcset="./img/visa.svg"
+                                       alt="Visa"
+                                       title="Visa"
+                                       height="38"
+                                       width="62" />
+                                  <img class="lazyload"
+                                       src="./img/mastercard.svg"
+                                       srcset="./img/blank.png"
+                                       data-srcset="./img/mastercard.svg"
+                                       alt="Mastercard"
+                                       title="Mastercard"
+                                       height="38"
+                                       width="62" />
+                                  <img class="lazyload"
+                                       src="./img/amex.svg"
+                                       srcset="./img/blank.png"
+                                       data-srcset="./img/amex.svg"
+                                       alt="American Express"
+                                       title="American Express"
+                                       height="38"
+                                       width="62" />
+                                  <img class="lazyload"
+                                       src="./img/discover.svg"
+                                       srcset="./img/blank.png"
+                                       data-srcset="./img/discover.svg"
+                                       alt="Discover"
+                                       title="Discover"
+                                       height="38"
+                                       width="62" />
+                                </span>
+                              </label>
+                            </div>
+                            <div class="form-amend"
+                                 aria-hidden="false"
+                                 id="payment-method-creditcard">
+                              <div class="form-grid">
+                                <div class="form-group">
+                                  <input type="text"
+                                         class="form-control"
+                                         name="credit-card"
+                                         id="credit-card"
+                                         autocomplete="cc-number"
+                                         spellcheck="false"
+                                         aria-required="true"
+                                         aria-invalid="false"
+                                         inputmode="numeric"
+                                         pattern="[0-9]"
+                                         data-mask="0000 0000 0000 0000 0000"
+                                         placeholder="Credit Card Number"
+                                         tabindex="15"
+                                         value="" />
+                                </div>
+                                <div class="form-group">
+                                  <input type="text"
+                                         class="form-control"
+                                         name="name-on-card"
+                                         id="name-on-card"
+                                         autocomplete="cc-name"
+                                         spellcheck="false"
+                                         aria-required="true"
+                                         aria-invalid="false"
+                                         placeholder="Name on the Card"
+                                         tabindex="16"
+                                         value="" />
+                                </div>
+                                <div class="form-group form-flex form-flex-3">
+                                  <input type="text"
+                                         class="form-control"
+                                         name="card-exp-month"
+                                         id="card-exp-month"
+                                         autocomplete="cc-exp-month"
+                                         spellcheck="false"
+                                         aria-required="true"
+                                         aria-invalid="false"
+                                         placeholder="Month"
+                                         inputmode="numeric"
+                                         pattern="[0-9]"
+                                         maxlength="2"
+                                         tabindex="17"
+                                         value="" />
+                                </div>
+                                <div class="form-group form-flex form-flex-3">
+                                  <input type="text"
+                                         class="form-control"
+                                         name="card-exp-year"
+                                         id="card-exp-year"
+                                         autocomplete="cc-exp-year"
+                                         spellcheck="false"
+                                         aria-required="true"
+                                         aria-invalid="false"
+                                         placeholder="Year"
+                                         inputmode="numeric"
+                                         pattern="[0-9]"
+                                         maxlength="2"
+                                         tabindex="18"
+                                         value="" />
+                                </div>
+                                <div class="form-group form-flex form-flex-3">
+                                  <input type="password"
+                                         class="form-control"
+                                         name="cc-security"
+                                         id="cc-security"
+                                         autocomplete="cc-csc"
+                                         spellcheck="false"
+                                         aria-required="true"
+                                         aria-invalid="false"
+                                         placeholder="Year"
+                                         inputmode="numeric"
+                                         pattern="[0-9]"
+                                         maxlength="3"
+                                         tabindex="19"
+                                         value="" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="option">
+                              <input type="radio"
+                                     name="payment-method"
+                                     id="payment-method-b"
+                                     aria-describedby="payment-method-label"
+                                     value=""
+                                     tabindex="17" />
+                              <label for="payment-method-b"
+                                     data-toggle="amend"
+                                     aria-controls="payment-method-paypal">
+                                <span class="graphics">
+                                  <img class="lazyload"
+                                       src="./img/paypal.svg"
+                                       srcset="./img/blank.png"
+                                       data-srcset="./img/paypal.svg"
+                                       alt="Paypal"
+                                       title="Paypal"
+                                       height="38"
+                                       width="62" />
+                                </span>
+                              </label>
+                            </div>
+                            <div class="form-amend"
+                                 aria-hidden="true"
+                                 id="payment-method-paypal">
+                              Paypal
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product-offer">
+                <div class="offer-image">
+                  <img class="lazyload"
+                       src="./img/BandanaSpiritualEdited_500x500.png"
+                       srcset="./img/blank.png"
+                       data-srcset="./img/BandanaSpiritualEdited_500x500.png 1x, ./img/BandanaSpiritualEdited_500x500@2x.png 2x"
+                       alt="Vibe with These Face Shields!"
+                       title="Vibe with These Face Shields!"
+                       height="99"
+                       width="139" />
+                </div>
+                <div class="offer-details">
+                  <strong>Vibe with These Face Shields!</strong>
+                  <span class="h3"><del class="text-danger">$25.99</del><span>$6.95</span></span>
+                </div>
+                <button class="btn btn-outline-dark"><i class="icon"></i>Add to my order</button>
+              </div>
+              <div class="product-list"
+                   role="group">
+                <div class="product-item">
+                  <div class="item-image">
+                    <img class="lazyload"
+                         src="./img/Yin-Yang-Mandala-1.png"
+                         srcset="./img/blank.png"
+                         data-srcset="./img/Yin-Yang-Mandala-1.png 1x, ./img/Yin-Yang-Mandala-1@2x.png 2x"
+                         alt="Yin Yang Mandala 1"
+                         title="Yin Yang Mandala 1"
+                         height="113"
+                         width="187" />
+                    <span class="item-count">1</span>
+                  </div>
+                  <div class="item-details">
+                    <strong>Yin Yang Mandala</strong>
+                    <span>Woman's Aqua Barefoot Shoes</span>
+                    <span>Black Sole | US 9:10 | EU 40:41</span>
+                  </div>
+                  <div class="item-price h3">
+                    <del>$35.00</del>
+                    <span class="text-danger">FREE</span>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="item-image">
+                    <img class="lazyload"
+                         src="./img/Yin-Yang-Mandala-2.png"
+                         srcset="./img/blank.png"
+                         data-srcset="./img/Yin-Yang-Mandala-2.png 1x, ./img/Yin-Yang-Mandala-2@2x.png 2x"
+                         alt="Yin Yang Mandala 1"
+                         title="Yin Yang Mandala 1"
+                         height="113"
+                         width="187" />
+                    <span class="item-count">1</span>
+                  </div>
+                  <div class="item-details">
+                    <strong>Yin Yang Mandala</strong>
+                    <span>Woman's Aqua Barefoot Shoes</span>
+                    <span>Black Sole | US 9:10 | EU 40:41</span>
+                  </div>
+                  <div class="item-price h3">
+                    <span>$35.00</span>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="item-image">
+                    <img class="lazyload"
+                         src="./img/Watercolor-Flowers-1.png"
+                         srcset="./img/blank.png"
+                         data-srcset="./img/Watercolor-Flowers-1.png 1x, ./img/Watercolor-Flowers-1@2x.png 2x"
+                         alt="Watercolor Flowers"
+                         title="Watercolor Flowers"
+                         height="113"
+                         width="187" />
+                    <span class="item-count">1</span>
+                  </div>
+                  <div class="item-details">
+                    <strong>Watercolor Flowers</strong>
+                    <span>Woman's Aqua Barefoot Shoes</span>
+                    <span>Black Sole | US 9:10 | EU 40:41</span>
+                  </div>
+                  <div class="item-price h3">
+                    <span>$35.00</span>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="item-image">
+                    <img class="lazyload"
+                         src="./img/Copy-of-Free-Mystery-Gift-1.png"
+                         srcset="./img/blank.png"
+                         data-srcset="./img/Copy-of-Free-Mystery-Gift-1.png 1x, ./img/Copy-of-Free-Mystery-Gift-1@2x.png 2x"
+                         alt="Copy of Free Mystery Gift"
+                         title="Copy of Free Mystery Gift"
+                         height="113"
+                         width="187" />
+                    <span class="item-count">1</span>
+                  </div>
+                  <div class="item-details">
+                    <strong>Copy of Free Mystery Gift</strong>
+                    <span>Free Gift | Vibrant Vibes | One Size</span>
+                  </div>
+                  <div class="item-price h3">
+                    <span>$0.00</span>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="item-image">
+                    <img class="lazyload"
+                         src="./img/Safeguard-Shipping-Guarantee.png"
+                         srcset="./img/blank.png"
+                         data-srcset="./img/Safeguard-Shipping-Guarantee.png 1x, ./img/Safeguard-Shipping-Guarantee@2x.png 2x"
+                         alt="Safeguard - Shipping Guarantee"
+                         title="Safeguard - Shipping Guarantee"
+                         height="113"
+                         width="187" />
+                    <span class="item-count">1</span>
+                  </div>
+                  <div class="item-details">
+                    <strong>Safeguard - Shipping Guarantee</strong>
+                    <span>Safeguard Shipping Guarantee</span>
+                    <span>0.98</span>
+                  </div>
+                  <div class="item-price h3">
+                    <span>$0.98</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-voucher">
+                <div class="form-group form-voucher">
+                  <label class="sr-only"
+                         for="voucher-demo">If you have promo code, you can type it here.</label>
+                  <div class="input-addon">
+                    <input type="text"
+                           class="form-control is-inverted"
+                           name="voucher-demo"
+                           id="voucher-demo"
+                           autocapitalize="characters"
+                           autocomplete="off"
+                           spellcheck="false"
+                           aria-required="false"
+                           aria-invalid="false"
+                           placeholder="Got a promo code?"
+                           value="AZYT32BG">
+                    <button type="button"
+                            name="apply"
+                            class="btn btn-secondary btn-addon"
+                            hidden>Apply</button>
+                    <button type="button"
+                            name="clear"
+                            class="btn-clear"
+                            hidden><i class="icon i-toggle-clear">Clear field</i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="layout-footer"
+            id="footer">
+      <div class="container">
+        <div class="foot">Footer</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="layout-drawer layout-drawer-right animate"
+       id="layout-drawer"
+       aria-hidden="true">
+    <div class="drawer"
+         aria-hidden="true">
+      <div class="drawer-head">Drawer head</div>
+      <div class="drawer-body">Drawer body</div>
+      <div class="drawer-foot">Drawer Foot</div>
+      <button class="drawer-close-float"
+              data-toggle="drawer"
+              data-target="drawer"
+              aria-controls="layout-drawer">
+        <i class="icon i-icon-cross i-24"
+           aria-hidden="true">Close</i>
+      </button>
+    </div>
+  </div>
+
+  <div class="layout-backdrop animate"
+       id="layout-backdrop"
+       aria-hidden="true"></div>
+
+  <script src="./js/lazysizes.js"></script>
+  <script src="./js/imask.js"></script>
+  <script src="./js/event-transition.js"></script>
+  <script src="./js/form-ammend.js"></script>
+  <script src="./js/form-mask.js"></script>
+  <script src="./js/form-mask.js"></script>
+  <script src="./js/ui-tabs.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

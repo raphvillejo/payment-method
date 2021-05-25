@@ -1,0 +1,29 @@
+﻿// SCSS File
+// layout-wizard-main.scss
+
+
+// wizard-main style
+@if $enable-wizard {
+	@if $enable-wizard-layout {
+		.wizard-main {
+			position: relative;
+			height: $wizard-main-height;
+			@include flex($wizard-main-flex);
+
+			.container {
+				height: $wizard-main-height;
+				max-width: $wizard-main-container-width;
+				padding-top: $wizard-main-container-pad-top;
+				padding-bottom: $wizard-main-container-pad-bot;
+			}
+
+			@include media-breakpoint-down(xs) {
+				.container {
+					padding-top: $spacer-24;
+					padding-bottom: $spacer-32;
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,14 @@
+﻿// SCSS File
+// wizard-gadget-data.scss
+
+
+// wizard-gadget-data style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-gadget-data {
+		.wizard-gadget-data {
+			dl {
+				font-size: $wizard-gadget-data-font-size;
+			}
+		}
+	}
+}

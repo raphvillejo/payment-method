@@ -1,0 +1,47 @@
+﻿// SCSS File
+// wizard-content.scss
+
+
+// wizard-content style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-content {
+		.wizard-content {
+			margin-top: $wizard-content-mar;
+			@include flex-justify-content(space-between);
+			@include flex-display();
+
+			.main {
+				@include flex($wizard-content-main-flex);
+				order: 2;
+			}
+
+			.side {
+				@include flex($wizard-content-side-flex);
+				margin-right: $wizard-content-side-mar;
+				order: 1;
+
+				> *:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+				@include flex-direction(column);
+
+				.side {
+					margin: 0;
+					display: none;
+				}
+
+				&.is-wrapping {
+
+					.side {
+						@include flex-basis();
+						margin-bottom: $spacer-32;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

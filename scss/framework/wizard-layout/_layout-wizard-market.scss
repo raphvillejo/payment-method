@@ -1,0 +1,28 @@
+﻿// SCSS File
+// layout-wizard-market.scss
+
+
+// wizard-market style
+@if $enable-wizard {
+	@if $enable-wizard-layout-market {
+		.wizard-market {
+			height: $wizard-market-height;
+			position: relative;
+			@include flex(1 1 100%);
+
+			.container {
+				height: $wizard-market-height;
+				padding-top: $wizard-market-container-pad-top;
+				padding-bottom: $wizard-market-container-pad-bot;
+			}
+
+			@include media-breakpoint-down(xs) {
+				.container {
+					padding-top: $spacer-24;
+					padding-bottom: $spacer-32;
+				}
+			}
+		}
+	}
+}
+

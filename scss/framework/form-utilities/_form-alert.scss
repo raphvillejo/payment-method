@@ -1,0 +1,47 @@
+﻿// SCSS File
+// form-alert.scss
+
+
+// alert style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-alert {
+			.alert {
+				pointer-events: auto;
+				position: relative;
+				padding: $alert-padding-y $alert-padding-x;
+				margin-bottom: $alert-margin-bottom;
+				border: $alert-border-width solid transparent;
+				@include border-radius($alert-border-radius);
+
+				p:last-child {
+					margin: 0;
+				}
+
+				a {
+					color: inherit;
+					text-decoration: underline;
+
+					@include hover {
+						text-decoration: none;
+					}
+				}
+
+				strong {
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show;
+			}
+
+			.alert-heading {
+				color: inherit;
+			}
+
+			.alert-link {
+				font-weight: $alert-link-font-weight;
+			}
+		}
+	}
+}

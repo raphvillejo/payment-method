@@ -1,0 +1,37 @@
+﻿// SCSS File
+// input-strength-feedback.scss
+
+
+// input-strength-feedback style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-input-strength-feedback {
+			.input-strength-feedback {
+				margin-top: -#{$spacer-32};
+				padding-top: $spacer-24;
+				font-size: $font-size-14;
+				color: $heading-color;
+
+				&.is-slim {
+					color: $build-invalid-border;
+				}
+
+				&.is-poor {
+					color: $build-warning-border;
+				}
+
+				&.is-fair {
+					color: $build-caution-border;
+				}
+
+				&.is-good {
+					color: $build-valid-bg;
+				}
+
+				&.is-great {
+					color: $build-valid-border;
+				}
+			}
+		}
+	}
+}

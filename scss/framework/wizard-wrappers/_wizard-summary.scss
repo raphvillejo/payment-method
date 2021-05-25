@@ -1,0 +1,55 @@
+﻿// SCSS File
+// wizard-summary.scss
+
+
+// wizard-summary style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-summary {
+		.wizard-summary {
+
+			.data {
+				position: relative;
+				margin-bottom: $wizard-summary-data-mar-y;
+				padding-bottom: $wizard-summary-data-pad-y;
+				border-bottom: $wizard-summary-data-border;
+
+				&:last-of-type {
+					margin-bottom: 0;
+					border-bottom: none;
+				}
+			}
+
+			.data-title {
+				margin-bottom: $wizard-summary-title-mar-y;
+				font-size: $wizard-summary-title-font-size;
+				font-weight: $wizard-summary-title-font-weight;
+				color: $wizard-summary-title-color;
+			}
+
+			.data-edit {
+				position: absolute;
+				right: 0;
+				top: $wizard-summary-edit-pos-y;
+			}
+
+			.data-details {
+				margin: 0;
+				font-size: $wizard-summary-details-font-size;
+
+				dt {
+					font-weight: $wizard-summary-details-title-font-weight;
+					color: $wizard-summary-details-title-color;
+				}
+
+				dd {
+					margin-bottom: 0;
+					color: $wizard-summary-details-data-color;
+				}
+
+				& + .data-details {
+					margin-top: $wizard-summary-details-data-mar-y;
+				}
+			}
+		}
+	}
+}

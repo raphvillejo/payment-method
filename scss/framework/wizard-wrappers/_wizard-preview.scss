@@ -1,0 +1,49 @@
+// SCSS File
+// wizard-preview.scss
+
+
+// wizard-preview style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-preview {
+		.wizard-preview {
+			position: relative;
+			align-items: center;
+			margin-bottom: $wizard-preview-mar;
+			padding: $wizard-preview-pad;
+			border-radius: $wizard-preview-round;
+			border: $wizard-preview-border;
+			box-shadow: $wizard-preview-shadow;
+
+			.icon {
+				position: absolute;
+				top: 25%;
+				@include transform-translateY(30%);
+			}
+
+			.preview-title, .preview-description {
+				display: block;
+				margin-left: $wizard-preview-title-mar;
+			}
+
+			.preview-title {
+				color: $wizard-preview-title-color;
+			}
+
+			.preview-description {
+				font-size: $wizard-preview-description-font-size;
+				color: $wizard-preview-description-color;
+				display: block;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@include media-breakpoint-down(xs) {
+				.preview-title {
+					font-size: $font-size-16;
+				}
+			}
+		}
+	}
+}

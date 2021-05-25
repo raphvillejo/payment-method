@@ -1,0 +1,80 @@
+﻿// SCSS File
+// card-details.scss
+
+
+// card-details style
+@if $enable-card {
+	@if $enable-card-details {
+		.card-details {
+			overflow-y: hidden;
+			overflow-x: scroll;
+			width: $card-details-width;
+
+			.table {
+				> thead > tr > th,
+				> tbody > tr > td,
+				> tbody > tr > th,
+				> tfoot > tr > td {
+					width: $card-details-cell-width;
+					padding: $card-details-cell-pad;
+					vertical-align: top;
+
+					&:nth-of-type(odd) {
+						background-color: $card-details-cell-odd-bg;
+					}
+
+					&:nth-of-type(even) {
+						background-color: $card-details-cell-even-bg;
+					}
+				}
+
+				> thead > tr {
+					&:first-child {
+						> th {
+							border-radius: $card-details-cell-round;
+						}
+					}
+
+					> th {
+						.image {
+							width: $card-details-cell-image-width;
+							background-color: $card-details-cell-image-bg;
+							border-radius: $card-details-cell-image-round;
+							@include image-mid-aligner($card-details-cell-image-height);
+						}
+					}
+				}
+
+				> tbody > tr {
+					&:nth-of-type(odd) > td {
+						&:nth-of-type(odd) {
+							background-color: $card-details-body-row-odd-cell-odd-bg;
+						}
+
+						&:nth-of-type(even) {
+							background-color: $card-details-body-row-odd-cell-even-bg;
+						}
+					}
+
+					&:nth-of-type(even) > td {
+						&:nth-of-type(odd) {
+							background-color: $card-details-body-row-even-cell-odd-bg;
+						}
+
+						&:nth-of-type(even) {
+							background-color: $card-details-body-row-even-cell-even-bg;
+						}
+					}
+				}
+
+				> tr > td:first-child {
+					width: $card-details-first-cell-width;
+				}
+
+				> tfoot > tr:first-child > td {
+					border-radius: $card-details-foot-cell-round;
+				}
+			}
+		}
+	}
+}

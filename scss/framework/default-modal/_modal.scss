@@ -1,0 +1,50 @@
+﻿// SCSS File
+// modal.scss
+
+
+// modal extend
+%extend-layout-modal {
+	@include preserve-3d();
+	@include transform-translate(0, 120%);
+}
+
+// modal style
+@if $enable-modal {
+	.modal {
+		width: $modal-width;
+		min-height: $modal-min-height;
+		margin: $modal-mar;
+		pointer-events: none;
+		@include flex-justify-content();
+		@include flex-align-items();
+		@include flex-display();
+		@extend %extend-layout-modal;
+
+		@if $enable-single-class-animate == false {
+			@extend %extend-animate-all;
+		}
+
+		@include media-breakpoint-down(xs) {
+			margin: 0;
+			height: calc(100% - #{$spacer-40});
+			min-height: 0;
+			margin-top: $spacer-40;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			background-color: $build-white;
+			@include flex-align-items(flex-start);
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin: $spacer-40;
+			height: calc(100% - #{$spacer-80});
+			min-height: calc(100% - #{$spacer-80});
+
+			&.modal-panel {
+				background-color: transparent;
+				height: auto;
+				@include flex-align-items(center);
+			}
+		}
+	}
+}

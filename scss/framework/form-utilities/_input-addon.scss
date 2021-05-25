@@ -1,0 +1,99 @@
+﻿// SCSS File
+// input-addon.scss
+
+
+// input addon style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-input-addon {
+			.input-addon {
+				position: relative;
+
+				.icon {
+					position: absolute;
+					left: 0;
+					top: $input-addon-icon-pos;
+					margin-top: $input-addon-icon-mar;
+					@include size($input-addon-icon-size);
+					line-height: $input-addon-icon-size;
+
+					~ .form-control, ~ .is-password-default .form-control {
+						padding-left: $input-addon-input-pad-x-1;
+					}
+
+					&.icon-right {
+						left: auto;
+						right: 0;
+
+						~ .form-control {
+							padding-left: $input-addon-input-pad-x-2;
+							padding-right: $input-addon-input-pad-x-1;
+						}
+					}
+
+					+ .icon ~ .form-control {
+						padding-left: $input-addon-input-pad-x-1;
+						padding-right: $input-addon-input-pad-x-1;
+					}
+
+					&.de-style-input {
+						@include plain-hover {
+							left: $input-addon-input-icon-pos;
+							line-height: normal;
+						}
+					}
+
+					&.icon-bottom {
+						top: auto;
+						bottom: 0;
+					}
+
+					@at-root button#{&} {
+						border: 0;
+						padding: 0;
+						margin: 0;
+					}
+
+					&.toggle-password {
+						cursor: pointer;
+						
+						&.active {
+							color: $build-primary;
+						}
+					}
+
+					@extend %extend-aria-hide;
+
+					@extend %extend-aria-show;
+				}
+
+				.btn {
+					padding: $input-addon-button-pad;
+					border-radius: $input-addon-button-round;
+
+					&.btn-addon {
+						position: absolute;
+						text-transform: uppercase;
+						right: $input-addon-button-pos;
+						top: $input-addon-button-pos;
+						width: $input-addon-button-width !important;
+						height: $input-addon-button-height;
+						font-size: $input-addon-button-font-size;
+					}
+				}
+
+				&.icon-right {
+					.icon {
+						left: auto;
+						right: 0;
+
+						~ .form-control, ~ .is-password-default .form-control {
+							padding-left: $input-addon-icon-right-control-pad-x;
+							padding-right: $input-addon-input-pad-x-1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

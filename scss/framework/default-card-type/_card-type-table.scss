@@ -1,0 +1,61 @@
+﻿// SCSS File
+// card-type-table.scss
+
+
+// card-type-table style
+@if $enable-card {
+	@if $enable-card-type-table {
+		.card-type-table {
+			width: $card-type-table-width;
+
+			.card-body {
+				width: $card-type-table-body-width;
+			}
+
+			.data-truncate {
+				max-width: $card-type-table-truncate-width;
+			}
+
+			.table {
+				font-size: $card-type-table-font-size;
+				color: $card-type-table-color;
+
+				.btn {
+					font-size: $card-type-table-font-size;
+					padding: $card-type-table-btn-pad;
+				}
+
+				> thead > tr > th,
+				> tbody > tr > th,
+				> tbody > tr > td,
+				> tfoot > tr > td {
+					padding-left: 0;
+					padding-right: 0;
+					vertical-align: middle;
+				}
+
+				> thead > tr > th {
+					border-top: 0;
+					border-bottom-width: $card-type-table-head-border-size;
+					color: $card-type-table-head-color;
+				}
+
+				> tbody > tr > td {
+					word-break: break-word;
+
+					@include media-breakpoint-down(lg) {
+						width: auto;
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+	}
+}

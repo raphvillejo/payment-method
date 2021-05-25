@@ -1,0 +1,39 @@
+﻿// SCSS File
+// wizard-status.scss
+
+
+// wizard-status style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-status {
+		.wizard-status {
+			text-align: center;
+			margin-bottom: $wizard-status-mar-y;
+			@include flex-align-items();
+			@include flex-direction(column);
+			@include flex-display();
+
+			.title {
+				font-size: $wizard-status-title-font-size;
+			}
+
+			.lead {
+				font-size: $wizard-status-lead-font-size;
+			}
+
+			.btn {
+
+				&:first-of-type {
+					margin-top: $wizard-status-btn-mar-y;
+				}
+
+				+ a {
+					margin-top: $wizard-status-btn-mar-y;
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+// SCSS File
+// drawer.scss
+
+// drawer style
+.drawer {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: -#{$spacer-24};
+    margin-right: -#{$spacer-24};
+  }
+
+  .menu-link {
+    padding: $p12 $spacer-24;
+  }
+}

@@ -1,0 +1,51 @@
+﻿// SCSS File
+// wizard-settings.scss
+
+
+// wizard-settings style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-settings {
+		.wizard-settings {
+			margin-bottom: $wizard-settings-mar-y;
+			@include flex-justify-content(flex-end);
+			@include flex-display();
+
+			.settings-group {
+				width: auto;
+				margin: 0;
+				@include flex-align-items();
+				@include flex-display();
+
+				label {
+					margin: 0;
+				}
+
+				.form-control {
+					width: auto;
+					padding-top: 0;
+					padding-bottom: 0;
+					display: inline-block;
+					height: $wizard-settings-input-height;
+					margin-left: $wizard-settings-input-mar-x;
+					background-color: $wizard-settings-input-bg;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+
+				.settings-group {
+					width: 100%;
+					@include flex-direction(column);
+
+					label {
+						display: none;
+					}
+
+					.form-control {
+						width: inherit;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+﻿// SCSS File
+// form-select.scss
+
+
+// select style
+@if $enable-form {
+	select {
+		cursor: pointer;
+
+		&.form-control {
+
+			&:not([size]):not([multiple]) {
+				padding-right: $select-pad-x;
+				background-image: $select-bg-image;
+				background-repeat: no-repeat;
+				background-position: $select-bg-pos;
+				background-size: $select-bg-size;
+			}
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,71 @@
+﻿// SCSS File
+// form.scss
+
+
+// form extensions
+%extend-form-appearance {
+	@include appearance(none);
+}
+
+// form style
+@if $enable-form {
+	form {
+		text-align: left;
+
+		hr {
+			margin: $form-horizontal-rule-mar;
+		}
+	}
+
+	// fieldset style
+	fieldset {
+	}
+
+	// label & legend style
+	label, legend {
+		margin-bottom: $form-label-mar-y;
+		line-height: $form-label-line-height;
+		font-weight: $form-label-font-weight;
+		font-size: $form-label-font-size;
+		color: $form-label-color;
+	}
+
+	// legend style
+	legend {
+		+ p {
+			margin-top: -#{$form-legend-para-mar-top};
+			margin-bottom: $form-legend-para-mar-bot;
+		}
+	}
+
+	// autocomplete style
+	input[autocomplete="off"] {
+		&::-webkit-contacts-auto-fill-button {
+			width: 0;
+			height: 0;
+			margin: 0;
+			display: none !important;
+			pointer-events: none;
+			visibility: hidden;
+		}
+	}
+
+	.field-validation-valid, .invalid-feedback {
+		display: none;
+		height: 0;
+		overflow: hidden;
+		pointer-events: none;
+		visibility: hidden;
+		opacity: 0;
+		margin-bottom: 0;
+	}
+
+	.disabled, [disabled="disabled"], :disabled {
+		opacity: $form-disabled-opacity;
+		pointer-events: none;
+	}
+
+	[onclick] {
+		cursor: pointer;
+	}
+}

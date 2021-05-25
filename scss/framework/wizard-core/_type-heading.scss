@@ -1,0 +1,18 @@
+﻿// SCSS File
+// type-heading.scss
+
+
+// wizard heading style
+@if $enable-wizard {
+	.wizard-heading {
+		margin-bottom: $wizard-heading-mar-y;
+		@include responsive-font-size($wizard-heading-font-size);
+		font-weight: $wizard-heading-font-weight;
+		line-height: $wizard-heading-line-height;
+
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-22;
+			margin-bottom: $spacer-24;
+		}
+	}
+}

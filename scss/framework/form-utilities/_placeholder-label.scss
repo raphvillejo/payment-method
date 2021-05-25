@@ -1,0 +1,55 @@
+﻿// SCSS File
+// placeholder-label.scss
+
+
+// placeholder-label style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-placeholder-label {
+			.placeholder-label {
+
+				.form-control {
+
+					@include input-placeholder() {
+						color: $placeholder-label-input-color;
+						opacity: 0;
+					}
+				}
+
+				label {
+					cursor: text;
+					margin-bottom: 0;
+					position: absolute;
+					top: $placeholder-label-pos;
+					left: $placeholder-label-pos;
+					padding: $placeholder-label-pad;
+					line-height: $placeholder-label-line-height;
+					height: $placeholder-label-height;
+					z-index: $placeholder-label-layer;
+					background-color: $placeholder-label-bg;
+					font-size: $placeholder-label-font-size;
+					border-radius: $placeholder-label-round;
+
+					@if $enable-single-class-animate == false {
+						@extend %extend-animate-all;
+					}
+				}
+
+				&.filled, &.focused {
+					label {
+						padding: $placeholder-label-filled-focused-pad;
+						line-height: $placeholder-label-filled-focused-line-height;
+						height: $placeholder-label-filled-focused-height;
+						font-size: $placeholder-label-filled-focused-font-size;
+						top: $placeholder-label-filled-focused-pos-y;
+						left: $placeholder-label-filled-focused-pos-x;
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

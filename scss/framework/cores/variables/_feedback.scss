@@ -1,0 +1,28 @@
+﻿// SCSS File
+// feedback.scss
+
+
+// feedback variables
+$feedback-width:									auto;
+$feedback-mar:										$spacer-34;
+$feedback-min-height:								calc(100% - (#{$feedback-mar} * 2));
+
+// feedback-content variables
+$feedback-content-width:							$modal-dialog-sm-width;
+$feedback-content-pad-y:							$spacer-70;
+$feedback-content-pad:								$spacer-24;
+$feedback-content-bg:								$build-white;
+$feedback-content-round:							0;
+$feedback-content-shadow:							0 $p4 $p8 0 $build-shadow-dark;
+$feedback-content-title-mar-y:						$spacer-14;
+$feedback-content-title-font-size:					$font-size-30;
+$feedback-content-title-font-weight:				$font-weight-3;
+$feedback-content-title-color:						$heading-color;
+$feedback-content-text-font-size:					$font-size-18;
+$feedback-content-text-color:						$text-color;
+$feedback-content-btn-width:						calc(100% + (#{$feedback-content-pad} * 2));
+$feedback-content-btn-mar:							$spacer-24;
+$feedback-content-badge-size:						$spacer-12 * 10;
+$feedback-content-badge-y:							$feedback-content-badge-size / 2;
+$feedback-content-badge-x:							calc(50% - #{$feedback-content-badge-y});
+$feedback-content-badge-pos:						$feedback-content-badge-y;

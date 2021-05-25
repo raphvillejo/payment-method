@@ -1,0 +1,72 @@
+﻿// SCSS File
+// layout-drawer.scss
+
+// layout-drawer extend
+%extend-drawer-show {
+  @include transform-translate(0, 0);
+  pointer-events: auto;
+}
+
+// layout-drawer style
+@if $enable-drawer {
+  .layout-drawer {
+    height: $layout-drawer-height;
+    width: $layout-drawer-width;
+    max-width: $layout-drawer-min-width;
+    border-right: $layout-drawer-border-color;
+    background-color: $layout-drawer-bg;
+    box-shadow: $layout-drawer-shadow;
+    position: fixed;
+    z-index: $layout-drawer-layer;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    @extend %extend-animate-all;
+
+    &.show {
+      z-index: $layout-drawer-layer-show;
+      @include transform-translate(0, 0);
+      pointer-events: auto;
+    }
+
+    &.layout-drawer-left {
+      @include transform-translate(-#{$layout-drawer-min-width}, 0);
+      left: -#{$layout-drawer-min-width};
+
+      &.show {
+        left: 0;
+        @extend %extend-drawer-show;
+      }
+
+      .drawer-close-float {
+        left: $layout-drawer-close-float-pos-x;
+      }
+
+      .nav-link.active {
+        border-left-color: $layout-drawer-nav-link-active-border-color;
+      }
+    }
+
+    &.layout-drawer-right {
+      @include transform-translate($layout-drawer-min-width, 0);
+      right: -#{$layout-drawer-min-width};
+
+      &.show {
+        right: 0;
+        @extend %extend-drawer-show;
+      }
+
+      .drawer-close-float {
+        right: $layout-drawer-close-float-pos-x;
+      }
+
+      .nav-link.active {
+        border-right-color: $layout-drawer-nav-link-active-border-color;
+      }
+    }
+
+    @extend %extend-aria-hide;
+
+    @extend %extend-aria-show;
+  }
+}

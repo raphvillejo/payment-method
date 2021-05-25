@@ -1,0 +1,36 @@
+// SCSS File
+// navigation.scss
+
+// navigation style
+.nav-tabs {
+  flex-direction: row;
+  border-width: 0;
+
+  .nav-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0;
+  }
+
+  .nav-link {
+    display: block;
+    line-height: normal;
+    padding: $p10 0;
+    text-align: center;
+    border-width: 0;
+    text-transform: uppercase;
+    font-size: $spacer-26;
+    letter-spacing: $p3;
+    box-shadow: 0 0 0 #00000000;
+    border-bottom: $p1 solid #ced4da;
+    color: #ced4da;
+    @extend %extend-animate-all;
+
+    &.active,
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0 $p3 $p9 #33333333;
+      border-bottom-color: transparent;
+    }
+  }
+}

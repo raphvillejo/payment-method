@@ -1,0 +1,140 @@
+﻿// SCSS File
+// stack-grid.scss
+// Modified April 1, 2020
+
+// stack grid style
+@if $enable-stack {
+  @if $enable-stack-grid {
+    .stack-grid {
+      padding: 0;
+      margin: 0;
+      margin-left: -#{$stack-gutter-width};
+      list-style: none;
+      flex-wrap: wrap;
+      display: flex;
+
+      .item {
+        flex-basis: calc(33.33% - #{$stack-gutter-width});
+        margin-top: $stack-gutter-width;
+        margin-left: #{$stack-gutter-width};
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+
+      &[data-items="2"] {
+        .item {
+          flex-basis: calc(50% - #{$stack-gutter-width});
+        }
+      }
+
+      &[data-items="4"] {
+        .item {
+          flex-basis: calc(25% - #{$stack-gutter-width});
+        }
+      }
+
+      &[data-items="5"] {
+        .item {
+          flex-basis: calc(20% - #{$stack-gutter-width});
+        }
+      }
+
+      &[data-items="6"] {
+        .item {
+          flex-basis: calc(16.66% - #{$stack-gutter-width});
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        .item {
+          flex-grow: 1;
+        }
+
+        &[data-items="6"],
+        &[data-items="5"] {
+          .item {
+            flex-basis: calc(25% - #{$stack-gutter-width});
+          }
+        }
+
+        &[data-md-items="3"] {
+          .item {
+            flex-basis: calc(33.33% - #{$stack-gutter-width}) !important;
+          }
+        }
+
+        &[data-md-items="2"] {
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width}) !important;
+          }
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        .item {
+          flex-basis: calc(50% - #{$stack-gutter-width}) !important;
+        }
+
+        &[data-sm-items="3"] {
+          .item {
+            flex-basis: calc(33.33% - #{$stack-gutter-width}) !important;
+          }
+        }
+
+        &[data-sm-items="2"],
+        &[data-md-items="2"] {
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width}) !important;
+          }
+        }
+
+        &[data-sm-items="1"] {
+          margin-left: 0;
+
+          .item {
+            flex-basis: 100% !important;
+            margin-left: 0;
+          }
+        }
+      }
+      @include media-breakpoint-down(xs) {
+        &[data-xs-items="3"],
+        &[data-sm-items="3"] {
+          margin-left: -#{$stack-gutter-width-sm};
+
+          .item {
+            flex-basis: calc(33.33% - #{$stack-gutter-width-sm}) !important;
+            margin-top: $stack-gutter-width-sm;
+            margin-left: #{$stack-gutter-width-sm};
+          }
+        }
+
+        &[data-xs-items="2"],
+        &[data-sm-items="2"],
+        &[data-md-items="2"] {
+          margin-left: -#{$stack-gutter-width-sm};
+
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width-sm}) !important;
+            margin-top: $stack-gutter-width-sm;
+            margin-left: #{$stack-gutter-width-sm};
+          }
+        }
+
+        &,
+        &[data-xs-items="1"] {
+          margin-left: 0;
+
+          .item {
+            flex-basis: 100% !important;
+            margin-top: $stack-gutter-width-sm;
+            margin-left: 0;
+          }
+        }
+
+        .item {
+          margin-top: $stack-gutter-width;
+        }
+      }
+    }
+  }
+}

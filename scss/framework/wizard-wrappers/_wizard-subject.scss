@@ -1,0 +1,47 @@
+﻿// SCSS File
+// wizard-subject.scss
+
+
+// wizard-subject style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-subject {
+		.wizard-subject {
+			position: relative;
+			padding-bottom: $wizard-subject-pad-y;
+
+			.wizard-heading {
+				margin-bottom: $wizard-subject-heading-mar-y;
+			}
+
+			.wizard-lead {
+				font-size: $wizard-subject-lead-font-size;
+				font-weight: $wizard-subject-lead-font-weight;
+				color: $wizard-subject-lead-color;
+			}
+
+			> *:last-child {
+				margin-bottom: 0;
+			}
+
+			+ hr.sm {
+				display: none;
+			}
+
+			@include media-breakpoint-down(xs) {
+				.wizard-heading {
+					font-size: $font-size-24;
+					margin-bottom: $spacer-16;
+				}
+
+				.wizard-lead {
+					font-size: $font-size-18;
+				}
+
+				.btn {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}

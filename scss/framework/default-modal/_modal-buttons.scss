@@ -1,0 +1,31 @@
+﻿// SCSS File
+// modal-buttons.scss
+
+
+// modal-buttons style
+@if $enable-modal {
+	.modal-buttons {
+		padding: 0;
+		border-top: $modal-buttons-border;
+		@include flex-shrink();
+		@include flex-grow();
+		@include flex-display();
+
+		.btn {
+			@include flex($modal-buttons-btn-flex);
+			padding: $modal-buttons-btn-pad;
+			border-width: $modal-buttons-btn-border-size;
+			margin: 0;
+			border-radius: 0;
+			@include flex-shrink();
+			@include flex-display-inline();
+
+			@include media-breakpoint-down(xs) {
+
+				+ .btn {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

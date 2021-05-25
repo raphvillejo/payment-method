@@ -1,0 +1,43 @@
+// SCSS File
+// stack-masonry.scss
+// Modified January 10, 2020
+
+// stack masonry style
+@if $enable-stack {
+  @if $enable-stack-masonry {
+    .stack-masonry {
+      column-count: 2;
+      column-gap: $masonry-gutter-width;
+      text-align: left;
+
+      .item {
+        width: 100%;
+        margin-top: $masonry-gutter-width;
+        display: inline-block;
+      }
+
+      &[data-items="2"] {
+        column-count: 2;
+      }
+
+      &[data-items="3"] {
+        column-count: 3;
+      }
+
+      &[data-items="4"] {
+        column-count: 4;
+      }
+
+      @include media-breakpoint-down(md) {
+        &[data-items="3"],
+        &[data-items="4"] {
+          column-count: 2;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        column-count: 1 !important;
+      }
+    }
+  }
+}

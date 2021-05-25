@@ -1,0 +1,26 @@
+// SCSS File
+// drawer-buttons.scss
+
+
+// drawer-buttons style
+@if $enable-drawer {
+    .drawer-buttons {
+        @include flex-display();
+        @include flex-direction();
+        padding: 0;
+
+        .btn {
+            @include flex(1 1 100%);
+            margin: 0;
+            border-radius: 0;
+        }
+
+        @extend %extend-aria-hide;
+
+        @extend %extend-aria-show-flex;
+
+        .layout-drawer-left & {
+            @include flex-direction(row-reverse);
+        }
+    }
+}

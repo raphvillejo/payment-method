@@ -1,0 +1,423 @@
+﻿// SCSS File
+// wizard-wrappers.scss
+
+
+// wizard-loading variables
+$wizard-loading-bg:										$build-white;
+$wizard-loading-mar:									$spacer-32;
+$wizard-loading-color:									$mono-008;
+$wizard-loading-span-bg:								$wizard-loading-color;
+$wizard-loading-layer-hide:								$layer-buried;
+$wizard-loading-layer-show:								10;
+
+// wizard-items variables
+$wizard-items-mar:										$gutter-md-size;
+$wizard-items-mar-bot:									$wizard-loading-mar;
+$wizard-items-round:									$p6;
+$wizard-items-border:									$build-apply-border;
+$wizard-items-shadow:									$build-apply-shadow;
+$wizard-items-bg:										$build-white;
+$wizard-items-flex-basis:								calc(50% - #{$wizard-items-mar});
+$wizard-items-pad:										$wizard-items-mar;
+$wizard-items-name-font-size:							$font-size-16;
+$wizard-items-name-color:								$heading-color;
+$wizard-items-label-font-size:							$font-size-14;
+$wizard-items-label-color:								$accent-color;
+$wizard-items-logo-mar-y:								$p10;
+$wizard-items-hover-bg:									$highlight-bg;
+$wizard-items-disabled-opacity:							$build-default-opacity;
+$wizard-form-grid-items-mar:							$gutter-lg-size;
+$wizard-form-grid-items-basis:							calc(50% - #{$wizard-form-grid-items-mar});
+
+// wizard-page variables
+$wizard-page:											null !default;
+
+// wizard-card variables
+$wizard-card-pad:										$spacer-16;
+$wizard-card-mar:										$gutter-lg-size;
+$wizard-card-round:										$round-l;
+$wizard-card-border:									$build-apply-border;
+$wizard-card-shadow:									$build-apply-shadow;
+$wizard-card-bg:										$build-white;
+$wizard-card-flex-fill:									1 1 100%;
+$wizard-card-header-pad:								$wizard-card-pad / 4;
+$wizard-card-header-heading-pad:						$wizard-card-pad;
+$wizard-card-body-pad:									$wizard-card-pad;
+$wizard-card-body-btn-round:							$round-s;
+$wizard-card-body-btn-pad:								$p10 0;
+$wizard-card-image-pad:									$wizard-card-pad;
+$wizard-card-footer-mar:								-#{$wizard-card-image-pad};
+$wizard-card-footer-btn-pad:							$wizard-card-body-btn-pad;
+$wizard-card-footer-btn-shadow:							inset 0 $p1 0 0 $border-color;
+$wizard-card-sticky-pos-y:								$spacer-24;
+
+$wizard-card-action-span-pad:							$p4 $spacer-16;
+$wizard-card-action-span-border:						$p1 solid $border-color;
+$wizard-card-action-span-height:						$spacer-32;
+$wizard-card-action-span-round:							$spacer-16;
+$wizard-card-action-span-line-height:					$spacer-22;
+$wizard-card-action-span-font-size:						$font-size-10;
+$wizard-card-action-span-font-weight:					$font-weight-5;
+$wizard-card-action-span-letter-spacing:				$p1;
+
+$wizard-card-action-input-checked-span-color:			$build-white;
+$wizard-card-action-input-checked-span-bg:				$build-tertiary;
+$wizard-card-action-input-checked-span-border-color:	$build-tertiary;
+
+// wizard-cards variables
+$wizard-cards-mar-x:									$spacer-20;
+$wizard-cards-mar-y:									$spacer-20;
+$wizard-cards-round:									$spacer-16;
+$wizard-cards-border:									$build-apply-border;
+$wizard-cards-shadow:									$build-apply-shadow;
+$wizard-cards-size:										calc(50% - #{$wizard-cards-mar-x});
+$wizard-cards-bg:										$build-white;
+$wizard-cards-name-font-size:							$font-size-18;
+$wizard-cards-name-font-weight:							$font-weight-5;
+$wizard-cards-name-color:								$heading-color;
+$wizard-cards-label-font-size:							$font-size-14;
+$wizard-cards-label-color:								$accent-color;
+$wizard-cards-price-span-font-size:						$font-size-12;
+$wizard-cards-price-span-mar-y:							$p8;
+$wizard-cards-price-span-color:							$text-color;
+$wizard-cards-price-em-font-size:						$wizard-cards-price-span-font-size;
+$wizard-cards-price-em-color:							$accent-color;
+$wizard-cards-price-strong-font-size:					$font-size-20;
+$wizard-cards-price-strong-font-weight:					$font-weight-5;
+$wizard-cards-price-strong-color:						$heading-color;
+$wizard-cards-product-pad:								$spacer-20;
+$wizard-cards-product-image-width:						$spacer-90;
+$wizard-cards-product-image-height:						$spacer-14 * 10;
+$wizard-cards-product-image-mar-x:						$spacer-20;
+$wizard-cards-product-image-size:						100%;
+$wizard-cards-buttons-pad:								$p10 0;
+$wizard-cards-buttons-flex-basis:						50%;
+$wizard-cards-buttons-shadow:							$build-apply-shadow;
+
+// wizard-content variables
+$wizard-content-mar:									$spacer-14;
+$wizard-content-main-flex:								1 1 100%;
+$wizard-content-side-mar:								$spacer-20;
+$wizard-content-side-flex:								0 0 #{$spacer-28 * 10};
+
+// wizard-document variables
+$document-outer-padding:								$p14 !default;
+$document-outer-bg:										$mono-002 !default;
+$document-outer-shadow:									$build-apply-dark-shadow !default;
+$document-inner-padding:								$spacer-24 !default;
+$document-inner-bg:										$build-white !default;
+$document-outer-width:									$spacer-96 * 10 !default; // 960px
+$document-outer-height:									100% !default;
+
+// wizard-agreement-consent variables
+$agreement-font-size: 									$font-size-15 !default;
+$agreement-consent-bg: 									$mono-001 !default;
+$agreement-consent-border:								$p3 solid $mono-002 !default;
+$agreement-consent-form-group-next-mar:					$spacer-14;
+$agreement-consent-form-section-heading-font-size:		$font-size-20;
+$agreement-consent-form-section-heading-next-mar:		$agreement-consent-form-group-next-mar;
+
+// wizard-agreement variables
+$wizard-agreement-font-size:							$agreement-font-size;
+$wizard-agreement-mar:									$spacer-14;
+
+// wizard-agreement-feedback variables
+$wizard-agreement-feedback-bg:							$build-backdrop-bg;
+$wizard-agreement-feedback-layer:						$layer-layout-output;
+$wizard-agreement-feedback-pad:							$spacer-24;
+$wizard-agreement-feedback-close-layer:					$layer-buried;
+$wizard-agreement-feedback-panel-width:					calc(100% - #{$spacer-48});
+
+// wizard-agreement-signature variables
+$wizard-agreement-signature-pad:						$spacer-24;
+$wizard-agreement-signature-flex-basis:					50%;
+$wizard-agreement-signature-mar:						$spacer-14;
+
+// wizard-filter variables
+$wizard-filter-mar:										$spacer-14;
+$wizard-filter-title-mar:								$p10;
+$wizard-filter-title-font-size:							$font-size-16;
+$wizard-filter-group-label-font-size:					$font-size-14;
+$wizard-filter-group-input-focus-color:					$build-input-focus;
+$wizard-filter-group-option-mar-x:						$p8;
+$wizard-filter-group-option-mar:						0 -#{$wizard-filter-group-option-mar-x};
+$wizard-filter-group-option-pad:						0 $wizard-filter-group-option-mar-x;
+$wizard-filter-group-option-hover-bg:					$highlight-color;
+$wizard-filter-group-option-cheked-bg:					$mono-002;
+
+// wizard-filters variables
+$wizard-filters-pad:									$spacer-20;
+$wizard-filters-mar:									$wizard-filters-pad;
+$wizard-filters-round:									$p6;
+$wizard-filters-border:									$build-apply-border;
+$wizard-filters-shadow:									$build-apply-shadow;
+$wizard-filters-bg:										$build-white;
+$wizard-filters-titles-mar:								$p10;
+$wizard-filters-titles-font-size:						$font-size-16;
+$wizard-filters-group-label-font-size:					$font-size-14;
+$wizard-filters-group-input-focus-color:				$build-input-focus;
+$wizard-filters-group-option-pad:						0 $p8;
+$wizard-filters-group-option-hover-bg:					$highlight-color;
+$wizard-filters-group-option-cheked-bg:					$mono-002;
+
+// wizard-gadget variables
+$wizard-gadget-pad:										$spacer-20;
+$wizard-gadget-image-width:								$spacer-90;
+$wizard-gadget-image-height:							$spacer-14 * 10;
+$wizard-gadget-image-size:								100%;
+$wizard-gadget-name-line-height:						$line-height-md;
+$wizard-gadget-name-font-size:							$font-size-18;
+$wizard-gadget-name-font-weight:						$font-weight-5;
+$wizard-gadget-name-color:								$heading-color;
+$wizard-gadget-label-font-size:							$font-size-14;
+$wizard-gadget-label-color:								$accent-color;
+$wizard-gadget-price-line-height:						$line-height-sm;
+$wizard-gadget-price-mar:								$p8;
+$wizard-gadget-price-span-font-size:					$font-size-12;
+$wizard-gadget-price-span-mar:							$p8;
+$wizard-gadget-price-span-color:						$text-color;
+$wizard-gadget-price-em-font-size:						$wizard-gadget-price-span-font-size;
+$wizard-gadget-price-em-color:							$accent-color;
+$wizard-gadget-price-strong-font-size:					$font-size-20;
+$wizard-gadget-price-strong-font-weight:				$font-weight-5;
+$wizard-gadget-price-strong-color:						$heading-color;
+
+// wizard-gadget-data variables
+$wizard-gadget-data-font-size:							$font-size-16;
+
+// wizard-gadget-inline variables
+$wizard-gadget-inline-details-mar:						$spacer-14;
+$wizard-gadget-inline-image-size:						auto;
+$wizard-gadget-inline-image-width:						62.5%;
+$wizard-gadget-inline-image-min-width:					100%;
+
+// wizard-gadget-modal variables
+$wizard-gadget-modal-pad:								$spacer-24;
+$wizard-gadget-modal-mar:								-#{$wizard-gadget-modal-pad} -#{$spacer-32};
+$wizard-gadget-modal-mar-y:								$wizard-gadget-modal-pad;
+$wizard-gadget-modal-bg:								$highlight-color;
+$wizard-gadget-modal-image-width:						$spacer-14 * 10; // 140px
+
+// wizard-graphic variables
+$wizard-graphic-mar:									$p10 0 $spacer-32;
+
+// wizard-guide variables
+$wizard-guide-counter-name:								custom-counter;
+$wizard-guide-psuedo-size:								$spacer-48;
+$wizard-guide-psuedo-pos:								0;
+$wizard-guide-psuedo-round:								$wizard-guide-psuedo-size / 2;
+$wizard-guide-psuedo-line-height:						$wizard-guide-psuedo-size;
+$wizard-guide-psuedo-bg:								$mono-004;
+$wizard-guide-psuedo-color:								$build-white;
+$wizard-guide-span-pad-x:								$wizard-guide-psuedo-size + $spacer-16;
+$wizard-guide-span-pad-top:								$p4;
+$wizard-guide-span-pad-bot:								0;
+$wizard-guide-span-font-size:							$font-size-24;
+$wizard-guide-span-font-weight:							$font-weight-3;
+$wizard-guide-span-min-height:							$spacer-48;
+$wizard-guide-div-flex:									0 0 100%;
+$wizard-guide-div-pad:									0;
+$wizard-guide-div-mar:									0 -#{$spacer-16};
+$wizard-guide-figure-img-width:							100%;
+$wizard-guide-figure-pad:								$spacer-16;
+$wizard-guide-figure-flex:								1 1 $wizard-guide-figure-img-width;
+$wizard-guide-figcaption-pad:							$spacer-16;
+
+// wizard-loader variables
+$wizard-loader-width:									30%;
+$wizard-loader-mar:										$spacer-14 auto $spacer-32;
+$wizard-loader-progress-height:							$p3;
+$wizard-loader-progress-round:							$p12;
+$wizard-loader-progress-bg:								$mono-001;
+$wizard-loader-progress-bar-bg:							$build-success;
+$wizard-loader-progress-bar-animation:					progress 3s ease infinite;
+
+// wizard-modal-content variables
+$wizard-modal-content-figcaption-mar:					$p8;
+$wizard-modal-content-figcaption-font-size:				$font-size-13;
+
+// wizard-navigation variables
+$wizard-navigation-font-size:							$font-size-14;
+$wizard-navigation-pos-y:								$p10;
+$wizard-navigation-btn-size:							$spacer-50 + $p4;
+$wizard-navigation-btn-border-size:						$p1;
+$wizard-navigation-btn-pad:								0;
+$wizard-navigation-btn-mar:								$p14;
+$wizard-navigation-btn-round:							$p2;
+$wizard-navigation-btn-ghost-bg:						$mono-001;
+$wizard-navigation-btn-ghost-color:						$text-color;
+$wizard-navigation-btn-ghost-border-color:				$mono-002;
+$wizard-navigation-icon-size:							$spacer-24;
+$wizard-navigation-icon-pos:							50%;
+$wizard-navigation-icon-mar:							-($wizard-navigation-icon-size / 2);
+$wizard-navigation-item-mar-x:							$spacer-16;
+
+// wizard-otp variables
+$wizard-otp-pad:										$spacer-32;
+
+// wizard-preview variables
+$wizard-preview-mar:									$spacer-14;
+$wizard-preview-pad:									$spacer-32;
+$wizard-preview-round:									$p6;
+$wizard-preview-border:									$build-apply-border;
+$wizard-preview-shadow:									$build-apply-shadow;
+$wizard-preview-title-mar:								$spacer-48;
+$wizard-preview-title-color:							$heading-color;
+$wizard-preview-description-font-size:					$font-size-15;
+$wizard-preview-description-color:						$accent-color;
+
+// wizard-product variables
+$wizard-product-pad:									$spacer-24;
+$wizard-product-mar:									$spacer-32;
+$wizard-product-round:									$p6;
+$wizard-product-border:									$build-apply-border;
+$wizard-product-shadow:									$build-apply-shadow;
+$wizard-product-bg:										$build-white;
+$wizard-product-logo-mar:								$spacer-24;
+$wizard-product-logo-height:							$spacer-48;
+$wizard-product-graphic-mar:							0 auto $spacer-14;
+$wizard-product-graphic-max-width:						$spacer-16 * 10;	// 160px
+$wizard-product-graphic-max-height:						$p10 * 10;			// 100px
+$wizard-product-name-font-size:							$font-size-18;
+$wizard-product-name-color:								$heading-color;
+$wizard-product-label-font-size:						$font-size-15;
+$wizard-product-label-color:							$accent-color;
+$wizard-product-company-font-size:						$wizard-product-label-font-size;
+$wizard-product-company-color:							$wizard-product-label-color;
+$wizard-product-caption-mar:							$p10 0 $spacer-24;
+$wizard-product-caption-pad:							$p10;
+$wizard-product-caption-bg:								$highlight-color;
+$wizard-product-caption-font-size:						$font-size-14;
+$wizard-product-details-mar:							$p10;
+$wizard-product-details-font-size:						$font-size-16;
+$wizard-product-details-color:							$heading-color;
+$wizard-product-toggle-pad:								$p14;
+$wizard-product-toggle-mar:								$spacer-24;
+$wizard-product-toggle-mar-top:							$wizard-product-toggle-pad;
+$wizard-product-toggle-bg:								$highlight-bg;
+$wizard-product-toggle-width:							calc(100% + #{$wizard-product-toggle-mar * 2});
+$wizard-product-toggle-font-size:						$font-size-16;
+$wizard-product-toggle-line-height:						$line-height-sm;
+$wizard-product-display-mar:							$p10;
+$wizard-product-note-pad:								$p8;
+$wizard-product-note-mar:								$spacer-24 + $p1;
+$wizard-product-note-mar-bot:							$spacer-24;
+$wizard-product-note-bg:								$build-invalid-border;
+$wizard-product-note-width:								calc(100% + (#{$wizard-product-note-mar} * 2));
+$wizard-product-note-font-size:							$font-size-13;
+$wizard-product-note-color:								$build-white;
+$wizard-product-buttons-mar:							$spacer-24;
+$wizard-product-buttons-pad:							$p10 0;
+$wizard-product-buttons-shadow:							inset 0 $p1 0 $divider-color;
+$wizard-product-sticky-pos:								$spacer-24;
+$wizard-product-root-subject-pad:						$spacer-24;
+$wizard-product-root-modal-details-mar:					$spacer-24;
+
+// wizard-product-count variables
+$wizard-product-count-line-height:						$line-height-md;
+$wizard-product-count-bg:								$build-danger;
+$wizard-product-count-color:							$build-white;
+$wizard-product-count-font-size:						$p12;
+$wizard-product-count-size:								$spacer-20;
+$wizard-product-count-pos:								-($wizard-product-count-size / 2);
+$wizard-product-count-round:							50%;
+
+// wizard-progress variables
+$wizard-progress-pad:									$spacer-24;
+$wizard-progress-mar:									$p14;
+$wizard-progress-bg:									rgba($build-white, .8);
+$wizard-progress-pos:									-#{$p1};
+$wizard-progress-span-color:							$build-white;
+$wizard-progress-span-pad:								$p10 $p10;
+$wizard-progress-span-font-size:						$font-size-14;
+$wizard-progress-span-font-weight:						$font-weight-4;
+$wizard-progress-stick-max-width:						730px;
+$wizard-progress-stick-mar:								$wizard-progress-stick-max-width / 2;
+$wizard-progress-stick-next-mar:						($progress-height + ($wizard-progress-pad * 2));
+$wizard-progress-stick-pad-sm:							$spacer-16;
+
+// wizard-settings variables
+$wizard-settings-mar-y:									$spacer-24;
+$wizard-settings-input-height:							$input-height-sm;
+$wizard-settings-input-mar-x:							$p10;
+$wizard-settings-input-bg:								$build-white;
+
+// wizard-stack variables
+$wizard-stack-mar:										$gutter-lg-size;
+$wizard-stack-card-mar:									$wizard-stack-mar;
+$wizard-stack-card-flex-basis-1:						calc(100% - #{$wizard-stack-mar});
+$wizard-stack-card-flex-basis-2:						calc(50% - #{$wizard-stack-mar});
+$wizard-stack-card-flex-basis-3:						calc(33.33333% - #{$wizard-stack-mar});
+$wizard-stack-card-flex-basis-4:						calc(25% - #{$wizard-stack-mar});
+
+// wizard-status variables
+$wizard-status-mar-y:									$spacer-32;
+$wizard-status-title-font-size:							$font-size-24;
+$wizard-status-lead-font-size:							$font-size-18;
+$wizard-status-btn-mar-y:								$spacer-24;
+
+// wizard-steps variables
+$wizard-steps-font-size:								$font-size-16 !default;
+$wizard-steps-pos-y:									$p10 !default;
+
+// wizard-sticky variables
+$wizard-sticky-show-board-width:						100%;
+$wizard-sticky-width:									100%;
+$wizard-sticky-max-width:								($spacer-72 + $p1) * 10;
+$wizard-sticky-mar:										-#{$wizard-sticky-max-width / 2};
+$wizard-sticky-pos:										50%;
+$wizard-sticky-placeholder-height:						$spacer-88;
+
+// wizard-subject variables
+$wizard-subject-pad-y:									$spacer-32;
+$wizard-subject-heading-mar-y:							$p8;
+$wizard-subject-lead-font-size:							$font-size-22;
+$wizard-subject-lead-font-weight:						$font-weight-3;
+$wizard-subject-lead-color:								$heading-color;
+
+// wizard-summary variables
+$wizard-summary-data-mar-y:								$spacer-24;
+$wizard-summary-data-pad-y:								$spacer-24;
+$wizard-summary-data-border:							$build-apply-border;
+$wizard-summary-title-mar-y:							$spacer-14;
+$wizard-summary-title-font-size:						$font-size-20;
+$wizard-summary-title-font-weight:						$font-weight-5;
+$wizard-summary-title-color:							$heading-color;
+$wizard-summary-edit-pos-y:								-#{$p8};
+$wizard-summary-details-font-size:						$font-size-16;
+$wizard-summary-details-title-font-weight:				$font-weight-5;
+$wizard-summary-details-title-color:					$accent-color;
+$wizard-summary-details-data-color:						$heading-color;
+$wizard-summary-details-data-mar-y:						$p4;
+
+// wizard-table variables
+$wizard-table-image-width:								$spacer-16 * 10;				// 160px
+$wizard-table-image-height:								$p10 * 10;						// 100px
+$wizard-table-title-sub-border:							$p3 solid $mono-004;
+$wizard-table-title-sub-pad:							$p4;
+$wizard-table-title-sub-mar:							$wizard-table-title-sub-pad;
+$wizard-table-title-sub-font-size:						$font-size-20;
+$wizard-table-title-sub-font-weight:					$font-weight-5;
+$wizard-table-btn-mar:									$spacer-16;
+
+// wizard-table-sticky variables
+$wizard-table-sticky-width:								100%;
+$wizard-table-sticky-height:							$spacer-16 * 10;
+$wizard-table-sticky-mar-y:								-#{$wizard-table-sticky-height};
+$wizard-table-sticky-pos-x:								0;
+$wizard-table-sticky-image-mar-y:						$p8;
+$wizard-table-sticky-stick-height:						$p10 * 9;
+$wizard-table-sticky-stick-image-height:				$spacer-30 + $p1;
+$wizard-table-sticky-stick-image-width:					$spacer-50 - $p1;
+$wizard-table-sticky-stick-next-mar-y:					$wizard-table-sticky-stick-height;
+$wizard-table-sticky-table-cel-border-size:				$p2;
+$wizard-table-sticky-next-mar-y:						$wizard-table-sticky-height;
+
+// wizard-voucher variables
+$wizard-voucher-mar-y:									$spacer-32;
+
+// wizard-result variables
+$wizard-result-height:									100%;
+$wizard-result-flex:									1 1 $wizard-result-height;
+$wizard-result-container-height:						100%;
+$wizard-result-container-flex:							1 1 $wizard-result-container-height;

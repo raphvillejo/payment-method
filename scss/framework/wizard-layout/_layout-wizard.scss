@@ -1,0 +1,15 @@
+﻿// SCSS File
+// layout-wizard.scss
+
+
+// layout-wizard style
+@if $enable-wizard {
+	@if $enable-wizard-layout {
+		.layout-wizard {
+			@include flex-display();
+			@include flex-direction(column);
+			@include flex(1 1 auto);
+		}
+	}
+}
+

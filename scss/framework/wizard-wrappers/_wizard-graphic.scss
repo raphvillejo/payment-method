@@ -1,0 +1,13 @@
+﻿// SCSS File
+// wizard-graphic.scss
+
+
+// wizard-graphic style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-graphic {
+		.wizard-graphic {
+			margin: $wizard-graphic-mar;
+		}
+	}
+}
+

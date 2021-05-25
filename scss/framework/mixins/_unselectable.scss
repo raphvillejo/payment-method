@@ -1,0 +1,9 @@
+﻿// SCSS File
+// unselectable.scss
+
+
+// unselectable mixin
+@mixin unselectable {
+	-webkit-touch-callout: none;
+	user-select: none;
+}

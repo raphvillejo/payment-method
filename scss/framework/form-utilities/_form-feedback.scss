@@ -1,0 +1,27 @@
+﻿// SCSS File
+// form-feedback.scss
+
+
+// feedback style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-feedback {
+			// valid feedback style
+			.valid-feedback {
+
+				.valid & {
+					display: block;
+				}
+			}
+
+			// invalid feedback style
+			.invalid-feedback {
+
+				.invalid & {
+					display: block;
+				}
+			}
+		}
+	}
+}
+

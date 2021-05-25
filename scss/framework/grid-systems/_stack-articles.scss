@@ -1,0 +1,54 @@
+// SCSS File
+// stack-articles.scss
+// Modified January 10, 2020
+
+// stack articles style
+@if $enable-stack {
+  @if $enable-stack-articles {
+    .stack-articles {
+      &.is-guides,
+      &.is-category {
+        .stack-grid {
+          .item {
+            &:nth-child(1),
+            &:nth-child(2) {
+              flex-basis: calc(50% - #{$stack-gutter-width});
+            }
+          }
+        }
+      }
+
+      &.is-related {
+      }
+
+      &.is-search {
+      }
+
+      @include media-breakpoint-down(md) {
+        .stack-grid {
+          .item {
+            flex-basis: calc(50% - #{$stack-gutter-width});
+
+            &:nth-child(1),
+            &:nth-child(2) {
+              flex-basis: inherit;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        .stack-grid {
+          margin-left: 0;
+          flex-direction: column;
+
+          .item {
+            width: 100%;
+            margin-left: 0;
+            flex-basis: auto;
+          }
+        }
+      }
+    }
+  }
+}

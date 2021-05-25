@@ -1,0 +1,41 @@
+﻿// SCSS File
+// form-consent.scss
+
+
+// form consent style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-consent {
+			.form-consent {
+				font-size: $form-consent-font-size;
+				line-height: $form-consent-line-height;
+				text-align: left;
+
+				ul {
+					padding-left: $form-consent-list-pad;
+					margin-bottom: $form-consent-list-mar;
+
+					li + li {
+						margin-top: $form-consent-list-li-mar;
+					}
+				}
+
+				@include media-breakpoint-down(sm) {
+					height: $spacer-16 * 10;
+					padding: $p10;
+					margin-bottom: $spacer-24;
+					border-radius: $p3;
+					border: $build-apply-border;
+					background-color: $build-white;
+					-webkit-overflow-scrolling: touch;
+					overflow: visible;
+					overflow-y: auto;
+
+					ul {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+﻿// SCSS File
+// ui-datepicker-calendar.scss
+
+
+// datepicker-calendar style
+@if $enable-form {
+	@if $enable-form-ui {
+		@if $enable-form-ui-datepicker {
+			.ui-datepicker-calendar {
+				width: $ui-datepicker-calendar-width;
+				table-layout: fixed;
+				border-collapse: collapse;
+				text-align: center;
+
+				thead {
+
+					th {
+						padding: $ui-datepicker-calendar-th-pad;
+						font-size: $ui-datepicker-calendar-th-font-size;
+						font-weight: $ui-datepicker-calendar-th-font-weight;
+						color: $ui-datepicker-calendar-th-color;
+					}
+				}
+
+				tbody {
+
+					td {
+						padding: $ui-datepicker-calendar-td-pad;
+						font-size: $ui-datepicker-calendar-td-font-size;
+						font-weight: $ui-datepicker-calendar-td-font-weight;
+					}
+
+					span, a {
+						padding: $ui-datepicker-calendar-spanlink-pad;
+						border-radius: $ui-datepicker-calendar-spanlink-round;
+						display: block;
+					}
+
+					span {
+						cursor: default;
+					}
+
+					a {
+						cursor: pointer;
+
+						@include hover {
+							text-decoration: none;
+						}
+					}
+				}
+
+				.ui-state-default {
+					background-color: $ui-datepicker-state-default-bg;
+					color: $ui-datepicker-state-default-color;
+					cursor: default;
+				}
+
+				.ui-state-hover {
+					background-color: $ui-datepicker-state-active-bg;
+					color: $ui-datepicker-state-hover-color;
+					cursor: pointer;
+				}
+
+				.ui-state-active {
+					background-color: $ui-datepicker-state-active-bg;
+					color: $ui-datepicker-state-active-color;
+				}
+
+				.ui-state-date-range {
+
+					a {
+						background-color: $ui-datepicker-state-range-bg;
+						color: $ui-datepicker-state-range-color;
+
+						&.ui-state-hover {
+							background-color: $ui-datepicker-state-active-bg;
+							color: $ui-datepicker-state-active-color;
+						}
+					}
+				}
+
+				.ui-state-start-date {
+
+					a {
+						background-color: $ui-datepicker-state-active-bg;
+						color: $ui-datepicker-state-active-color;
+					}
+				}
+
+				.ui-state-end-date {
+
+					a {
+						background-color: $ui-datepicker-state-active-bg;
+						color: $ui-datepicker-state-active-color;
+					}
+				}
+
+				.ui-state-disabled {
+
+					span {
+						background-color: $ui-datepicker-state-disabled-bg;
+						background-image: $ui-datepicker-state-disabled-bg-greadient;
+						color: $ui-datepicker-state-disabled-color;
+					}
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					thead {
+						display: none;
+					}
+				}
+
+				@include media-breakpoint-down(xs) {
+
+					tbody {
+
+						span, a {
+							padding: $p8 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

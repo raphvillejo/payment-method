@@ -1,0 +1,183 @@
+﻿// SCSS File
+// form-core.scss
+
+// form-core variables
+$form-horizontal-rule-mar: $spacer-24 0 $spacer-24;
+$form-label-mar-y: $p8;
+$form-label-color: $mono-006;
+$form-label-font-size: $font-size-18;
+$form-label-font-weight: $font-weight-4;
+$form-label-line-height: $line-height-md;
+$form-legend-para-mar-top: $form-label-mar-y - $p4;
+$form-legend-para-mar-bot: $form-label-mar-y;
+$form-disabled-opacity: $build-default-opacity;
+
+// select variables
+$select-pad-x: $spacer-48;
+$select-bg-image-color: $build-black;
+$select-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYBAMAAABpfeIHAAAAElBMVEUAAAA0O0A1O0E2PEI9PUk0OkAiqeRcAAAABXRSTlMA6qpVFQVXMqEAAABSSURBVBjTVcuxCQAgEMXQD67gCvau4AqC+69iYSRcysDLOKWdVUdPq2PmGUWeUQSjwCgwCowCo8AoMAgaCowCo9AgNAgNQoPQIDQIDUKD0HxxAZxJP8Gf3MEsAAAAAElFTkSuQmCC");
+$select-bg-pos: right $spacer-18 center;
+$select-bg-size: $p8 $p6;
+
+// checkbox variables
+$checkbox-label-pad: $p3 0;
+$checkbox-label-pad-x: $spacer-24;
+$checkbox-label-color: $text-color;
+$checkbox-size: $spacer-18;
+$checkbox-mar: 0;
+$checkbox-mar-x: $p10;
+$checkbox-v-align: $p5;
+$checkbox-round: $p3;
+$checkbox-border: $p1 solid $border-color;
+//$checkbox-bg:										$build-input-bg;
+$checkbox-bg: $border-color;
+$checkbox-focus-border-color: $build-interface-border;
+$checkbox-focus-shadow: $build-input-shadow;
+$checkbox-focus-outline-offset: $p3;
+$checkbox-checked-border-color: #00000073;
+$checkbox-checked-bg-image-color: $build-primary;
+$checkbox-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$checkbox-checked-bg-image-color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath id='tick' class='cls-1' d='M453.263,135.306h0L207.317,405.249l-0.015.016-0.038.042h0a44.987,44.987,0,0,1-66.862-.382l-0.005,0-114-128,0.006,0a44.992,44.992,0,1,1,67.2-59.848l0.006,0,80.776,90.7,212.3-233.016,0.015-.017,0.038-.041h0A45,45,0,1,1,453.263,135.306Z'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+$checkbox-checked-bg-size: $p10;
+$checkbox-is-inverted-border: $build-inverted-border;
+$checkbox-is-inverted-bg: $build-inverted-bg;
+$checkbox-is-inverted-focus-border: $checkbox-focus-border-color;
+$checkbox-is-inverted-focus-bg: $checkbox-is-inverted-bg;
+$checkbox-is-valid-border: $build-valid-border;
+$checkbox-is-valid-bg: $build-valid-bg;
+$checkbox-is-valid-focus-border: $checkbox-is-valid-border;
+$checkbox-is-valid-focus-shadow: $build-valid-shadow;
+$checkbox-is-valid-checked-bg-image-color: $build-valid-color;
+$checkbox-is-valid-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$checkbox-is-valid-checked-bg-image-color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath id='tick' class='cls-1' d='M453.263,135.306h0L207.317,405.249l-0.015.016-0.038.042h0a44.987,44.987,0,0,1-66.862-.382l-0.005,0-114-128,0.006,0a44.992,44.992,0,1,1,67.2-59.848l0.006,0,80.776,90.7,212.3-233.016,0.015-.017,0.038-.041h0A45,45,0,1,1,453.263,135.306Z'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+$checkbox-is-valid-label-color: $build-valid-color;
+$checkbox-is-invalid-border: $build-invalid-border;
+$checkbox-is-invalid-bg: $build-invalid-bg;
+$checkbox-is-invalid-focus-border: $checkbox-is-invalid-border;
+$checkbox-is-invalid-focus-shadow: $build-invalid-shadow;
+$checkbox-is-invalid-checked-bg-image-color: $build-invalid-color;
+$checkbox-is-invalid-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$checkbox-is-invalid-checked-bg-image-color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath id='tick' class='cls-1' d='M453.263,135.306h0L207.317,405.249l-0.015.016-0.038.042h0a44.987,44.987,0,0,1-66.862-.382l-0.005,0-114-128,0.006,0a44.992,44.992,0,1,1,67.2-59.848l0.006,0,80.776,90.7,212.3-233.016,0.015-.017,0.038-.041h0A45,45,0,1,1,453.263,135.306Z'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+$checkbox-is-invalid-label-color: $build-invalid-color;
+
+// radio variables
+$radio-round: 50%;
+$radio-checked-bg-size: $p10 $p10;
+$radio-checked-bg-image-color: $build-white;
+$radio-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$radio-checked-bg-image-color}; %7D %3C/style%3E%3C/defs%3E%3Ccircle id='dot' class='cls-1' cx='240' cy='240' r='230'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+$radio-is-valid-checked-bg-image-color: $build-valid-color;
+$radio-is-valid-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$radio-is-valid-checked-bg-image-color}; %7D %3C/style%3E%3C/defs%3E%3Ccircle id='dot' class='cls-1' cx='240' cy='240' r='230'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+$radio-is-invalid-checked-bg-image-color: $build-invalid-color;
+$radio-is-invalid-checked-bg-image: str-replace(
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$radio-is-invalid-checked-bg-image-color}; %7D %3C/style%3E%3C/defs%3E%3Ccircle id='dot' class='cls-1' cx='240' cy='240' r='230'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+
+// form-control variables
+$input-width: 100%;
+$input-font-family: $font-family-default;
+$input-focus-color: $build-input-focus;
+$input-focus-bg: $mono-001;
+$input-focus-border-color: $build-interface-border;
+$input-focus-shadow: 0 0 0 $p3 rgba($build-input-focus, 0.25);
+$form-control-textarea-height: $spacer-96;
+$form-control-placeholder-line-height: $line-height-md;
+$form-control-placeholder-font-weight: $font-weight-4;
+$form-control-placeholder-font-size: $font-size-16;
+$form-control-placeholder-color: $mono-003;
+$form-control-focus-color: $build-interface-color;
+$form-control-inverted-border: $build-inverted-border;
+$form-control-inverted-bg: $build-inverted-bg;
+$form-control-inverted-placeholder-color: $form-control-placeholder-color;
+$form-control-inverted-focus-border: $build-interface-border;
+$form-control-inverted-focus-bg: $build-white;
+$form-control-valid-border: $build-valid-border;
+$form-control-valid-bg: $build-valid-bg;
+$form-control-valid-color: $build-valid-color;
+$form-control-valid-shadow: $build-valid-shadow;
+$form-control-invalid-border: $build-invalid-border;
+$form-control-invalid-bg: $build-invalid-bg;
+$form-control-invalid-color: $build-invalid-color;
+$form-control-invalid-shadow: $build-invalid-shadow;
+$form-control-highlight-color: $mono-009;
+$form-control-highlight-text-fill: rgba($form-control-highlight-color, 1);
+$form-control-disabled-opacity: $build-default-opacity;
+$form-control-placeholder-opacity: $form-control-disabled-opacity + 0.15;
+$form-control-label-font-size: $input-font-size;
+$form-control-label-pad-y: $spacer-20;
+$form-control-ribbed-bg: darken($mono-001, 2%);
+$form-control-ribbed-bg-image: repeating-linear-gradient(
+  45deg,
+  transparent,
+  transparent $p6,
+  $form-control-ribbed-bg $p6,
+  $form-control-ribbed-bg $p8
+);
+
+// btn variables
+$btn-process-color: rgba($build-white, 0);
+$btn-psuedo-size: 100%;
+$btn-psuedo-bg-image: radial-gradient(
+  circle,
+  $build-black 10%,
+  transparent 10.01%
+);
+$btn-psuedo-bg-pos: 50%;
+$btn-psuedo-transition: transform 0.5s, opacity 1s;
+$btn-psuedo-active-opacity: $build-default-opacity;
+$btn-icon-mar-y: $p3;
+$btn-icon-mar-x: $p10;
+$btn-iconed-icon-size: $spacer-24;
+$btn-iconed-icon-pos-x: $p12;
+$btn-iconed-icon-pos-y: 50%;
+$btn-iconed-icon-mar: -#{$btn-iconed-icon-size / 2};
+$btn-iconed-icon-round: 50%;
+$btn-iconed-pad-x: $btn-iconed-icon-size * 2.5;
+$btn-caret-pad-x: $input-height-inner-lg;
+$btn-caret-pos-y: 50%;
+$btn-caret-pos-x: $spacer-22;
+$btn-caret-border-point: $p8;
+$btn-caret-border-point-color: $mono-008;
+$btn-caret-border-space: $btn-caret-border-point / 2;
+$btn-caret-mar-y: -#{$btn-caret-border-space};
+$btn-caret-border-up: 0 $btn-caret-border-space $btn-caret-border-point
+  $btn-caret-border-space;
+$btn-caret-border-right: $btn-caret-border-space 0 $btn-caret-border-space
+  $btn-caret-border-point;
+$btn-caret-border-down: $btn-caret-border-point $btn-caret-border-space 0
+  $btn-caret-border-space;
+$btn-caret-border-left: $btn-caret-border-space $btn-caret-border-point
+  $btn-caret-border-space 0;
+$btn-caret-border-color-up: transparent transparent
+  $btn-caret-border-point-color transparent;
+$btn-caret-border-color-right: transparent transparent transparent
+  $btn-caret-border-point-color;
+$btn-caret-border-color-down: $btn-caret-border-point-color transparent
+  transparent transparent;
+$btn-caret-border-color-left: transparent transparent transparent
+  $btn-caret-border-point-color;
+
+// btn wide variables
+$btn-wide-width: $spacer-24 * 10; // 240px
+$btn-wide-sm-width: $spacer-16 * 10; // 160px
+
+// btn link variables
+$btn-link-color: $build-primary;

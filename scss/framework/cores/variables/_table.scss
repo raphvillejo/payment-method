@@ -1,0 +1,26 @@
+﻿// SCSS File
+// table.scss
+
+
+// table variables
+$table-margin-y:									$spacer-16 !default;
+$table-color:										$body-color !default;
+$table-bg:											null !default;
+$table-border-width:								$border-width !default;
+$table-border-color:								$border-color !default;
+$table-head-color:									$mono-007 !default;
+$table-head-bg:										$mono-002 !default;
+$table-striped-order:								odd !default;
+$table-accent-bg:									$mono-001 !default;
+$table-hover-color:									$table-color !default;
+$table-hover-bg:									rgba($build-black, .075) !default;
+$table-active-bg:									$table-hover-bg !default;
+$table-dark-color:									$build-white !default;
+$table-dark-bg:										$mono-008 !default;
+$table-dark-border-color:							lighten($table-dark-bg, 7.5%) !default;
+$table-dark-accent-bg:								rgba($build-white, .05) !default;
+$table-dark-hover-color:							$table-dark-color !default;
+$table-dark-hover-bg:								rgba($build-white, .075) !default;
+$table-cell-padding:								$p12 !default;
+$table-cell-padding-sm:								$p5 !default;
+$table-caption-color:								$build-grey !default;

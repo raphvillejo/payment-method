@@ -1,0 +1,23 @@
+﻿// SCSS File
+// input-flex.scss
+
+
+// input flex style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-input-flex {
+			.input-flex {
+				margin-left: $input-flex-mar-x;
+				@include flex-display();
+
+				input {
+					width: auto;
+					margin-left: $input-flex-input-mar-x;
+
+					&[size] {
+					}
+				}
+			}
+		}
+	}
+}

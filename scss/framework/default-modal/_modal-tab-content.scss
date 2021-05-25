@@ -1,0 +1,65 @@
+﻿// SCSS File
+// modal-tab-content.scss
+
+
+// modal-tab-content style
+@if $enable-modal {
+	@if $enable-modal-tab-content {
+		.modal-tab-content {
+			.modal-body {
+				padding: $modal-tab-content-body-pad;
+				font-size: $modal-tab-content-body-font-size;
+			}
+
+			.heading {
+				margin-bottom: 0;
+			}
+
+			.card {
+				padding: 0;
+				box-shadow: none;
+				border-color: transparent;
+			}
+
+			.card-type-alert {
+				//margin-top: $modal-tab-content-card-mar-y;
+				//margin-bottom: $modal-tab-content-card-mar-y;
+
+				.btn {
+					border-radius: 0;
+				}
+			}
+
+			.list-data {
+				@include flex-basis($modal-tab-content-list-data-flex-basis);
+
+				> li {
+					margin-top: 0;
+					margin-bottom: $modal-tab-content-list-data-mar-y;
+
+					> span {
+						@include flex-basis($modal-tab-content-list-data-span-flex-basis);
+					}
+
+					> ul, > strong {
+						@include flex-basis($modal-tab-content-list-data-strong-flex-basis);
+					}
+
+					strong {
+						color: $modal-tab-content-list-data-strong-color;
+						font-weight: $modal-tab-content-list-data-strong-font-weight;
+						text-align: left;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+	}
+}

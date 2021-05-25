@@ -1,0 +1,12 @@
+﻿// SCSS File
+// wizard-card-stack.scss
+
+
+// card-stack style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-card-stack {
+		.wizard-card-stack {
+		}
+	}
+}
+

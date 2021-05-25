@@ -1,0 +1,11 @@
+﻿// SCSS File
+// card-progress.scss
+
+
+// card-progress style
+@if $enable-card {
+	@if $enable-card-progress {
+		.card-progress {
+		}
+	}
+}

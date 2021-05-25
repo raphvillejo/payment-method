@@ -1,0 +1,16 @@
+﻿// SCSS File
+// form-emphasis.scss
+
+
+// form-emphasis style
+@if $enable-form {
+	@if $enable-form-wrappers {
+		@if $enable-form-wrappers-emphasis {
+			.form-emphasis {
+				padding: $form-emphasis-pad;
+				background-color: $form-emphasis-bg;
+				font-size: $form-emphasis-font-size;
+			}
+		}
+	}
+}

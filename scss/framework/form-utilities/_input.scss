@@ -1,0 +1,13 @@
+﻿// SCSS File
+// input.scss
+
+
+// input style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-input {
+			.input {
+			}
+		}
+	}
+}

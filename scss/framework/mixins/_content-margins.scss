@@ -1,0 +1,22 @@
+﻿// mixins
+// content-margins.scss
+
+
+// content-margins mixin
+@mixin content-margins($selector: '> *', $last-child: false) {
+	@if not $selector {
+		$selector: '&';
+	}
+
+	#{unquote($selector)} {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		@if $last-child {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

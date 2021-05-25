@@ -1,0 +1,61 @@
+﻿// SCSS File
+// wizard-navigation.scss
+
+
+// wizard-navigation style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-navigation {
+		.wizard-navigation {
+			position: absolute;
+			right: 0;
+			top: $wizard-navigation-pos-y;
+			font-size: $wizard-navigation-font-size;
+			@include flex-display();
+			@include flex-direction();
+
+			.wizard-nav-item {
+				position: relative;
+				display: inline-block;
+				margin-left: $wizard-navigation-item-mar-x;
+				@include flex();
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+
+			.btn {
+				z-index: 2;
+				margin-left: 0;
+				margin-right: 0;
+				padding: $wizard-navigation-btn-pad;
+				@include size($wizard-navigation-btn-size);
+				border-radius: $wizard-navigation-btn-round;
+				border-width: $wizard-navigation-btn-border-size;
+
+				.icon {
+					position: absolute;
+					top: $wizard-navigation-icon-pos;
+					left: $wizard-navigation-icon-pos;
+					margin-top: $wizard-navigation-icon-mar;
+					margin-left: $wizard-navigation-icon-mar;
+				}
+			}
+
+			.btn-ghost-primary {
+				color: $wizard-navigation-btn-ghost-color;
+				background-color: $wizard-navigation-btn-ghost-bg;
+				border-color: $wizard-navigation-btn-ghost-border-color;
+
+				@include hover {
+					background-color: darken($wizard-navigation-btn-ghost-bg, 3%);
+					border-color: darken($wizard-navigation-btn-ghost-border-color, 3%);
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				display: none;
+			}
+		}
+	}
+}

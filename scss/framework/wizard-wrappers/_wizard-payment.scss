@@ -1,0 +1,11 @@
+﻿// SCSS File
+// wizard-payment.scss
+
+
+// wizard-payment style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-payment {
+		.wizard-payment {
+		}
+	}
+}

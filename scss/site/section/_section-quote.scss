@@ -1,0 +1,45 @@
+// SCSS File
+// section-quote.scss
+
+// section-quote style
+.section-quote {
+  background-color: #1450d2;
+  background-image: url(../img/bg-fractal.jpg);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding: $spacer-96 0;
+  border-top: $p2 solid #bdbdbd;
+  border-bottom: $p4 solid #1450d2;
+  text-align: center;
+  color: $white;
+  text-shadow: 0 $p1 $p1 rgba(0, 0, 0, 0.5);
+
+  .heading {
+    font-size: $font-size-48;
+
+    @include media-breakpoint-down(xs) {
+      font-size: 11vw;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    height: 30px;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+  }
+
+  &::before {
+    top: 0;
+    @include gradient-y(rgba($black, 0.2), rgba($black, 0));
+  }
+
+  &::after {
+    bottom: 0;
+    @include gradient-y(rgba($black, 0), rgba($black, 0.2));
+  }
+}

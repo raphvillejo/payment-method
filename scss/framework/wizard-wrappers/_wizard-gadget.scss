@@ -1,0 +1,74 @@
+﻿// SCSS File
+// wizard-gadget.scss
+
+
+// wizard-gadget style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-gadget {
+		.wizard-gadget {
+			padding: $wizard-gadget-pad;
+			@include flex-display();
+
+			.gadget-details {
+				@include flex-grow(1);
+				@include flex-direction(column);
+				@include flex-display();
+			}
+
+			.gadget-image {
+				width: $wizard-gadget-image-width;
+				height: $wizard-gadget-image-height;
+				margin-right: $wizard-gadget-pad;
+				@include flex-grow();
+
+				img {
+					width: $wizard-gadget-image-size;
+					max-width: $wizard-gadget-image-size;
+					height: auto;
+				}
+			}
+
+			.gadget-name {
+				margin: 0;
+				line-height: $wizard-gadget-name-line-height;
+				font-size: $wizard-gadget-name-font-size;
+				font-weight: $wizard-gadget-name-font-weight;
+				color: $wizard-gadget-name-color;
+			}
+
+			.gadget-label {
+				display: block;
+				font-size: $wizard-gadget-label-font-size;
+				color: $wizard-gadget-label-color;
+			}
+
+			.gadget-price {
+				margin-top: auto;
+				margin-bottom: $wizard-gadget-price-mar;
+
+				span, em, strong {
+					line-height: $wizard-gadget-price-line-height;
+				}
+
+				span {
+					display: block;
+					margin-bottom: $wizard-gadget-price-span-mar;
+					font-size: $wizard-gadget-price-span-font-size;
+					color: $wizard-gadget-price-span-color;
+				}
+
+				em {
+					font-style: normal;
+					font-size: $wizard-gadget-price-em-font-size;
+					color: $wizard-gadget-price-em-color;
+				}
+
+				strong {
+					font-size: $wizard-gadget-price-strong-font-size;
+					font-weight: $wizard-gadget-price-strong-font-weight;
+					color: $wizard-gadget-price-strong-color;
+				}
+			}
+		}
+	}
+}

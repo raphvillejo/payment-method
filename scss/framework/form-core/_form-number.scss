@@ -1,0 +1,16 @@
+﻿// SCSS File
+// form-number.scss
+
+
+// form-number style
+@if $enable-form {
+	input[type="number"] {
+		@include appearance(textfield);
+
+		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+			margin: 0;
+			@extend %extend-form-appearance;
+		}
+	}
+}
+

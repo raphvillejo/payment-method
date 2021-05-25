@@ -1,0 +1,90 @@
+﻿// SCSS File
+// card-grid.scss
+
+
+// card-grid style
+@if $enable-card {
+	@if $enable-card-grid {
+		.card-grid {
+			margin-left: -#{$card-grid-mar-x};
+			@include flex-display();
+
+			.grid {
+				@include flex-basis();
+				margin-left: $card-grid-mar-x;
+			}
+
+			.grid-fixed {
+				@include flex-basis($card-grid-fixed-basis);
+				@include flex-shrink();
+			}
+
+			.grid-auto {
+				@include flex-grow(1);
+			}
+
+			.grid-left {
+				text-align: left;
+			}
+
+			.grid-right {
+				text-align: right;
+			}
+
+			.grid-center {
+				@include flex-align-self(center);
+			}
+
+			&.grid-column {
+				@include flex-align-items();
+			}
+
+			@include media-breakpoint-down(sm) {
+
+				&.grid-row {
+					@include flex-direction();
+					@include flex-wrap();
+				}
+
+				&.grid-column {
+					margin-left: 0;
+					@include flex-direction(column);
+
+					.grid {
+						@include flex-basis();
+						@include flex-align-self();
+						margin: 0;
+
+						& + .grid {
+							margin-top: $p10;
+							text-align: center;
+						}
+					}
+				}
+
+				.grid-block {
+					flex-basis: calc(100% - #{$card-grid-mar-x});
+					margin-top: $p10;
+					@include flex-shrink();
+					@include flex-grow(1);
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				margin-left: 0;
+				@include flex-direction(column);
+
+				.grid {
+					@include flex-basis();
+					@include flex-align-self();
+					margin: 0;
+
+					& + .grid {
+						margin-top: $p10;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}

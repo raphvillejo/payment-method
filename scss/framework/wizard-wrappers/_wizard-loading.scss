@@ -1,0 +1,52 @@
+﻿// SCSS File
+// wizard-loading.scss
+
+
+// wizard-loading style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-loading {
+		.wizard-loading {
+			background-color: $wizard-loading-bg;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			outline: 0;
+			pointer-events: none;
+			z-index: $wizard-loading-layer-hide;
+			opacity: 0;
+
+			@if $enable-single-class-animate == false {
+				@extend %extend-animate-all;
+			}
+
+			.title {
+				display: block;
+				margin-top: $wizard-loading-mar;
+				color: $wizard-loading-color;
+			}
+
+			.loading {
+
+				span {
+					background-color: $wizard-loading-span-bg;
+				}
+			}
+
+			&.show {
+				z-index: $wizard-loading-layer-show;
+				opacity: 1;
+
+				~ * {
+					display: none;
+				}
+			}
+
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+	}
+}

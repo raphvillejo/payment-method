@@ -1,0 +1,30 @@
+// SCSS File
+// display.scss
+
+
+// display style
+@if $utilities-display {
+    @if $utilities-display-element {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            @include media-breakpoint-up($breakpoint) {
+                $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+                @each $value in $displays {
+                    .d#{$infix}-#{$value} {
+                        display: $value !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @if $utilities-display-print {
+        @media print {
+            @each $value in $displays {
+                .d-print-#{$value} {
+                    display: $value !important;
+                }
+            }
+        }
+    }
+}

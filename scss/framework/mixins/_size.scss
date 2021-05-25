@@ -1,0 +1,9 @@
+// SCSS File
+// size.scss
+
+
+// size mixin
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}

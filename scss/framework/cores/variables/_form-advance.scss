@@ -1,0 +1,250 @@
+﻿// SCSS File
+// form-advance.scss
+
+
+// form-control-range variables
+$range-pad-y:										$p4;
+$range-pad-x:										$p3;
+$range-pad:											$range-pad-y $range-pad-x;
+$range-round:										$range-pad-x;
+$range-mar:									        $p14 0 0 0;
+$range-border-size:									$p1;
+$range-border-color:								$build-input-border;
+$range-border:										$range-border-size solid $range-border-color;
+$range-bg:											$build-input-bg;
+$range-is-inverted-bg:								$build-inverted-bg;
+$range-is-inverted-border:							$build-inverted-border;
+$range-focus-cursor:								url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAO0lEQVQ4y2NgGHbgPxTjY+PWDAP42PgM+k8IwNRQZAg+A/5TYsB/UgBFBtDM/0QZQkxawGsI3QygLwAAbjZlqS88cqkAAAAASUVORK5CYII=') 8 8, move;
+$range-focus-border-color:							$build-interface-border;
+$range-focus-color:									$build-interface-color;
+$range-focus-shadow:								$input-focus-shadow;
+$range-focus-runtrack-bg:							rgba($range-focus-color, .6);
+$range-focus-progress-bg:							$range-focus-runtrack-bg;
+$range-track-width:                                 100%;
+$range-track-height:								$range-round;
+$range-track-round:									$range-round;
+$range-track-shadow:								inset 0 -#{$range-border-size} 0 0 $build-shadow-dark;
+$range-track-mar:									0 $range-pad-y;
+$range-track-border-size:							$range-track-height 0;
+$range-slider-size:									$spacer-32;
+$range-slider-margin:								-#{$range-slider-size / 2}; // 14px
+$range-slider-round:								50%;
+$range-slider-border:								$range-border;
+$range-slider-bg:									$build-white;
+$range-slider-bg-image:								url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAA8JJREFUWAnFWF1oU0kUPjNz721u0zS1aaJ1xYBShArFB6vSVREfdkW3LCgUWUUQfRJ8EMHnvviixQdBtCDig8jSF11Yf0Bduv6giFJkUQvrw7rWUpu2tsY2TW7mjufcOuGa1mg0aeahZ+bMzPm++535SxkUUR487m9xstnfpHTbFEDMVW4UFNQyBtMY5p0QvJ8zcV8weaNtTcvfXxuafWlgT0+PWBRvPixl9oCUKv6l8bpfCPbCMMwz429Sp9vbV09p/1y2IIm7D5/ucrLO0WLA80G44EOmMA9sWNt8Kb9Pt+ck0dnZyTdv2XE242T36oFkA1UW1IaCEKwOgGWZYBoGYArAdV3AFEFqOg2TU9PwfnIKplLp3FTOmRJC9Lz5//mejo6OTK7jY2UWib6+vrqJlLiSlbKNxmC+ob6uFqKROggEqvLnf7ZNhEbGJuDteNIjSQMNw7ibHEn/nJ+eT0iQApt+2n5HEwjXBqExFikKPJ9VJuPAq8FhSL6fWRaoyKPEQP+PfkU+IXH7wT/nKAUMP79xYQRiDQvyY35zexRVeT2UQFUUWKY4v3Fdy14dLEeCFuF0OnPBMATElyyCUE21HlMy+y45Cf+9GsJ4SllV5u71q1depOCc/tA2pF1ACpSLAOHQol4WX0xV5qSdru7ubpMaHomZc0DFKQXlUICAdKkJ2pjqBpCuamxetf4g+T0SdBDRIizlGtCgc1naaaSKI51D1M/oKJ5MpZ6sWL70u3bBXGCFfLRr+l+8BMsOtHK6C+gcKOYMKBT8a/vosKsLhwCycjuny4jkqUSh9CP+Rm5aZnS+VdAfTNeAaRoxHqqxI9pZCYv4C3jQtiuTi49fXG3bYW6aYrQSCmhM0zJGOd5sg9pRCWsaYhDfHHygEuAakzM+wLPSvacdlbCEz5XjXK4EuMYkfO8qHxlLPsUnVLPumDer1LOG+tBK7wJzlToxb8A+II3rkei9df08vjOe+frLX0U8DxeRci+rxNjENsbEn+VHn0FQSv4SrQ9foZanBFXIoRQcp3q5C+FoAoQl/IBB27rVuratFV95TX5/KetI4Oqpk137ent78ZfkTMmlQzsSiUQIhP07EtmqfaWyRABkamc0Gk36Y+bSoZ00AJm244Qu7SuFpXgUN58AxZ6lhB/QW6zAj33XGYK7QIF7xL8G/BhUn6WEfwBN/OvmtRb8rbm/6C2M4DSP5hciQHgFlfATovrw8EQTE+JXYGoDqvMD/m9iMa6dCEo9ipEGkehrUOyOkvKPWCz8b/78z7U/AGrrYy58z/gGAAAAAElFTkSuQmCC');
+$range-slider-bg-pos:								center center;
+$range-slider-bg-size:								$p11 $p11;
+$range-progress-bg:									$build-warning;
+$range-progress-shadow:								$range-track-shadow;
+$range-progress-color:								$build-warning;
+$range-focusring-outline-offset:					$range-border-size;
+$range-focusring-outline:							$range-focusring-outline-offset solid $build-white;
+$range-field-border-size:							$range-border-size;
+$range-height:								        (($range-pad-y * 2) + $range-track-height + ($range-field-border-size * 2)) !default;
+$range-width:                                       100%;
+
+// form-date variables
+$form-date-label-flex-basis:						calc(50% - #{$gutter-md-size});
+$form-date-label-width:								100%;
+$form-date-input-mar:								0 -#{$p1};
+$form-date-controls-height:							$input-height;
+$form-date-controls-border:							$input-border;
+$form-date-controls-bg:								$input-bg-color;
+$form-date-controls-round:							$input-border-radius;
+$form-date-controls-psuedo-width:					$spacer-20;
+$form-date-controls-psuedo-mar-x:					-#{$form-date-controls-psuedo-width / 2};
+$form-date-controls-psuedo-pos-x:					50%;
+$form-date-controls-psuedo-pos-y:					calc(#{$input-padding-y} - #{$p3});
+$form-date-long-controls-psuedo-pos-x-1:			calc(30% - #{$p5});
+$form-date-long-controls-psuedo-pos-x-2:			calc(60% + #{$p5});
+$form-date-short-controls-input-width:				calc(50% - #{$spacer-20});
+$form-date-long-controls-input-width-1:				calc(30% - #{$spacer-20});
+$form-date-long-controls-input-width-2:				calc(40% - #{$spacer-20});
+$form-date-inverted-controls-border:				$build-inverted-border;
+$form-date-inverted-controls-bg:					$build-inverted-bg;
+$form-date-invalid-controls-border:					$build-invalid-border;
+$form-date-invalid-controls-bg:						$build-invalid-bg;
+$form-date-invalid-controls-color:					$build-invalid-color;
+$form-date-birthday-label-flex-basis-1:				calc(30% - #{$gutter-md-size});
+$form-date-birthday-label-flex-basis-2:				calc(40% - #{$gutter-md-size});
+$form-date-birthday-input-flex-basis-1:				$form-date-birthday-label-flex-basis-1;
+$form-date-birthday-input-flex-basis-2:				$form-date-birthday-label-flex-basis-2;
+$form-date-birthday-controls-pos-x-1:				calc(30% - #{$p5});
+$form-date-birthday-controls-pos-x-2:				calc(60% + #{$p5});
+
+// autocomplete-items variables
+$autocomplete-item-pad:								$p12;
+$autocomplete-item-line-height:						$spacer-16;
+$autocomplete-item-font-size:						$font-size-16;
+$autocomplete-item-bg:								$build-white;
+$autocomplete-item-border:							$build-apply-border;
+$autocomplete-item-div-border:                      $p1 solid $mono-002;
+$autocomplete-item-hover-bg:						lighten($build-grey, 40%);
+$autocomplete-item-active-bg:						$build-primary;
+$autocomplete-item-active-color:					$build-white;
+$autocomplete-items-pos-y:							100%;
+$autocomplete-items-pos-x:							($spacer-28 * 2);
+$autocomplete-items-width:							calc(100% - #{$autocomplete-items-pos-x});
+$autocomplete-items-shadow:							0 $p2 $p8 0 $build-shadow;
+$autocomplete-items-round:							$round-l;
+$autocomplete-items-height:							(($autocomplete-item-line-height + ($autocomplete-item-pad * 2)) * 5);
+
+// file-preview variables
+$file-preview-height:								100%;
+
+// file-media variables
+$file-media-border:									$build-apply-border;
+$file-media-bg:										$highlight-color;
+$file-media-mar-y:									$spacer-14;
+$file-media-image-width:							100%;
+$file-media-psuedo-size:							100%;
+$file-media-psuedo-border:							$p8 solid rgba($build-white, .25);
+
+// file-documents variables
+$file-documents-mar-y:								$spacer-14;
+$file-documents-pad:								$spacer-24;
+$file-documents-font-size:							$font-size-16;
+$file-documents-line-height:						$line-height-lg;
+$file-documents-bg:									$highlight-color;
+
+// file-display variables
+$file-display-card-pad:								$spacer-24;
+$file-display-card-round:							$p6;
+$file-display-card-border:							$build-apply-border;
+$file-display-card-shadow:							$build-apply-shadow;
+$file-display-card-bg:								$build-white;
+$file-display-location-height:						$p10 * 10;
+$file-display-location-mar:							$file-display-card-pad;
+$file-display-location-image-width:					100%;
+$file-display-location-image-object-pos:			50% 100%;
+$file-display-thumb-image-round:					$p3;
+$file-display-signature-height:						$spacer-14 * 10;
+$file-display-signature-image-height:				100%;
+$file-display-count-font-size:						$font-size-26;
+$file-display-count-pos-x:							$p15;
+$file-display-count-pos-y:							$p4;
+$file-display-count-color:							$heading-color;
+$file-display-icon-size:							$spacer-32;
+$file-display-icon-round:							50%;
+$file-display-icon-bg:								$mono-004;
+$file-display-icon-color:							$build-white;
+$file-display-icon-pos-x:							$file-display-icon-size / 2;
+$file-display-icon-pos-y:							$p10;
+$file-display-icon-mar:								$p6;
+$file-display-toggle-width:							calc(100% + #{$spacer-48});
+$file-display-toggle-pad:							$spacer-14;
+$file-display-toggle-mar:							$file-display-card-pad;
+$file-display-toggle-mar-y:							$file-display-toggle-mar;
+$file-display-toggle-bg:							$highlight-bg;
+$file-display-toggle-round:							$p6;
+$file-display-toggle-font-size:						$font-size-16;
+$file-display-toggle-line-height:					1;
+$file-display-file-card-bg:							$highlight-bg;
+$file-display-file-icon-pos-y:						$spacer-30;
+$file-display-file-toggle-bg:						$build-white;
+$file-display-success-icon-bg:						$build-success;
+$file-display-success-icon-color:					$build-white;
+$file-display-error-label-color:					$build-invalid-color;
+$file-display-error-card-border:					rgba($build-invalid-border, .5);
+$file-display-error-card-shadow:					0 $p2 0 0 rgba($build-invalid-border, .2);
+$file-display-error-card-color:						$build-invalid-color;
+$file-display-error-icon-bg:						$build-danger;
+$file-display-error-icon-color:						$build-white;
+
+// form-locality variables
+$form-locality-field-mar-y:							$spacer-24;
+
+// form-locality-places variables
+$form-locality-places-font:							$font-family-default;
+$form-locality-places-layer:						$layer-google-places;
+$form-locality-places-span-font-weight:				$font-weight-5;
+$form-locality-places-span-font-size:				$font-size-12;
+$form-locality-places-span-color:					$accent-color;
+$form-locality-places-item-pad:						$p8 $p10;
+$form-locality-places-item-pad-x:					$spacer-36;
+$form-locality-places-item-line-height:				$line-height-md;
+$form-locality-places-item-bg-hover:				$highlight-color;
+$form-locality-places-item-query-color-hover:		$link-color;
+$form-locality-places-item-query-font-weight:		$font-weight-5;
+$form-locality-places-item-query-font-size:			$font-size-16;
+$form-locality-places-item-query-color:				$heading-color;
+$form-locality-places-icon-pos-x:					$p10;
+$form-locality-places-icon-pos-y:					calc(50% - #{$form-locality-places-icon-pos-x});
+$form-locality-places-matched-font-weight:			$font-weight-5;
+$form-locality-places-logo-height:					$spacer-36;
+$form-locality-places-logo-border:					$build-apply-border;
+$form-locality-places-logo-bg-pos:					center right $p10;
+$form-locality-places-logo-bg:						$highlight-color;
+
+// form-locality-pin variables
+$form-locality-pin-pad:								$p4 $p10;
+$form-locality-pin-pad-x:							$spacer-30;
+$form-locality-pin-bg:								$build-white;
+$form-locality-pin-span-font-size:					$font-size-14;
+$form-locality-pin-span-line-height:				$line-height-md;
+$form-locality-pin-span-color:						$accent-color;
+$form-locality-pin-name-font-weight:				$font-weight-5;
+$form-locality-pin-name-color:						$heading-color;
+$form-locality-pin-icon-pos-x:						$spacer-14;
+$form-locality-pin-icon-pos-y:						calc(50% - #{$p8});
+
+// form-locality-places variables
+$form-locality-picker-width:						100%;
+$form-locality-picker-height:						$spacer-36 * 10;
+
+// form-locality-map variables
+$form-locality-map-width:							100%;
+$form-locality-map-height:							$spacer-36 * 10;
+$form-locality-map-mar-y:							$spacer-16;
+$form-locality-map-bg:								$highlight-color;
+$form-locality-map-bg-image:						url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdQAAAG2BAMAAAA0NWoOAAAAMFBMVEUAAACDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6mDk6njiNsjAAAAD3RSTlMAdxHuu0Qi3WbMmTOqiFU2pDjdAAAFQklEQVR42uzBgQAAAACAoP2pF6kCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm525eZ4rCOIB/55p7DcN4LSk14yVvkZdS8nYRNhZ3ConNKPakyEINUZakrKQrScpiyMpCZCHZUMrWlIUlY2aM33j5uuc5v3OHf8DimfNZ/H6zfbr3PM8z5zxnPM/zPM/zPM/zPM/zPM/zPM/zPM/zPM/zPM/z/p9HrzEeggUkxsM8kjWMgyfM1DEGSjH56hjGwVXyPcZChbyJ8bCUE+ORkoAqN2I8BDEvQFyEciV2azAOdrW/xzPZg7GavA21SnUARf5CphCTfWgVJqck1A6ASpNkD1pNkSCLEuFMcgt5AUoVJCHN5EDycKfW5Glo1TSJqGQ7/fnH0GAHWjX4AwjyzDuDXbVNv12mb/gDIiKfQ6mIbAONPPNWFZabsO5iOwUUydkQLX2LNUp6NtalJrYy+R3GMn39UlAlf0oCKkkiqtrHWok5hDIRM0OJNeVteYN7baxMTcTafGBmQ03KTR8IUlpnoM5SDkysUkp7skjFL2Vf4hYcA0r8eYXkOSCy38vnMdN7CFWOSJJN2b5E8ozbbQkWkre0dUot9mWJbgzMk9yLafpKqXOcE7JEfyIwyWlfSGp7mk6BvCDlpo6oRfLeB719b5MbXUdYTki+U9j3Tvosi3OF/A1TZiagVJE8lu+Ilpqkwh4pOCR1s0xZnAlvu31CXoMuR5vkq7/LTR/G4pgboMtBGmdsVwhgOnsQq4fK2sETtC4ABVmcUax0J3QtyfOLmuT3UbnRuRNqks8Dm2/rQENOLqaq7AhN+dyPzCrytCs3FZU7odPJczCClB3pCncCSDR2hFHsSudxeaAf+BvAM5UdYZXf82b/7ajcfIc+U+kOxJtcD5Sk3ATbFK5VVPI+96q8u6mUG42RAgm/QayTEtPQt+GLsAbxjD//PpCaQSrbMkOUbM3LTR1GQUKNOKEt1A/sXnCzSafyUDPz1PW/JDsQ1ckPM+04yxJok5B8kZcb+a+ymGZa3RYnpKaE0jsADX6FSlU+Jbf+VW6CVN0J6qQGZ1+dHEY6KfloDbXOEZ7k7UrMXzYfsY0o5W/oNIvX8Jjc7crNPL3zZkV+QZTafuEqO4epNf8C09mXrYdNAKYxM9DWJOUK0ji8kdc2ZGYulHl0d1cbRsihbGpzaCN+CWUWkBzMhm3r7aAvr5t0fAPKfKJhmySynJDbZZEWNkOZ1RS2SUr4huzUDpA7EGhrHoKUvH/oMu0ub4syd1ZuKjxZRNEmn4+yPFElB3XZ6+7qC3Xyi2nZ9oMNF2LrDrQJYtrYnsn20Tp+hYigToED94E7gSn8Aa3kfpBI2QeKeptezOJvCLvXO1PlyaILtT9KxTUUFF+IGj3VCtlGyC60miVrVZhcHOidIESRAxjuqDhW9xsIhbPuA/PYqqbaJNpm1MN0CCGH/3moz4E5UEZOn6wkT8FvFHb4bthBNDiowQj0LVM37DAqp2/zFlGjfNhhdOvrqtKeMB92sLe+XLuvkht2sLe+6iilan+tRIYd8h2XwR7ZJNTJlRu9t76c0bBDfutLZaX5Z9jB3fpSeziTlxurrDjQ0bADlkO9P+3bwQmAMAAEQREE/7Zij5ZhCbZkJ/ERA4JJA8dME/fZe+dm3ad4NXZYznJP6WrscOUdhPpzM2+lpN1mfmrscETvadNih9SC5SM1dugIjR26ImOHgcDYYSQvdgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASPIAUpX40MFnkugAAAAASUVORK5CYII=');
+$form-locality-map-bg-size-h:						$spacer-16 * 10;
+$form-locality-map-bg-size-w:						$p15 * 10;
+$form-locality-map-bg-size:							$form-locality-map-bg-size-h $form-locality-map-bg-size-w;
+
+// form-otp variables
+$form-otp-pad:										$spacer-32;
+$form-otp-mar:										$p4;
+$form-otp-complete-border-color:					$build-success;
+$form-otp-complete-border-size:						$p3;
+$form-otp-complete-focus-border-color:				$build-interface-border;
+$form-otp-complete-focus-border-size:				$p1;
+$form-otp-input-pad:								$input-padding-y 0;
+$form-otp-input-mar:								0 $form-otp-mar;
+
+// password-meter variables
+$password-meter-font-size:							$p10;
+$password-meter-font-weight:						$font-weight-5;
+$password-meter-line-height:						2.5;
+$password-meter-color:								$mono-004;
+$password-meter-bars-width:							100%;
+$password-meter-bars-hegiht:						$p6;
+$password-meter-bars-mar-x:							$password-meter-bars-hegiht;
+$password-meter-bars-pos-y:							calc(100% + #{$password-meter-bars-mar-x});
+$password-meter-bars-layer:							3;
+$password-meter-bars-border:						$password-meter-bars-mar-x solid $build-white;
+$password-meter-bars-pos-x:							0;
+$password-meter-bars-flex:							1 1 $password-meter-bars-width;
+$password-meter-bars-round:							$password-meter-bars-hegiht / 2;
+$password-meter-bars-bg:							null;
+$password-meter-bars-bg-worst:						$build-invalid-border;
+$password-meter-bars-bg-bad:						$build-warning-border;
+$password-meter-bars-bg-weak:						lighten($build-caution-border, 10%);
+$password-meter-bars-bg-good:						lighten($build-valid-border, 30%);
+$password-meter-bars-bg-strong:						$build-valid-border;
+$password-meter-bars-psuedo-layer:					1;
+$password-meter-bars-psuedo-height:					$password-meter-bars-hegiht;
+$password-meter-bars-psuedo-width-worst:			20%;
+$password-meter-bars-psuedo-width-bad:				40%;
+$password-meter-bars-psuedo-width-weak:				60%;
+$password-meter-bars-psuedo-width-good:				80%;
+$password-meter-bars-psuedo-width-strong:			100%;
+
+// progress variables
+$progress-height:									$spacer-20;
+$progress-round:									$progress-height / 2;
+$progress-bg:										$mono-001;
+$progress-bar-bg:									$build-success;
+$progress-bar-font-size:							0;
+$progress-bar-font-weight:							$font-weight-8;
+$progress-bar-color:								$build-white;

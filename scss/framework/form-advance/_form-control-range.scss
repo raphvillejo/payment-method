@@ -1,0 +1,131 @@
+﻿// SCSS File
+// form-control-range.scss
+
+
+// form-control-range style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-control-range {
+			.form-control-range {
+				@extend %extend-form-appearance;
+				width: $range-width;
+				background-color: $range-bg;
+				height: $range-height;
+				padding: $range-pad;
+				margin: $range-mar;
+				border: $range-border;
+				border-radius: $range-round;
+				-webkit-tap-highlight-color: transparent;
+
+				&.is-inverted {
+					border-color: $range-is-inverted-border;
+					background-color: $range-is-inverted-bg;
+				}
+
+				&:focus {
+					cursor: $range-focus-cursor;
+					border-color: $range-focus-border-color;
+					color: $range-focus-color;
+					box-shadow: $range-focus-shadow;
+					outline: none;
+
+					&::-webkit-slider-runnable-track {
+						background-color: $range-focus-runtrack-bg;
+					}
+
+					&::-moz-range-progress {
+						background-color: $range-focus-progress-bg;
+					}
+				}
+
+				&::-webkit-slider-runnable-track {
+					height: $range-track-height;
+					border-radius: $range-track-round;
+					box-shadow: $range-track-shadow;
+					background-color: $range-progress-color;
+				}
+
+				&::-moz-range-track {
+					height: $range-track-height;
+					border-radius: $range-track-round;
+					background-color: transparent;
+				}
+
+				&::-ms-track {
+					background: transparent;
+					border-color: transparent;
+					color: transparent;
+					width: $range-track-width;
+					height: $range-track-height;
+					margin: $range-track-mar;
+					border-radius: $range-track-round;
+					border-width: $range-track-border-size;
+				}
+
+				&::-webkit-slider-thumb {
+					@extend %extend-form-appearance;
+					@include size($range-slider-size);
+					margin-top: $range-slider-margin;
+					border-radius: $range-slider-round;
+					border: $range-slider-border;
+					background-color: $range-slider-bg;
+					background-image: $range-slider-bg-image;
+					background-position: $range-slider-bg-pos;
+					background-repeat: no-repeat;
+					background-size: $range-slider-bg-size;
+				}
+
+				&::-moz-range-thumb {
+					@include size($range-slider-size);
+					margin-top: $range-slider-margin;
+					border-radius: $range-slider-round;
+					border: $range-slider-border;
+					background-color: $range-slider-bg;
+					background-image: $range-slider-bg-image;
+					background-position: $range-slider-bg-pos;
+					background-repeat: no-repeat;
+					background-size: $range-slider-bg-size;
+				}
+				
+				&::-ms-thumb {
+					@include size($range-slider-size);
+					margin-top: $range-slider-margin;
+					border-radius: $range-slider-round;
+					border: $range-slider-border;
+					background-color: $range-slider-bg;
+					background-image: $range-slider-bg-image;
+					background-position: $range-slider-bg-pos;
+					background-repeat: no-repeat;
+					background-size: $range-slider-bg-size;
+				}
+
+				&::-moz-range-progress {
+					background-color: $range-progress-bg;
+					box-shadow: $range-progress-shadow;
+				}
+
+				&::-ms-fill-lower {
+					background: $range-progress-bg;
+					box-shadow: $range-progress-shadow;
+				}
+
+				&::-ms-fill-upper {
+					background: transparent;
+				}
+
+				&::-ms-tooltip {
+					display: none;
+				}
+
+				&:-moz-focusring {
+					outline: $range-focusring-outline;
+					outline-offset: -#{$range-focusring-outline-offset};
+				}
+
+				&::-moz-focus-outer {
+					border: 0;
+				}
+			}
+		}
+	}
+}

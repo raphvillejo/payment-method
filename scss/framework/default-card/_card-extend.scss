@@ -1,0 +1,71 @@
+﻿// SCSS File
+// card-extend.scss
+
+
+// card-extend collection
+%extend-card-image-at-root {
+	.cover-loaded {
+		overflow: hidden;
+		position: relative;
+		z-index: 0;
+
+		img {
+			@include transition(transform .2s linear);
+		}
+	}
+
+	@include hover {
+		text-decoration: none;
+
+		img {
+			@include transform-scale(1.04);
+		}
+	}
+}
+
+%extend-card-loading {
+	position: relative;
+	opacity: 0;
+	min-height: $card-loading-min-height;
+	width: $card-loading-width;
+	z-index: $card-loading-layer;
+
+	@if $enable-single-class-animate == false {
+		@extend %extend-animate-all;
+	}
+
+	&.show {
+		opacity: 1;
+	}
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		@include size($card-loading-psuedo-size);
+		border-radius: $card-loading-psuedo-round;
+		top: $card-loading-psuedo-pos;
+		left: $card-loading-psuedo-pos;
+		margin-top: $card-loading-psuedo-mar;
+		margin-left: $card-loading-psuedo-mar;
+		border-width: $card-loading-psuedo-border-size;
+	}
+
+	&::before {
+		@include animation($card-loading-psuedo-animation);
+		border-color: $card-loading-psuedo-border-color-01 transparent transparent transparent;
+	}
+
+	&::after {
+		border-color: $card-loading-psuedo-border-color-02;
+	}
+
+	@extend %extend-aria-hide;
+
+	@extend %extend-aria-show;
+}
+
+%extend-card-type-product-flex-display-direction {
+	@include flex-display();
+	@include flex-direction();
+}

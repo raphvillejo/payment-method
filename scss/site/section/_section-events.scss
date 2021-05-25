@@ -1,0 +1,21 @@
+// SCSS File
+// section-events.scss
+
+// section-events style
+.section-events {
+  padding: $spacer-64 0;
+
+  .heading {
+    font-size: $font-size-32;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  .lead {
+    font-size: $font-size-16;
+  }
+
+  .item {
+    display: flex;
+  }
+}

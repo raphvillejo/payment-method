@@ -1,0 +1,32 @@
+﻿// SCSS File
+// form-alert.scss
+
+
+// alert-status style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-alert-status {
+			.alert-status {
+				font-size: $alert-status-font-size;
+				font-weight: $alert-status-font-weight;
+				margin-top: $alert-status-mar;
+				padding: $alert-status-pad;
+				color: $alert-status-color;
+				border-color: $alert-status-border;
+
+				.icon {
+					flex: $alert-status-icon-flex;
+					font-size: $alert-status-icon-font-size;
+					height: $alert-status-icon-height;
+					margin-right: $alert-status-icon-mar;
+				}
+
+				@each $color, $value in $theme-colors {
+					&.alert-#{$color} {
+						@include alert-variant(theme-color-level($color, $alert-status-bg-level), theme-color-level($color, $alert-status-border-level), theme-color-level($color, $alert-status-color-level));
+					}
+				}
+			}
+		}
+	}
+}

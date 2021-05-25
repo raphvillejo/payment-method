@@ -1,0 +1,39 @@
+﻿// SCSS File
+// progress.scss
+
+
+// progress style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-progress {
+			.progress {
+				height: $progress-height;
+				border-radius: $progress-round;
+				background-color: $progress-bg;
+				overflow: hidden;
+
+				.bar {
+					height: inherit;
+					border-radius: inherit;
+					background-color: $progress-bar-bg;
+					@include flex-justify-content(flex-end);
+					@include flex-align-items();
+					@include flex-display();
+
+					@if $enable-single-class-animate == false {
+						@extend %extend-animate-all;
+					}
+
+					> span {
+						font-size: $progress-bar-font-size;
+						font-weight: $progress-bar-font-weight;
+						color: $progress-bar-color;
+
+						@include media-breakpoint-down(xs) {
+						}
+					}
+				}
+			}
+		}
+	}
+}

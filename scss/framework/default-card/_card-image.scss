@@ -1,0 +1,41 @@
+﻿// SCSS File
+// card-image.scss
+
+
+// card-image style
+@if $enable-card {
+	@if $enable-card-image {
+		.card-image {
+			margin: $card-image-mar;
+			border-top-left-radius: $card-image-round;
+			border-top-right-radius: $card-image-round;
+			border: $card-image-border;
+			background-color: $card-image-bg;
+			position: relative;
+
+			img {
+				border-radius: inherit;
+			}
+
+			&.cover-loaded {
+				border: none;
+
+				&::after {
+					max-width: $card-image-psuedo-width;
+					border: $card-image-psuedo-border;
+					border-radius: inherit;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					content: '';
+				}
+			}
+
+			@at-root a.card {
+				@extend %extend-card-image-at-root;
+			}
+		}
+	}
+}

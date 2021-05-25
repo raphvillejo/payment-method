@@ -1,0 +1,37 @@
+﻿// SCSS File
+// form-file-preview.scss
+
+
+// file-preview style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-preview {
+			.file-preview {
+				height: $file-preview-height;
+				@include flex-direction(column);
+				@include flex-justify-content();
+				@include flex-align-items();
+				@include flex-display();
+
+				&.is-multiple {
+					height: auto;
+					@include flex-align-items(flex-start);
+					@include flex-direction();
+					@include flex-wrap();
+				}
+
+				@include media-breakpoint-down(xs) {
+					height: auto;
+					@include flex-align-items(flex-start);
+					@include flex-direction();
+					@include flex-wrap();
+
+					.modal & {
+						.file-card {
+						}
+					}
+				}
+			}
+		}
+	}
+}

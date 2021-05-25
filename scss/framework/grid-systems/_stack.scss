@@ -1,0 +1,36 @@
+﻿// SCSS File
+// stack.scss
+// Modified April 1, 2020
+
+// stack style
+@if $enable-stack {
+  .stack {
+    margin: -#{$p10} 0 $spacer-32;
+
+    @include media-breakpoint-down(sm) {
+      margin: -#{$p10} 0 $p14;
+    }
+
+    & + .btn {
+      margin-top: $spacer-24;
+    }
+
+    @at-root h2 + .stack {
+      padding-top: $p14;
+    }
+
+    @at-root .lead + .stack {
+      padding-top: $p10;
+    }
+
+    @include media-breakpoint-down(xs) {
+      @at-root h2 + .stack {
+        padding-top: $p8;
+      }
+
+      @at-root .lead + .stack {
+        padding-top: $p4;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+﻿// SCSS File
+// wizard-result.scss
+
+
+// wizard-result style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-result {
+		.wizard-result {
+			height: $wizard-result-height;
+			@include flex-display();
+			@include flex-direction(column);
+			@include flex($wizard-result-flex);
+
+			.container {
+				height: $wizard-result-container-height;
+				@include flex-display();
+				@include flex-direction(column);
+				@include flex($wizard-result-container-flex);
+			}
+
+			.wizard-subject {
+				@include flex-display();
+				@include flex-direction(column);
+				@include flex();
+			}
+		}
+	}
+}

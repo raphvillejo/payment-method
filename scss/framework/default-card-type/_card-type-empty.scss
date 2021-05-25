@@ -1,0 +1,14 @@
+﻿// SCSS File
+// card-type-empty.scss
+
+
+// card-type-empty style
+@if $enable-card {
+	@if $enable-card-type-empty {
+		.card-type-empty {
+			@extend %extend-aria-hide;
+
+			@extend %extend-aria-show;
+		}
+	}
+}

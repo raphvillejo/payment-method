@@ -1,0 +1,93 @@
+﻿// SCSS File
+// badge.scss
+
+
+// badge style
+@if $component-badge {
+	.badge {
+		display: inline-block;
+		padding: $badge-padding-y $badge-padding-x;
+		border-radius: $badge-border-radius;
+		font-size: $badge-font-size;
+		color: $badge-color;
+		background-color: $badge-bg;
+		color: $badge-color;
+
+		@if $enable-single-class-animate == false {
+			@extend %extend-animate-all;
+		}
+
+		&.badge-sm {
+			padding: $badge-padding-y-sm $badge-padding-x-sm;
+			font-size: $badge-font-size-sm;
+			font-weight: $badge-font-weight-sm;
+			line-height: $badge-font-size-sm;
+		}
+	}
+
+	@each $color, $value in $theme-colors {
+		.badge-#{$color} {
+			color: $build-white;
+			background-color: $value;
+		}
+	}
+
+	@if $component-badge-icon {
+		// badge-icon style
+		.badge-icon {
+			width: $badge-icon-width;
+			height: $badge-icon-height;
+			padding: 0;
+			border-radius: 0;
+			background: none;
+			position: absolute;
+			right: -#{$spacer-24};
+			top: $spacer-14;
+
+			span {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: $build-success;
+				@include transform-scale(.2);
+				@include flex-justify-content();
+				@include flex-align-items();
+				@include flex-display();
+				opacity: 0;
+
+				@if $enable-single-class-animate == false {
+					@extend %extend-animate-all;
+				}
+			}
+
+			&.show {
+
+				span {
+					@include transition-delay(.8s);
+					@include transform-scale(1);
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	@if $component-badge-pill {
+		// badge-pill style
+		.badge-pill {
+			padding: $badge-pill-padding-y $badge-pill-padding-x;
+			border-radius: $badge-pill-border-radius;
+			font-size: $badge-pill-font-size;
+			font-weight: $badge-pill-font-weight;
+			line-height: 1;
+
+			.icon {
+				width: $p14;
+				height: $p14;
+				margin: 0 $p4 0 -#{$p4};
+				font-size: $p14;
+				vertical-align: -#{$p3};
+			}
+		}
+	}
+}
+

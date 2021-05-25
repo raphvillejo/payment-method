@@ -1,0 +1,52 @@
+﻿// SCSS File
+// variables.scss
+
+
+// variable imports
+@import 'variables/spacers';
+@import 'variables/font-size';
+@import 'variables/font-weight';
+@import 'variables/media-breakpoint';
+@import 'variables/layers';
+@import 'variables/gutters';
+@import 'variables/line-height';
+@import 'variables/round';
+@import 'variables/utilities';
+@import 'variables/font-family';
+@import 'variables/icon';
+@import 'variables/type';
+
+// =========================================== main variables
+@import 'variables/layout';
+@import 'variables/modal';
+@import 'variables/drawer';
+@import 'variables/feedback';
+
+// =========================================== forms variables
+@import 'variables/input';
+@import 'variables/btn';
+@import 'variables/form-core';
+@import 'variables/form-advance';
+@import 'variables/form-wrappers';
+@import 'variables/form-utilities';
+@import 'variables/form-ui';
+
+// =========================================== wizard variables
+@import 'variables/wizard-core';
+@import 'variables/wizard-layout';
+@import 'variables/wizard-wrappers';
+
+// =========================================== cards variables
+@import 'variables/card';
+@import 'variables/card-type';
+
+// =========================================== components variables
+@import 'variables/badge';
+@import 'variables/measurement';
+@import 'variables/list';
+@import 'variables/nav';
+@import 'variables/table';
+@import 'variables/toggle';
+
+// =========================================== display variables
+@import 'variables/display';

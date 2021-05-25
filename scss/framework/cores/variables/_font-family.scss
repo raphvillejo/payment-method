@@ -1,0 +1,12 @@
+﻿// SCSS File
+// font-family.scss
+
+// font-family variables
+$font-family-glyphs: $font-default-glyphs !default;
+$font-family-default: -apple-system, system-ui,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;
+$font-family-fixed: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+// font-family
+$font-family-base: $font-family-default;
+$font-family-monospace: $font-family-fixed;

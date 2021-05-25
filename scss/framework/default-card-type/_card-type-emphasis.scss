@@ -1,0 +1,50 @@
+﻿// SCSS File
+// card-type-emphasis.scss
+
+
+// card-type-emphasis style
+@if $enable-card {
+	@if $enable-card-type-emphasis {
+		.card-type-emphasis {
+			padding: $card-type-emphasis-pad;
+
+			.card-body {
+				position: relative;
+				border-radius: $card-type-emphasis-body-round;
+				padding: $card-type-emphasis-body-pad;
+				padding-right: $card-type-emphasis-body-pad-right;
+			}
+
+			.emphasis {
+				position: absolute;
+				text-align: center;
+				right: $card-type-emphasis-pos-x;
+				top: $card-type-emphasis-pos-y;
+				color: $card-type-emphasis-color;
+				margin-top: -#{$card-type-emphasis-round};
+				height: $card-type-emphasis-size;
+				width: $card-type-emphasis-size;
+				line-height: $card-type-emphasis-size;
+				border-radius: $card-type-emphasis-round;
+			}
+
+			&:nth-child(1) {
+				.emphasis {
+					background-color: $card-type-emphasis-bg-1;
+				}
+			}
+
+			&:nth-child(2) {
+				.emphasis {
+					background-color: $card-type-emphasis-bg-2;
+				}
+			}
+
+			&:nth-child(3) {
+				.emphasis {
+					background-color: $card-type-emphasis-bg-3;
+				}
+			}
+		}
+	}
+}

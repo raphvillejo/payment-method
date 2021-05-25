@@ -1,0 +1,70 @@
+﻿// SCSS File
+// form-btn-ghost.scss
+
+
+// button-ghost-style mixin
+@mixin button-ghost-style($color, $background, $border, $hover-color, $hover-background, $hover-border, $focus-color) {
+	border-color: $border;
+	background-color: $background;
+	position: relative;
+	white-space: normal;
+	overflow: hidden;
+	color: $color;
+
+	@include hover {
+		border-color: $hover-border;
+		background-color: $hover-background;
+		color: $hover-color;
+	}
+
+	&:focus, &.focus {
+		border-color: lighten($focus-color, 34%);
+		background-color: lighten($focus-color, 38%);
+		box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+		color: $color;
+	}
+
+	&.disabled, &:disabled {
+		border-color: $border;
+		background-color: $background;
+		color: $color;
+	}
+
+	&:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active, .show > &.dropdown-toggle {
+		border-color: lighten($focus-color, 34%);
+		background-color: lighten($focus-color, 38%);
+		color: $color;
+
+		&:focus {
+			box-shadow: 0 0 0 $btn-focus-width rgba($focus-color, .5);
+		}
+	}
+
+	&[disabled] {
+		pointer-events: none;
+	}
+
+	&::after {
+		@include size(100%);
+		@include transform-scale(10);
+		@include transition(transform .5s, opacity 1s);
+		background-image: radial-gradient(circle, $focus-color 12.5%, transparent 18.75%);
+		background-repeat: no-repeat;
+		background-position: 50%;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		opacity: 0;
+		content: '';
+	}
+
+	&:active {
+		&::after {
+			@include transition(0s);
+			@include transform-scale(0);
+			opacity: .35;
+		}
+	}
+}

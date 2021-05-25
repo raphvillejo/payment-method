@@ -1,0 +1,114 @@
+// SCSS File
+// card-specs.scss
+
+
+// card-specs style
+@if $enable-card {
+    @if $enable-card-specs {
+        .card-specs {
+            @include flex-display();
+            @include flex-direction();
+            @include flex-wrap();
+            padding-bottom: 0;
+            font-size: $card-specs-font-size;
+            margin-bottom: $card-specs-mar;
+
+            > div {
+                @include flex-grow(1);
+                @include flex-shrink(1);
+                padding-bottom: $card-specs-div-pad;
+
+                > span, > strong {
+                    display: block;
+                }
+
+                > strong {
+
+                    > span {
+                        font-weight: $card-specs-div-strong-span-font-weight;
+                        font-size: $card-specs-div-strong-span-font-size;
+                    }
+                }
+
+                > h4 {
+                    font-weight: $card-specs-div-h4-font-weight;
+                }
+
+                &:nth-last-child(1),
+                &:nth-last-child(2),
+                &:nth-last-child(3) {
+                    padding-bottom: 0;
+                }
+            }
+
+            &.card-specs-flex {
+                > div {
+                    max-width: $card-specs-1-min-width;
+                    @include flex-basis($card-specs-1-min-width);
+                }
+            }
+
+            &.card-specs-2 {
+                > div {
+                    max-width: $card-specs-2-min-width;
+                    @include flex-basis($card-specs-2-min-width);
+                }
+            }
+
+            &.card-specs-3 {
+                > div {
+                    max-width: $card-specs-3-min-width;
+                    @include flex-basis($card-specs-3-min-width);
+                }
+            }
+
+            &.card-specs-4 {
+                > div {
+                    max-width: $card-specs-4-min-width;
+                    @include flex-basis($card-specs-4-min-width);
+
+                    &:nth-last-child(4) {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            &.card-specs-inline {
+                > div {
+                    > span, > strong {
+                        display: inline;
+                    }
+                }
+            }
+
+            &.card-specs-table {
+                > div {
+                    max-width: 100%;
+                    padding-bottom: 0;
+                    @include flex(1 1 100%);
+                    @include flex-display();
+
+                    > span, > strong {
+                        @include flex-grow(1);
+                        @include flex-shrink(1);
+                    }
+
+                    > span {
+                        max-width: $card-specs-4-min-width;
+                        @include flex-basis($card-specs-4-min-width);
+                    }
+
+                    > strong {
+
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,209 @@
+﻿// SCSS File
+// wizard-product.scss
+
+
+// wizard-product style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-product {
+		// product style
+		.wizard-product {
+
+			.product {
+				position: relative;
+				padding: $wizard-product-pad;
+				margin-bottom: $wizard-product-mar;
+				border-radius: $wizard-product-round;
+				border: $wizard-product-border;
+				box-shadow: $wizard-product-shadow;
+				background-color: $wizard-product-bg;
+			}
+
+			.product-logo {
+				margin-bottom: $wizard-product-logo-mar;
+
+				img {
+					width: auto;
+					height: $wizard-product-logo-height;
+				}
+			}
+
+			.product-graphic {
+				margin: $wizard-product-graphic-mar;
+
+				img {
+					height: auto;
+					width: auto;
+					max-width: $wizard-product-graphic-max-width;
+					max-height: $wizard-product-graphic-max-height;
+				}
+			}
+
+			.product-name {
+				font-size: $wizard-product-name-font-size;
+				color: $wizard-product-name-color;
+				margin-bottom: 0;
+			}
+
+			.product-label {
+				font-size: $wizard-product-label-font-size;
+				color: $wizard-product-label-color;
+				display: block;
+			}
+
+			.product-company {
+				font-size: $wizard-product-company-font-size;
+				color: $wizard-product-company-color;
+				margin-bottom: 0;
+			}
+
+			.product-caption {
+				margin: $wizard-product-caption-mar;
+				padding: $wizard-product-caption-pad;
+				background-color: $wizard-product-caption-bg;
+				font-size: $wizard-product-caption-font-size;
+				display: block;
+
+				strong {
+					display: block;
+				}
+			}
+
+			.product-details {
+				margin: 0;
+				margin-top: $wizard-product-details-mar;
+				font-size: $wizard-product-details-font-size;
+				color: $wizard-product-details-color;
+			}
+
+			.product-toggle {
+				display: block;
+				border-bottom-left-radius: inherit;
+				border-bottom-right-radius: inherit;
+				margin: -#{$wizard-product-toggle-mar};
+				width: $wizard-product-toggle-width;
+				padding: $wizard-product-toggle-pad;
+				margin-top: $wizard-product-toggle-mar-top;
+				background-color: $wizard-product-toggle-bg;
+				font-size: $wizard-product-toggle-font-size;
+				line-height: $wizard-product-toggle-line-height;
+			}
+
+			.product-display {
+				overflow: hidden;
+
+				.product-graphic {
+					margin: 0;
+					margin-right: $wizard-product-display-mar;
+					float: left;
+				}
+
+				.product-logo {
+					margin: 0;
+					float: right;
+				}
+			}
+
+			.product-note {
+				text-align: center;
+				border-top-left-radius: inherit;
+				border-top-right-radius: inherit;
+				width: $wizard-product-note-width;
+				padding: $wizard-product-note-pad;
+				margin: -#{$wizard-product-note-mar};
+				margin-bottom: $wizard-product-note-mar-bot;
+				background-color: $wizard-product-note-bg;
+				font-size: $wizard-product-note-font-size;
+				color: $wizard-product-note-color;
+			}
+
+			.product-buttons {
+				margin: -#{$wizard-product-buttons-mar};
+				margin-top: $wizard-product-buttons-mar;
+				border-radius: inherit;
+				@include flex-align-items();
+				@include flex-display();
+
+				.product-toggle {
+					margin: 0;
+				}
+
+				.btn {
+					width: auto;
+					margin: 0;
+					border: none;
+					border-radius: 0;
+					padding: $wizard-product-buttons-pad;
+					@include flex-basis(100%);
+
+					&.btn-link, &.btn-ghost-primary {
+						box-shadow: $wizard-product-buttons-shadow;
+					}
+
+					&:first-child {
+						border-bottom-left-radius: inherit;
+					}
+
+					&:last-child {
+						border-bottom-right-radius: inherit;
+					}
+				}
+			}
+
+			&.sticky-top {
+				top: $wizard-product-sticky-pos;
+			}
+
+			@at-root .wizard-subject + & {
+				padding-top: $wizard-product-root-subject-pad;
+			}
+
+			.modal & {
+				text-align: center;
+
+				.product-details {
+					margin-top: $wizard-product-root-modal-details-mar;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+
+				.product-name {
+					font-size: $font-size-16;
+				}
+
+				.product-details, .product-toggle {
+					font-size: $font-size-15;
+				}
+
+				.product-display {
+					text-align: center;
+
+					.product-graphic, .product-logo {
+						margin: 0 auto $spacer-14;
+						float: none;
+
+						img {
+							width: 100%;
+							max-width: 100%;
+							max-height: 100%;
+						}
+					}
+
+					.product-logo {
+						width: 100%;
+						margin: 0 auto $spacer-24;
+
+						img {
+							width: auto;
+							max-height: ($spacer-40 + $p2);
+						}
+					}
+				}
+
+				@at-root .wizard-subject + & {
+					padding-top: $p10;
+				}
+			}
+		}
+	}
+}

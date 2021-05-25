@@ -1,0 +1,26 @@
+﻿// SCSS File
+// card-background.scss
+
+
+// card-background style
+@if $enable-card {
+	@if $enable-card-background {
+		.card-background {
+			width: $card-background-width;
+			position: absolute;
+			z-index: $card-background-layer;
+			right: 0;
+			top: 0;
+			bottom: 0;
+
+			img {
+				object-fit: contain;
+				object-position: right 0;
+			}
+
+			@include media-breakpoint-down(xs) {
+				width: $p12 * 10;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+﻿// SCSS File
+// form-file-editor.scss
+
+
+// file editor style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-file-editor {
+			.file-editor {
+				position: relative;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+﻿// SCSS File
+// card-loading.scss
+
+
+// card-loading style
+@if $enable-card {
+	@if $enable-card-loading {
+		.card-loading {
+			@extend %extend-card-loading;
+		}
+	}
+}

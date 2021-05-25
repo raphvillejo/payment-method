@@ -1,0 +1,15 @@
+﻿// SCSS File
+// autocomplete.scss
+
+
+// autocomplete style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-autocomplete {
+			.autocomplete {
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}

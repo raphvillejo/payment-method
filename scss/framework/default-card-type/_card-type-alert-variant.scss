@@ -1,0 +1,14 @@
+﻿// SCSS File
+// card-type-alert-variant.scss
+
+
+// card-type-alert-variant style
+@if $enable-card {
+	@if $enable-card-type-alert-variant {
+		@each $color, $value in $theme-colors {
+			.card-type-alert-#{$color} {
+				@include alert-variant(theme-color-level($color, $card-type-alert-bg-level), theme-color-level($color, $card-type-alert-border-level), theme-color-level($color, $card-type-alert-color-level));
+			}
+		}
+	}
+}

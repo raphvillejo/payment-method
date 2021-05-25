@@ -1,0 +1,67 @@
+﻿// SCSS File
+// spacers.scss
+
+
+// spacers variables
+// =========================================== spacing base
+$sb:												1rem;
+
+// =========================================== pixel
+$p1:												$sb * .0625;	// 1px
+$p2:												$sb * .125;		// 2px
+$p3:												$sb * .1875;	// 3px
+$p4:												$sb * .25;		// 4px
+$p5:												$sb * .3125;	// 5px
+$p6:												$sb * .375;		// 6px
+$p7:												$sb * .4375;	// 7px
+$p8:												$sb * .5;		// 8px
+$p9:												$sb * .5625;	// 9px
+$p10:												$sb * .625;		// 10px
+$p11:												$sb * .6875;	// 11px
+$p12:												$sb * .75;		// 12px
+$p13:												$sb * .8125;	// 13px
+$p14:												$sb * .875;		// 14px
+$p15:												$sb * .9375;	// 15px
+
+// =========================================== spacer by 2
+$spacer-12:											$sb * .75;		// 12px
+$spacer-14:											$sb * .875;		// 14px
+$spacer-16:											$sb;			// 16px
+$spacer-18:											$sb * 1.125;	// 18px
+$spacer-20:											$sb * 1.25;		// 20px
+$spacer-22:											$sb * 1.375;	// 22px
+$spacer-24:											$sb * 1.5;		// 24px
+$spacer-26:											$sb * 1.625;	// 26px
+$spacer-28:											$sb * 1.75;		// 28px
+$spacer-30:											$sb * 1.875;	// 30px
+$spacer-32:											$sb * 2;		// 32px
+$spacer-34:											$sb * 2.125;	// 34px
+$spacer-36:											$sb * 2.25;		// 36px
+$spacer-38:											$sb * 2.375;	// 38px
+$spacer-40:											$sb * 2.5;		// 40px
+$spacer-48:											$sb * 3;		// 48px
+$spacer-50:											$sb * 3.125;	// 50px
+$spacer-56:											$sb * 3.5;		// 56px
+$spacer-60:											$sb * 3.75;		// 60px
+$spacer-64:											$sb * 4;		// 64px
+$spacer-70:											$sb * 4.375;	// 70px
+$spacer-72:											$sb * 4.5;		// 72px
+$spacer-80:											$sb * 5;		// 80px
+$spacer-88:											$sb * 5.5;		// 88px
+$spacer-90:											$sb * 5.625;	// 90px
+$spacer-96:											$sb * 6;		// 96px
+$spacer-100:										$sb * 6.25;		// 100px
+
+$spacers:											() !default;
+$spacers: map-merge((								0: 0,
+													1: $p4,
+													2: $p8,
+													3: $p10,
+													4: $p14,
+													5: $spacer-24,
+													6: $spacer-32,
+													7: $spacer-48,
+													8: $spacer-64,
+													9: $spacer-72,
+													10: $spacer-96
+													), $spacers);

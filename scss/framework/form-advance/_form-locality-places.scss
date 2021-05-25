@@ -1,0 +1,71 @@
+﻿// SCSS File
+// form-locality-places.scss
+
+
+// form-locality-places style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-locality-places {
+			.form-locality-places {
+				font-family: $form-locality-places-font;
+				z-index: $form-locality-places-layer;
+
+				span {
+					padding: 0;
+					font-weight: $form-locality-places-span-font-weight;
+					font-size: $form-locality-places-span-font-size;
+					color: $form-locality-places-span-color;
+				}
+
+				.pac-item {
+					position: relative;
+					padding: $form-locality-places-item-pad;
+					padding-left: $form-locality-places-item-pad-x;
+					line-height: $form-locality-places-item-line-height;
+
+					@include hover {
+						background-color: $form-locality-places-item-bg-hover;
+
+						.pac-item-query {
+							color: $form-locality-places-item-query-color-hover;
+						}
+					}
+				}
+
+				.pac-icon {
+					margin: 0;
+					position: absolute;
+					left: $form-locality-places-icon-pos-x;
+					top: $form-locality-places-icon-pos-y;
+				}
+
+				.pac-item-query {
+					display: block;
+					font-weight: $form-locality-places-item-query-font-weight;
+					font-size: $form-locality-places-item-query-font-size !important;
+					color: $form-locality-places-item-query-color;
+				}
+
+				.pac-matched {
+					color: inherit;
+					font-size: inherit;
+					font-weight: $form-locality-places-matched-font-weight;
+				}
+
+				&.pac-logo {
+
+					&::after {
+						height: $form-locality-places-logo-height;
+						border-top: $form-locality-places-logo-border;
+						background-position: $form-locality-places-logo-bg-pos;
+						background-color: $form-locality-places-logo-bg;
+					}
+				}
+
+				&.is-fixed {
+					position: fixed !important;
+				}
+			}
+		}
+	}
+}

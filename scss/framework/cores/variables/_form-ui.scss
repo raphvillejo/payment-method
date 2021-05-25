@@ -1,0 +1,47 @@
+﻿// SCSS File
+// form-ui.scss
+
+
+// datepicker variables
+$ui-datepicker-mar-x:								0 -#{$p2};
+
+// datepicker-title variables
+$ui-datepicker-title-line-height:					$line-height-md;
+$ui-datepicker-title-font-size:						$font-size-16;
+$ui-datepicker-title-month-font-weight:				$font-weight-5;
+$ui-datepicker-title-month-font-size:				$font-size-20;
+
+// datepicker-header variables
+$ui-datepicker-header-mar-y:						$spacer-24;
+$ui-datepicker-header-arrow-size:					$spacer-48;
+$ui-datepicker-header-arrow-pos-y:					$p10;
+$ui-datepicker-header-arrow-hover-color:			$build-primary;
+$ui-datepicker-header-arrow-psuedo-font-size:		$font-size-24;
+$ui-datepicker-header-arrow-psuedo-font-family:		$font-family-glyphs;
+$ui-datepicker-header-arrow-psuedo-pos-y:			$ui-datepicker-header-arrow-pos-y / 2;
+
+// datepicker-group variables
+$ui-datepicker-group-flex:							100%;
+
+// datepicker-calendar variables
+$ui-datepicker-calendar-width:						100%;
+$ui-datepicker-calendar-th-pad:						$p10;
+$ui-datepicker-calendar-th-font-size:				$font-size-14;
+$ui-datepicker-calendar-th-font-weight:				$font-weight-5;
+$ui-datepicker-calendar-th-color:					$accent-color;
+$ui-datepicker-calendar-td-pad:						$p2;
+$ui-datepicker-calendar-td-font-size:				$font-size-14;
+$ui-datepicker-calendar-td-font-weight:				$font-weight-4;
+$ui-datepicker-calendar-spanlink-pad:				$p10;
+$ui-datepicker-calendar-spanlink-round:				$p3;
+$ui-datepicker-state-default-bg:					$mono-001;
+$ui-datepicker-state-default-color:					$heading-color;
+$ui-datepicker-state-hover-bg:						$build-primary;
+$ui-datepicker-state-hover-color:					$build-white;
+$ui-datepicker-state-active-bg:						$build-primary;
+$ui-datepicker-state-active-color:					$build-white;
+$ui-datepicker-state-range-bg:						rgba($build-primary, .16);
+$ui-datepicker-state-range-color:					$build-primary;
+$ui-datepicker-state-disabled-bg:					$mono-001;
+$ui-datepicker-state-disabled-bg-greadient:			repeating-linear-gradient(130deg, $build-white, $build-white $p5, $mono-002 $p2, $build-white $p7);
+$ui-datepicker-state-disabled-color:				$mono-004;

@@ -1,0 +1,64 @@
+﻿// SCSS File
+// form-basket.scss
+
+
+// form-basket style
+@if $enable-form {
+	@if $enable-form-utilities {
+		@if $enable-form-utilities-basket {
+			.form-basket {
+				padding: $form-basket-pad;
+				background-color: $form-basket-bg;
+				border-radius: $form-basket-round;
+
+				hr {
+					margin: $form-basket-hr-mar;
+				}
+
+				.basket-details {
+					font-size: $form-basket-details-font-size;
+					@include list-unstyled;
+					@include flex-display();
+
+					li {
+						@include flex-basis();
+						@include flex-grow(1);
+
+						&:nth-child(even) {
+							text-align: right;
+						}
+					}
+
+					em {
+						font-style: normal;
+					}
+
+					span, strong {
+						font-weight: $form-basket-details-font-weight;
+						color: $form-basket-details-color;
+					}
+				}
+
+				.basket-terms {
+					font-size: $form-basket-terms-font-size;
+					color: $form-basket-terms-color;
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					.basket-details {
+						@include flex-direction(column);
+
+						li {
+							text-align: left;
+
+							+ li {
+								margin-top: $p8;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

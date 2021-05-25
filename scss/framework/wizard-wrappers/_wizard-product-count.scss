@@ -1,0 +1,23 @@
+﻿// SCSS File
+// wizard-product-count.scss
+
+
+// wizard-product-count style
+@if $enable-wizard {
+	@if $enable-wizard-wrappers-product-count {
+		.wizard-product-count {
+			z-index: 3;
+			display: block;
+			position: absolute;
+			text-align: center;
+			line-height: $wizard-product-count-line-height;
+			top: $wizard-product-count-pos;
+			right: $wizard-product-count-pos;
+			font-size: $wizard-product-count-font-size;
+			background-color: $wizard-product-count-bg;
+			color: $wizard-product-count-color;
+			border-radius: $wizard-product-count-round;
+			@include size($wizard-product-count-size);
+		}
+	}
+}

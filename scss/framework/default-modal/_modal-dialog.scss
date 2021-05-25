@@ -1,0 +1,40 @@
+﻿// SCSS File
+// modal-dialog.scss
+
+
+// modal-dialog style
+@if $enable-modal {
+	.modal-dialog {
+		height: $modal-dialog-height;
+		width: $modal-dialog-width;
+		background-color: $modal-dialog-bg;
+		background-clip: padding-box;
+		position: relative;
+		pointer-events: auto;
+		@include flex-wrap(nowrap);
+		@include flex-display();
+
+		.modal-sm & {
+			width: $modal-dialog-sm-width;
+		}
+
+		.modal-md & {
+			width: $modal-dialog-md-width;
+		}
+
+		.modal-center & {
+			text-align: center;
+		}
+
+		@include media-breakpoint-down(xs) {
+			height: $modal-dialog-height-xs;
+			min-height: $modal-dialog-min-height-xs;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+
+			.modal-sm &, .modal-md & {
+				width: $modal-dialog-width-xs;
+			}
+		}
+	}
+}

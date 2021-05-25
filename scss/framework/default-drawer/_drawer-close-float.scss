@@ -1,0 +1,38 @@
+﻿// SCSS File
+// drawer-close-float.scss
+
+
+// drawer-close-float style
+@if $enable-drawer {
+	.drawer-close-float {
+		@include size($drawer-close-float-size);
+		box-shadow: $drawer-close-float-shadow;
+		border-radius: $drawer-close-float-round;
+		background-color: $drawer-close-float-bg;
+		position: absolute;
+		border-width: 0;
+		top: $drawer-close-float-pos-y;
+		margin-top: $drawer-close-float-mar-y;
+
+		.icon {
+			margin: $drawer-close-float-icon-mar;
+		}
+
+		@include media-breakpoint-down(xs) {
+			@include size($spacer-48);
+			box-shadow: 0 0 $p2 $p2 $build-shadow;
+
+			.icon {
+				margin: $p4;
+			}
+
+			.layout-drawer.layout-drawer-right &,
+			.layout-drawer.layout-drawer-left & {
+				left: auto;
+				top: auto;
+				right: $p14;
+				bottom: $spacer-24;
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+﻿// SCSS File
+// keyframes.scss
+
+
+// keyframes mixin
+@mixin keyframes($animation_name) {
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+// loading frames
+@include keyframes(loading) {
+	from {
+		@include transform-scale(0, 0);
+	}
+
+	to {
+		@include transform-scale(1, 1);
+	}
+}
+
+// spinner frames
+@include keyframes(spinner) {
+	from {
+		@include transform-rotate(0)
+	}
+
+	to {
+		@include transform-rotate(360)
+	}
+}

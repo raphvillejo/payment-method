@@ -1,0 +1,44 @@
+﻿// SCSS File
+// layout-wizard-footer.scss
+
+
+// wizard-footer style
+@if $enable-wizard {
+	@if $enable-wizard-layout {
+		.wizard-footer {
+			border-top: $wizard-footer-border;
+			background-color: $wizard-footer-bg;
+			@include flex($wizard-footer-flex);
+
+			.container {
+				max-width: $wizard-footer-container-max-width;
+			}
+
+			.foot {
+				padding-top: $wizard-footer-pad;
+				color: $wizard-footer-color;
+				line-height: $wizard-footer-line-height;
+				font-size: $wizard-footer-font-size;
+				font-weight: $wizard-footer-font-weight;
+				height: $wizard-footer-height;
+
+				+ .foot {
+					border-top: $wizard-footer-border;
+				}
+
+				a {
+					color: inherit;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+
+				.foot {
+					padding-top: $wizard-footer-pad / 2;
+				}
+			}
+		}
+	}
+}
+

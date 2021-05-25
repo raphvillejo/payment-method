@@ -1,0 +1,10 @@
+﻿// SCSS File
+// pseudo.scss
+
+
+// pseudo mixin
+@mixin pseudo($pos: null, $display: block, $content: '') {
+	content: $content;
+	display: $display;
+	position: $pos;
+}

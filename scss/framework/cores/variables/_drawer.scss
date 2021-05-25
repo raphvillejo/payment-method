@@ -1,0 +1,69 @@
+﻿// SCSS File
+// drawer.scss
+
+
+// drawer variables
+$drawer-label-font-weight:                          $font-weight-5;
+$drawer-option-input-pos:			                $p5;
+$drawer-option-input-mar:                           $drawer-option-input-pos;
+$drawer-option-label-pad-y:			                $drawer-option-input-mar;
+$drawer-option-label-pad-x:			                $spacer-32 + $drawer-option-input-mar;
+$drawer-option-label-pad:				            $drawer-option-label-pad-y $drawer-option-label-pad-x;
+$drawer-option-label-hover-bg:                      $mono-001;
+
+// drawer-head variables
+$drawer-head-pad-y:									$spacer-30;
+$drawer-head-pad-x:									$spacer-24;
+$drawer-head-pad:									$drawer-head-pad-y $drawer-head-pad-x;
+$drawer-head-border:								$build-apply-border;
+$drawer-head-heading-font-size:						$font-size-18;
+$drawer-head-heading-font-weight:					$font-weight-5;
+$drawer-head-title-font-size:						$font-size-16;
+$drawer-head-title-font-weight:						$drawer-head-heading-font-weight;
+$drawer-head-lead-font-size:						$font-size-14;
+$drawer-head-lead-font-weight:						$drawer-head-heading-font-weight;
+$drawer-head-lead-color:							$accent-color;
+$drawer-head-close-pos-y:							50%;
+$drawer-head-close-pos-x:							$drawer-head-pad-x;
+$drawer-head-close-mar-y:							-#{$spacer-16};
+
+// drawer-body variables
+$drawer-body-pad:									$drawer-head-pad;
+$drawer-body-min-height:							100%;
+$drawer-body-flex:									1 1 $drawer-body-min-height;
+
+// drawer-body-section variables
+$drawer-body-section-mar-y:							$spacer-32;
+
+// drawer-foot variables
+$drawer-foot-pad-y:									$drawer-head-pad-x;
+$drawer-foot-pad-x:									$drawer-head-pad-x;
+$drawer-foot-pad:									$drawer-foot-pad-y $drawer-foot-pad-x;
+$drawer-foot-border:								$drawer-head-border;
+$drawer-foot-btn-border-size:						$p1;
+
+// drawer-close variables
+$drawer-close-size:									$spacer-32;
+$drawer-close-bg:									$build-white;
+$drawer-close-shadow:								$build-apply-shadow;
+$drawer-close-icon-mar:								$p8;
+
+// drawer-close-float variables
+$drawer-close-float-size:							$drawer-close-size * 2;
+$drawer-close-float-shadow:							$build-apply-dark-shadow;
+$drawer-close-float-round:							50%;
+$drawer-close-float-bg:								$build-white;
+$drawer-close-float-pos-x:							125%;
+$drawer-close-float-pos-y:							50%;
+$drawer-close-float-mar-y:							-#{$drawer-close-float-size / 2};
+$drawer-close-float-icon-mar:						$spacer-20;
+
+// drawer-avatar variables
+$drawer-avatar-size:								$p10 * 10;
+$drawer-avatar-bg:									$build-primary;
+$drawer-avatar-round:								50%;
+$drawer-avatar-border-size:							$p5;
+$drawer-avatar-border-color:						$mono-008;
+$drawer-avatar-border:								$drawer-avatar-border-size solid $drawer-avatar-border-color;
+$drawer-avatar-img-width:							$drawer-avatar-size + $drawer-avatar-border-size;
+$drawer-avatar-img-mar:								-#{$drawer-avatar-border-size};

@@ -1,0 +1,107 @@
+// SCSS File
+// card-type-event.scss
+
+// card-type-event style
+.card-type-event {
+  color: $white;
+  padding: 0;
+  box-shadow: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include gradient-y(#1450d2, #1144b4);
+
+  .card-header {
+    background-color: #001254;
+    text-align: center;
+    width: $spacer-96;
+    height: $spacer-96;
+    padding: 0;
+    top: -#{$spacer-20};
+    margin-bottom: -#{$spacer-20};
+    margin-left: $spacer-20;
+    flex: 0 0 $spacer-96;
+
+    strong,
+    span {
+      display: block;
+      line-height: 1;
+    }
+
+    strong {
+      font-size: $font-size-32;
+    }
+
+    span {
+      padding-top: $spacer-20;
+      font-size: $font-size-16;
+      text-transform: uppercase;
+    }
+
+    &::before {
+      content: "";
+      border-color: #ebebeb #3b4e96 #3b4e96 #ebebeb;
+      border-width: $p10;
+      border-style: solid;
+      height: $spacer-20;
+      width: $spacer-20;
+      position: absolute;
+      top: 0;
+      left: -#{$spacer-20};
+    }
+  }
+
+  .card-body {
+    padding: $spacer-24;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+
+    strong,
+    span {
+      display: block;
+    }
+
+    strong,
+    .btn {
+      flex: 0 0 auto;
+    }
+
+    strong {
+      font-size: $font-size-20;
+    }
+
+    span {
+      margin-bottom: $spacer-16;
+      flex: 1 1 100%;
+    }
+  }
+
+  .card-footer {
+    position: relative;
+    margin-left: $spacer-24;
+    overflow: hidden;
+    text-align: right;
+    padding-right: $spacer-24;
+    font-weight: 800;
+    flex: 0 0 auto;
+
+    span {
+      position: relative;
+      z-index: 2;
+      color: $black;
+    }
+
+    &::before {
+      content: "";
+      bottom: -#{$p1};
+      left: $spacer-32;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      background-color: #ebebeb;
+      transform: skew(-45deg, 0deg);
+    }
+  }
+}

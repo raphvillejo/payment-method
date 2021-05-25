@@ -1,0 +1,22 @@
+﻿// SCSS File
+// drawer-avatar.scss
+
+
+// drawer-avatar style
+@if $enable-drawer {
+	.drawer-avatar {
+		@include size($drawer-avatar-size);
+		display: inline-block;
+		overflow: hidden;
+		background-color: $drawer-avatar-bg;
+		border-radius: $drawer-avatar-round;
+		border: $drawer-avatar-border;
+
+		img {
+			display: block;
+			width: $drawer-avatar-img-width;
+			height: auto;
+			margin: $drawer-avatar-img-mar;
+		}
+	}
+}

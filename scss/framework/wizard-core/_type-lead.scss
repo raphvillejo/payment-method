@@ -1,0 +1,16 @@
+﻿// SCSS File
+// type-lead.scss
+
+
+// wizard lead style
+@if $enable-wizard {
+	.wizard-lead {
+		@include responsive-font-size($wizard-lead-font-size);
+		font-weight: $wizard-lead-font-weight;
+		line-height: $wizard-lead-line-height;
+
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-18;
+		}
+	}
+}

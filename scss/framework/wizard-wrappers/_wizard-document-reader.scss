@@ -1,0 +1,18 @@
+﻿// SCSS File
+// wizard-document-reader.scss
+
+
+// wizard-document-reader style
+@if $enable-wizard {
+    @if $enable-wizard-wrappers-document-reader {
+        .wizard-document-reader {
+            margin: 0 auto;
+            min-height: $document-outer-height;
+            max-width: $document-outer-width;
+            padding: $document-inner-padding;
+            box-shadow: $document-outer-shadow;
+            background-color: $document-inner-bg;
+        }
+    }
+}
+

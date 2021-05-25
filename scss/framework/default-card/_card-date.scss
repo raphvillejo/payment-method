@@ -1,0 +1,32 @@
+﻿// SCSS File
+// card-date.scss
+
+
+// card-date style
+@if $enable-card {
+	@if $enable-card-date {
+		.card-date {
+			margin-bottom: $card-date-mar-y;
+			font-size: $card-date-font-size;
+			@include flex-display();
+			@include flex-justify-content(space-between);
+
+			strong {
+				color: $card-date-strong-color;
+			}
+
+			em {
+				font-style: normal;
+				color: $card-date-em-color;
+			}
+
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-14;
+
+				strong {
+					display: none;
+				}
+			}
+		}
+	}
+}

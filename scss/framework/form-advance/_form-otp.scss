@@ -1,0 +1,51 @@
+﻿// SCSS File
+// form-otp.scss
+
+
+// form-otp style
+@if $enable-form {
+	@if $enable-form-advance {
+		@if $enable-form-advance-otp {
+			.form-otp {
+				padding-top: $form-otp-pad;
+				margin-left: -#{$form-otp-mar};
+				margin-right: -#{$form-otp-mar};
+				@include flex-flow();
+				@include flex-display();
+
+				.complete {
+					border-bottom-color: $form-otp-complete-border-color;
+					border-bottom-width: $form-otp-complete-border-size;
+
+					&:focus {
+						border-color: $form-otp-complete-focus-border-color;
+						border-bottom-width: $form-otp-complete-focus-border-size;
+					}
+				}
+
+				input {
+					width: auto;
+					padding: $form-otp-input-pad;
+					margin: $form-otp-input-mar;
+					text-align: center;
+					display: inline-block;
+					@include flex-grow(1);
+				}
+
+				@extend %extend-aria-hide;
+
+				@extend %extend-aria-show-flex;
+
+				@include media-breakpoint-down(xs) {
+					margin-left: -#{$p6};
+					margin-right: -#{$p6};
+
+					input {
+						margin-left: $p6;
+						margin-right: $p6;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+﻿// SCSS File
+// icon-svg.scss
+
+
+// icon-svg mixin
+@mixin icon-sizer($size) {
+	height: $size;
+	width: $size;
+	background-size: $size;
+}
+
+@mixin icon-cart($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 21.333 21.333'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill-rule: evenodd; fill: #{$color}; %7D %3C/style%3E%3C/defs%3E%3Cpath id='icon-cart' class='cls-1' d='M1659.86,557.5h-7.88s-1.45,2.5.02,2.5h11v1.413h-12c-2.86,0-1-3.413-1-3.413l1-2-4-7h-2v-1.516h3l1.39,2.077h14.99ZM1650,551l2.59,5H1659l3-5h-12Zm1,12a2,2,0,1,1-2,2A2,2,0,0,1,1651,563Zm10,0a2,2,0,1,1-2,2A2,2,0,0,1,1661,563Z' transform='translate(-1644.023 -546.568)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-envelope($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; %7D %3C/style%3E%3C/defs%3E%3Cpath id='icon-envelope' class='cls-1' d='M971,549H949a2,2,0,0,1-2-2V534l13,5,13-5v13A2,2,0,0,1,971,549Zm-24-16a2,2,0,0,1,2-2h22a2,2,0,0,1,2,2l-13,5Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-cart-solid($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 21.333 21.333'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; %7D %3C/style%3E%3C/defs%3E%3Cpath id='icon-cart-solid' class='cls-1' d='M964.859,540.5h-7.877s-1.451,2.5.018,2.5h11v1.413H956c-2.858,0-1-3.413-1-3.413l1-2-4-7h-2v-1.516h3l1.386,2.077h14.992ZM956,546a2,2,0,1,1-2,2A2,2,0,0,1,956,546Zm10,0a2,2,0,1,1-2,2A2,2,0,0,1,966,546Z' transform='translate(-949.021 -529.568)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-filter($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; %7D %3C/style%3E%3C/defs%3E%3Cpath id='icon-filter' class='cls-1' d='M949,527h22a2,2,0,0,1,2,2v1l-11,10v13h-4V540l-11-10v-1A2,2,0,0,1,949,527Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-view($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='view' xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; %7D .cls-1, .cls-3 %7B fill-rule: evenodd; %7D .cls-2 %7B fill: %23c7e8fe; %7D .cls-3 %7B fill: %23036; %7D %3C/style%3E%3C/defs%3E%3Cpath id='view-bg-1' class='cls-1' d='M960,533c-7,0-11,7-11,7s4,7,11,7,11-7,11-7S967,533,960,533Z' transform='translate(-944 -524)'/%3E%3Ccircle id='view-bg-2' class='cls-2' cx='16' cy='16' r='4'/%3E%3Cpath id='view-border' class='cls-3' d='M960,548a13.024,13.024,0,0,1-12-8,13,13,0,0,1,24,0A13.024,13.024,0,0,1,960,548Zm0-14a11.607,11.607,0,0,0-10,6,11.333,11.333,0,0,0,20,0A11.607,11.607,0,0,0,960,534Zm0,11a5,5,0,1,1,5-5A5,5,0,0,1,960,545Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,960,537Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-view-hide($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='view-hide' xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; %7D .cls-1, .cls-2, .cls-3 %7B fill-rule: evenodd; %7D .cls-2 %7B fill: %23c7e8fe; %7D .cls-3 %7B fill: %23036; %7D %3C/style%3E%3C/defs%3E%3Cpath id='view-hide-bg-1' class='cls-1' d='M951.987,543.6A16.923,16.923,0,0,1,949,540s4-7,11-7a10.363,10.363,0,0,1,2.316.27Zm12.438-9.61A16.267,16.267,0,0,1,971,540s-4,7-11,7a11.186,11.186,0,0,1-6.444-2.141Z' transform='translate(-944 -524)'/%3E%3Cpath id='view-hide-bg-2' class='cls-2' d='M956.046,539.539a3.976,3.976,0,0,1,3.493-3.493Zm5.863-3.034a3.987,3.987,0,1,1-5.4,5.4Z' transform='translate(-944 -524)'/%3E%3Cpath id='view-hide-border' class='cls-3' d='M971.707,529.707l-4.47,4.47A13.832,13.832,0,0,1,972,540a13.024,13.024,0,0,1-12,8,12.841,12.841,0,0,1-5.435-1.151l-4.858,4.858h0a1,1,0,1,1-1.414-1.414h0l4.47-4.47c-0.035-.024-0.063-0.051-0.1-0.075l1.44-1.44c0.036,0.023.065,0.048,0.1,0.07l1.625-1.624c-0.024-.035-0.04-0.074-0.062-0.109l1.485-1.486c0.017,0.041.026,0.087,0.045,0.127l3.986-3.986c-0.04-.019-0.086-0.028-0.127-0.045l1.486-1.485c0.035,0.022.074,0.038,0.109,0.062l1.136-1.136c-0.042-.016-0.087-0.027-0.129-0.042l1.551-1.552c0.04,0.018.084,0.031,0.123,0.049l4.858-4.858h0a1,1,0,1,1,1.414,1.414h0Zm-9.007,9.007-3.986,3.986A2.969,2.969,0,0,0,960,543a3,3,0,0,0,3-3A2.969,2.969,0,0,0,962.7,538.714Zm1.468-1.468a4.994,4.994,0,0,1-6.922,6.922L956.11,545.3a11.039,11.039,0,0,0,3.89.7,11.607,11.607,0,0,0,10-6,12.231,12.231,0,0,0-4.207-4.378ZM955,540a5,5,0,0,1,5-5,4.9,4.9,0,0,1,.545.041l-5.5,5.5A4.9,4.9,0,0,1,955,540Zm6.479-5.893A11.1,11.1,0,0,0,960,534a11.607,11.607,0,0,0-10,6,12.074,12.074,0,0,0,2.5,3.088l-1.373,1.373A14.02,14.02,0,0,1,948,540a13.024,13.024,0,0,1,12-8,13.352,13.352,0,0,1,3.2.385Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-dashboard($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='dashboard' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M962,556V539h14v17H962Zm11-14h-8v11h8V542Zm-11-18h14v11H962V524Zm3,8h8v-5h-8v5Zm-21,13h14v11H944V545Zm3,8h8v-5h-8v5Zm-3-29h14v17H944V524Zm3,14h8V527h-8v11Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-help($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='help' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 28 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M971,552h-7l-4,4-4-4h-7a3,3,0,0,1-3-3V527a3,3,0,0,1,3-3h22a3,3,0,0,1,3,3v22A3,3,0,0,1,971,552Zm0-25H949v22h8l3,3,3-3h8V527Zm-10,17h-2v-5h1a4,4,0,1,0-4-4h-2a6,6,0,1,1,7,5.9V544Zm0,3h-2v-2h2v2Z' transform='translate(-946 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-list($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='list' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath id='list-2' data-name='list' class='cls-1' d='M974,556H946a2,2,0,0,1-2-2V526a2,2,0,0,1,2-2h28a2,2,0,0,1,2,2v28A2,2,0,0,1,974,556Zm-2-28H948v24h24V528Zm-17,7h-4v-4h4v4Zm0,7h-4v-4h4v4Zm0,7h-4v-4h4v4Zm14-14H958v-4h11v4Zm0,7H958v-4h11v4Zm0,7H958v-4h11v4Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
+
+@mixin icon-log-out($color: $build-white) {
+	background-image: str-replace(url("data:image/svg+xml,%3Csvg id='log-out' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: #{$color}; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M972,556H948a4,4,0,0,1-4-4v-4a2,2,0,0,1,4,0v4h24V528H948v4a2,2,0,0,1-4,0v-4a4,4,0,0,1,4-4h24a4,4,0,0,1,4,4v24A4,4,0,0,1,972,556Zm-28-16a2,2,0,0,1,2-2h15.172l-2.586-2.586h0a2,2,0,1,1,2.828-2.828h0l6,6h0a2,2,0,0,1,0,2.828h0l-6,6h0a2,2,0,1,1-2.828-2.828h0L961.172,542H946A2,2,0,0,1,944,540Z' transform='translate(-944 -524)'/%3E%3C/svg%3E%0A"), "#", "%23");
+}
