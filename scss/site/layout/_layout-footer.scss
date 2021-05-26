@@ -4,8 +4,19 @@
 // layout-footer style
 .layout-footer {
   background-color: #f6f6f6;
-  color: #717171;
   padding: $spacer-20 0;
-  font-size: $font-size-10;
   text-align: center;
+
+  .foot {
+    font-size: $font-size-10;
+
+    > a {
+      font-family: $font-custom-font-bo;
+    }
+
+    a {
+      color: #717171;
+      margin: 0 $spacer-16;
+    }
+  }
 }

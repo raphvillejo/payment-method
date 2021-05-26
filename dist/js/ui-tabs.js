@@ -1,77 +1,62 @@
-﻿/* JavaScript File                                                  */
-/* ui-tabs.js                                                  		*/
-/* Modified January 22, 2019                                        */
+﻿// tab ui
 
+var ui_tabs = (function (document) {
+  var evt = [
+      function (document, window, args) {
+        var tabs = document.querySelectorAll("[data-toggle=tab]")
 
-var ui_tabs = (function(document) {
+        tabs.forEach(function (trigger) {
+          trigger.addEventListener(
+            "click",
+            function (event) {
+              show(event)
+            },
+            false
+          )
+        })
 
-	var evt = [
+        var show = function (event) {
+          event.preventDefault()
 
-		// tabs - function to control a tabbed interface
+          var link = event.target
+          var nav = link.closest(".nav")
+          var links = nav.querySelectorAll(".nav-link")
 
-		function(document, window, args) {
+          var tab = document.querySelector(
+            "#" + link.getAttribute("aria-controls")
+          )
+          var tabs = tab.closest(".tabs")
 
-			var tabs = document.querySelectorAll('[data-toggle=tab]');
+          nav.querySelectorAll(".nav-link").forEach(function (item) {
+            item.classList.remove("active")
+            item.setAttribute("aria-selected", false)
+          })
 
-			tabs.forEach(function(trigger) {
+          link.classList.add("active")
+          link.setAttribute("aria-selected", true)
 
-				trigger.addEventListener('click', function (event) {
+          tabs.querySelectorAll(".tab").forEach(function (item) {
+            item.classList.remove("active")
+          })
 
-					show(event);
+          tab.classList.add("active")
+        }
 
-				}, false);
+        if (args && args.action === "show") {
+          show(args.event)
+        }
+      },
+    ],
+    initAll = function (args) {
+      initEvt(document, window, args)
+    },
+    initEvt = function (document, window, args) {
+      evt.forEach(function (e) {
+        e(document, window, args)
+      })
+    }
 
-			});
+  return { init: initAll }
+})(document, window)
 
-			var show = function(event) {
-
-				event.preventDefault();
-				
-				var link 	= event.target;
-				var nav 	= link.closest('.nav');
-				var links 	= nav.querySelectorAll('.nav-link');
-
-				var tab 	= document.querySelector('#' + link.getAttribute('aria-controls'));
-				var tabs 	= tab.closest('.tabs');
-
-				nav.querySelectorAll('.nav-link').forEach(function(item) {
-
-					item.classList.remove('active');
-					item.setAttribute('aria-selected', false);
-				});
-
-				link.classList.add('active');
-				link.setAttribute('aria-selected', true);
-
-				tabs.querySelectorAll('.tab').forEach(function(item) {
-
-					item.classList.remove('active');
-				});
-
-				tab.classList.add('active');
-			}
-
-			if (args && args.action === 'show') {
-
-				show(args.event);
-			}
-		}
-
-	],
-	initAll = function(args) {
-
-		initEvt(document, window, args);
-	},
-	initEvt = function(document, window, args) {
-
-		evt.forEach(function(e) {
-			
-			e(document, window, args);
-		});
-	};
-	
-	return { init: initAll };
-
-})(document, window);
-
-ui_tabs.init();
+ui_tabs.init()

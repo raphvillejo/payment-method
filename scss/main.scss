@@ -24,21 +24,9 @@
 
 // components
 @import "site/components/navigation";
-@import "site/components/menu";
-@import "site/components/drawer";
 @import "site/components/payment";
 @import "site/components/product";
-
-// card
-@import "site/form/form-text";
-
-// card
-@import "site/card/card";
-@import "site/card/card-image";
-
-// card-type
-@import "site/card-type/card-type-image";
-@import "site/card-type/card-type-event";
+@import "site/components/modal";
 
 // utilities
 @import "site/utilities/image";

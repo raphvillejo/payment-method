@@ -6,7 +6,7 @@
         content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet"
         href="./css/main.css" />
-  <title>Create and Account</title>
+  <title>Checkout</title>
 </head>
 <body>
   <div class="layout"
@@ -420,7 +420,7 @@
                                      id="payment-method-b"
                                      aria-describedby="payment-method-label"
                                      value=""
-                                     tabindex="17" />
+                                     tabindex="20" />
                               <label for="payment-method-b"
                                      data-toggle="amend"
                                      aria-controls="payment-method-paypal">
@@ -443,6 +443,16 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="form-button mb-6">
+                        <button type="button"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="modal"
+                                aria-controls="layout-modal"
+                                tabindex="21">
+                          Complete Order
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -589,17 +599,46 @@
                            spellcheck="false"
                            aria-required="false"
                            aria-invalid="false"
-                           placeholder="Got a promo code?"
-                           value="AZYT32BG">
+                           placeholder="Woohoo! Congrats!"
+                           value="">
                     <button type="button"
                             name="apply"
-                            class="btn btn-secondary btn-addon"
+                            class="btn btn-grey btn-addon"
                             hidden>Apply</button>
                     <button type="button"
                             name="clear"
-                            class="btn-clear"
-                            hidden><i class="icon i-toggle-clear">Clear field</i></button>
+                            class="btn btn-grey btn-clear"
+                            hidden>&times;</button>
                   </div>
+                  <div class="voucher-collection">
+                    <span class="codes">
+                      <i class="icon i-tags"></i>
+                      BOGO
+                      <button class="btn-remove"
+                              name="remove">&times;</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-total">
+                <div class="product-total-list">
+                  <div class="product-total-label"><span>Subtotal</span></div>
+                  <div class="product-total-value"><span>$105.98</span></div>
+                </div>
+                <div class="product-total-list">
+                  <div class="product-total-label">
+                    <span class="text-danger">Discount</span>
+                    <span class="codes"><i class="icon i-tags"></i>BOGO</span>
+                  </div>
+                  <div class="product-total-value"><span class="text-danger">-$35.00</span></div>
+                </div>
+                <div class="product-total-list">
+                  <div class="product-total-label"><span>Shipping</span></div>
+                  <div class="product-total-value"><span>Calculated at next step</span></div>
+                </div>
+                <div class="product-total-sum">
+                  <div class="product-total-label"><span>Total</span></div>
+                  <div class="product-total-value"><small>USD</small> <span>$70.98</span></div>
                 </div>
               </div>
             </div>
@@ -610,27 +649,58 @@
     <footer class="layout-footer"
             id="footer">
       <div class="container">
-        <div class="foot">Footer</div>
+        <div class="foot">
+          <a href="javascript:;">Spiritual Hippie</a>
+          <small>
+            <a href="javascript:;">Support</a>
+            <a href="javascript:;">Track Order</a>
+            <a href="javascript:;">Privacy Policy</a>
+            <a href="javascript:;">Terms of Service</a>
+          </small>
+        </div>
       </div>
     </footer>
   </div>
 
-  <div class="layout-drawer layout-drawer-right animate"
-       id="layout-drawer"
+  <div class="layout-modal animate"
+       id="layout-modal"
        aria-hidden="true">
-    <div class="drawer"
-         aria-hidden="true">
-      <div class="drawer-head">Drawer head</div>
-      <div class="drawer-body">Drawer body</div>
-      <div class="drawer-foot">Drawer Foot</div>
-      <button class="drawer-close-float"
-              data-toggle="drawer"
-              data-target="drawer"
-              aria-controls="layout-drawer">
-        <i class="icon i-icon-cross i-24"
-           aria-hidden="true">Close</i>
-      </button>
+
+    <!-- modal starts -->
+    <div class="modal modal-sm"
+         tabindex="-1"
+         role="dialog">
+      <div class="modal-dialog"
+           role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+
+            <h4>Your Payment Method was declined.<br />
+              Please try another Payment Method.</h4>
+            <button type="button"
+                    class="btn btn-primary"
+                    name="close"
+                    data-toggle="modal"
+                    data-target="modal"
+                    aria-controls="layout-modal">
+              Okay, Try Another Payment Method
+            </button>
+
+            <button type="button"
+                    class="toggle toggle-button modal-close"
+                    name="close"
+                    data-toggle="modal"
+                    data-target="modal"
+                    aria-controls="layout-modal">
+              &times;
+            </button>
+
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- modal ends -->
+
   </div>
 
   <div class="layout-backdrop animate"
@@ -642,8 +712,10 @@
   <script src="./js/event-transition.js"></script>
   <script src="./js/form-ammend.js"></script>
   <script src="./js/form-mask.js"></script>
-  <script src="./js/form-mask.js"></script>
+  <script src="./js/form-voucher.js"></script>
+  <script src="./js/ui-backdrop.js"></script>
   <script src="./js/ui-tabs.js"></script>
+  <script src="./js/ui-modal.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -38,6 +38,9 @@
 }
 
 .payment-body {
+  position: sticky;
+  top: 0;
+
   .tab {
     padding-top: $spacer-28;
     display: none;

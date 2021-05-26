@@ -45,7 +45,7 @@ $build-warning: $orange-color !default;
 $build-danger: $red-color !default;
 $build-white: $white !default;
 $build-black: $black !default;
-$build-grey: #7c858d !default;
+$build-grey: #c4c4c4 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -138,9 +138,9 @@ $font-default-glyphs: "RENAME_ME_1" !default;
 $enable-custom-glyphs: false !default;
 $font-custom-glyphs: "custom" !default;
 $enable-custom-font: true !default;
-$font-custom-font-rg:"Hurme Geometric Sans 3";
-$font-custom-font-sb:"Hurme Geometric Sans 3 Semi Bold";
-$font-custom-font-bo:"Hurme Geometric Sans 3 Bold";
+$font-custom-font-rg: "Hurme Geometric Sans 3";
+$font-custom-font-sb: "Hurme Geometric Sans 3 Semi Bold";
+$font-custom-font-bo: "Hurme Geometric Sans 3 Bold";
 $font-custom-font: $font-custom-font-rg, $font-custom-font-sb,
   $font-custom-font-bo !default;
 
@@ -166,16 +166,16 @@ $alert-status-border-level: -1.6 !default; // color level border
 $alert-status-color-level: 0.05 !default; // color level text
 
 // =========================================== card settings
-$enable-card: true !default; // parent
+$enable-card: false !default; // parent
 $enable-card-button: false !default;
 $enable-card-grid: false !default;
 $enable-card-icon: false !default;
 $enable-card-image: false !default;
 $enable-card-background: false !default;
 $enable-card-hover: false !default;
-$enable-card-loading: true !default;
+$enable-card-loading: false !default;
 $enable-card-toggle: false !default;
-$enable-card-action: true !default;
+$enable-card-action: false !default;
 $enable-card-application: false !default;
 $enable-card-data: false !default;
 $enable-card-date: false !default;
@@ -215,11 +215,11 @@ $card-type-alert-border-level: -3 !default; // color level border
 $card-type-alert-color-level: 6 !default; // color level text
 
 // =========================================== drawer components settings
-$enable-drawer: true !default;
+$enable-drawer: false !default;
 $enable-drawer-form: false !default;
 
 // =========================================== modal components settings
-$enable-modal: false !default;
+$enable-modal: true !default;
 $enable-modal-image: false !default;
 $enable-modal-inset: false !default;
 $enable-modal-outset: false !default;
@@ -323,15 +323,15 @@ $utilities-display-element: false !default;
 $utilities-display-print: false !default;
 
 // =========================================== background utilities settings
-$utilities-background: true !default; // parent
-$utilities-background-variant: true !default;
+$utilities-background: false !default; // parent
+$utilities-background-variant: false !default;
 $utilities-background-gradient: false !default;
 $utilities-background-white: false !default;
 $utilities-background-transparent: false !default;
 
 // =========================================== stack grid system settings
-$enable-stack: true !default;
-$enable-stack-grid: true !default;
+$enable-stack: false !default;
+$enable-stack-grid: false !default;
 $enable-stack-grid-small: false !default;
 $enable-stack-display: false !default;
 $enable-stack-masonry: false !default;
@@ -367,13 +367,13 @@ $enable-form-wrappers-radio-stack: false !default;
 $enable-form-wrappers-range: false !default;
 $enable-form-wrappers-info: false !default;
 $enable-form-wrappers-info-otp: false !default;
-$enable-form-wrappers-voucher: false !default;
+$enable-form-wrappers-voucher: true !default;
 $enable-form-wrappers-autocomplete: false !default;
 $enable-form-wrappers-guidance: false !default;
 $enable-form-wrappers-datepicker: false !default;
 
 // form-advance
-$enable-form-advance: true !default; // parent
+$enable-form-advance: false !default; // parent
 $enable-form-advance-date: false !default;
 $enable-form-advance-control-range: false !default;
 $enable-form-advance-file: false !default;
@@ -390,7 +390,7 @@ $enable-form-advance-locality-pin: false !default;
 $enable-form-advance-locality-places: false !default;
 $enable-form-advance-otp: false !default;
 $enable-form-advance-digits: false !default;
-$enable-form-advance-password-meter: true !default;
+$enable-form-advance-password-meter: false !default;
 $enable-form-advance-progress: false !default;
 $enable-form-advance-autocomplete: false !default;
 $enable-form-advance-autocomplete-items: false !default;
@@ -412,10 +412,10 @@ $enable-form-utilities-alert-status: false !default;
 $enable-form-utilities-alert-variant: false !default;
 $enable-form-utilities-feedback: false !default;
 $enable-form-utilities-feedback-output: false !default;
-$enable-form-utilities-loading: true !default;
+$enable-form-utilities-loading: false !default;
 $enable-form-utilities-help: false !default;
 $enable-form-utilities-basket: false !default;
-$enable-form-utilities-btn-edit: true !default;
+$enable-form-utilities-btn-edit: false !default;
 $enable-form-utilities-btn-group: false !default;
 $enable-form-utilities-btn-toggle: false !default;
 $enable-form-utilities-input: false !default;
@@ -423,7 +423,7 @@ $enable-form-utilities-input-addon: true !default;
 $enable-form-utilities-input-group: false !default;
 $enable-form-utilities-input-flex: false !default;
 $enable-form-utilities-pagination: false !default;
-$enable-form-utilities-placeholder-label: true !default;
+$enable-form-utilities-placeholder-label: false !default;
 
 // =========================================== wizard settings
 // If parent settings is enabled, please choose a child settings to include in the build.
@@ -481,7 +481,7 @@ $enable-wizard-wrappers-subject: false !default;
 $enable-wizard-wrappers-summary: false !default;
 $enable-wizard-wrappers-table: false !default;
 $enable-wizard-wrappers-table-sticky: false !default;
-$enable-wizard-wrappers-voucher: false !default;
+$enable-wizard-wrappers-voucher: true !default;
 
 // =========================================== other settings
 $enable-caret: true !default;

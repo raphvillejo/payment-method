@@ -1,17 +1,81 @@
 ﻿// SCSS File
 // form-voucher.scss
 
-
 // form-voucher style
 @if $enable-form {
-	@if $enable-form-wrappers {
-		@if $enable-form-wrappers-voucher {
-			.form-voucher {
+  @if $enable-form-wrappers {
+    @if $enable-form-wrappers-voucher {
+      .form-voucher {
+        .form-control {
+          padding-right: $form-voucher-input-pad-x;
 
-				.form-control {
-					padding-right: $form-voucher-input-pad-x;
-				}
-			}
-		}
-	}
+          ~ .btn-grey {
+            color: $white;
+          }
+        }
+      }
+
+      .voucher-collection {
+        padding-top: $spacer-16;
+        display: flex;
+
+        .codes {
+          background-color: #f1f1f1;
+          padding: $p4;
+          border-radius: $p3;
+          margin-right: $p4;
+        }
+      }
+
+      .codes {
+        position: relative;
+        color: #717171;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+
+        .icon {
+          margin-right: $p4;
+        }
+      }
+
+      .i-tags {
+        position: relative;
+        display: inline-block;
+        transform: rotate(-45deg);
+        @include size($spacer-24);
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          border-style: solid;
+          border-width: $p5;
+          @include size($p10);
+          right: $p6;
+        }
+
+        &::before {
+          top: 0;
+          border-color: transparent transparent #717171 transparent;
+          background-color: transparent;
+        }
+
+        &::after {
+          bottom: $p4;
+          border-color: #717171;
+          background-color: #717171;
+          border-radius: 0 0 $p2 $p2;
+        }
+      }
+
+      .btn-remove {
+        font-size: $font-size-32;
+        padding: 0;
+        margin: 0;
+        line-height: $spacer-24;
+        @include size($spacer-24);
+      }
+    }
+  }
 }

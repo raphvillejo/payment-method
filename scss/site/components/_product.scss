@@ -111,3 +111,62 @@
     font-size: 70%;
   }
 }
+
+.product-voucher {
+  padding-top: $spacer-40;
+  padding-bottom: $spacer-40;
+
+  .form-control {
+    border-width: 0;
+    background-color: #f6f6f6;
+    font-size: $font-size-20;
+
+    &:focus {
+      background-color: #f6f6f6;
+      color: #182940;
+    }
+  }
+}
+
+.product-total {
+  padding-top: $spacer-30;
+  padding-bottom: $spacer-30;
+  border-top: $p1 solid $border-color;
+}
+
+.product-total-list {
+  display: flex;
+  justify-content: center;
+  padding-bottom: $p10;
+  padding-top: $p10;
+
+  &:nth-last-child(2) {
+    padding-bottom: $spacer-40;
+  }
+}
+
+.product-total-label {
+  flex: 1 1 100%;
+  display: flex;
+}
+
+.product-total-value {
+  flex: 0 0 auto;
+}
+
+.product-total-sum {
+  display: flex;
+  justify-content: center;
+  border-top: $p1 solid $border-color;
+  padding-top: $spacer-30;
+  font-size: $font-size-24;
+
+  .product-total-label,
+  .product-total-value {
+    font-family: $font-custom-font-bo;
+  }
+
+  small {
+    font-family: $font-custom-font-rg;
+  }
+}

@@ -1,26 +1,21 @@
 ﻿// SCSS File
 // modal-body.scss
 
-
 // modal-body style
 @if $enable-modal {
-	.modal-body {
-		padding: $modal-body-pad;
-		text-align: inherit;
-		@include flex(1 1 $modal-body-height);
+  .modal-body {
+    padding: $modal-body-pad;
+    text-align: inherit;
+    @include flex(1 1 $modal-body-height);
 
-		&:last-child {
-			padding-bottom: $modal-body-pad;
-		}
+    @extend %extend-aria-hide;
 
-		@extend %extend-aria-hide;
+    @extend %extend-aria-show;
 
-		@extend %extend-aria-show;
-
-		@include media-breakpoint-down(xs) {
-			height: $modal-body-height;
-			padding-left: $modal-body-pad-xs;
-			padding-right: $modal-body-pad-xs;
-		}
-	}
+    @include media-breakpoint-down(xs) {
+      height: $modal-body-height;
+      padding-left: $modal-body-pad-xs;
+      padding-right: $modal-body-pad-xs;
+    }
+  }
 }
